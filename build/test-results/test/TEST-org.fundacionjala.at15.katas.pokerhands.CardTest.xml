@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.fundacionjala.at15.katas.pokerhands.CardTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-08T23:18:47" hostname="LAPTOP-SFVDBN3N" time="0.0">
+<testsuite name="org.fundacionjala.at15.katas.pokerhands.CardTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-08T23:40:00" hostname="LAPTOP-SFVDBN3N" time="0.001">
   <properties/>
-  <testcase name="itShouldHaveAValue" classname="org.fundacionjala.at15.katas.pokerhands.CardTest" time="0.0"/>
+  <testcase name="itShouldHaveAValue" classname="org.fundacionjala.at15.katas.pokerhands.CardTest" time="0.001"/>
   <testcase name="itShouldHaveASuit" classname="org.fundacionjala.at15.katas.pokerhands.CardTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
