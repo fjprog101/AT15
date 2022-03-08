@@ -7,10 +7,15 @@ public class ClubCard extends Card {
     public ClubCard(String value) {
 <span class="fc" id="L8">        super(value);</span>
 <span class="fc" id="L9">        this.suit = &quot;C&quot;;</span>
-<span class="fc" id="L10">    }</span>
+<span class="fc" id="L10">        value = getValue();</span>
+<span class="fc" id="L11">    }</span>
 
-    public String getClubCard() {
-<span class="fc" id="L13">        return getValue() + suit;</span>
+    public String getCompletCard() {
+<span class="fc" id="L14">        return getValue() + suit;</span>
+    }
+
+    public String getSuit() {
+<span class="nc" id="L18">        return suit;</span>
     }
 
 }

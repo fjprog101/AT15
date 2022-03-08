@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Card.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">AT15</a> &gt; <a href="index.source.html" class="el_package">org.fundacionjala.at15.katas.pokerhands.mauricio</a> &gt; <span class="el_source">Card.java</span></div><h1>Card.java</h1><pre class="source lang-java linenums">package org.fundacionjala.at15.katas.pokerhands.mauricio;
 
-public class Card {
+public abstract class Card {
     private String value;
 
 <span class="fc" id="L6">    public Card(String value) {</span>
@@ -14,5 +14,56 @@ public class Card {
     public void setValue(String value1) {
 <span class="nc" id="L15">        this.value = value1;</span>
 <span class="nc" id="L16">    }</span>
+
+    public abstract String getCompletCard();
+
+    public int getValueOfCard() {
+<span class="nc" id="L21">        int result = 0;</span>
+<span class="nc bnc" id="L22" title="All 14 branches missed.">        switch (value) {</span>
+            case &quot;A&quot;:
+<span class="nc" id="L24">                result = 13;</span>
+<span class="nc" id="L25">                break;</span>
+            case &quot;2&quot;:
+<span class="nc" id="L27">                result = 1;</span>
+<span class="nc" id="L28">                break;</span>
+            case &quot;3&quot;:
+<span class="nc" id="L30">                result = 2;</span>
+<span class="nc" id="L31">                break;</span>
+            case &quot;4&quot;:
+<span class="nc" id="L33">                result = 3;</span>
+<span class="nc" id="L34">                break;</span>
+            case &quot;5&quot;:
+<span class="nc" id="L36">                result = 4;</span>
+<span class="nc" id="L37">                break;</span>
+            case &quot;6&quot;:
+<span class="nc" id="L39">                result = 5;</span>
+<span class="nc" id="L40">                break;</span>
+            case &quot;7&quot;:
+<span class="nc" id="L42">                result = 6;</span>
+<span class="nc" id="L43">                break;</span>
+            case &quot;8&quot;:
+<span class="nc" id="L45">                result = 7;</span>
+<span class="nc" id="L46">                break;</span>
+            case &quot;9&quot;:
+<span class="nc" id="L48">                result = 8;</span>
+<span class="nc" id="L49">                break;</span>
+            case &quot;10&quot;:
+<span class="nc" id="L51">                result = 9;</span>
+<span class="nc" id="L52">                break;</span>
+            case &quot;J&quot;:
+<span class="nc" id="L54">                result = 10;</span>
+<span class="nc" id="L55">                break;</span>
+            case &quot;Q&quot;:
+<span class="nc" id="L57">                result = 11;</span>
+<span class="nc" id="L58">                break;</span>
+            case &quot;K&quot;:
+<span class="nc" id="L60">                result = 12;</span>
+<span class="nc" id="L61">                break;</span>
+
+            default:
+                break;
+        }
+<span class="nc" id="L66">        return result;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,12 +1,12 @@
 package org.fundacionjala.at15.katas.pokerhands.mauricio;
 
-public class ClubCard extends Card {
+public class DiamondCard extends Card {
 
     private String suit;
 
-    public ClubCard(String value) {
+    public DiamondCard(String value) {
         super(value);
-        this.suit = "C";
+        this.suit = "D";
         value = getValue();
     }
 
@@ -17,5 +17,4 @@ public class ClubCard extends Card {
     public String getSuit() {
         return suit;
     }
-
 }

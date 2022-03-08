@@ -1,12 +1,12 @@
 package org.fundacionjala.at15.katas.pokerhands.mauricio;
 
-public class ClubCard extends Card {
+public class HeartCard extends Card {
 
     private String suit;
 
-    public ClubCard(String value) {
+    public HeartCard(String value) {
         super(value);
-        this.suit = "C";
+        this.suit = "H";
         value = getValue();
     }
 
