@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CardsClubs.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">AT15</a> &gt; <a href="index.source.html" class="el_package">org.fundacionjala.at15.katas.pokerhands</a> &gt; <span class="el_source">CardsClubs.java</span></div><h1>CardsClubs.java</h1><pre class="source lang-java linenums">package org.fundacionjala.at15.katas.pokerhands;
+
+<span class="fc" id="L3">public class CardsClubs extends DeckOfCards {</span>
+<span class="fc" id="L4">    private final int numberOfCards = 13;</span>
+    private String[] clubs;
+
+    public String[] cards(String suit) {
+<span class="fc" id="L8">        clubs = new String[numberOfCards];</span>
+<span class="fc" id="L9">        int valueCard = 2;</span>
+<span class="fc" id="L10">        final int value10 = 10;</span>
+<span class="fc" id="L11">        final int value11 = 11;</span>
+<span class="fc" id="L12">        final int value12 = 12;</span>
+<span class="fc" id="L13">        final int value13 = 13;</span>
+<span class="fc" id="L14">        final int value14 = 14;</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        for (int ind = 0; ind &lt; numberOfCards; ind++) {</span>
+<span class="fc" id="L16">            clubs[ind] = valueCard + suit;</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">            if (valueCard == value10) {</span>
+<span class="fc" id="L18">                String valueC = &quot;T&quot;;</span>
+<span class="fc" id="L19">                clubs[ind] = valueC + suit;</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">            } else if (valueCard == value11) {</span>
+<span class="fc" id="L21">                String valueC = &quot;J&quot;;</span>
+<span class="fc" id="L22">                clubs[ind] = valueC + suit;</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">            } else if (valueCard == value12) {</span>
+<span class="fc" id="L24">                String valueC = &quot;Q&quot;;</span>
+<span class="fc" id="L25">                clubs[ind] = valueC + suit;</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">            } else if (valueCard == value13) {</span>
+<span class="fc" id="L27">                String valueC = &quot;K&quot;;</span>
+<span class="fc" id="L28">                clubs[ind] = valueC + suit;</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">            } else if (valueCard == value14) {</span>
+<span class="fc" id="L30">                String valueC = &quot;A&quot;;</span>
+<span class="fc" id="L31">                clubs[ind] = valueC + suit;</span>
+            }
+<span class="fc" id="L33">            valueCard++;</span>
+        }
+<span class="fc" id="L35">        return clubs;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
