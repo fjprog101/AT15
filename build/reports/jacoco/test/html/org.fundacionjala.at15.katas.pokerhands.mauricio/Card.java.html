@@ -3,67 +3,81 @@
 public abstract class Card {
     private String value;
 
-<span class="fc" id="L6">    public Card(String value) {</span>
-<span class="fc" id="L7">        this.value = value;</span>
-<span class="fc" id="L8">    }</span>
+<span class="fc" id="L6">    private final int number1 = 1;</span>
+<span class="fc" id="L7">    private final int number2 = 2;</span>
+<span class="fc" id="L8">    private final int number3 = 3;</span>
+<span class="fc" id="L9">    private final int number4 = 4;</span>
+<span class="fc" id="L10">    private final int number5 = 5;</span>
+<span class="fc" id="L11">    private final int number6 = 6;</span>
+<span class="fc" id="L12">    private final int number7 = 7;</span>
+<span class="fc" id="L13">    private final int number8 = 8;</span>
+<span class="fc" id="L14">    private final int number9 = 9;</span>
+<span class="fc" id="L15">    private final int number10 = 10;</span>
+<span class="fc" id="L16">    private final int number11 = 11;</span>
+<span class="fc" id="L17">    private final int number12 = 12;</span>
+<span class="fc" id="L18">    private final int number13 = 13;</span>
+
+<span class="fc" id="L20">    public Card(String value) {</span>
+<span class="fc" id="L21">        this.value = value;</span>
+<span class="fc" id="L22">    }</span>
 
     public String getValue() {
-<span class="fc" id="L11">        return value;</span>
+<span class="fc" id="L25">        return value;</span>
     }
 
     public void setValue(String value1) {
-<span class="nc" id="L15">        this.value = value1;</span>
-<span class="nc" id="L16">    }</span>
+<span class="nc" id="L29">        this.value = value1;</span>
+<span class="nc" id="L30">    }</span>
 
     public abstract String getCompletCard();
 
     public int getValueOfCard() {
-<span class="nc" id="L21">        int result = 0;</span>
-<span class="nc bnc" id="L22" title="All 14 branches missed.">        switch (value) {</span>
+<span class="nc" id="L35">        int result = 0;</span>
+<span class="nc bnc" id="L36" title="All 14 branches missed.">        switch (value) {</span>
             case &quot;A&quot;:
-<span class="nc" id="L24">                result = 13;</span>
-<span class="nc" id="L25">                break;</span>
+<span class="nc" id="L38">                result = number13;</span>
+<span class="nc" id="L39">                break;</span>
             case &quot;2&quot;:
-<span class="nc" id="L27">                result = 1;</span>
-<span class="nc" id="L28">                break;</span>
+<span class="nc" id="L41">                result = number1;</span>
+<span class="nc" id="L42">                break;</span>
             case &quot;3&quot;:
-<span class="nc" id="L30">                result = 2;</span>
-<span class="nc" id="L31">                break;</span>
+<span class="nc" id="L44">                result = number2;</span>
+<span class="nc" id="L45">                break;</span>
             case &quot;4&quot;:
-<span class="nc" id="L33">                result = 3;</span>
-<span class="nc" id="L34">                break;</span>
+<span class="nc" id="L47">                result = number3;</span>
+<span class="nc" id="L48">                break;</span>
             case &quot;5&quot;:
-<span class="nc" id="L36">                result = 4;</span>
-<span class="nc" id="L37">                break;</span>
+<span class="nc" id="L50">                result = number4;</span>
+<span class="nc" id="L51">                break;</span>
             case &quot;6&quot;:
-<span class="nc" id="L39">                result = 5;</span>
-<span class="nc" id="L40">                break;</span>
+<span class="nc" id="L53">                result = number5;</span>
+<span class="nc" id="L54">                break;</span>
             case &quot;7&quot;:
-<span class="nc" id="L42">                result = 6;</span>
-<span class="nc" id="L43">                break;</span>
+<span class="nc" id="L56">                result = number6;</span>
+<span class="nc" id="L57">                break;</span>
             case &quot;8&quot;:
-<span class="nc" id="L45">                result = 7;</span>
-<span class="nc" id="L46">                break;</span>
+<span class="nc" id="L59">                result = number7;</span>
+<span class="nc" id="L60">                break;</span>
             case &quot;9&quot;:
-<span class="nc" id="L48">                result = 8;</span>
-<span class="nc" id="L49">                break;</span>
+<span class="nc" id="L62">                result = number8;</span>
+<span class="nc" id="L63">                break;</span>
             case &quot;10&quot;:
-<span class="nc" id="L51">                result = 9;</span>
-<span class="nc" id="L52">                break;</span>
+<span class="nc" id="L65">                result = number9;</span>
+<span class="nc" id="L66">                break;</span>
             case &quot;J&quot;:
-<span class="nc" id="L54">                result = 10;</span>
-<span class="nc" id="L55">                break;</span>
+<span class="nc" id="L68">                result = number10;</span>
+<span class="nc" id="L69">                break;</span>
             case &quot;Q&quot;:
-<span class="nc" id="L57">                result = 11;</span>
-<span class="nc" id="L58">                break;</span>
+<span class="nc" id="L71">                result = number11;</span>
+<span class="nc" id="L72">                break;</span>
             case &quot;K&quot;:
-<span class="nc" id="L60">                result = 12;</span>
-<span class="nc" id="L61">                break;</span>
+<span class="nc" id="L74">                result = number12;</span>
+<span class="nc" id="L75">                break;</span>
 
             default:
                 break;
         }
-<span class="nc" id="L66">        return result;</span>
+<span class="nc" id="L80">        return result;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
