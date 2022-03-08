@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.34">
+<file name="C:\workspace\progra\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\Calculator.java">
+</file>
+<file name="C:\workspace\progra\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\Operation.java">
+</file>
+<file name="C:\workspace\progra\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\SubstractOperation.java">
+</file>
+<file name="C:\workspace\progra\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\SumOperation.java">
+</file>
+<file name="C:\workspace\progra\AT15\src\main\java\org\fundacionjala\at15\katas\pokerhands\diana\Game.java">
+</file>
+<file name="C:\workspace\progra\AT15\src\main\java\org\fundacionjala\at15\katas\pokerhands\diana\Hands.java">
+</file>
+</checkstyle>
