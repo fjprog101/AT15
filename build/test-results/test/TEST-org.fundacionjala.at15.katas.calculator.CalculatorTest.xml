@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.fundacionjala.at15.katas.calculator.CalculatorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-08T17:46:32" hostname="DESKTOP-01VSN5H" time="0.002">
+<testsuite name="org.fundacionjala.at15.katas.calculator.CalculatorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-09T02:31:40" hostname="DESKTOP-01VSN5H" time="0.001">
   <properties/>
-  <testcase name="itShouldSubstractTwoIntegers" classname="org.fundacionjala.at15.katas.calculator.CalculatorTest" time="0.002"/>
+  <testcase name="itShouldSubstractTwoIntegers" classname="org.fundacionjala.at15.katas.calculator.CalculatorTest" time="0.001"/>
   <testcase name="itShouldSumTwoIntegers" classname="org.fundacionjala.at15.katas.calculator.CalculatorTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

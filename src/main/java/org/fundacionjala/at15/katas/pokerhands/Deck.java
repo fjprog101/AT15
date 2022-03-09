@@ -4,7 +4,7 @@ public class Deck {
     private char suit;
     private char value;
 
-    public Deck(char newSuit, char newValue) {
+    public Deck(char newValue, char newSuit) {
         this.suit = newSuit;
         this.value = newValue;
     }
