@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.pokerhands;
+package org.fundacionjala.at15.katas.pokerhands.adrian;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,6 +8,8 @@ public class pokerHandTest {
 
     @Test
     public void itShouldReturnTheHighestHand() {
+        //Black: 2H 3D 5S 9C KD  White: 2C 3H 4S 8C AH
+        //White wins. - with high card: Ace
         Game game = new Game();
         String player1 = "Black";
         String hand1 = "2H 3D 5S 9C KD";

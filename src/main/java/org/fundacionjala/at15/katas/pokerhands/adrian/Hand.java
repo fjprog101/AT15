@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.pokerhands;
+package org.fundacionjala.at15.katas.pokerhands.adrian;
 
 public abstract class Hand {
     private final int ten = 10;

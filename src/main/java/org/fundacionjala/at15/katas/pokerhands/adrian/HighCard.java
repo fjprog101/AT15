@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.pokerhands;
+package org.fundacionjala.at15.katas.pokerhands.adrian;
 
 public class HighCard extends Hand {
     private final int three = 3;
