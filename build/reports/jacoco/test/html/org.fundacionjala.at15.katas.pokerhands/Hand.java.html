@@ -18,27 +18,27 @@
     }
 
     public boolean isNumeric(String str) {
-<span class="pc bpc" id="L21" title="2 of 4 branches missed.">        return str != null &amp;&amp; str.matches(&quot;[2-9]+&quot;);</span>
+<span class="pc bpc" id="L21" title="1 of 4 branches missed.">        return str != null &amp;&amp; str.matches(&quot;[2-9]+&quot;);</span>
     }
 
     public int valueOfCard(Character character) {
-<span class="nc" id="L25">        int result = 0;</span>
-<span class="nc bnc" id="L26" title="All 2 branches missed.">        if (character.equals('T')) {</span>
-<span class="nc" id="L27">            result = ten;</span>
+<span class="fc" id="L25">        int result = 0;</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (character.equals('T')) {</span>
+<span class="fc" id="L27">            result = ten;</span>
         }
-<span class="nc bnc" id="L29" title="All 2 branches missed.">        if (character.equals('J')) {</span>
-<span class="nc" id="L30">            result = eleven;</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (character.equals('J')) {</span>
+<span class="fc" id="L30">            result = eleven;</span>
         }
-<span class="nc bnc" id="L32" title="All 2 branches missed.">        if (character.equals('Q')) {</span>
-<span class="nc" id="L33">            result = twelve;</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        if (character.equals('Q')) {</span>
+<span class="fc" id="L33">            result = twelve;</span>
         }
-<span class="nc bnc" id="L35" title="All 2 branches missed.">        if (character.equals('K')) {</span>
-<span class="nc" id="L36">            result = thirteen;</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        if (character.equals('K')) {</span>
+<span class="fc" id="L36">            result = thirteen;</span>
         }
-<span class="nc bnc" id="L38" title="All 2 branches missed.">        if (character.equals('A')) {</span>
-<span class="nc" id="L39">            result = fourteen;</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        if (character.equals('A')) {</span>
+<span class="fc" id="L39">            result = fourteen;</span>
         }
-<span class="nc" id="L41">        return result;</span>
+<span class="fc" id="L41">        return result;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

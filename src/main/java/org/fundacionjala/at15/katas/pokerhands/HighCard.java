@@ -19,10 +19,16 @@ public class HighCard extends Hand {
         while ((index + three) < hand.length()) {
             if (isNumeric(String.valueOf(hand.charAt(index)))) {
                 number1 = Character.getNumericValue(hand.charAt(index));
+            } else {
+                number1 = valueOfCard(hand.charAt(index));
             }
+
             if (isNumeric(String.valueOf(hand.charAt(index + three)))) {
                 number2 = Character.getNumericValue(hand.charAt(index + three));
+            } else {
+                number2 = valueOfCard(hand.charAt(index + three));
             }
+
             if (higherValue(number1, number2) > higherValue) {
                 higherValue = higherValue(number1, number2);
             }

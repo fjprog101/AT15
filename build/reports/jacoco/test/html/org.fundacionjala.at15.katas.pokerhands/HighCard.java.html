@@ -4,8 +4,8 @@
 <span class="fc" id="L4">    private final int three = 3;</span>
 
     public String compareHands(String hand1, String hand2) {
-<span class="pc bpc" id="L7" title="1 of 2 branches missed.">        if (higherCard(hand1) &gt; higherCard(hand2)) {</span>
-<span class="nc" id="L8">            return hand1;</span>
+<span class="fc bfc" id="L7" title="All 2 branches covered.">        if (higherCard(hand1) &gt; higherCard(hand2)) {</span>
+<span class="fc" id="L8">            return hand1;</span>
         } else {
 <span class="fc" id="L10">            return hand2;</span>
         }
@@ -17,18 +17,24 @@
 <span class="fc" id="L17">        int higherValue = 0;</span>
 <span class="fc" id="L18">        int index = 0;</span>
 <span class="fc bfc" id="L19" title="All 2 branches covered.">        while ((index + three) &lt; hand.length()) {</span>
-<span class="pc bpc" id="L20" title="1 of 2 branches missed.">            if (isNumeric(String.valueOf(hand.charAt(index)))) {</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">            if (isNumeric(String.valueOf(hand.charAt(index)))) {</span>
 <span class="fc" id="L21">                number1 = Character.getNumericValue(hand.charAt(index));</span>
+            } else {
+<span class="fc" id="L23">                number1 = valueOfCard(hand.charAt(index));</span>
             }
-<span class="pc bpc" id="L23" title="1 of 2 branches missed.">            if (isNumeric(String.valueOf(hand.charAt(index + three)))) {</span>
-<span class="fc" id="L24">                number2 = Character.getNumericValue(hand.charAt(index + three));</span>
+
+<span class="fc bfc" id="L26" title="All 2 branches covered.">            if (isNumeric(String.valueOf(hand.charAt(index + three)))) {</span>
+<span class="fc" id="L27">                number2 = Character.getNumericValue(hand.charAt(index + three));</span>
+            } else {
+<span class="fc" id="L29">                number2 = valueOfCard(hand.charAt(index + three));</span>
             }
-<span class="fc bfc" id="L26" title="All 2 branches covered.">            if (higherValue(number1, number2) &gt; higherValue) {</span>
-<span class="fc" id="L27">                higherValue = higherValue(number1, number2);</span>
+
+<span class="fc bfc" id="L32" title="All 2 branches covered.">            if (higherValue(number1, number2) &gt; higherValue) {</span>
+<span class="fc" id="L33">                higherValue = higherValue(number1, number2);</span>
             }
-<span class="fc" id="L29">            index = index + three;</span>
+<span class="fc" id="L35">            index = index + three;</span>
         }
-<span class="fc" id="L31">        return higherValue;</span>
+<span class="fc" id="L37">        return higherValue;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
