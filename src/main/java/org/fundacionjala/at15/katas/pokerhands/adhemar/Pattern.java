@@ -36,4 +36,15 @@ public class Pattern {
         }
         return high;
     }
+
+    public int countSameValue() {
+        int sameCards = 0;
+        int value = this.cards[0].calculateValue();
+        for (Card card : this.cards) {
+            if (card.calculateValue() == value) {
+                sameCards++;
+            }
+        }
+        return sameCards;
+    }
 }

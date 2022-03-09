@@ -16,9 +16,9 @@ public class PatternTest {
             new Card('6', 'D'),
             new Card('7', 'D')
         };
-        Pattern ranker = new Pattern(cards1);
+        Pattern pattern = new Pattern(cards1);
 
-        assertTrue(ranker.isAllSameSuit());
+        assertTrue(pattern.isAllSameSuit());
         
         Card[] cards2 = {
             new Card('3', 'D'),
@@ -27,9 +27,9 @@ public class PatternTest {
             new Card('6', 'D'),
             new Card('7', 'D')
         };
-        ranker = new Pattern(cards2);
+        pattern = new Pattern(cards2);
 
-        assertFalse(ranker.isAllSameSuit());
+        assertFalse(pattern.isAllSameSuit());
     }
 
     @Test
@@ -41,9 +41,9 @@ public class PatternTest {
             new Card('6', 'D'),
             new Card('7', 'D')
         };
-        Pattern ranker = new Pattern(cards1);
+        Pattern pattern = new Pattern(cards1);
 
-        assertTrue(ranker.isContinuous());
+        assertTrue(pattern.isContinuous());
 
         Card[] cards2 = {
             new Card('3', 'D'),
@@ -52,9 +52,9 @@ public class PatternTest {
             new Card('6', 'D'),
             new Card('8', 'D')
         };
-        ranker = new Pattern(cards2);
+        pattern = new Pattern(cards2);
 
-        assertFalse(ranker.isContinuous());
+        assertFalse(pattern.isContinuous());
     }
 
     @Test
@@ -66,8 +66,22 @@ public class PatternTest {
             new Card('6', 'H'),
             new Card('Q', 'D')
         };
-        Pattern ranker = new Pattern(cards1);
+        Pattern pattern = new Pattern(cards1);
 
-        assertEquals(14, ranker.calculateTheHighestCard());
+        assertEquals(14, pattern.calculateTheHighestCard());
+    }
+
+    @Test
+    public void itShoulCountSameValueCards() {
+        Card[] cards1 = {
+            new Card('3', 'S'),
+            new Card('A', 'D'),
+            new Card('5', 'D'),
+            new Card('3', 'H'),
+            new Card('3', 'D')
+        };
+        Pattern pattern = new Pattern(cards1);
+
+        assertEquals(3, pattern.countSameValue());
     }
 }
