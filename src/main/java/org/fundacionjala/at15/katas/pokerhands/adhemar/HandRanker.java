@@ -28,4 +28,12 @@ public class HandRanker {
         }
         return true;
     }
+
+    public int calculateTheHighestCard() {
+        int high = this.cards[0].calculateValue();
+        for (Card card : this.cards) {
+            high = card.calculateValue() > high ? card.calculateValue() : high;
+        }
+        return high;
+    }
 }

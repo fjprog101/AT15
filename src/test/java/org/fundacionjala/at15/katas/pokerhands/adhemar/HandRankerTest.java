@@ -1,5 +1,6 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -54,5 +55,19 @@ public class HandRankerTest {
         ranker = new HandRanker(cards2);
 
         assertFalse(ranker.isContinuous());
+    }
+
+    @Test
+    public void itShouldHaveAHighestCard() {
+        Card[] cards1 = {
+            new Card('3', 'S'),
+            new Card('A', 'D'),
+            new Card('5', 'D'),
+            new Card('6', 'H'),
+            new Card('Q', 'D')
+        };
+        HandRanker ranker = new HandRanker(cards1);
+
+        assertEquals(14, ranker.calculateTheHighestCard());
     }
 }
