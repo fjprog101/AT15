@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.fundacionjala.at15.katas.poker.PokerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-08T23:19:54" hostname="DESKTOP-96F8HDU" time="0.003">
+<testsuite name="org.fundacionjala.at15.katas.poker.PokerTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2022-03-09T01:02:59" hostname="DESKTOP-96F8HDU" time="0.01">
   <properties/>
-  <testcase name="itShouldHaveFiveCards" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.003"/>
+  <testcase name="itShouldReturnTheSuitOfTheCard" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.007"/>
+  <testcase name="itShouldReturnFullHouse" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.0"/>
+  <testcase name="itShouldReturnStraightFlush" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.0"/>
+  <testcase name="itShouldReturnStraight" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.0"/>
+  <testcase name="itShouldReturnTwoPairs" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.0"/>
+  <testcase name="itShouldReturnPair" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.001"/>
+  <testcase name="itShouldReturnFourOfAKind" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.0"/>
+  <testcase name="itShouldReturnFlush" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.0"/>
+  <testcase name="itShouldReturnThreeOfAKind" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.0"/>
+  <testcase name="itShouldHaveFiveCards" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.0"/>
+  <testcase name="itShouldReturnTheValueOfTheCard" classname="org.fundacionjala.at15.katas.poker.PokerTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
