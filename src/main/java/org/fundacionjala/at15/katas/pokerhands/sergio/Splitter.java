@@ -24,7 +24,7 @@ public class Splitter {
         return this.suitPokerHand[ind];
     }
 
-    public int[] getValuesPokerHand() {
+    public int[] getValuePokerHand() {
         return valuesPokerHand;
     }
 

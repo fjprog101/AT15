@@ -65,7 +65,7 @@ public class SplitterTest {
         splitterTest.theSplit();
         int[] expectedValueArray = {2, 3, 5, 9, 13};
         String[] expectedSuitArray = {"H", "D", "S", "C", "D"};
-        assertArrayEquals(expectedValueArray, splitterTest.getValuesPokerHand());
+        assertArrayEquals(expectedValueArray, splitterTest.getValuePokerHand());
         assertArrayEquals(expectedSuitArray, splitterTest.getSuitPokerHand());
     }
 
