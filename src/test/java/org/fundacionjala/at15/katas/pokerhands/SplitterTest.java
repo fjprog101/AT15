@@ -42,4 +42,16 @@ public class SplitterTest {
         assertEquals(13, splitterTest.getValuesPokerHand(4));
     }
 
+    @Test
+    public void itShouldSplitSuit() {
+        String[] black = { "2H", "3D", "5S", "9C", "KD" };
+        Splitter splitterTest = new Splitter(black);
+        splitterTest.theSplitSuit();
+        assertEquals("H", splitterTest.getSuitPokerHand(0));
+        assertEquals("D", splitterTest.getSuitPokerHand(1));
+        assertEquals("S", splitterTest.getSuitPokerHand(2));
+        assertEquals("C", splitterTest.getSuitPokerHand(3));
+        assertEquals("D", splitterTest.getSuitPokerHand(4));
+    }
+
 }

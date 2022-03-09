@@ -3,7 +3,7 @@
 public class Splitter {
     private String[] pokerHand;
 <span class="fc" id="L5">    private int[] valuesPokerHand = new int[NUMBER_5];</span>
-    private String[] suitPokerHand;
+<span class="fc" id="L6">    private String[] suitPokerHand = new String[NUMBER_5];</span>
 <span class="fc" id="L7">    private String[] valuesHand = new String[NUMBER_5];</span>
     private static final int NUMBER_5 = 5;
 
@@ -21,46 +21,50 @@ public class Splitter {
 <span class="fc" id="L21">        return this.valuesPokerHand[ind];</span>
     }
 
+    public String getSuitPokerHand(int ind) {
+<span class="fc" id="L25">        return this.suitPokerHand[ind];</span>
+    }
+
     public void theSplit() {
-<span class="nc" id="L25">        theSplitValue();</span>
-<span class="nc" id="L26">        valuesHandCorrection();</span>
-<span class="nc" id="L27">        valuesHandToInt();</span>
-<span class="nc" id="L28">        theSplitSuit();</span>
-<span class="nc" id="L29">    }</span>
+<span class="nc" id="L29">        theSplitValue();</span>
+<span class="nc" id="L30">        valuesHandCorrection();</span>
+<span class="nc" id="L31">        valuesHandToInt();</span>
+<span class="nc" id="L32">        theSplitSuit();</span>
+<span class="nc" id="L33">    }</span>
 
     public void theSplitValue() {
-<span class="fc bfc" id="L32" title="All 2 branches covered.">        for (int ind = 0; ind &lt; NUMBER_5; ind++) {</span>
-<span class="fc" id="L33">            valuesHand[ind] = pokerHand[ind].substring(0, 1);</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (int ind = 0; ind &lt; NUMBER_5; ind++) {</span>
+<span class="fc" id="L37">            valuesHand[ind] = pokerHand[ind].substring(0, 1);</span>
         }
-<span class="fc" id="L35">    }</span>
+<span class="fc" id="L39">    }</span>
 
     public void valuesHandCorrection() {
-<span class="fc bfc" id="L38" title="All 2 branches covered.">        for (int ind = 0; ind &lt; NUMBER_5; ind++) {</span>
-<span class="pc bpc" id="L39" title="1 of 2 branches missed.">            if (valuesHand[ind].equals(&quot;T&quot;)) {</span>
-<span class="nc" id="L40">                this.valuesHand[ind] = &quot;10&quot;;</span>
-<span class="pc bpc" id="L41" title="1 of 2 branches missed.">            } else if (valuesHand[ind].equals(&quot;J&quot;)) {</span>
-<span class="nc" id="L42">                this.valuesHand[ind] = &quot;11&quot;;</span>
-<span class="pc bpc" id="L43" title="1 of 2 branches missed.">            } else if (valuesHand[ind].equals(&quot;Q&quot;)) {</span>
-<span class="nc" id="L44">                this.valuesHand[ind] = &quot;12&quot;;</span>
-<span class="fc bfc" id="L45" title="All 2 branches covered.">            } else if (valuesHand[ind].equals(&quot;K&quot;)) {</span>
-<span class="fc" id="L46">                this.valuesHand[ind] = &quot;13&quot;;</span>
-<span class="pc bpc" id="L47" title="1 of 2 branches missed.">            } else if (valuesHand[ind].equals(&quot;A&quot;)) {</span>
-<span class="nc" id="L48">                valuesHand[ind] = &quot;14&quot;;</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        for (int ind = 0; ind &lt; NUMBER_5; ind++) {</span>
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">            if (valuesHand[ind].equals(&quot;T&quot;)) {</span>
+<span class="nc" id="L44">                this.valuesHand[ind] = &quot;10&quot;;</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">            } else if (valuesHand[ind].equals(&quot;J&quot;)) {</span>
+<span class="nc" id="L46">                this.valuesHand[ind] = &quot;11&quot;;</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">            } else if (valuesHand[ind].equals(&quot;Q&quot;)) {</span>
+<span class="nc" id="L48">                this.valuesHand[ind] = &quot;12&quot;;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">            } else if (valuesHand[ind].equals(&quot;K&quot;)) {</span>
+<span class="fc" id="L50">                this.valuesHand[ind] = &quot;13&quot;;</span>
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">            } else if (valuesHand[ind].equals(&quot;A&quot;)) {</span>
+<span class="nc" id="L52">                valuesHand[ind] = &quot;14&quot;;</span>
             }
         }
-<span class="fc" id="L51">    }</span>
+<span class="fc" id="L55">    }</span>
 
     public void valuesHandToInt() {
-<span class="fc bfc" id="L54" title="All 2 branches covered.">        for (int ind = 0; ind &lt; NUMBER_5; ind++) {</span>
-<span class="fc" id="L55">            valuesPokerHand[ind] = Integer.parseInt(valuesHand[ind]);</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        for (int ind = 0; ind &lt; NUMBER_5; ind++) {</span>
+<span class="fc" id="L59">            valuesPokerHand[ind] = Integer.parseInt(valuesHand[ind]);</span>
         }
-<span class="fc" id="L57">    }</span>
+<span class="fc" id="L61">    }</span>
 
     public void theSplitSuit() {
-<span class="nc bnc" id="L60" title="All 2 branches missed.">        for (int ind = 0; ind &lt; NUMBER_5; ind++) {</span>
-<span class="nc" id="L61">            suitPokerHand[ind] = pokerHand[ind].substring(1, 2);</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        for (int ind = 0; ind &lt; NUMBER_5; ind++) {</span>
+<span class="fc" id="L65">            suitPokerHand[ind] = pokerHand[ind].substring(1, 2);</span>
         }
-<span class="nc" id="L63">    }</span>
+<span class="fc" id="L67">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

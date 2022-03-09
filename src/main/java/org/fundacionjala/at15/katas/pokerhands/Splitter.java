@@ -3,7 +3,7 @@ package org.fundacionjala.at15.katas.pokerhands;
 public class Splitter {
     private String[] pokerHand;
     private int[] valuesPokerHand = new int[NUMBER_5];
-    private String[] suitPokerHand;
+    private String[] suitPokerHand = new String[NUMBER_5];
     private String[] valuesHand = new String[NUMBER_5];
     private static final int NUMBER_5 = 5;
 
@@ -19,6 +19,10 @@ public class Splitter {
 
     public int getValuesPokerHand(int ind) {
         return this.valuesPokerHand[ind];
+    }
+
+    public String getSuitPokerHand(int ind) {
+        return this.suitPokerHand[ind];
     }
 
     public void theSplit() {
