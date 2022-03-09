@@ -10,23 +10,23 @@ public abstract class Card {
         return suit;
     }
 
-    public void setSuit(String suit) {
-        this.suit = suit;
+    public void setSuit(String suitParam) {
+        this.suit = suitParam;
     }
 
     public String getNotation() {
         return notation;
     }
 
-    public void setNotation(String notation) {
-        this.notation = notation;
+    public void setNotation(String notationParam) {
+        this.notation = notationParam;
     }
 
     public int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setValue(int valueParam) {
+        this.value = valueParam;
     }
 }
