@@ -2,12 +2,10 @@ package org.fundacionjala.at15.katas.pokerhands.vladimir;
 
 import static org.junit.Assert.assertEquals;
 
-import org.fundacionjala.at15.katas.pokerhands.vladimir.Card;
-import org.fundacionjala.at15.katas.pokerhands.vladimir.Hand;
 import org.junit.Test;
 
 public class handTest {
-    @Test
+    /*@Test
     public void itShouldShowHighCardOfTheHand() {
         Card[] card = new Card[5];
         card[0] = new Card('2', 'C');
@@ -58,5 +56,5 @@ public class handTest {
         assertEquals("8S", actual4);
         assertEquals("3H", actual1);
         assertEquals("3C", actual2);
-    }
+    }*/
 }
