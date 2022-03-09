@@ -1,11 +1,11 @@
-package org.fundacionjala.at15.katas.pokerHands;
+package org.fundacionjala.at15.katas.pokerHands.gonzalo;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.fundacionjala.at15.katas.pokerhands.DeckOfCards;
+import org.fundacionjala.at15.katas.pokerhands.gonzalo.DeckOfCards;
 import org.junit.Test;
 
 public class cardsTest {

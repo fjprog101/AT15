@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.pokerhands;
+package org.fundacionjala.at15.katas.pokerhands.gonzalo;
 
 import java.util.ArrayList;
 import java.util.List;
