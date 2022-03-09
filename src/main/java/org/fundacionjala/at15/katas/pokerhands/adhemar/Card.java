@@ -17,7 +17,7 @@ public class Card {
     static final int KING = 13;
     static final int ACE = 14;
 
-    public Card(char suit, char charValue) {
+    public Card(char charValue, char suit) {
         this.suit = suit;
         this.charValue = charValue;
     }

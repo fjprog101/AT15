@@ -9,7 +9,7 @@ public class CardTest {
     public void itShouldHaveASuitAndACharValue() {
         char suit = 'C';
         char charValue = '2';
-        Card theCard = new Card(suit, charValue);
+        Card theCard = new Card(charValue, suit);
 
         assertEquals(suit, theCard.getSuit());
         assertEquals(charValue, theCard.getCharValue());
@@ -20,7 +20,7 @@ public class CardTest {
         char suit = 'C';
         char charValue = 'T';
         int value = 10;
-        Card theCard = new Card(suit, charValue);
+        Card theCard = new Card(charValue, suit);
 
         assertEquals(value, theCard.calculateValue());
     }
