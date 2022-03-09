@@ -1,9 +1,9 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
-public class HandRanker {
+public class Pattern {
     private Card[] cards;
 
-    public HandRanker(Card[] cards) {
+    public Pattern(Card[] cards) {
         this.cards = cards;
     }
 

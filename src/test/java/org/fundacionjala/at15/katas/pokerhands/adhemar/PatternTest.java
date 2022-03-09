@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class HandRankerTest {
+public class PatternTest {
     @Test
     public void itShouldHaveAllCardsWithTheSameSuit() {
         Card[] cards1 = {
@@ -16,7 +16,7 @@ public class HandRankerTest {
             new Card('6', 'D'),
             new Card('7', 'D')
         };
-        HandRanker ranker = new HandRanker(cards1);
+        Pattern ranker = new Pattern(cards1);
 
         assertTrue(ranker.isAllSameSuit());
         
@@ -27,7 +27,7 @@ public class HandRankerTest {
             new Card('6', 'D'),
             new Card('7', 'D')
         };
-        ranker = new HandRanker(cards2);
+        ranker = new Pattern(cards2);
 
         assertFalse(ranker.isAllSameSuit());
     }
@@ -41,7 +41,7 @@ public class HandRankerTest {
             new Card('6', 'D'),
             new Card('7', 'D')
         };
-        HandRanker ranker = new HandRanker(cards1);
+        Pattern ranker = new Pattern(cards1);
 
         assertTrue(ranker.isContinuous());
 
@@ -52,7 +52,7 @@ public class HandRankerTest {
             new Card('6', 'D'),
             new Card('8', 'D')
         };
-        ranker = new HandRanker(cards2);
+        ranker = new Pattern(cards2);
 
         assertFalse(ranker.isContinuous());
     }
@@ -66,7 +66,7 @@ public class HandRankerTest {
             new Card('6', 'H'),
             new Card('Q', 'D')
         };
-        HandRanker ranker = new HandRanker(cards1);
+        Pattern ranker = new Pattern(cards1);
 
         assertEquals(14, ranker.calculateTheHighestCard());
     }
