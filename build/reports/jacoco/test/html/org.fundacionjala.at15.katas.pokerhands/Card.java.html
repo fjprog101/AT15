@@ -12,10 +12,10 @@ public class Card {
 <span class="fc" id="L12">    public Card(String input) {</span>
 <span class="fc" id="L13">        suit = input.charAt(input.length() - 1);</span>
 <span class="fc" id="L14">        String aux = input.substring(0, input.length() - 1);</span>
-<span class="pc bpc" id="L15" title="1 of 2 branches missed.">        if (Character.isDigit(aux.charAt(0))) {</span>
-<span class="nc" id="L16">            value = Integer.valueOf(aux);</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        if (Character.isDigit(aux.charAt(0))) {</span>
+<span class="fc" id="L16">            value = Integer.valueOf(aux);</span>
         } else {
-<span class="pc bpc" id="L18" title="5 of 6 branches missed.">            switch (aux.charAt(0)) {</span>
+<span class="pc bpc" id="L18" title="3 of 6 branches missed.">            switch (aux.charAt(0)) {</span>
                 case 'T':
 <span class="nc" id="L20">                    value = ten;</span>
 <span class="nc" id="L21">                    break;</span>
@@ -29,10 +29,10 @@ public class Card {
 <span class="nc" id="L29">                    value = thert;</span>
 <span class="nc" id="L30">                    break;</span>
                 case 'A':
-<span class="nc" id="L32">                    value = ace;</span>
-<span class="nc" id="L33">                    break;</span>
+<span class="fc" id="L32">                    value = ace;</span>
+<span class="fc" id="L33">                    break;</span>
                 default:
-<span class="nc" id="L35">                    value = 0;</span>
+<span class="fc" id="L35">                    value = 0;</span>
                     break;
             }
         }
