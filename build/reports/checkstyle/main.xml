@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.34">
+<file name="C:\Users\Adrian\Documents\JALA\Coding\Prog101\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\Calculator.java">
+</file>
+<file name="C:\Users\Adrian\Documents\JALA\Coding\Prog101\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\Operation.java">
+</file>
+<file name="C:\Users\Adrian\Documents\JALA\Coding\Prog101\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\SubstractOperation.java">
+</file>
+<file name="C:\Users\Adrian\Documents\JALA\Coding\Prog101\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\SumOperation.java">
+</file>
+<file name="C:\Users\Adrian\Documents\JALA\Coding\Prog101\AT15\src\main\java\org\fundacionjala\at15\katas\pokerhands\Game.java">
+</file>
+<file name="C:\Users\Adrian\Documents\JALA\Coding\Prog101\AT15\src\main\java\org\fundacionjala\at15\katas\pokerhands\Hand.java">
+</file>
+<file name="C:\Users\Adrian\Documents\JALA\Coding\Prog101\AT15\src\main\java\org\fundacionjala\at15\katas\pokerhands\HighCard.java">
+</file>
+</checkstyle>
