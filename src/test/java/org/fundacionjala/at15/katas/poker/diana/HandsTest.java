@@ -10,7 +10,7 @@ import java.util.List;
 import org.fundacionjala.at15.katas.pokerhands.diana.Hands;
 import org.junit.Test;
 
-public class PokerTest {
+public class HandsTest {
     @Test
     public void itShouldHaveFiveCards() {
         Hands hand = new Hands();
@@ -36,45 +36,4 @@ public class PokerTest {
         ArrayList<String> result = hand.suitOfCards(blackHand);
         assertEquals(blackHandValues, result);
     }
-
-    @Test
-    public void itShouldReturnPair() {
-
-    }
-
-    @Test
-    public void itShouldReturnTwoPairs() {
-
-    }
-
-    @Test
-    public void itShouldReturnThreeOfAKind() {
-
-    }
-
-    @Test
-    public void itShouldReturnStraight() {
-
-    }
-
-    @Test
-    public void itShouldReturnFlush() {
-
-    }
-
-    @Test
-    public void itShouldReturnFullHouse() {
-
-    }
-
-    @Test
-    public void itShouldReturnFourOfAKind() {
-
-    }
-
-    @Test
-    public void itShouldReturnStraightFlush() {
-
-    }
-
 }
