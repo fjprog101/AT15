@@ -30,4 +30,29 @@ public class HandRankerTest {
 
         assertFalse(ranker.isAllSameSuit());
     }
+
+    @Test
+    public void itShouldHaveContinuousCards() {
+        Card[] cards1 = {
+            new Card('3', 'D'),
+            new Card('4', 'D'),
+            new Card('5', 'D'),
+            new Card('6', 'D'),
+            new Card('7', 'D')
+        };
+        HandRanker ranker = new HandRanker(cards1);
+
+        assertTrue(ranker.isContinuous());
+
+        Card[] cards2 = {
+            new Card('3', 'D'),
+            new Card('4', 'D'),
+            new Card('5', 'D'),
+            new Card('6', 'D'),
+            new Card('8', 'D')
+        };
+        ranker = new HandRanker(cards2);
+
+        assertFalse(ranker.isContinuous());
+    }
 }

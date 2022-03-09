@@ -17,4 +17,15 @@ public class HandRanker {
         }
         return true;
     }
+
+    public boolean isContinuous() {
+        int prevValue = this.cards[0].calculateValue() - 1;
+        for (Card card : this.cards) {
+            if (card.calculateValue() != prevValue + 1) {
+                return false;
+            }
+            prevValue = card.calculateValue();
+        }
+        return true;
+    }
 }
