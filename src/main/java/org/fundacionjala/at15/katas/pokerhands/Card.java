@@ -2,13 +2,13 @@ package org.fundacionjala.at15.katas.pokerhands;
 
 public class Card extends Deck {
 
-    public Card(char newSuit, char newValue) {
-        super(newSuit, newValue);
+    public Card(char newValue, char newSuit) {
+        super(newValue, newSuit);
     }
 
     public String joinSuitValue() {
         String union;
-        union = "" + getValue() + getSuit();
+        union = Character.toString(getValue()) + Character.toString(getSuit());
         return union;
     }
 }

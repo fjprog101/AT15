@@ -2,13 +2,13 @@
 
 public class Card extends Deck {
 
-    public Card(char newSuit, char newValue) {
-<span class="fc" id="L6">        super(newSuit, newValue);</span>
+    public Card(char newValue, char newSuit) {
+<span class="fc" id="L6">        super(newValue, newSuit);</span>
 <span class="fc" id="L7">    }</span>
 
     public String joinSuitValue() {
         String union;
-<span class="fc" id="L11">        union = &quot;&quot; + getValue() + getSuit();</span>
+<span class="fc" id="L11">        union = Character.toString(getValue()) + Character.toString(getSuit());</span>
 <span class="fc" id="L12">        return union;</span>
     }
 }

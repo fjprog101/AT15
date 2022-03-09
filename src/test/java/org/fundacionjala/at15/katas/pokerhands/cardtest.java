@@ -6,7 +6,7 @@ import org.junit.Test;
 public class cardtest {
     @Test
     public void itShouldJoinValueAndSuit() {
-        Card card = new Card('C', 'A');
+        Card card = new Card('A', 'C');
         String expectedUnion = "AC";
         assertEquals(expectedUnion, card.joinSuitValue());
     }
