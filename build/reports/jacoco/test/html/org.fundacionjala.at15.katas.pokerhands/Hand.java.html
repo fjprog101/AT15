@@ -2,28 +2,75 @@
 
 public class Hand {
 <span class="fc" id="L4">    private final int limit = 5;</span>
-<span class="fc" id="L5">    private Card[] card = new Card[limit];</span>
+<span class="fc" id="L5">    private final int limitTwoPairs = 4;</span>
+<span class="fc" id="L6">    private final int ind1 = 1;</span>
+<span class="fc" id="L7">    private final int ind2 = 2;</span>
+<span class="fc" id="L8">    private final int ind3 = 3;</span>
+<span class="fc" id="L9">    private final int ind4 = 4;</span>
+<span class="fc" id="L10">    private final int ind5 = 5;</span>
+<span class="fc" id="L11">    private Card[] card = new Card[limit];</span>
 
-<span class="fc" id="L7">    public Hand(Card[] newCard) {</span>
-<span class="fc" id="L8">        this.card = newCard;</span>
-<span class="fc" id="L9">    }</span>
+<span class="fc" id="L13">    public Hand(Card[] newCard) {</span>
+<span class="fc" id="L14">        this.card = newCard;</span>
+<span class="fc" id="L15">    }</span>
 
     public Card highCard() {
-<span class="fc" id="L12">        int high = 0;</span>
+<span class="fc" id="L18">        int high = 0;</span>
         int numAux;
-<span class="fc" id="L14">        int pos = 0;</span>
-<span class="pc bpc" id="L15" title="1 of 2 branches missed.">        for (int ind = 0; ind &lt; card.length; ind++) {</span>
-<span class="fc" id="L16">            numAux = Character.getNumericValue(card[ind].getValue());</span>
-<span class="fc bfc" id="L17" title="All 2 branches covered.">            if (Character.isDigit(card[ind].getValue())) {</span>
-<span class="pc bpc" id="L18" title="1 of 2 branches missed.">                if (high &lt; numAux) {</span>
-<span class="fc" id="L19">                    high = numAux;</span>
-<span class="fc" id="L20">                    pos = ind;</span>
+<span class="fc" id="L20">        int pos = 0;</span>
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        for (int ind = 0; ind &lt; card.length; ind++) {</span>
+<span class="fc" id="L22">            numAux = Character.getNumericValue(card[ind].getValue());</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">            if (Character.isDigit(card[ind].getValue())) {</span>
+<span class="pc bpc" id="L24" title="1 of 2 branches missed.">                if (high &lt; numAux) {</span>
+<span class="fc" id="L25">                    high = numAux;</span>
+<span class="fc" id="L26">                    pos = ind;</span>
                 }
             } else {
-<span class="fc" id="L23">                return card[ind];</span>
+<span class="fc" id="L29">                return card[ind];</span>
             }
         }
-<span class="nc" id="L26">        return card[pos];</span>
+<span class="nc" id="L32">        return card[pos];</span>
+    }
+
+    public Card[] pair() {
+        int numAuxI;
+        int numAuxJ;
+<span class="fc" id="L38">        Card[] auxCard = new Card[2];</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        for (int ind = 0; ind &lt; card.length; ind++) {</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">            for (int indj = ind + 1; indj &lt; card.length; indj++) {</span>
+<span class="fc" id="L41">                numAuxI = Character.getNumericValue(card[ind].getValue());</span>
+<span class="fc" id="L42">                numAuxJ = Character.getNumericValue(card[indj].getValue());</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">                if (numAuxI == numAuxJ) {</span>
+<span class="fc" id="L44">                    auxCard[0] = card[ind];</span>
+<span class="fc" id="L45">                    auxCard[1] = card[indj];</span>
+<span class="fc" id="L46">                    break;</span>
+                }
+            }
+        }
+<span class="fc" id="L50">        return auxCard;</span>
+    }
+
+    public Card[] twoPairs() {
+        int numAuxI;
+        int numAuxJ;
+        int aux;
+<span class="fc" id="L57">        Card[] auxCard = new Card[limitTwoPairs];</span>
+<span class="fc" id="L58">        Card[] auxCard2 = new Card[2];</span>
+<span class="fc" id="L59">        auxCard2 = pair();</span>
+<span class="fc" id="L60">        auxCard[0] = auxCard2[0];</span>
+<span class="fc" id="L61">        auxCard[1] = auxCard2[1];</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        for (int ind = 0; ind &lt; card.length; ind++) {</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">            for (int indj = ind + 1; indj &lt; card.length; indj++) {</span>
+<span class="fc" id="L64">                numAuxI = Character.getNumericValue(card[ind].getValue());</span>
+<span class="fc" id="L65">                numAuxJ = Character.getNumericValue(card[indj].getValue());</span>
+<span class="fc" id="L66">                aux = Character.getNumericValue(auxCard[0].getValue());</span>
+<span class="pc bpc" id="L67" title="1 of 6 branches missed.">                if (numAuxI == numAuxJ &amp;&amp; numAuxI != aux &amp;&amp; numAuxJ != aux) {</span>
+<span class="fc" id="L68">                    auxCard[ind2] = card[ind];</span>
+<span class="fc" id="L69">                    auxCard[ind3] = card[indj];</span>
+                }
+            }
+        }
+<span class="fc" id="L73">        return auxCard;</span>
     }
 }
 
