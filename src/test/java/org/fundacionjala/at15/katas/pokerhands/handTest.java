@@ -1,6 +1,9 @@
 package org.fundacionjala.at15.katas.pokerhands;
 
 import static org.junit.Assert.assertEquals;
+
+import org.fundacionjala.at15.katas.pokerhands.vladimir.Card;
+import org.fundacionjala.at15.katas.pokerhands.vladimir.Hand;
 import org.junit.Test;
 
 public class handTest {
