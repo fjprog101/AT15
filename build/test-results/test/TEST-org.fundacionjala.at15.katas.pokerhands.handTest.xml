@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.fundacionjala.at15.katas.pokerhands.handTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-03-09T03:43:52" hostname="DESKTOP-01VSN5H" time="0.015">
-  <properties/>
-  <testcase name="itShouldShowHighCardOfTheHand" classname="org.fundacionjala.at15.katas.pokerhands.handTest" time="0.013"/>
-  <testcase name="itShouldShowTwoPairsOfTheHand" classname="org.fundacionjala.at15.katas.pokerhands.handTest" time="0.001"/>
-  <testcase name="itShouldShowPairOfTheHand" classname="org.fundacionjala.at15.katas.pokerhands.handTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
