@@ -15,7 +15,7 @@ public class Grouper {
     public void groupValues() {
         String value;
         for (Card card : this.cards) {
-            value = String.valueOf(card.getCharValue());
+            value = String.valueOf(card.getStringValue());
             if (!groups.contains(value)) {
                 groups.add(value);
             }

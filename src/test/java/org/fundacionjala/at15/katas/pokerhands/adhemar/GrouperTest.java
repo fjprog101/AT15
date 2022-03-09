@@ -9,11 +9,11 @@ public class GrouperTest {
     public void itShouldGetGroup() {
         String[] groups = {"3", "A", "5"};
         Card[] cards1 = {
-            new Card('3', 'S'),
-            new Card('A', 'D'),
-            new Card('5', 'D'),
-            new Card('3', 'H'),
-            new Card('3', 'D')
+            new Card("3", "S"),
+            new Card("A", "D"),
+            new Card("5", "D"),
+            new Card("3", "H"),
+            new Card("3", "D")
         };
         Grouper grouper = new Grouper(cards1);
 

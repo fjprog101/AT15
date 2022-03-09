@@ -8,7 +8,7 @@ public class Pattern {
     }
 
     public boolean isAllSameSuit() {
-        char prevSuit = this.cards[0].getSuit();
+        String prevSuit = this.cards[0].getSuit();
         for (Card card : this.cards) {
             if (prevSuit != card.getSuit()) {
                 return false;

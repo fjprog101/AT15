@@ -10,22 +10,22 @@ public class PatternTest {
     @Test
     public void itShouldHaveAllCardsWithTheSameSuit() {
         Card[] cards1 = {
-            new Card('3', 'D'),
-            new Card('4', 'D'),
-            new Card('5', 'D'),
-            new Card('6', 'D'),
-            new Card('7', 'D')
+            new Card("3", "D"),
+            new Card("4", "D"),
+            new Card("5", "D"),
+            new Card("6", "D"),
+            new Card("7", "D")
         };
         Pattern pattern = new Pattern(cards1);
 
         assertTrue(pattern.isAllSameSuit());
         
         Card[] cards2 = {
-            new Card('3', 'D'),
-            new Card('4', 'D'),
-            new Card('5', 'C'),
-            new Card('6', 'D'),
-            new Card('7', 'D')
+            new Card("3", "D"),
+            new Card("4", "D"),
+            new Card("5", "C"),
+            new Card("6", "D"),
+            new Card("7", "D")
         };
         pattern = new Pattern(cards2);
 
@@ -35,22 +35,22 @@ public class PatternTest {
     @Test
     public void itShouldHaveContinuousCards() {
         Card[] cards1 = {
-            new Card('3', 'D'),
-            new Card('4', 'D'),
-            new Card('5', 'D'),
-            new Card('6', 'D'),
-            new Card('7', 'D')
+            new Card("3", "D"),
+            new Card("4", "D"),
+            new Card("5", "D"),
+            new Card("6", "D"),
+            new Card("7", "D")
         };
         Pattern pattern = new Pattern(cards1);
 
         assertTrue(pattern.isContinuous());
 
         Card[] cards2 = {
-            new Card('3', 'D'),
-            new Card('4', 'D'),
-            new Card('5', 'D'),
-            new Card('6', 'D'),
-            new Card('8', 'D')
+            new Card("3", "D"),
+            new Card("4", "D"),
+            new Card("5", "D"),
+            new Card("6", "D"),
+            new Card("8", "D")
         };
         pattern = new Pattern(cards2);
 
@@ -60,11 +60,11 @@ public class PatternTest {
     @Test
     public void itShouldHaveAHighestCard() {
         Card[] cards1 = {
-            new Card('3', 'S'),
-            new Card('A', 'D'),
-            new Card('5', 'D'),
-            new Card('6', 'H'),
-            new Card('Q', 'D')
+            new Card("3", "S"),
+            new Card("A", "D"),
+            new Card("5", "D"),
+            new Card("6", "H"),
+            new Card("Q", "D")
         };
         Pattern pattern = new Pattern(cards1);
 
@@ -74,11 +74,11 @@ public class PatternTest {
     @Test
     public void itShoulCountSameValueCards() {
         Card[] cards1 = {
-            new Card('3', 'S'),
-            new Card('A', 'D'),
-            new Card('5', 'D'),
-            new Card('3', 'H'),
-            new Card('3', 'D')
+            new Card("3", "S"),
+            new Card("A", "D"),
+            new Card("5", "D"),
+            new Card("3", "H"),
+            new Card("3", "D")
         };
         Pattern pattern = new Pattern(cards1);
 

@@ -1,8 +1,8 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
 public class Card {
-    private char suit;
-    private char charValue;
+    private String suit;
+    private String stringValue;
     static final int TWO = 2;
     static final int THREE = 3;
     static final int FOUR = 4;
@@ -17,46 +17,46 @@ public class Card {
     static final int KING = 13;
     static final int ACE = 14;
 
-    public Card(char charValue, char suit) {
+    public Card(String stringValue, String suit) {
         this.suit = suit;
-        this.charValue = charValue;
+        this.stringValue = stringValue;
     }
 
-    public char getSuit() {
+    public String getSuit() {
         return this.suit;
     }
 
-    public char getCharValue() {
-        return this.charValue;
+    public String getStringValue() {
+        return this.stringValue;
     }
 
     public int calculateValue() {
-        switch (this.charValue) {
-            case '2':
+        switch (this.stringValue) {
+            case "2":
                 return TWO;
-            case '3':
+            case "3":
                 return THREE;
-            case '4':
+            case "4":
                 return FOUR;
-            case '5':
+            case "5":
                 return FIVE;
-            case '6':
+            case "6":
                 return SIX;
-            case '7':
+            case "7":
                 return SEVEN;
-            case '8':
+            case "8":
                 return EIGHT;
-            case '9':
+            case "9":
                 return NINE;
-            case 'T':
+            case "T":
                 return TEN;
-            case 'J':
+            case "J":
                 return JACK;
-            case 'Q':
+            case "Q":
                 return QUEEN;
-            case 'K':
+            case "K":
                 return KING;
-            case 'A':
+            case "A":
                 return ACE;
             default:
                 return 0;
