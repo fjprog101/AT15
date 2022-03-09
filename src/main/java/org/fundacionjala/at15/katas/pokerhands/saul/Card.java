@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.pokerhands;
+package org.fundacionjala.at15.katas.pokerhands.saul;
 
 public abstract class Card implements Comparable<Card> {
     protected char value;

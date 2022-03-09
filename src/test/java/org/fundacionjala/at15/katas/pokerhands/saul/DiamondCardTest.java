@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.pokerhands;
+package org.fundacionjala.at15.katas.pokerhands.saul;
 
 import static org.junit.Assert.assertEquals;
 

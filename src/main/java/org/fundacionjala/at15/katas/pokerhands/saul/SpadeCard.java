@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.pokerhands;
+package org.fundacionjala.at15.katas.pokerhands.saul;
 
 public class SpadeCard extends Card {
     public SpadeCard(char value) {
@@ -10,5 +10,4 @@ public class SpadeCard extends Card {
         // TODO Auto-generated method stub
         return 0;
     }
-
 }

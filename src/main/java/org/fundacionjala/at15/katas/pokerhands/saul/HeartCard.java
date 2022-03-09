@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.pokerhands;
+package org.fundacionjala.at15.katas.pokerhands.saul;
 
 public class HeartCard extends Card {
     public HeartCard(char value) {
