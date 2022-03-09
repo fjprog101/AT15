@@ -7,7 +7,7 @@ import org.junit.Test;
 public class GrouperTest {
     @Test
     public void itShouldGetGroup() {
-        String[] group = {"3", "A", "5"};
+        String[] groups = {"3", "A", "5"};
         Card[] cards1 = {
             new Card('3', 'S'),
             new Card('A', 'D'),
@@ -17,6 +17,6 @@ public class GrouperTest {
         };
         Grouper grouper = new Grouper(cards1);
 
-        assertArrayEquals(group, grouper.getGroup().toArray());
+        assertArrayEquals(groups, grouper.getGroup().toArray());
     }
 }

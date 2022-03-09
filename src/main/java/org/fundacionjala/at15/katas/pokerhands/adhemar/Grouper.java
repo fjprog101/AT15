@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Grouper {
     private Card[] cards;
-    private ArrayList<String> group;
+    private ArrayList<String> groups;
 
     public Grouper(Card[] cards) {
         this.cards = cards;
-        this.group = new ArrayList<String>();
+        this.groups = new ArrayList<String>();
         groupValues();
     }
 
@@ -16,13 +16,13 @@ public class Grouper {
         String value;
         for (Card card : this.cards) {
             value = String.valueOf(card.getCharValue());
-            if (!group.contains(value)) {
-                group.add(value);
+            if (!groups.contains(value)) {
+                groups.add(value);
             }
         }
     }
 
     public ArrayList<String> getGroup() {
-        return this.group;
+        return this.groups;
     }
 }
