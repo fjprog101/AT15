@@ -1,8 +1,8 @@
 package org.fundacionjala.at15.katas.pokerhands.saul;
 
 public abstract class Card implements Comparable<Card> {
-    protected char value;
-    protected char suit;
+    private char value;
+    private char suit;
 
     public Card(char value, char suit) {
         this.value = value;
