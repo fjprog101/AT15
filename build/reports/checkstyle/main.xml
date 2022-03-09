@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.34">
+<file name="E:\Sergio\Jala\workplace\progr101\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\Calculator.java">
+</file>
+<file name="E:\Sergio\Jala\workplace\progr101\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\Operation.java">
+</file>
+<file name="E:\Sergio\Jala\workplace\progr101\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\SubstractOperation.java">
+</file>
+<file name="E:\Sergio\Jala\workplace\progr101\AT15\src\main\java\org\fundacionjala\at15\katas\calculator\SumOperation.java">
+</file>
+<file name="E:\Sergio\Jala\workplace\progr101\AT15\src\main\java\org\fundacionjala\at15\katas\pokerhands\Counter.java">
+</file>
+<file name="E:\Sergio\Jala\workplace\progr101\AT15\src\main\java\org\fundacionjala\at15\katas\pokerhands\Croupier.java">
+</file>
+<file name="E:\Sergio\Jala\workplace\progr101\AT15\src\main\java\org\fundacionjala\at15\katas\pokerhands\Identifier.java">
+</file>
+<file name="E:\Sergio\Jala\workplace\progr101\AT15\src\main\java\org\fundacionjala\at15\katas\pokerhands\Main.java">
+</file>
+<file name="E:\Sergio\Jala\workplace\progr101\AT15\src\main\java\org\fundacionjala\at15\katas\pokerhands\Splitter.java">
+</file>
+</checkstyle>
