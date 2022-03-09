@@ -10,7 +10,6 @@ public class Splitter {
 
     public Splitter(String[] pokerHand) {
         this.pokerHand = pokerHand;
-
     }
 
     public String getValuesHand(int ind) {
@@ -23,6 +22,14 @@ public class Splitter {
 
     public String getSuitPokerHand(int ind) {
         return this.suitPokerHand[ind];
+    }
+
+    public int[] getValuesPokerHand() {
+        return valuesPokerHand;
+    }
+
+    public String[] getSuitPokerHand() {
+        return suitPokerHand;
     }
 
     public void theSplit() {

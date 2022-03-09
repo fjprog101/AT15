@@ -1,5 +1,6 @@
 package org.fundacionjala.at15.katas.pokerhands.sergio;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -20,12 +21,15 @@ public class SplitterTest {
 
     @Test
     public void itShouldCorrectValuesHand() {
-        String[] black = { "2H", "3D", "5S", "9C", "KD" };
+        String[] black = { "TH", "JD", "QS", "KC", "AD" };
         Splitter splitterTest = new Splitter(black);
         splitterTest.theSplitValue();
         splitterTest.valuesHandCorrection();
-        assertEquals("13", splitterTest.getValuesHand(4));
-        assertEquals("2", splitterTest.getValuesHand(0));
+        assertEquals("10", splitterTest.getValuesHand(0));
+        assertEquals("11", splitterTest.getValuesHand(1));
+        assertEquals("12", splitterTest.getValuesHand(2));
+        assertEquals("13", splitterTest.getValuesHand(3));
+        assertEquals("14", splitterTest.getValuesHand(4));
     }
 
     @Test
@@ -52,6 +56,17 @@ public class SplitterTest {
         assertEquals("S", splitterTest.getSuitPokerHand(2));
         assertEquals("C", splitterTest.getSuitPokerHand(3));
         assertEquals("D", splitterTest.getSuitPokerHand(4));
+    }
+
+    @Test
+    public void itShouldDoTheCompleteSplit() {
+        String[] black = { "2H", "3D", "5S", "9C", "KD" };
+        Splitter splitterTest = new Splitter(black);
+        splitterTest.theSplit();
+        int[] expectedValueArray = {2, 3, 5, 9, 13};
+        String[] expectedSuitArray = {"H", "D", "S", "C", "D"};
+        assertArrayEquals(expectedValueArray, splitterTest.getValuesPokerHand());
+        assertArrayEquals(expectedSuitArray, splitterTest.getSuitPokerHand());
     }
 
 }
