@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.pokerhands;
+package org.fundacionjala.at15.katas.pokerhands.mauricio;
 
 import static org.junit.Assert.assertEquals;
 import org.fundacionjala.at15.katas.pokerhands.mauricio.HeartCard;
