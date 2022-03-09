@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.poker;
+package org.fundacionjala.at15.katas.poker.diana;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
