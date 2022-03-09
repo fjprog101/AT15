@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.pokerhands;
+package org.fundacionjala.at15.katas.pokerhands.jimy;
 
 import static org.junit.Assert.assertEquals;
 
