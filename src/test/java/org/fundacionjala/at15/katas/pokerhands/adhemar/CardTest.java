@@ -14,4 +14,14 @@ public class CardTest {
         assertEquals(suit, theCard.getSuit());
         assertEquals(charValue, theCard.getCharValue());
     }
+
+    @Test
+    public void itShouldCalculateValue() {
+        char suit = 'C';
+        char charValue = 'T';
+        int value = 10;
+        Card theCard = new Card(suit, charValue);
+
+        assertEquals(value, theCard.calculateValue());
+    }
 }
