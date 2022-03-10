@@ -41,4 +41,19 @@ public class FlushTest {
         String expected = "KC";
         assertEquals(expected, res);
     }
+
+    @Test
+    public void itShouldTestIfIsFlush() {
+        Card[] card = new Card[5];
+        card[0] = new Card("10", "C");
+        card[1] = new Card("9", "C");
+        card[2] = new Card("2", "C");
+        card[3] = new Card("6", "C");
+        card[4] = new Card("A", "C");
+        Hand hand = new Hand(card);
+        Flush flush = new Flush();
+        int result = flush.isFlush(hand);
+        int expected = 6;
+        assertEquals(expected, result);
+    }
 }
