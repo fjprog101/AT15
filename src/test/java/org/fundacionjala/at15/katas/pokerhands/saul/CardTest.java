@@ -17,12 +17,4 @@ public class CardTest {
         Card card = new Card(5, 'S');
         assertEquals('S', card.getSuit());
     }
-
-    @Test
-    public void itShouldCompareWithOtherCard() {
-        Card clubCard = new Card(2, 'C');
-        Card heartCard = new Card(2, 'H');
-
-        assertEquals(0, clubCard.compareTo(heartCard));
-    }
 }
