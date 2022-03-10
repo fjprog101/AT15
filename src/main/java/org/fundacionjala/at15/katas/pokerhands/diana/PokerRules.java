@@ -60,8 +60,18 @@ public class PokerRules {
         return arrayValueCards[indPD];
     }
 
-    public void twoPair() {
-
+    public List<Integer> twoPair(ArrayList<Integer> valueOfCards) {
+        List<Integer> duplicateValues = new ArrayList<Integer>();
+        int indPD = 0;
+        int[] arrayValueCards = valueOfCards.stream().mapToInt(i -> i).toArray();
+        for (int indP = 0; indP < arrayValueCards.length - 1; indP++) {
+            for (indPD = indP + 1; indPD < arrayValueCards.length; indPD++) {
+                if (arrayValueCards[indP] == arrayValueCards[indPD]) {
+                    duplicateValues.add(arrayValueCards[indPD]);
+                }
+            }
+        }
+        return duplicateValues;
     }
 
     public void threeOfAKind() {

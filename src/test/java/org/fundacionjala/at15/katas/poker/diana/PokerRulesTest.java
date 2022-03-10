@@ -2,6 +2,7 @@ package org.fundacionjala.at15.katas.poker.diana;
 
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.fundacionjala.at15.katas.pokerhands.diana.PokerRules;
 import org.junit.Test;
@@ -36,7 +37,18 @@ public class PokerRulesTest {
 
     @Test
     public void itShouldReturnTwoPairs() {
-
+        ArrayList<Integer> numeros = new ArrayList<Integer>();
+        numeros.add(5);
+        numeros.add(7);
+        numeros.add(5);
+        numeros.add(7);
+        numeros.add(13);
+        PokerRules pokerRules = new PokerRules(numeros);
+        List<Integer> result = pokerRules.twoPair(numeros);
+        List<Integer> expectedResult = new ArrayList<Integer>();
+        expectedResult.add(5);
+        expectedResult.add(7);
+        assertEquals(expectedResult, result);
     }
 
     @Test
