@@ -18,7 +18,7 @@ public class PatternTest {
         };
         Pattern pattern = new Pattern(cards1);
 
-        assertTrue(pattern.isAllSameSuit());
+        assertTrue(pattern.isFlush());
         
         Card[] cards2 = {
             new Card("3", "D"),
@@ -29,32 +29,68 @@ public class PatternTest {
         };
         pattern = new Pattern(cards2);
 
-        assertFalse(pattern.isAllSameSuit());
+        assertFalse(pattern.isFlush());
     }
 
     @Test
-    public void itShouldBeContinuousCards() {
+    public void itShouldBeStraight() {
         Card[] cards1 = {
             new Card("3", "D"),
-            new Card("4", "D"),
+            new Card("4", "C"),
             new Card("5", "D"),
             new Card("6", "D"),
             new Card("7", "D")
         };
         Pattern pattern = new Pattern(cards1);
 
-        assertTrue(pattern.isContinuous());
+        assertTrue(pattern.isStraight());
 
         Card[] cards2 = {
             new Card("3", "D"),
             new Card("4", "D"),
-            new Card("5", "D"),
+            new Card("5", "C"),
             new Card("6", "D"),
             new Card("8", "D")
         };
         pattern = new Pattern(cards2);
 
-        assertFalse(pattern.isContinuous());
+        assertFalse(pattern.isStraight());
+    }
+
+    @Test
+    public void itShouldBeStraightFlush() {
+        Card[] cards1 = {
+            new Card("9", "C"),
+            new Card("T", "C"),
+            new Card("J", "C"),
+            new Card("Q", "C"),
+            new Card("K", "C")
+        };
+        Pattern pattern = new Pattern(cards1);
+
+        assertTrue(pattern.isStraightFlush());
+
+        Card[] cards2 = {
+            new Card("8", "C"),
+            new Card("T", "C"),
+            new Card("J", "C"),
+            new Card("Q", "C"),
+            new Card("K", "C")
+        };
+        pattern = new Pattern(cards2);
+
+        assertFalse(pattern.isStraightFlush());
+
+        Card[] cards3 = {
+            new Card("9", "C"),
+            new Card("T", "H"),
+            new Card("J", "D"),
+            new Card("Q", "C"),
+            new Card("K", "C")
+        };
+        pattern = new Pattern(cards3);
+
+        assertFalse(pattern.isStraightFlush());
     }
 
     @Test
@@ -180,5 +216,51 @@ public class PatternTest {
         pattern = new Pattern(cards2);
 
         assertFalse(pattern.isTwoPairs());
+    }
+
+    @Test
+    public void itShouldBePair() {
+        Card[] cards1 = {
+            new Card("4", "S"),
+            new Card("5", "C"),
+            new Card("3", "D"),
+            new Card("4", "H"),
+            new Card("A", "D")
+        };
+        Pattern pattern = new Pattern(cards1);
+
+        assertTrue(pattern.isPair());
+
+        Card[] cards2 = {
+            new Card("3", "S"),
+            new Card("3", "C"),
+            new Card("3", "D"),
+            new Card("3", "H"),
+            new Card("T", "D")
+        };
+        pattern = new Pattern(cards2);
+
+        assertFalse(pattern.isPair());
+
+        Card[] cards3 = {
+            new Card("3", "S"),
+            new Card("3", "C"),
+            new Card("5", "D"),
+            new Card("5", "H"),
+            new Card("T", "D")
+        };
+        pattern = new Pattern(cards3);
+
+        assertFalse(pattern.isPair());
+
+        Card[] cards4 = {
+            new Card("3", "S"),
+            new Card("4", "C"),
+            new Card("5", "D"),
+            new Card("6", "H")
+        };
+        pattern = new Pattern(cards4);
+
+        assertFalse(pattern.isPair());
     }
 }

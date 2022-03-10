@@ -11,7 +11,7 @@ public class Pattern {
         this.groups = new Grouper(this.cards).getGroups();
     }
 
-    public boolean isAllSameSuit() {
+    public boolean isFlush() {
         String prevSuit = this.cards[0].getSuit();
         for (Card card : this.cards) {
             if (prevSuit != card.getSuit()) {
@@ -22,7 +22,7 @@ public class Pattern {
         return true;
     }
 
-    public boolean isContinuous() {
+    public boolean isStraight() {
         int prevValue = this.cards[0].calculateValue() - 1;
         for (Card card : this.cards) {
             if (card.calculateValue() != prevValue + 1) {
@@ -31,6 +31,10 @@ public class Pattern {
             prevValue = card.calculateValue();
         }
         return true;
+    }
+
+    public boolean isStraightFlush() {
+        return isFlush() && isStraight();
     }
 
     public int calculateTheHighestCard() {
@@ -82,6 +86,15 @@ public class Pattern {
         }
         if (pairs == Card.TWO) {
             return true;
+        }
+        return false;
+    }
+
+    public boolean isPair() {
+        for (Group group : this.groups) {
+            if (this.groups.size() == Card.FOUR && group.getQuantity() == Card.TWO) {
+                return true;
+            }
         }
         return false;
     }
