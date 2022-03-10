@@ -10,6 +10,7 @@ public class Grouper {
         this.cards = cards;
         this.groups = new ArrayList<Group>();
         groupValues();
+        countGroups();
     }
 
     public void groupValues() {
@@ -23,6 +24,18 @@ public class Grouper {
             }
         }
         groupTemp = null;
+    }
+
+    public void countGroups() {
+        for (Group group : this.groups) {
+            int counter = 0;
+            for (Card card : this.cards) {
+                if (group.getStringValue() == card.getStringValue()) {
+                    counter++;
+                }
+            }
+            group.setQuantity(counter);
+        }
     }
 
     public ArrayList<Group> getGroups() {

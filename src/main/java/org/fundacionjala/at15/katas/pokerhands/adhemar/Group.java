@@ -16,4 +16,8 @@ public class Group {
     public int getQuantity() {
         return this.quantity;
     }
+
+    public void setQuantity(int param) {
+        this.quantity = param;
+    }
 }
