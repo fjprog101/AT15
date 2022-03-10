@@ -1,7 +1,7 @@
 package org.fundacionjala.at15.katas.pokerhands.saul;
 
-public abstract class Card implements Comparable<Card> {
-    private char value;
+public class Card implements Comparable<Card> {
+    private int value;
     private char suit;
 
     public Card(char value, char suit) {
@@ -9,11 +9,22 @@ public abstract class Card implements Comparable<Card> {
         this.suit = suit;
     }
 
-    public char getValue() {
+    public int getValue() {
         return value;
     }
 
     public char getSuit() {
         return suit;
+    }
+
+    @Override
+    public int compareTo(Card card) {
+        if (this.value < card.getValue()) {
+            return -1;
+        } else if (this.value > card.getValue()) {
+            return 1;
+        }
+
+        return 0;
     }
 }
