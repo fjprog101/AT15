@@ -72,4 +72,17 @@ public class Pattern {
         }
         return false;
     }
+
+    public boolean isTwoPairs() {
+        int pairs = 0;
+        for (Group group : this.groups) {
+            if (group.getQuantity() == Card.TWO) {
+                pairs++;
+            }
+        }
+        if (pairs == Card.TWO) {
+            return true;
+        }
+        return false;
+    }
 }
