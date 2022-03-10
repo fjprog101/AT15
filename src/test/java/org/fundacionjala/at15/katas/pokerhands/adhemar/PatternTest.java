@@ -95,4 +95,65 @@ public class PatternTest {
 
         assertFalse(pattern.isFourOfAKind());
     }
+
+    @Test
+    public void itShouldBeFullHouse() {
+        Card[] cards1 = {
+            new Card("A", "S"),
+            new Card("5", "C"),
+            new Card("5", "D"),
+            new Card("A", "H"),
+            new Card("A", "D")
+        };
+        Pattern pattern = new Pattern(cards1);
+
+        assertTrue(pattern.isFullHouse());
+
+        Card[] cards2 = {
+            new Card("A", "S"),
+            new Card("5", "C"),
+            new Card("5", "D"),
+            new Card("A", "H"),
+            new Card("2", "D")
+        };
+        pattern = new Pattern(cards2);
+
+        assertFalse(pattern.isFullHouse());
+
+        Card[] cards3 = {
+            new Card("5", "S"),
+            new Card("5", "C"),
+            new Card("5", "D"),
+            new Card("A", "H"),
+            new Card("2", "D")
+        };
+        pattern = new Pattern(cards3);
+
+        assertFalse(pattern.isFullHouse());
+    }
+
+    @Test
+    public void itShouldBeThreeOfAKind() {
+        Card[] cards1 = {
+            new Card("Q", "S"),
+            new Card("5", "C"),
+            new Card("Q", "D"),
+            new Card("Q", "H"),
+            new Card("A", "D")
+        };
+        Pattern pattern = new Pattern(cards1);
+
+        assertTrue(pattern.isThreeOfAKind());
+
+        Card[] cards2 = {
+            new Card("Q", "S"),
+            new Card("5", "C"),
+            new Card("Q", "D"),
+            new Card("A", "H"),
+            new Card("A", "D")
+        };
+        pattern = new Pattern(cards2);
+
+        assertFalse(pattern.isThreeOfAKind());
+    }
 }

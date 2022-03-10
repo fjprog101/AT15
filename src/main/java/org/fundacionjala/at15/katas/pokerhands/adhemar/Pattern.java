@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class Pattern {
     private Card[] cards;
+    private ArrayList<Group> groups;
 
     public Pattern(Card[] cards) {
         this.cards = cards;
+        this.groups = new Grouper(this.cards).getGroups();
     }
 
     public boolean isAllSameSuit() {
@@ -40,9 +42,31 @@ public class Pattern {
     }
 
     public boolean isFourOfAKind() {
-        ArrayList<Group> groups = new Grouper(this.cards).getGroups();
-        for (Group group : groups) {
+        for (Group group : this.groups) {
             if (group.getQuantity() == Card.FOUR) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isFullHouse() {
+        boolean isThereTriple = false;
+        boolean isPair = false;
+        for (Group group : this.groups) {
+            if (group.getQuantity() == Card.THREE) {
+                isThereTriple = true;
+            }
+            if (group.getQuantity() == Card.TWO) {
+                isPair = true;
+            }
+        }
+        return isThereTriple && isPair;
+    }
+
+    public boolean isThreeOfAKind() {
+        for (Group group : this.groups) {
+            if (group.getQuantity() == Card.THREE) {
                 return true;
             }
         }
