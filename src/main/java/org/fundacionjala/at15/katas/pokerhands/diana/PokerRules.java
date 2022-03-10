@@ -74,8 +74,21 @@ public class PokerRules {
         return duplicateValues;
     }
 
-    public void threeOfAKind() {
-
+    public int threeOfAKind(ArrayList<Integer> valueOfCards) {
+        int indPD = 0;
+        int indPDN = 0;
+        int[] arrayValueCards = valueOfCards.stream().mapToInt(i -> i).toArray();
+        for (int indP = 0; indP < arrayValueCards.length - 1; indP++) {
+            for (indPD = indP + 1; indPD < arrayValueCards.length; indPD++) {
+                for (indPDN = indPD + 1; indPDN < arrayValueCards.length; indPDN++) {
+                    if ((arrayValueCards[indP] == arrayValueCards[indPD])
+                            && (arrayValueCards[indPD] == arrayValueCards[indPDN])) {
+                        return arrayValueCards[indPDN];
+                    }
+                }
+            }
+        }
+        return arrayValueCards[indPDN];
     }
 
     public void straight() {
@@ -86,12 +99,25 @@ public class PokerRules {
 
     }
 
-    public void fullHouse() {
-
-    }
-
-    public void fourOfAKind() {
-
+    public int fourOfAKind(ArrayList<Integer> valueOfCards) {
+        int indPD = 0;
+        int indPDN = 0;
+        int indPDNu = 0;
+        int[] arrayValueCards = valueOfCards.stream().mapToInt(i -> i).toArray();
+        for (int indP = 0; indP < arrayValueCards.length - 1; indP++) {
+            for (indPD = indP + 1; indPD < arrayValueCards.length; indPD++) {
+                for (indPDN = indPD + 1; indPDN < arrayValueCards.length; indPDN++) {
+                    for (indPDNu = indPD + 1; indPDNu < arrayValueCards.length; indPDNu++) {
+                        if ((arrayValueCards[indP] == arrayValueCards[indPD])
+                                && (arrayValueCards[indPD] == arrayValueCards[indPDN])
+                                && (arrayValueCards[indPDN] == arrayValueCards[indPDNu])) {
+                            return arrayValueCards[indPDNu];
+                        }
+                    }
+                }
+            }
+        }
+        return arrayValueCards[indPDNu];
     }
 
     public void straightFlush() {

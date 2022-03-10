@@ -53,7 +53,15 @@ public class PokerRulesTest {
 
     @Test
     public void itShouldReturnThreeOfAKind() {
-
+        ArrayList<Integer> numeros = new ArrayList<Integer>();
+        numeros.add(2);
+        numeros.add(3);
+        numeros.add(2);
+        numeros.add(7);
+        numeros.add(2);
+        PokerRules pokerRules = new PokerRules(numeros);
+        int result = pokerRules.threeOfAKind(numeros);
+        assertEquals(2, result);
     }
 
     @Test
@@ -73,7 +81,15 @@ public class PokerRulesTest {
 
     @Test
     public void itShouldReturnFourOfAKind() {
-
+        ArrayList<Integer> numeros = new ArrayList<Integer>();
+        numeros.add(8);
+        numeros.add(8);
+        numeros.add(2);
+        numeros.add(8);
+        numeros.add(8);
+        PokerRules pokerRules = new PokerRules(numeros);
+        int result = pokerRules.fourOfAKind(numeros);
+        assertEquals(8, result);
     }
 
     @Test
