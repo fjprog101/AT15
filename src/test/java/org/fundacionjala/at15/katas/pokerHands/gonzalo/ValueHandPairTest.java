@@ -11,8 +11,7 @@ public class ValueHandPairTest {
         String[] hand = {"2H", "6S", "AD", "5C", "5H"};
         String expected = "pair";
         ValueHandPair value = new ValueHandPair();
-        String compare = value.comare(hand);
-        assertEquals(expected, compare);
+        assertEquals(expected, value.comparePair(hand));
     }
 
     @Test
@@ -20,7 +19,6 @@ public class ValueHandPairTest {
         String[] hand = {"2H", "3S", "AD", "9C", "5H"};
         String expected = null;
         ValueHandPair value = new ValueHandPair();
-        String compare = value.comare(hand);
-        assertEquals(expected, compare);
+        assertEquals(expected, value.comparePair(hand));
     }
 }

@@ -5,12 +5,11 @@ public class ValueHandPair {
     //private char[] cardsValue;
     private int count = 0;
     private int pair = 1;
-    private int cardNumber = 0;
     private String valueHand;
-    private ValueSuitCard valueCard = new ValueSuitCard();
+    private Converter valueCard = new Converter();
 
-    public String comare(String[] hand) {
-        char[] value = valueCard.valueCard(hand, cardNumber);
+    public String comparePair(String[] hand) {
+        char[] value = valueCard.converterCharValue(hand);
         final int nextCard = 1;
         for (int ind = 0; ind < value.length; ind++) {
             final int aux = ind + nextCard;
