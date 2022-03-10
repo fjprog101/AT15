@@ -15,5 +15,4 @@ public class PokerHandBuilderTest {
 
         assertEquals(card1, cardList.getHandOfCardsElement(0));
     }
-
 }
