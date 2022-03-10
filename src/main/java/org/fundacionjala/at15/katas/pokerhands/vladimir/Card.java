@@ -24,38 +24,37 @@ public class Card extends Deck {
     }
 
     public int getValue() {
-        int num = 0;
         switch (value) {
             case "2":
-                num = cardValue2;
+                return cardValue2;
             case "3":
-                num = cardValue3;
+                return cardValue3;
             case "4":
-                num = cardValue4;
+                return cardValue4;
             case "5":
-                num = cardValue5;
+                return cardValue5;
             case "6":
-                num = cardValue6;
+                return cardValue6;
             case "7":
-                num = cardValue7;
+                return cardValue7;
             case "8":
-                num = cardValue8;
+                return cardValue8;
             case "9":
-                num = cardValue9;
+                return cardValue9;
             case "10":
-                num = cardValue10;
+                return cardValue10;
             case "J":
-                num = cardValueJ;
+                return cardValueJ;
             case "Q":
-                num = cardValueQ;
+                return cardValueQ;
             case "K":
-                num = cardValueK;
+                return cardValueK;
             case "A":
-                num = cardValueA;
+                return cardValueA;
             default:
                 break;
         }
-        return num;
+        return 0;
     }
 
     public String getSuit() {

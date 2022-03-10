@@ -14,8 +14,8 @@ public class cardtest {
 
     @Test
     public void itShouldGetValueAndSuit() {
-        Card card = new Card("A", "C");
-        int expectedValue = 14;
+        Card card = new Card("Q", "C");
+        int expectedValue = 12;
         String expectedSuit = "C";
         assertEquals(expectedValue, card.getValue());
         assertEquals(expectedSuit, card.getSuit());
