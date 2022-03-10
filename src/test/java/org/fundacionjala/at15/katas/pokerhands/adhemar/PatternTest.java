@@ -151,6 +151,42 @@ public class PatternTest {
     }
 
     @Test
+    public void itShouldBeThreeOfAKind() {
+        Card[] cards1 = {
+            new Card("Q", "S"),
+            new Card("5", "C"),
+            new Card("Q", "D"),
+            new Card("Q", "H"),
+            new Card("A", "D")
+        };
+        Pattern pattern = new Pattern(cards1);
+
+        assertTrue(pattern.isThreeOfAKind());
+
+        Card[] cards2 = {
+            new Card("Q", "S"),
+            new Card("5", "C"),
+            new Card("Q", "D"),
+            new Card("A", "H"),
+            new Card("A", "D")
+        };
+        pattern = new Pattern(cards2);
+
+        assertFalse(pattern.isThreeOfAKind());
+
+        Card[] cards3 = {
+            new Card("Q", "D"),
+            new Card("5", "D"),
+            new Card("Q", "D"),
+            new Card("A", "D"),
+            new Card("Q", "D")
+        };
+        pattern = new Pattern(cards3);
+
+        assertFalse(pattern.isThreeOfAKind());
+    }
+
+    @Test
     public void itShouldBeAllCardsWithTheSameSuit() {
         Card[] cards1 = {
             new Card("3", "D"),
@@ -295,30 +331,5 @@ public class PatternTest {
         pattern = new Pattern(cards3);
 
         assertFalse(pattern.isFullHouse());
-    }
-
-    @Test
-    public void itShouldBeThreeOfAKind() {
-        Card[] cards1 = {
-            new Card("Q", "S"),
-            new Card("5", "C"),
-            new Card("Q", "D"),
-            new Card("Q", "H"),
-            new Card("A", "D")
-        };
-        Pattern pattern = new Pattern(cards1);
-
-        assertTrue(pattern.isThreeOfAKind());
-
-        Card[] cards2 = {
-            new Card("Q", "S"),
-            new Card("5", "C"),
-            new Card("Q", "D"),
-            new Card("A", "H"),
-            new Card("A", "D")
-        };
-        pattern = new Pattern(cards2);
-
-        assertFalse(pattern.isThreeOfAKind());
     }
 }

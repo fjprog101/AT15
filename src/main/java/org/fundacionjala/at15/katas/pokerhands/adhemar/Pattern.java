@@ -42,6 +42,15 @@ public class Pattern {
         return false;
     }
 
+    public boolean isThreeOfAKind() {
+        for (Group group : this.groups) {
+            if (!isFlush() && group.getQuantity() == Values.THREE.getValue()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean isFlush() {
         String prevSuit = this.cards[0].getSuit();
         for (Card card : this.cards) {
@@ -97,14 +106,5 @@ public class Pattern {
             }
         }
         return isThereTriple && isPair;
-    }
-
-    public boolean isThreeOfAKind() {
-        for (Group group : this.groups) {
-            if (group.getQuantity() == Values.THREE.getValue()) {
-                return true;
-            }
-        }
-        return false;
     }
 }
