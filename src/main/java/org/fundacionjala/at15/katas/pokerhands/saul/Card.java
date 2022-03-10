@@ -4,7 +4,7 @@ public class Card implements Comparable<Card> {
     private int value;
     private char suit;
 
-    public Card(char value, char suit) {
+    public Card(int value, char suit) {
         this.value = value;
         this.suit = suit;
     }
