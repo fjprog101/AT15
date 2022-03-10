@@ -1,13 +1,12 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 public class GrouperTest {
     @Test
     public void itShouldGetGroup() {
-        String[] groups = {"3", "A", "5"};
         Card[] cards1 = {
             new Card("3", "S"),
             new Card("A", "D"),
@@ -17,6 +16,8 @@ public class GrouperTest {
         };
         Grouper grouper = new Grouper(cards1);
 
-        assertArrayEquals(groups, grouper.getGroup().toArray());
+        assertEquals("3", grouper.getGroups().get(0).getStringValue());
+        assertEquals("A", grouper.getGroups().get(1).getStringValue());
+        assertEquals("5", grouper.getGroups().get(2).getStringValue());
     }
 }
