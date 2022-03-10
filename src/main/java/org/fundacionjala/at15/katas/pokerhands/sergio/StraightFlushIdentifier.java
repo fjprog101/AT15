@@ -3,13 +3,10 @@ package org.fundacionjala.at15.katas.pokerhands.sergio;
 import java.util.*;
 
 public class StraightFlushIdentifier extends Identifier {
-    private int[] valuePokerHand = new int[NUMBER_5];
-    private String[] suitPokerHand;
     private boolean isFlush = false;
     private boolean isStraight = false;
     private boolean isStraightFlush = false;
-    private static final int NUMBER_5 = 5;
-    private static final int NUMBER_4 = 4;
+
 
     public StraightFlushIdentifier(Splitter pokerHandSplitted) {
         this.valuePokerHand = pokerHandSplitted.getValuePokerHand();

@@ -8,8 +8,8 @@ public class CroupierTest {
 
     @Test
     public void itShouldDeclareWinnerWhite() {
-        String[] black = { "2H", "3D", "5S", "9C", "KD" };
-        String[] white = { "2C", "3H", "4S", "8C", "AH" };
+        // String[] black = { "2H", "3D", "5S", "9C", "KD" };
+        // String[] white = { "2C", "3H", "4S", "8C", "AH" };
         int whiteValueCards = 15;
         int blackValueCards = 10;
 
