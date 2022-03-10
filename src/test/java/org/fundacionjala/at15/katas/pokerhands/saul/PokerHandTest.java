@@ -46,4 +46,28 @@ public class PokerHandTest {
         pokerHand.setRank();
         assertEquals(1, pokerHand.getHandValue());
     }
+
+    @Test
+    public void itShouldCompareWithOtherHand() {
+        List<Card> myHand = new ArrayList<Card>();
+        myHand.add(new Card(2, 'C'));
+        myHand.add(new Card(4, 'S'));
+        myHand.add(new Card(5, 'H'));
+        myHand.add(new Card(8, 'C'));
+        myHand.add(new Card(9, 'D'));
+
+        List<Card> otherHand = new ArrayList<Card>();
+        otherHand.add(new Card(2, 'C'));
+        otherHand.add(new Card(4, 'D'));
+        otherHand.add(new Card(5, 'H'));
+        otherHand.add(new Card(8, 'H'));
+        otherHand.add(new Card(9, 'D'));
+
+        PokerHand firstHand = new PokerHand(myHand);
+        firstHand.setRank();
+        PokerHand secondHand = new PokerHand(otherHand);
+        secondHand.setRank();
+
+        assertEquals(0, firstHand.compareTo(secondHand));
+    }
 }
