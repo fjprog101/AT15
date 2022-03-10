@@ -47,7 +47,7 @@ public class Pattern {
 
     public boolean isFourOfAKind() {
         for (Group group : this.groups) {
-            if (group.getQuantity() == Card.FOUR) {
+            if (group.getQuantity() == Values.FOUR.getValue()) {
                 return true;
             }
         }
@@ -58,10 +58,10 @@ public class Pattern {
         boolean isThereTriple = false;
         boolean isPair = false;
         for (Group group : this.groups) {
-            if (group.getQuantity() == Card.THREE) {
+            if (group.getQuantity() == Values.THREE.getValue()) {
                 isThereTriple = true;
             }
-            if (group.getQuantity() == Card.TWO) {
+            if (group.getQuantity() == Values.TWO.getValue()) {
                 isPair = true;
             }
         }
@@ -70,7 +70,7 @@ public class Pattern {
 
     public boolean isThreeOfAKind() {
         for (Group group : this.groups) {
-            if (group.getQuantity() == Card.THREE) {
+            if (group.getQuantity() == Values.THREE.getValue()) {
                 return true;
             }
         }
@@ -80,11 +80,11 @@ public class Pattern {
     public boolean isTwoPairs() {
         int pairs = 0;
         for (Group group : this.groups) {
-            if (group.getQuantity() == Card.TWO) {
+            if (group.getQuantity() == Values.TWO.getValue()) {
                 pairs++;
             }
         }
-        if (pairs == Card.TWO) {
+        if (pairs == Values.TWO.getValue()) {
             return true;
         }
         return false;
@@ -92,7 +92,7 @@ public class Pattern {
 
     public boolean isPair() {
         for (Group group : this.groups) {
-            if (this.groups.size() == Card.FOUR && group.getQuantity() == Card.TWO) {
+            if (this.groups.size() == Values.FOUR.getValue() && group.getQuantity() == Values.TWO.getValue()) {
                 return true;
             }
         }
@@ -100,7 +100,7 @@ public class Pattern {
     }
 
     public boolean isHighCard() {
-        if (this.groups.size() == Card.FIVE && !isFlush()) {
+        if (this.groups.size() == Values.FIVE.getValue() && !isFlush()) {
             return true;
         }
         return false;

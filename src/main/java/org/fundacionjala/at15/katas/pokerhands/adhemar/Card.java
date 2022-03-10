@@ -3,19 +3,6 @@ package org.fundacionjala.at15.katas.pokerhands.adhemar;
 public class Card {
     private String suit;
     private String stringValue;
-    static final int TWO = 2;
-    static final int THREE = 3;
-    static final int FOUR = 4;
-    static final int FIVE = 5;
-    static final int SIX = 6;
-    static final int SEVEN = 7;
-    static final int EIGHT = 8;
-    static final int NINE = 9;
-    static final int TEN = 10;
-    static final int JACK = 11;
-    static final int QUEEN = 12;
-    static final int KING = 13;
-    static final int ACE = 14;
 
     public Card(String stringValue, String suit) {
         this.suit = suit;
@@ -33,31 +20,31 @@ public class Card {
     public int calculateValue() {
         switch (this.stringValue) {
             case "2":
-                return TWO;
+                return Values.TWO.getValue();
             case "3":
-                return THREE;
+                return Values.THREE.getValue();
             case "4":
-                return FOUR;
+                return Values.FOUR.getValue();
             case "5":
-                return FIVE;
+                return Values.FIVE.getValue();
             case "6":
-                return SIX;
+                return Values.SIX.getValue();
             case "7":
-                return SEVEN;
+                return Values.SEVEN.getValue();
             case "8":
-                return EIGHT;
+                return Values.EIGHT.getValue();
             case "9":
-                return NINE;
+                return Values.NINE.getValue();
             case "T":
-                return TEN;
+                return Values.TEN.getValue();
             case "J":
-                return JACK;
+                return Values.JACK.getValue();
             case "Q":
-                return QUEEN;
+                return Values.QUEEN.getValue();
             case "K":
-                return KING;
+                return Values.KING.getValue();
             case "A":
-                return ACE;
+                return Values.ACE.getValue();
             default:
                 return 0;
         }

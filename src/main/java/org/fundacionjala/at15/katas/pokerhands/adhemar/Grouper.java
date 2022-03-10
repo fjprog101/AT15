@@ -17,7 +17,7 @@ public class Grouper {
         String value;
         ArrayList<String> groupTemp = new ArrayList<String>();
         for (Card card : this.cards) {
-            value = String.valueOf(card.getStringValue());
+            value = card.getStringValue();
             if (!groupTemp.contains(value)) {
                 groupTemp.add(value);
                 groups.add(new Group(value));
