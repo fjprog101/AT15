@@ -37,6 +37,9 @@ public class Main {
         //     }
         //     System.out.println(value.get(0));
         //     System.out.println(frequency.get(0));
-
+//        List<Card> number = new ArrayList<Card>();
+//        number.add(new Card("3","D"));
+//        number.add(new Card("2","H"));
+//        System.out.println(number);
     }
 }
