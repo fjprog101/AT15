@@ -25,30 +25,12 @@ public class Hand {
     protected static final int INDEX_TWELVE = 12;
 
     public String compareHands(String hand1, String hand2) {
-        int score1 = 0;
-        int score2 = 0;
+        Score score = new Score(hand1, hand2);
         String absolutWinner = "";
-        HighCard checkHighCard = new HighCard();
-        String winner = checkHighCard.compareHandsWithHigherCard(hand1, hand2);
-        if (winner.equals(hand1)) {
-            score1 = score1 + 1;
-        }
-        if (winner.equals(hand2)) {
-            score2 = score2 + 1;
-        }
 
-        Pair checkPairs = new Pair();
-        winner = checkPairs.compareHandsWithPairs(hand1, hand2);
-        if (winner.equals(hand1)) {
-            score1 = score1 + 2;
-        }
-        if (winner.equals(hand2)) {
-            score2 = score2 + 2;
-        }
-
-        if (score1 == score2) {
+        if (score.getScore1() == score.getScore2()) {
             return "It is a tie";
-        } else if (score1 > score2) {
+        } else if (score.getScore1() > score.getScore2()) {
             absolutWinner = hand1;
         } else {
             absolutWinner = hand2;
@@ -65,14 +47,6 @@ public class Hand {
         int[] array = {number1, number2, number3, number4, number5};
         Arrays.sort(array);
         return array;
-    }
-
-    public int higherValue(int value1, int value2) {
-        if (value1 > value2) {
-            return value1;
-        } else {
-            return value2;
-        }
     }
 
     public int valueOfCard(Character character) {

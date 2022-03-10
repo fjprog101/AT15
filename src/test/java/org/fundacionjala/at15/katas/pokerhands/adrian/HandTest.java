@@ -8,19 +8,13 @@ public class HandTest {
 
     @Test
     public void compareHandsTest() {
-        //high card
         Hand handsComparer = new Hand();
         String hand1 = "2H 3D 5S 9C KD";
         String hand2 = "2C 3H 4S 8C AH";
         String result = handsComparer.compareHands(hand1, hand2);
         assertEquals(hand2, result);
 
-        //pair
-        hand1 = "2S 8C AS QH 3S";
-        hand2 = "2H 4S 4C 3D 5H";
-        result = handsComparer.compareHands(hand1, hand2);
-        assertEquals(hand2, result);
-        hand1 = "2H AD 3S 7C AD";
+        hand1 = "2H 8D 3S 4C 8D";
         hand2 = "2C 7H 4S 7C QH";
         result = handsComparer.compareHands(hand1, hand2);
         assertEquals(hand1, result);
@@ -39,15 +33,6 @@ public class HandTest {
         int winner = checkHighCard.sortedHand(hand1)[4];
         int expectedResult = 14;
         assertEquals(expectedResult, winner);
-    }
-
-    @Test
-    public void higherValueTest() {
-        Hand handsComparer = new Hand();
-        int result = handsComparer.higherValue(5, 7);
-        assertEquals(7, result);
-        result = handsComparer.higherValue(8, 4);
-        assertEquals(8, result);
     }
 
     @Test
