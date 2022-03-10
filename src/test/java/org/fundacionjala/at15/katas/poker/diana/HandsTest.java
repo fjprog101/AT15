@@ -23,8 +23,8 @@ public class HandsTest {
     public void itShouldReturnTheValueOfTheCard() {
         Hands hand = new Hands();
         String blackHand[] = { "2H", "3D", "5S", "9C", "KD" };
-        List<String> blackHandValues = Arrays.asList("2", "3", "5", "9", "K");
-        ArrayList<String> result = hand.valueOfCards(blackHand);
+        List<Integer> blackHandValues = Arrays.asList(2, 3, 5, 9, 13);
+        ArrayList<Integer> result = hand.valueOfCards(blackHand);
         assertEquals(blackHandValues, result);
     }
 
