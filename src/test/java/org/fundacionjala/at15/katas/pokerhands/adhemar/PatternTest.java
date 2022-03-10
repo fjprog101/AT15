@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class PatternTest {
     @Test
-    public void itShouldHaveAllCardsWithTheSameSuit() {
+    public void itShouldBeAllCardsWithTheSameSuit() {
         Card[] cards1 = {
             new Card("3", "D"),
             new Card("4", "D"),
@@ -33,7 +33,7 @@ public class PatternTest {
     }
 
     @Test
-    public void itShouldHaveContinuousCards() {
+    public void itShouldBeContinuousCards() {
         Card[] cards1 = {
             new Card("3", "D"),
             new Card("4", "D"),
@@ -58,7 +58,7 @@ public class PatternTest {
     }
 
     @Test
-    public void itShouldHaveAHighestCard() {
+    public void itShouldCalculateAHighestCard() {
         Card[] cards1 = {
             new Card("3", "S"),
             new Card("A", "D"),
@@ -72,16 +72,27 @@ public class PatternTest {
     }
 
     @Test
-    public void itShoulCountSameValueCards() {
+    public void itShoulBeFourOfAKind() {
         Card[] cards1 = {
-            new Card("3", "S"),
+            new Card("A", "S"),
             new Card("A", "D"),
             new Card("5", "D"),
-            new Card("3", "H"),
-            new Card("3", "D")
+            new Card("A", "H"),
+            new Card("A", "D")
         };
         Pattern pattern = new Pattern(cards1);
 
-        assertEquals(3, pattern.countSameValue());
+        assertTrue(pattern.isFourOfAKind());
+
+        Card[] cards2 = {
+            new Card("A", "S"),
+            new Card("T", "D"),
+            new Card("5", "D"),
+            new Card("A", "H"),
+            new Card("A", "D")
+        };
+        pattern = new Pattern(cards2);
+
+        assertFalse(pattern.isFourOfAKind());
     }
 }

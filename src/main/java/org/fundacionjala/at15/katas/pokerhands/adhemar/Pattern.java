@@ -1,5 +1,7 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
+import java.util.ArrayList;
+
 public class Pattern {
     private Card[] cards;
 
@@ -37,14 +39,13 @@ public class Pattern {
         return high;
     }
 
-    public int countSameValue() {
-        int sameCards = 0;
-        int value = this.cards[0].calculateValue();
-        for (Card card : this.cards) {
-            if (card.calculateValue() == value) {
-                sameCards++;
+    public boolean isFourOfAKind() {
+        ArrayList<Group> groups = new Grouper(this.cards).getGroups();
+        for (Group group : groups) {
+            if (group.getQuantity() == Card.FOUR) {
+                return true;
             }
         }
-        return sameCards;
+        return false;
     }
 }
