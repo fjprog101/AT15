@@ -51,7 +51,7 @@ public class Poker extends PokerHands {
             if (count == index1 || count == index2) {
                 break;
             } else if (count == index3) {
-                value = handValue5;
+                value = handValue8;
                 break;
             }
         }

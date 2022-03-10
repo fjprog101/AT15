@@ -26,4 +26,18 @@ public class Straight extends PokerHands {
         }
         return card[pos];
     }
+
+    public int isStraight(Hand hand) {
+        Card[] cards = hand.getCards();
+        int value = 0;
+        if (cards[index0].getValue() + 1 == cards[index1].getValue() && cards[index1].getValue() + 1 == cards[index2].getValue()
+            && cards[index2].getValue() + 1 == cards[index3].getValue() && cards[index3].getValue() + 1 == cards[index4].getValue()) {
+            value = handValue5;
+        }
+        if (cards[index0].getSuit() == cards[index1].getSuit() && cards[index1].getSuit() == cards[index2].getSuit()
+            && cards[index2].getSuit() == cards[index3].getSuit() && cards[index3].getSuit() == cards[index4].getSuit()) {
+            value = 0;
+        }
+        return value;
+    }
 }

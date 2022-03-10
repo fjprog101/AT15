@@ -41,4 +41,19 @@ public class StrightTest {
         String expected = "6S";
         assertEquals(expected, res);
     }
+
+    @Test
+    public void itShouldTestIfIsStraight() {
+        Card[] card = new Card[5];
+        card[0] = new Card("10", "C");
+        card[1] = new Card("J", "D");
+        card[2] = new Card("Q", "C");
+        card[3] = new Card("K", "S");
+        card[4] = new Card("A", "C");
+        Hand hand = new Hand(card);
+        Straight straight = new Straight();
+        int result = straight.isStraight(hand);
+        int expected = 5;
+        assertEquals(expected, result);
+    }
 }

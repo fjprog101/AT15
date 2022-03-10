@@ -53,7 +53,7 @@ public class PokerTest {
         Hand hand = new Hand(card);
         Poker poker = new Poker();
         int result = poker.isPoker(hand);
-        int expected = 5;
+        int expected = 8;
         assertEquals(expected, result);
     }
 }
