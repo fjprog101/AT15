@@ -5,11 +5,6 @@ public class ValueHand extends Hand {
     private ValueHandPair pair = new ValueHandPair();
 
     public String getValueHand(String[] hand) {
-        if (pair.comare(hand) != null) {
-            value = pair.comare(hand);
-        } else {
-            value = "no pair";
-        }
-        return value;
+        return null;
     }
 }
