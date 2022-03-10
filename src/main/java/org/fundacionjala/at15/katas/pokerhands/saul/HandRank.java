@@ -1,4 +1,5 @@
 package org.fundacionjala.at15.katas.pokerhands.saul;
+
 import static org.fundacionjala.at15.katas.pokerhands.saul.Constans.*;
 
 import java.util.List;
@@ -15,31 +16,33 @@ public class HandRank {
         return value;
     }
 
-    public void setRank(PokerHand pokerHand) {
-        List<Card> hand = pokerHand.getHand();
+    public Rank getRank() {
+        return rank;
+    }
 
+    public void setRank(List<Card> hand) {
         if (isStraightFlush(hand)) {
             rank = Rank.STRAIGHT_FLUSH;
             value = NINE;
-        } else if(isFourKind(hand)) {
+        } else if (isFourKind(hand)) {
             rank = Rank.FOUR_KIND;
             value = EIGHT;
-        } else if(isFullHouse(hand)) {
+        } else if (isFullHouse(hand)) {
             rank = Rank.FULL_HOUSE;
             value = SEVEN;
-        } else if(isFlush(hand)) {
+        } else if (isFlush(hand)) {
             rank = Rank.FLUSH;
             value = SIX;
-        } else if(isStraight(hand)) {
+        } else if (isStraight(hand)) {
             rank = Rank.STRAIGHT;
             value = FIVE;
-        } else if(isThreeKind(hand)) {
+        } else if (isThreeKind(hand)) {
             rank = Rank.THREE_KIND;
             value = FOUR;
-        } else if(isTwoPairs(hand)) {
+        } else if (isTwoPairs(hand)) {
             rank = Rank.TWO_PAIRS;
             value = THREE;
-        } else if(isPair(hand)) {
+        } else if (isPair(hand)) {
             rank = Rank.PAIR;
             value = TWO;
         } else {
