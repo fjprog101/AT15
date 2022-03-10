@@ -5,10 +5,10 @@ import java.util.List;
 
 public class CardSuit extends Cards {
     private final int numberOfCards = 13;
-    private List<String> clubs;
+    private List<String> suitCard;
 
     public List<String> cards(String suit) {
-        clubs = new ArrayList<String>();
+        suitCard = new ArrayList<String>();
         int valueCard = 2;
         final int value10 = 10;
         final int value11 = 11;
@@ -17,25 +17,25 @@ public class CardSuit extends Cards {
         final int value14 = 14;
         for (int ind = 0; ind < numberOfCards; ind++) {
             if (valueCard < value10) {
-                clubs.add(valueCard + suit);
+                suitCard.add(valueCard + suit);
             } else if (valueCard == value10) {
                 String valueC = "T";
-                clubs.add(valueC + suit);
+                suitCard.add(valueC + suit);
             } else if (valueCard == value11) {
                 String valueC = "J";
-                clubs.add(valueC + suit);
+                suitCard.add(valueC + suit);
             } else if (valueCard == value12) {
                 String valueC = "Q";
-                clubs.add(valueC + suit);
+                suitCard.add(valueC + suit);
             } else if (valueCard == value13) {
                 String valueC = "K";
-                clubs.add(valueC + suit);
+                suitCard.add(valueC + suit);
             } else if (valueCard == value14) {
                 String valueC = "A";
-                clubs.add(valueC + suit);
+                suitCard.add(valueC + suit);
             }
             valueCard++;
         }
-        return clubs;
+        return suitCard;
     }
 }
