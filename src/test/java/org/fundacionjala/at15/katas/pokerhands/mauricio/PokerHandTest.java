@@ -15,7 +15,6 @@ public class PokerHandTest {
         int highNumber = 12;
         int resultHand = black.getPokerHandScore();
         assertEquals(highNumber, resultHand);
-
     }
 
 }

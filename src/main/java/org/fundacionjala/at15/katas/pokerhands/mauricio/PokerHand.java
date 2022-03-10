@@ -31,4 +31,22 @@ public class PokerHand {
         }
         return highNumber;
     }
+
+    public int getPairCardsScore() {
+        int[] cardValues = new int[numberCards];
+        int score = 0;
+        for (int vari = 0; vari < cardValues.length; vari++) {
+            cardValues[vari] = cards.get(vari).getValueOfCard();
+            System.out.println("values: " + cardValues[vari]);
+        }
+        for (int vari = 0; vari < cardValues.length; vari++) {
+
+            for (int varj = 0; varj < cardValues.length; varj++) {
+                if (cardValues[vari] == cardValues[varj]) {
+                    score++;
+                }
+            }
+        }
+        return score;
+    }
 }
