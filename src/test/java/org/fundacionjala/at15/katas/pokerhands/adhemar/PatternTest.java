@@ -263,4 +263,40 @@ public class PatternTest {
 
         assertFalse(pattern.isPair());
     }
+
+    @Test
+    public void itShouldBeHighCard() {
+        Card[] cards1 = {
+            new Card("4", "S"),
+            new Card("5", "C"),
+            new Card("3", "D"),
+            new Card("K", "H"),
+            new Card("A", "D")
+        };
+        Pattern pattern = new Pattern(cards1);
+
+        assertTrue(pattern.isHighCard());
+
+        Card[] cards2 = {
+            new Card("4", "S"),
+            new Card("4", "C"),
+            new Card("3", "D"),
+            new Card("K", "H"),
+            new Card("A", "D")
+        };
+        pattern = new Pattern(cards2);
+
+        assertFalse(pattern.isHighCard());
+
+        Card[] cards3 = {
+            new Card("4", "S"),
+            new Card("J", "S"),
+            new Card("3", "S"),
+            new Card("K", "S"),
+            new Card("A", "S")
+        };
+        pattern = new Pattern(cards3);
+
+        assertFalse(pattern.isHighCard());
+    }
 }

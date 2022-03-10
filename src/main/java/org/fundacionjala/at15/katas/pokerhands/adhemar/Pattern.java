@@ -98,4 +98,11 @@ public class Pattern {
         }
         return false;
     }
+
+    public boolean isHighCard() {
+        if (this.groups.size() == Card.FIVE && !isFlush()) {
+            return true;
+        }
+        return false;
+    }
 }
