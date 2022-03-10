@@ -25,4 +25,35 @@ public class HighCard extends PokerHands {
         }
         return card[pos];
     }
+
+    public int isHighCard(Hand hand) {
+        Card[] cards = hand.getCards();
+        int numAuxI;
+        int numAuxJ;
+        int value = 0;
+        for (int ind = 0; ind < cards.length; ind++) {
+            for (int indj = ind + 1; indj < cards.length; indj++) {
+                numAuxI = cards[ind].getValue();
+                numAuxJ = cards[indj].getValue();
+                if (numAuxI == numAuxJ) {
+                    value = 0;
+                    break;
+                } else {
+                    value = 1;
+                }
+            }
+            if (value == 0) {
+                break;
+            }
+        }
+        if (cards[index0].getValue() + 1 == cards[index1].getValue() && cards[index1].getValue() + 1 == cards[index2].getValue()
+            && cards[index2].getValue() + 1 == cards[index3].getValue() && cards[index3].getValue() + 1 == cards[index4].getValue()) {
+            value = 0;
+        }
+        if (cards[index0].getSuit() == cards[index1].getSuit() && cards[index1].getSuit() == cards[index2].getSuit()
+            && cards[index2].getSuit() == cards[index3].getSuit() && cards[index3].getSuit() == cards[index4].getSuit()) {
+            value = 0;
+        }
+        return value;
+    }
 }

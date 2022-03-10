@@ -46,4 +46,44 @@ public class TwoPairs extends PokerHands {
         auxCard[1] = card[pos2];
         return auxCard;
     }
+
+    public int isTwoPair(Hand hand) {
+        Card[] cards = hand.getCards();
+        int numAuxI;
+        int numAuxJ;
+        int aux = 0;
+        int value = 0;
+        int count = 0;
+        int count2 = 0;
+        for (int ind = 0; ind < cards.length; ind++) {
+            for (int indj = ind + 1; indj < cards.length; indj++) {
+                numAuxI = cards[ind].getValue();
+                numAuxJ = cards[indj].getValue();
+                if (numAuxI == numAuxJ) {
+                    aux = numAuxI;
+                    count++;
+                }
+            }
+            if (count == 1) {
+                break;
+            }
+        }
+
+        if (count == 1) {
+            for (int ind = 0; ind < cards.length; ind++) {
+                for (int indj = ind + 1; indj < cards.length; indj++) {
+                    numAuxI = cards[ind].getValue();
+                    numAuxJ = cards[indj].getValue();
+                    if (numAuxI == numAuxJ && numAuxI != aux) {
+                        count2++;
+                    }
+                }
+            }
+        }
+
+        if (count == 1 && count2 == 1) {
+            value = 1;
+        }
+        return value;
+    }
 }

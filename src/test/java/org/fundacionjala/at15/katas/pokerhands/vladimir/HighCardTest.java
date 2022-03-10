@@ -41,11 +41,19 @@ public class HighCardTest {
         String expected = "KD";
         assertEquals(expected, res);
     }
-    /*
+
     @Test
-    public void itShouldSumTwoIntegers() {
-        Calculator calculator = new Calculator();
-        int result = calculator.doOperation(new SumOperation(), 2, 3);
-        assertEquals(5, result);
-    }*/
+    public void itShouldTestIfIsHightCard() {
+        Card[] card1 = new Card[5];
+        card1[0] = new Card("5", "C");
+        card1[1] = new Card("6", "S");
+        card1[2] = new Card("A", "H");
+        card1[3] = new Card("8", "D");
+        card1[4] = new Card("K", "C");
+        Hand hand = new Hand(card1);
+        HighCard highCard = new HighCard();
+        int result = highCard.isHighCard(hand);
+        int expected = 1;
+        assertEquals(expected, result);
+    }
 }

@@ -41,4 +41,19 @@ public class PairTest {
         String expected = "8H";
         assertEquals(expected, res);
     }
+
+    @Test
+    public void itShouldTestIfIsPairCard() {
+        Card[] card = new Card[5];
+        card[0] = new Card("A", "C");
+        card[1] = new Card("3", "D");
+        card[2] = new Card("2", "D");
+        card[3] = new Card("A", "H");
+        card[4] = new Card("8", "S");
+        Hand hand = new Hand(card);
+        Pair pair = new Pair();
+        int result = pair.isPair(hand);
+        int expected = 1;
+        assertEquals(expected, result);
+    }
 }

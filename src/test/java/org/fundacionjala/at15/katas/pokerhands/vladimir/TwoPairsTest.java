@@ -45,4 +45,19 @@ public class TwoPairsTest {
         assertEquals(expected1, res1);
         assertEquals(expected2, res2);
     }
+
+    @Test
+    public void itShouldTestIfIsTwoPair() {
+        Card[] card = new Card[5];
+        card[0] = new Card("A", "C");
+        card[1] = new Card("A", "D");
+        card[2] = new Card("Q", "D");
+        card[3] = new Card("8", "H");
+        card[4] = new Card("8", "S");
+        Hand hand = new Hand(card);
+        TwoPairs twoPairs = new TwoPairs();
+        int result = twoPairs.isTwoPair(hand);
+        int expected = 1;
+        assertEquals(expected, result);
+    }
 }
