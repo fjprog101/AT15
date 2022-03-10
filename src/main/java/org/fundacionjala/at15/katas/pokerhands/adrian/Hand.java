@@ -1,5 +1,7 @@
 package org.fundacionjala.at15.katas.pokerhands.adrian;
 
+import java.util.Arrays;
+
 public class Hand {
     private static final int TWO_CARD = 2;
     private static final int THREE_CARD = 3;
@@ -15,9 +17,17 @@ public class Hand {
     private static final int K_CARD = 13;
     private static final int A_CARD = 14;
 
+    protected static final int INDEX_CERO = 0;
+    protected static final int INDEX_THREE = 3;
+    protected static final int INDEX_FOUR = 4;
+    protected static final int INDEX_SIX = 6;
+    protected static final int INDEX_NINE = 9;
+    protected static final int INDEX_TWELVE = 12;
+
     public String compareHands(String hand1, String hand2) {
         int score1 = 0;
         int score2 = 0;
+        String absolutWinner = "";
         HighCard checkHighCard = new HighCard();
         String winner = checkHighCard.compareHandsWithHigherCard(hand1, hand2);
         if (winner.equals(hand1)) {
@@ -27,14 +37,34 @@ public class Hand {
             score2 = score2 + 1;
         }
 
+        Pair checkPairs = new Pair();
+        winner = checkPairs.compareHandsWithPairs(hand1, hand2);
+        if (winner.equals(hand1)) {
+            score1 = score1 + 2;
+        }
+        if (winner.equals(hand2)) {
+            score2 = score2 + 2;
+        }
+
         if (score1 == score2) {
             return "It is a tie";
         } else if (score1 > score2) {
-            winner = hand1;
+            absolutWinner = hand1;
         } else {
-            winner = hand2;
+            absolutWinner = hand2;
         }
-        return winner;
+        return absolutWinner;
+    }
+
+    public int[] sortedHand(String hand) {
+        int number1 = valueOfCard(hand.charAt(INDEX_CERO));
+        int number2 = valueOfCard(hand.charAt(INDEX_THREE));
+        int number3 = valueOfCard(hand.charAt(INDEX_SIX));
+        int number4 = valueOfCard(hand.charAt(INDEX_NINE));
+        int number5 = valueOfCard(hand.charAt(INDEX_TWELVE));
+        int[] array = {number1, number2, number3, number4, number5};
+        Arrays.sort(array);
+        return array;
     }
 
     public int higherValue(int value1, int value2) {
