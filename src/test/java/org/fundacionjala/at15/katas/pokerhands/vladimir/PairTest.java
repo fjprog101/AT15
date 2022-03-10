@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class PairTest {
     @Test
-    public void itShouldShowHightCardWinner() {
+    public void itShouldShowPairWinner() {
         Card[] card1 = new Card[5];
         card1[0] = new Card("A", "C");
         card1[1] = new Card("A", "D");

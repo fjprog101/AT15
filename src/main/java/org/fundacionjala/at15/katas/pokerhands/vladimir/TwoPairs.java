@@ -1,14 +1,31 @@
 package org.fundacionjala.at15.katas.pokerhands.vladimir;
 
-public class TwoPairs extends PokerHands{
+public class TwoPairs extends PokerHands {
 
     @Override
     public String run(Hand blackHand, Hand whiteHand) {
-        // TODO Auto-generated method stub
-        return null;
+        Card[] cardsBlackHand = new Card[2];
+        cardsBlackHand = getTwoPairs(blackHand.getCards());
+        Card[] cardsWhiteHand = new Card[2];
+        cardsWhiteHand = getTwoPairs(whiteHand.getCards());
+        Card highCardBlackHand = getHigh(cardsBlackHand);
+        Card highCardWhiteHand = getHigh(cardsWhiteHand);
+        if (highCardBlackHand.getValue() > highCardWhiteHand.getValue()) {
+            return "Black hand wins";
+        } else {
+            return "White hand wins";
+        }
     }
 
-    public Card[] twoPairs(Card[] card) {
+    public Card getHigh(Card[] twoCards) {
+        if (twoCards[0].getValue() > twoCards[1].getValue()) {
+            return twoCards[0];
+        } else {
+            return twoCards[1];
+        }
+    }
+
+    public Card[] getTwoPairs(Card[] card) {
         int numAuxI;
         int numAuxJ;
         int aux;
