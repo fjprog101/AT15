@@ -14,4 +14,13 @@ public class ValueHandTest {
         String compare = value.getValueHand(hand);
         assertEquals(expected, compare);
     }
+
+    @Test
+    public void itNotShouldBeOnePair() {
+        String[] hand = {"2H", "3S", "AD", "9C", "5H"};
+        String expected = "no pair";
+        ValueHand value = new ValueHand();
+        String compare = value.getValueHand(hand);
+        assertEquals(expected, compare);
+    }
 }

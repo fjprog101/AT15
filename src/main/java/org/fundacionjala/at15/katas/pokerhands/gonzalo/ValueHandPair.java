@@ -31,8 +31,6 @@ public class ValueHandPair {
         }
         if (count == pair) {
             valueHand = "pair";
-        } else {
-            valueHand = "no pair";
         }
         return valueHand;
     }
