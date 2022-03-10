@@ -53,7 +53,7 @@ public class PairTest {
         Hand hand = new Hand(card);
         Pair pair = new Pair();
         int result = pair.isPair(hand);
-        int expected = 1;
+        int expected = 2;
         assertEquals(expected, result);
     }
 }

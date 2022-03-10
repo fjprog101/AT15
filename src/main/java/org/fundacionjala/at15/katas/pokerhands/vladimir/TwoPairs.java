@@ -82,7 +82,7 @@ public class TwoPairs extends PokerHands {
         }
 
         if (count == 1 && count2 == 1) {
-            value = 1;
+            value = handValue3;
         }
         return value;
     }

@@ -39,7 +39,7 @@ public class HighCard extends PokerHands {
                     value = 0;
                     break;
                 } else {
-                    value = 1;
+                    value = handValue1;
                 }
             }
             if (value == 0) {

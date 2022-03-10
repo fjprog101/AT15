@@ -57,7 +57,7 @@ public class TwoPairsTest {
         Hand hand = new Hand(card);
         TwoPairs twoPairs = new TwoPairs();
         int result = twoPairs.isTwoPair(hand);
-        int expected = 1;
+        int expected = 3;
         assertEquals(expected, result);
     }
 }

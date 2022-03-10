@@ -41,4 +41,19 @@ public class PokerTest {
         int expected = 12;
         assertEquals(expected, res);
     }
+
+    @Test
+    public void itShouldTestIfIsPoker() {
+        Card[] card = new Card[5];
+        card[0] = new Card("A", "C");
+        card[1] = new Card("A", "S");
+        card[2] = new Card("A", "D");
+        card[3] = new Card("A", "H");
+        card[4] = new Card("8", "S");
+        Hand hand = new Hand(card);
+        Poker poker = new Poker();
+        int result = poker.isPoker(hand);
+        int expected = 5;
+        assertEquals(expected, result);
+    }
 }

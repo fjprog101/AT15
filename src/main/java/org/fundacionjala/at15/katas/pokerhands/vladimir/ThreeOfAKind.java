@@ -32,4 +32,44 @@ public class ThreeOfAKind extends PokerHands {
         }
         return card[pos];
     }
+
+    public int isThreeOfAKind(Hand hand) {
+        Card[] cards = hand.getCards();
+        int numAuxI;
+        int numAuxJ;
+        int aux = 0;
+        int value = 0;
+        int count = 0;
+        int count2 = 0;
+        for (int ind = 0; ind < cards.length; ind++) {
+            for (int indj = ind + 1; indj < cards.length; indj++) {
+                numAuxI = cards[ind].getValue();
+                numAuxJ = cards[indj].getValue();
+                if (numAuxI == numAuxJ) {
+                    aux = numAuxI;
+                    count++;
+                }
+            }
+            if (count == 1) {
+                break;
+            } else if (count == 2) {
+                break;
+            }
+        }
+        if (count == 2) {
+            for (int ind = 0; ind < cards.length; ind++) {
+                for (int indj = ind + 1; indj < cards.length; indj++) {
+                    numAuxI = cards[ind].getValue();
+                    numAuxJ = cards[indj].getValue();
+                    if (numAuxI == numAuxJ && numAuxI != aux) {
+                        count2++;
+                    }
+                }
+            }
+        }
+        if (count == 2 && count2 == 0) {
+            value = handValue4;
+        }
+        return value;
+    }
 }

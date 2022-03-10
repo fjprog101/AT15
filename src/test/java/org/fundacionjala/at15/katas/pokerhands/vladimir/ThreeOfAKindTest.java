@@ -41,4 +41,19 @@ public class ThreeOfAKindTest {
         int expected = 13;
         assertEquals(expected, res);
     }
+
+    @Test
+    public void itShouldTestIfIsPairCard() {
+        Card[] card = new Card[5];
+        card[0] = new Card("Q", "C");
+        card[1] = new Card("Q", "D");
+        card[2] = new Card("Q", "D");
+        card[3] = new Card("A", "H");
+        card[4] = new Card("8", "S");
+        Hand hand = new Hand(card);
+        ThreeOfAKind threeOfAKind = new ThreeOfAKind();
+        int result = threeOfAKind.isThreeOfAKind(hand);
+        int expected = 4;
+        assertEquals(expected, result);
+    }
 }

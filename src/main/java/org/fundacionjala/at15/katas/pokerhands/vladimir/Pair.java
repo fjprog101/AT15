@@ -45,7 +45,7 @@ public class Pair extends PokerHands {
             }
         }
         if (count == 1) {
-            value = 1;
+            value = handValue2;
         }
         return value;
     }
