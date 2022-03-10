@@ -3,15 +3,14 @@ package org.fundacionjala.at15.katas.pokerhands.mauricio;
 public class Main {
     public static void main(String[] args) {
 
-        PokerDeck black = new PokerDeck(new HeartCard("2"), new DiamondCard("3"), new SpadeCard("5"), new ClubCard("9"),
-                new DiamondCard("K"));
-        System.out.println("Black Poker Deck:");
-        black.printDeck();
-
-        PokerDeck white = new PokerDeck(new ClubCard("2"), new HeartCard("3"), new SpadeCard("4"), new ClubCard("8"),
-                new HeartCard("A"));
-        System.out.println("White Poker Deck:");
-        white.printDeck();
+        // PokerHand black = new PokerHand(new Card("2", "H"), new Card("3", "D"), new Card("5", "S"),
+        //         new Card("9", "C"),
+        //         new Card("K", "D"));
+        // PokerHand white = new PokerHand(new Card("2", "C"), new Card("3", "H"), new Card("4", "S"),
+        //         new Card("8", "C"),
+        //         new Card("A", "H"));
+        // Game game = new Game(black, white);
+        // game.whoWins();
 
     }
 }

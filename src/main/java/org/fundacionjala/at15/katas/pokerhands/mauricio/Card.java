@@ -1,77 +1,68 @@
 package org.fundacionjala.at15.katas.pokerhands.mauricio;
 
-public abstract class Card {
+public  class Card {
     private String value;
+    private String suit;
+    private final int cardValue1 = 1;
+    private final int cardValue2 = 2;
+    private final int cardValue3 = 3;
+    private final int cardValue4 = 4;
+    private final int cardValue5 = 5;
+    private final int cardValue6 = 6;
+    private final int cardValue7 = 7;
+    private final int cardValue8 = 8;
+    private final int cardValue9 = 9;
+    private final int cardValue10 = 10;
+    private final int cardValue11 = 11;
+    private final int cardValue12 = 12;
+    private final int cardValue13 = 13;
 
-    private final int number1 = 1;
-    private final int number2 = 2;
-    private final int number3 = 3;
-    private final int number4 = 4;
-    private final int number5 = 5;
-    private final int number6 = 6;
-    private final int number7 = 7;
-    private final int number8 = 8;
-    private final int number9 = 9;
-    private final int number10 = 10;
-    private final int number11 = 11;
-    private final int number12 = 12;
-    private final int number13 = 13;
-
-    public Card(String value) {
+    public Card(String value, String suit) {
         this.value = value;
+        this.suit = suit;
     }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value1) {
-        this.value = value1;
-    }
-
-    public abstract String getCompletCard();
 
     public int getValueOfCard() {
         int result = 0;
         switch (value) {
             case "A":
-                result = number13;
+                result = cardValue13;
                 break;
             case "2":
-                result = number1;
+                result = cardValue1;
                 break;
             case "3":
-                result = number2;
+                result = cardValue2;
                 break;
             case "4":
-                result = number3;
+                result = cardValue3;
                 break;
             case "5":
-                result = number4;
+                result = cardValue4;
                 break;
             case "6":
-                result = number5;
+                result = cardValue5;
                 break;
             case "7":
-                result = number6;
+                result = cardValue6;
                 break;
             case "8":
-                result = number7;
+                result = cardValue7;
                 break;
             case "9":
-                result = number8;
+                result = cardValue8;
                 break;
             case "10":
-                result = number9;
+                result = cardValue9;
                 break;
             case "J":
-                result = number10;
+                result = cardValue10;
                 break;
             case "Q":
-                result = number11;
+                result = cardValue11;
                 break;
             case "K":
-                result = number12;
+                result = cardValue12;
                 break;
 
             default:
