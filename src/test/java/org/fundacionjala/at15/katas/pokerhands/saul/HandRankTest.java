@@ -51,4 +51,23 @@ public class HandRankTest {
         HandRank handRank = new HandRank();
         assertTrue(handRank.isTwoPairs(myHand));
     }
+
+    @Test
+    public void itShouldVerifiesThreeOfAKind() {
+        Card firstCard = new Card(2, 'C');
+        Card secondCard = new Card(2, 'S');
+        Card thirdCard = new Card(8, 'H');
+        Card fourthCard = new Card(8, 'C');
+        Card fifthCard = new Card(8, 'D');
+
+        List<Card> myHand = new ArrayList<Card>();
+        myHand.add(firstCard);
+        myHand.add(secondCard);
+        myHand.add(thirdCard);
+        myHand.add(fourthCard);
+        myHand.add(fifthCard);
+
+        HandRank handRank = new HandRank();
+        assertTrue(handRank.isThreeKind(myHand));
+    }
 }

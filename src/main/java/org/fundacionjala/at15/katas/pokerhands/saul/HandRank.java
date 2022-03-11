@@ -86,8 +86,27 @@ public class HandRank {
         return isTwoPairs;
     }
 
-    private boolean isThreeKind(List<Card> hand) {
-        return false;
+    public boolean isThreeKind(List<Card> hand) {
+        boolean isThreeKind = false;
+        int counter = 0;
+
+        for (int index = 0; index < hand.size(); index++) {
+            int next = index + 1;
+            if (next < hand.size()) {
+                if (hand.get(index).compareTo(hand.get(next)) == 0) {
+                    counter += 1;
+
+                    if (counter == 2) {
+                        isThreeKind = true;
+                        break;
+                    }
+                } else {
+                    counter = 0;
+                }
+            }
+        }
+
+        return isThreeKind;
     }
 
     private boolean isStraight(List<Card> hand) {
