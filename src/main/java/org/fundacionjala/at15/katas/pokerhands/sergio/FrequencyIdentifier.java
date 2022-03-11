@@ -22,6 +22,10 @@ public class FrequencyIdentifier extends Identifier {
         return frequency;
     }
 
+    public List<Card> getPokerHand() {
+        return pokerHand;
+    }
+
     private void valuePokerHandFill() {
         for (int ind = 0; ind < NUMBER_5; ind++) {
             valuePokerHand[ind] = pokerHand.get(ind).getValue();
