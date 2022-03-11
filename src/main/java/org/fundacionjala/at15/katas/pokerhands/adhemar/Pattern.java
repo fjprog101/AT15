@@ -51,6 +51,22 @@ public class Pattern {
         return false;
     }
 
+    public boolean isOnlyStraight() {
+        return isStraight() && !isFlush();
+    }
+
+    public boolean isStraight() {
+        Card[] sortedCards = CardSorter.sort(this.cards);
+        int prevValue = sortedCards[0].calculateValue() - 1;
+        for (Card card : sortedCards) {
+            if (card.calculateValue() != prevValue + 1) {
+                return false;
+            }
+            prevValue = card.calculateValue();
+        }
+        return true;
+    }
+
     public boolean isFlush() {
         String prevSuit = this.cards[0].getSuit();
         for (Card card : this.cards) {
@@ -58,17 +74,6 @@ public class Pattern {
                 return false;
             }
             prevSuit = card.getSuit();
-        }
-        return true;
-    }
-
-    public boolean isStraight() {
-        int prevValue = this.cards[0].calculateValue() - 1;
-        for (Card card : this.cards) {
-            if (card.calculateValue() != prevValue + 1) {
-                return false;
-            }
-            prevValue = card.calculateValue();
         }
         return true;
     }

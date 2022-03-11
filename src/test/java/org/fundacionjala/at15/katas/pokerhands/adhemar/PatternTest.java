@@ -187,6 +187,53 @@ public class PatternTest {
     }
 
     @Test
+    public void itShouldBeOnlyStraight() {
+        Card[] cards1 = {
+            new Card("3", "D"),
+            new Card("4", "C"),
+            new Card("5", "D"),
+            new Card("6", "D"),
+            new Card("7", "D")
+        };
+        Pattern pattern = new Pattern(cards1);
+
+        assertTrue(pattern.isOnlyStraight());
+
+        Card[] cards2 = {
+            new Card("3", "D"),
+            new Card("4", "D"),
+            new Card("5", "C"),
+            new Card("6", "D"),
+            new Card("8", "D")
+        };
+        pattern = new Pattern(cards2);
+
+        assertFalse(pattern.isOnlyStraight());
+
+        Card[] cards3 = {
+            new Card("T", "D"),
+            new Card("J", "D"),
+            new Card("Q", "D"),
+            new Card("K", "D"),
+            new Card("A", "D")
+        };
+        pattern = new Pattern(cards3);
+
+        assertFalse(pattern.isOnlyStraight());
+
+        Card[] cards4 = {
+            new Card("T", "D"),
+            new Card("K", "H"),
+            new Card("J", "D"),
+            new Card("Q", "D"),
+            new Card("A", "D")
+        };
+        pattern = new Pattern(cards4);
+
+        assertTrue(pattern.isOnlyStraight());
+    }
+
+    @Test
     public void itShouldBeAllCardsWithTheSameSuit() {
         Card[] cards1 = {
             new Card("3", "D"),
@@ -209,31 +256,6 @@ public class PatternTest {
         pattern = new Pattern(cards2);
 
         assertFalse(pattern.isFlush());
-    }
-
-    @Test
-    public void itShouldBeStraight() {
-        Card[] cards1 = {
-            new Card("3", "D"),
-            new Card("4", "C"),
-            new Card("5", "D"),
-            new Card("6", "D"),
-            new Card("7", "D")
-        };
-        Pattern pattern = new Pattern(cards1);
-
-        assertTrue(pattern.isStraight());
-
-        Card[] cards2 = {
-            new Card("3", "D"),
-            new Card("4", "D"),
-            new Card("5", "C"),
-            new Card("6", "D"),
-            new Card("8", "D")
-        };
-        pattern = new Pattern(cards2);
-
-        assertFalse(pattern.isStraight());
     }
 
     @Test

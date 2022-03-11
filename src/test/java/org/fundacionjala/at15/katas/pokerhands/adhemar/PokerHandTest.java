@@ -20,12 +20,12 @@ public class PokerHandTest {
 
     @Test
     public void itShouldCreateCards() {
-        String[][] charCards = {{"2", "H"}
+        String[][] stringCards = {{"2", "H"}
             , {"3", "D"}
             , {"5", "S"}
             , {"9", "C"}
             , {"K", "D"}};
-        PokerHand thePokerHand = new PokerHand(charCards);
+        PokerHand thePokerHand = new PokerHand(stringCards);
         Card theCard = new Card("K", "D");
 
         assertEquals(theCard.getSuit(), thePokerHand.getCards()[4].getSuit());
