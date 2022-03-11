@@ -3,10 +3,11 @@ package org.fundacionjala.at15.katas.pokerhands.adrian;
 public class Score {
     private int score1 = 0;
     private int score2 = 0;
-    private final int points3 = 3;
-    private final int points4 = 4;
-    private final int points5 = 5;
-    private final int points10 = 10;
+    private final int twoPairPoints = 3;
+    private final int threeKindPoints = 4;
+    private final int straightPoints = 5;
+    private final int flushPoints = 10;
+    private final int fullHousePoints = 20;
     public Score(String hand1, String hand2) {
         HighCard checkHighCard = new HighCard();
         String winner = checkHighCard.compareHandsWithHigherCard(hand1, hand2);
@@ -37,15 +38,15 @@ public class Score {
         if (checkTwoPairs.theHandHasTwoPairs(hand1) && checkTwoPairs.theHandHasTwoPairs(hand2)) {
             winner = checkTwoPairs.compareHandsWithTwoPairs(hand1, hand2);
             if (winner.equals(hand1)) {
-                score1 = score1 + points3;
+                score1 = score1 + twoPairPoints;
             }
             if (winner.equals(hand2)) {
-                score2 = score2 + points3;
+                score2 = score2 + twoPairPoints;
             }
         } else if (checkTwoPairs.theHandHasTwoPairs(hand1)) {
-            score1 = score1 + points3;
+            score1 = score1 + twoPairPoints;
         } else if (checkTwoPairs.theHandHasTwoPairs(hand2)) {
-            score2 = score2 + points3;
+            score2 = score2 + twoPairPoints;
         }
 
 
@@ -53,15 +54,15 @@ public class Score {
         if (threeOfAKind.theHandHasThreeOfAKind(hand1) && threeOfAKind.theHandHasThreeOfAKind(hand2)) {
             winner = threeOfAKind.compareHandsWithThreeOfAKind(hand1, hand2);
             if (winner.equals(hand1)) {
-                score1 = score1 + points4;
+                score1 = score1 + threeKindPoints;
             }
             if (winner.equals(hand2)) {
-                score2 = score2 + points4;
+                score2 = score2 + threeKindPoints;
             }
         } else if (threeOfAKind.theHandHasThreeOfAKind(hand1)) {
-            score1 = score1 + points4;
+            score1 = score1 + threeKindPoints;
         } else if (threeOfAKind.theHandHasThreeOfAKind(hand2)) {
-            score2 = score2 + points4;
+            score2 = score2 + threeKindPoints;
         }
 
 
@@ -69,30 +70,45 @@ public class Score {
         if (straight.theHandIsStraight(hand1) && straight.theHandIsStraight(hand2)) {
             winner = straight.compareStraightsHands(hand1, hand2);
             if (winner.equals(hand1)) {
-                score1 = score1 + points5;
+                score1 = score1 + straightPoints;
             }
             if (winner.equals(hand2)) {
-                score2 = score2 + points5;
+                score2 = score2 + straightPoints;
             }
         } else if (straight.theHandIsStraight(hand1)) {
-            score1 = score1 + points5;
+            score1 = score1 + straightPoints;
         } else if (straight.theHandIsStraight(hand2)) {
-            score2 = score2 + points5;
+            score2 = score2 + straightPoints;
         }
 
         Flush flush = new Flush();
         if (flush.theHandIsFlush(hand1) && flush.theHandIsFlush(hand2)) {
             winner = flush.compareHandsWithFlush(hand1, hand2);
             if (winner.equals(hand1)) {
-                score1 = score1 + points10;
+                score1 = score1 + flushPoints;
             }
             if (winner.equals(hand2)) {
-                score2 = score2 + points10;
+                score2 = score2 + flushPoints;
             }
         } else if (flush.theHandIsFlush(hand1)) {
-            score1 = score1 + points10;
+            score1 = score1 + flushPoints;
         } else if (flush.theHandIsFlush(hand2)) {
-            score2 = score2 + points10;
+            score2 = score2 + flushPoints;
+        }
+
+        FullHouse fullHouse = new FullHouse();
+        if (fullHouse.theHandIsFullHouse(hand1) && fullHouse.theHandIsFullHouse(hand2)) {
+            winner = fullHouse.compareHandsFullHouse(hand1, hand2);
+            if (winner.equals(hand1)) {
+                score1 = score1 + fullHousePoints;
+            }
+            if (winner.equals(hand2)) {
+                score2 = score2 + fullHousePoints;
+            }
+        } else if (fullHouse.theHandIsFullHouse(hand1)) {
+            score1 = score1 + fullHousePoints;
+        } else if (fullHouse.theHandIsFullHouse(hand2)) {
+            score2 = score2 + fullHousePoints;
         }
     }
 

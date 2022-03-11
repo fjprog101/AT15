@@ -83,5 +83,19 @@ public class ScoreTest {
         assertEquals(11, score8c.getScore1());
         assertEquals(0, score8c.getScore2());
 
+        //FullHouse
+        Score score9 = new Score("2H 4S 4C 2D 4H", "2H KD AS 7C 2D");
+        assertEquals(29, score9.getScore1());
+        assertEquals(1, score9.getScore2());
+        Score score9a = new Score("2D 3H 9C 9S 9H", "4H 4S 7C 7D 7H");
+        assertEquals(7, score9a.getScore1());
+        assertEquals(23, score9a.getScore2());
+        Score score9b = new Score("7S 7C AD AH 7H", "8H 6S 6C 8D 8H");
+        assertEquals(6, score9b.getScore1());
+        assertEquals(24, score9b.getScore2());
+        Score score9c = new Score("4C 4C 4H TC TC", "2H 4S 4C 2D 4H");
+        assertEquals(26, score9c.getScore1());
+        assertEquals(0, score9c.getScore2());
+
     }
 }
