@@ -1,6 +1,5 @@
 package org.fundacionjala.at15.katas.poker.diana;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;

@@ -9,6 +9,15 @@ import java.util.stream.Collectors;
 
 public class PokerRules {
     static final int ZERO = 0;
+    static final int ONE = 0;
+    static final int TWO = 0;
+    static final int THREE = 0;
+    static final int FOUR = 0;
+    static final int FIVE = 0;
+    static final int SIX = 0;
+    static final int SEVEN = 0;
+    static final int EIGHT = 0;
+    static final int NINE = 0;
     private ArrayList<Integer> numeros;
     private ArrayList<String> suits;
     private int range;
@@ -42,11 +51,12 @@ public class PokerRules {
 
     public int highCard(ArrayList<Integer> valueOfCards) {
         int valueHighCard = Collections.max(valueOfCards);
-        range = 1;
+        range = ONE;
         return valueHighCard;
     }
 
     public int pair(ArrayList<Integer> valueOfCards) {
+        range = TWO;
         int indPD = 0;
         int[] arrayValueCards = valueOfCards.stream().mapToInt(i -> i).toArray();
         for (int indP = 0; indP < arrayValueCards.length - 1; indP++) {
@@ -56,7 +66,6 @@ public class PokerRules {
                 }
             }
         }
-        range = 2;
         return arrayValueCards[indPD];
     }
 
@@ -71,7 +80,7 @@ public class PokerRules {
                 }
             }
         }
-        range = 3;
+        range = THREE;
         Collections.sort(duplicateValues, Collections.reverseOrder());
         return duplicateValues;
     }
@@ -90,7 +99,7 @@ public class PokerRules {
                 }
             }
         }
-        range = 4;
+        range = FOUR;
         return arrayValueCards[indPDN];
     }
 
@@ -107,12 +116,12 @@ public class PokerRules {
             }
             visited.add(inde);
         }
-        range = 5;
+        range = FIVE;
         return true;
     }
 
     public boolean flush(ArrayList<String> valueOfSuitCards) {
-        range = 6;
+        range = SIX;
         return new HashSet<String>(valueOfSuitCards).size() <= 1;
     }
 
@@ -135,7 +144,7 @@ public class PokerRules {
             }
         }
         List<Integer> arrayAux = fullHousValues.stream().distinct().collect(Collectors.toList());
-        range = 7;
+        range = SEVEN;
         return arrayAux.stream().sorted().collect(Collectors.toList());
     }
 
@@ -157,7 +166,7 @@ public class PokerRules {
                 }
             }
         }
-        range = 8;
+        range = EIGHT;
         return arrayValueCards[indPDNu];
     }
 
@@ -177,7 +186,7 @@ public class PokerRules {
             }
             return true;
         }
-        range = 9;
+        range = NINE;
         return false;
     }
 }

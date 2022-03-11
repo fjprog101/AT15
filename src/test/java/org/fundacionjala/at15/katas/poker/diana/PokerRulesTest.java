@@ -2,10 +2,8 @@ package org.fundacionjala.at15.katas.poker.diana;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import org.fundacionjala.at15.katas.pokerhands.diana.PokerRules;
 import org.junit.Test;
 
