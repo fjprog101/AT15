@@ -4,6 +4,31 @@ import java.util.*;
 
 public class WinnerCalculator {
 
+    public int getWinner(PokerHand firstHand, PokerHand secondHand) {
+        int result = 0;
+        if (firstHand.compareTo(secondHand) < 0) {
+            result = 1;
+        } else if (firstHand.compareTo(secondHand) > 0) {
+            result = -1;
+        } else {
+            result = getWinner(firstHand, secondHand, firstHand.getRank());
+        }
+        return result;
+    }
+
+    public int getWinner(PokerHand firstHand, PokerHand secondHand, HandRank rank) {
+        int result = 0;
+        switch (rank.getRank()) {
+            case HIGH_CARD:
+                result = highestCardWinner(firstHand, secondHand);
+                break;
+
+            default:
+                break;
+        }
+        return result;
+    }
+
     public int highestCardWinner(PokerHand firstHand, PokerHand secondHand) {
         List<Card> blackHand = firstHand.getHand();
         List<Card> whiteHand = secondHand.getHand();

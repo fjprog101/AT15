@@ -43,7 +43,7 @@ public class PokerHandTest {
         myHand.add(fifthCard);
 
         PokerHand pokerHand = new PokerHand(myHand);
-        assertEquals(9, pokerHand.getHandValue());
+        assertEquals(1, pokerHand.getHandValue());
     }
 
     @Test

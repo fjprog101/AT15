@@ -45,41 +45,41 @@ public class HandRank {
     public void setValue(List<Card> hand) {
         switch (rank) {
             case STRAIGHT_FLUSH:
-                value = getHighestCardValue(hand);
+                value = NINE;
                 break;
 
             case FOUR_KIND:
-                value = hand.get(TWO).getValue();
+                value = EIGHT;
                 break;
 
             case FULL_HOUSE:
-                value = hand.get(TWO).getValue();
+                value = SEVEN;
                 break;
 
             case FLUSH:
-                value = getHighestCardValue(hand);
+                value = SIX;
                 break;
 
             case STRAIGHT:
-                value = getHighestCardValue(hand);
+                value = FIVE;
                 break;
 
             case THREE_KIND:
-                value = hand.get(TWO).getValue();
+                value = FOUR;
                 break;
 
             case TWO_PAIRS:
-                value = hand.get(TWO).getValue();
+                value = THREE;
+                break;
+
+            case PAIR:
+                value = TWO;
                 break;
 
             default:
-                value = getHighestCardValue(hand);
+                value = ONE;
                 break;
         }
-    }
-
-    private int getHighestCardValue(List<Card> hand) {
-        return hand.get(hand.size() - 1).getValue();
     }
 
     public boolean isPair(List<Card> hand) {
