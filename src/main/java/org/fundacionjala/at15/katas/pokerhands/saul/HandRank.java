@@ -23,32 +23,63 @@ public class HandRank {
     public void setRank(List<Card> hand) {
         if (isStraightFlush(hand)) {
             rank = Rank.STRAIGHT_FLUSH;
-            value = NINE;
         } else if (isFourKind(hand)) {
             rank = Rank.FOUR_KIND;
-            value = EIGHT;
         } else if (isFullHouse(hand)) {
             rank = Rank.FULL_HOUSE;
-            value = SEVEN;
         } else if (isFlush(hand)) {
             rank = Rank.FLUSH;
-            value = SIX;
         } else if (isStraight(hand)) {
             rank = Rank.STRAIGHT;
-            value = FIVE;
         } else if (isThreeKind(hand)) {
             rank = Rank.THREE_KIND;
-            value = FOUR;
         } else if (isTwoPairs(hand)) {
             rank = Rank.TWO_PAIRS;
-            value = THREE;
         } else if (isPair(hand)) {
             rank = Rank.PAIR;
-            value = TWO;
         } else {
             rank = Rank.HIGH_CARD;
-            value = ONE;
         }
+    }
+
+    public void setValue(List<Card> hand) {
+        switch (rank) {
+            case STRAIGHT_FLUSH:
+                value = getHighestCardValue(hand);
+                break;
+
+            case FOUR_KIND:
+                value = hand.get(TWO).getValue();
+                break;
+
+            case FULL_HOUSE:
+                value = hand.get(TWO).getValue();
+                break;
+
+            case FLUSH:
+                value = getHighestCardValue(hand);
+                break;
+
+            case STRAIGHT:
+                value = getHighestCardValue(hand);
+                break;
+
+            case THREE_KIND:
+                value = hand.get(TWO).getValue();
+                break;
+
+            case TWO_PAIRS:
+                value = hand.get(TWO).getValue();
+                break;
+
+            default:
+                value = getHighestCardValue(hand);
+                break;
+        }
+    }
+
+    private int getHighestCardValue(List<Card> hand) {
+        return hand.get(hand.size() - 1).getValue();
     }
 
     public boolean isPair(List<Card> hand) {

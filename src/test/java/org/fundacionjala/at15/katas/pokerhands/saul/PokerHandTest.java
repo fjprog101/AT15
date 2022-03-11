@@ -43,8 +43,7 @@ public class PokerHandTest {
         myHand.add(fifthCard);
 
         PokerHand pokerHand = new PokerHand(myHand);
-        pokerHand.setRank();
-        assertEquals(1, pokerHand.getHandValue());
+        assertEquals(9, pokerHand.getHandValue());
     }
 
     @Test
@@ -64,9 +63,7 @@ public class PokerHandTest {
         otherHand.add(new Card(9, 'D'));
 
         PokerHand firstHand = new PokerHand(myHand);
-        firstHand.setRank();
         PokerHand secondHand = new PokerHand(otherHand);
-        secondHand.setRank();
 
         assertEquals(0, firstHand.compareTo(secondHand));
     }

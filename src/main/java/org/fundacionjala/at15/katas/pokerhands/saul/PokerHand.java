@@ -9,6 +9,8 @@ public class PokerHand implements Comparable<PokerHand> {
     public PokerHand(List<Card> pokerHand) {
         this.pokerHand = pokerHand;
         rank = new HandRank();
+        rank.setRank(pokerHand);
+        rank.setValue(pokerHand);
     }
 
     public List<Card> getHand() {
@@ -21,6 +23,10 @@ public class PokerHand implements Comparable<PokerHand> {
 
     public void setRank() {
         rank.setRank(pokerHand);
+    }
+
+    public HandRank getRank() {
+        return rank;
     }
 
     @Override
