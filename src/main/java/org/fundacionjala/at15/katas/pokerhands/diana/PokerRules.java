@@ -9,15 +9,15 @@ import java.util.stream.Collectors;
 
 public class PokerRules {
     static final int ZERO = 0;
-    static final int ONE = 0;
-    static final int TWO = 0;
-    static final int THREE = 0;
-    static final int FOUR = 0;
-    static final int FIVE = 0;
-    static final int SIX = 0;
-    static final int SEVEN = 0;
-    static final int EIGHT = 0;
-    static final int NINE = 0;
+    static final int ONE = 1;
+    static final int TWO = 2;
+    static final int THREE = 3;
+    static final int FOUR = 4;
+    static final int FIVE = 5;
+    static final int SIX = 6;
+    static final int SEVEN = 7;
+    static final int EIGHT = 8;
+    static final int NINE = 9;
     private ArrayList<Integer> number;
     private ArrayList<String> suit;
     private int range;

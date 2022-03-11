@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Hands {
     static final int ONE = 1;
+    static final int TEN = 10;
     static final int ELEVEN = 11;
     static final int TWELVE = 12;
-    static final int THIRTEEN = 13;
 
     public int countCards(String[] hand) {
         int count = hand.length;
@@ -26,11 +26,11 @@ public class Hands {
                     case "A":
                         valueOfFirstPosition.add(ONE);
                     case "J":
-                        valueOfFirstPosition.add(ELEVEN);
+                        valueOfFirstPosition.add(TEN);
                     case "Q":
-                        valueOfFirstPosition.add(TWELVE);
+                        valueOfFirstPosition.add(ELEVEN);
                     case "K":
-                        valueOfFirstPosition.add(THIRTEEN);
+                        valueOfFirstPosition.add(TWELVE);
                     default:
                 }
             }

@@ -21,7 +21,7 @@ public class HandsTest {
 
     @Test
     public void itShouldReturnTheValueOfTheCard() {
-        List<Integer> blackHandValues = Arrays.asList(2, 3, 5, 9, 13);
+        List<Integer> blackHandValues = Arrays.asList(2, 3, 5, 9, 12);
         ArrayList<Integer> result = hand.valueOfCards(blackHand);
         assertEquals(blackHandValues, result);
     }
