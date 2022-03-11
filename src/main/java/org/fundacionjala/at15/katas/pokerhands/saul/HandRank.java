@@ -161,8 +161,27 @@ public class HandRank {
         return isFullHouse;
     }
 
-    private boolean isFourKind(List<Card> hand) {
-        return false;
+    public boolean isFourKind(List<Card> hand) {
+        boolean isFourKind = false;
+        int counter = 0;
+
+        for (int index = 0; index < hand.size(); index++) {
+            int next = index + 1;
+            if (next < hand.size()) {
+                if (hand.get(index).compareTo(hand.get(next)) == 0) {
+                    counter += 1;
+
+                    if (counter == THREE) {
+                        isFourKind = true;
+                        break;
+                    }
+                } else {
+                    counter = 0;
+                }
+            }
+        }
+
+        return isFourKind;
     }
 
     private boolean isStraightFlush(List<Card> hand) {
