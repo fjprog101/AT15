@@ -37,26 +37,6 @@ public class StraightFlushIdentifierTest {
 //        assertFalse(theIdentificationTest2.getIsStraightFlush());
 //    }
 //
-//    @Test
-//    public void itShouldIdentifyIfStraight() {
-//        String[] pokerHand = {"AD", "JH", "QD", "TS", "KD"};
-//        Splitter splitterTest = new Splitter(pokerHand);
-//        splitterTest.theSplit();
-//        StraightFlushIdentifier theIdentificationTest = new StraightFlushIdentifier(splitterTest);
-//        theIdentificationTest.straightIdentifier();
 //
-//        assertTrue(theIdentificationTest.getIsStraight());
-//    }
-//
-//    @Test
-//    public void itShouldIdentifyIfNotStraight() {
-//        String[] pokerHand = {"AD", "2H", "QD", "7S", "KD"};
-//        Splitter splitterTest = new Splitter(pokerHand);
-//        splitterTest.theSplit();
-//        StraightFlushIdentifier theIdentificationTest = new StraightFlushIdentifier(splitterTest);
-//        theIdentificationTest.straightIdentifier();
-//
-//        assertFalse(theIdentificationTest.getIsStraight());
-//    }
 
 }
