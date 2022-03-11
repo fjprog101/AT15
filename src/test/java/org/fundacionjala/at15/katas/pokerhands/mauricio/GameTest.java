@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class GameTest {
 
-    //@Test
+    @Test
     public void itShouldWinHighHand() {
         PokerHand black = new PokerHand(new Card("2", "H"), new Card("3", "D"), new Card("5", "S"),
                 new Card("9", "C"),
@@ -17,21 +17,6 @@ public class GameTest {
         Game game = new Game(black, white);
         String result = game.whoWins();
         String expected = "White wins";
-
-        assertEquals(expected, result);
-    }
-
-    @Test
-    public void itShouldTieTwoHands() {
-        PokerHand black = new PokerHand(new Card("2", "H"), new Card("3", "D"), new Card("5", "S"),
-                new Card("9", "C"),
-                new Card("K", "D"));
-        PokerHand white = new PokerHand(new Card("2", "H"), new Card("3", "D"), new Card("5", "S"),
-                new Card("9", "C"),
-                new Card("A", "D"));
-        Game game = new Game(black, white);
-        String result = game.whoWins();
-        String expected = "Tie!";
 
         assertEquals(expected, result);
     }
@@ -51,7 +36,7 @@ public class GameTest {
     }
 
     @Test
-    public void itShouldWinBlackHandBecauseATwoPair() {
+    public void itShouldWinBlackHandBecauseHasATwoPair() {
         PokerHand black = new PokerHand(new Card("2", "H"), new Card("2", "D"), new Card("2", "S"),
                 new Card("2", "C"),
                 new Card("K", "D"));
@@ -64,6 +49,34 @@ public class GameTest {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void itShouldWinBlackHandBecauseHasThreeCardsOfTheSameValue() {
+        PokerHand black = new PokerHand(new Card("2", "H"), new Card("2", "D"), new Card("2", "S"),
+                new Card("4", "C"),
+                new Card("K", "D"));
+        PokerHand white = new PokerHand(new Card("2", "C"), new Card("2", "H"), new Card("4", "S"),
+                new Card("8", "C"),
+                new Card("A", "H"));
+        Game game = new Game(black, white);
+        String result = game.whoWins();
+        String expected = "Black wins";
+        assertEquals(expected, result);
+    }
+
+    //@Test
+    public void itShouldTieTwoHands() {
+        PokerHand black = new PokerHand(new Card("2", "H"), new Card("3", "D"), new Card("5", "S"),
+                new Card("9", "C"),
+                new Card("K", "D"));
+        PokerHand white = new PokerHand(new Card("2", "H"), new Card("3", "D"), new Card("5", "S"),
+                new Card("9", "C"),
+                new Card("A", "D"));
+        Game game = new Game(black, white);
+        String result = game.whoWins();
+        String expected = "Tie!";
+
+        assertEquals(expected, result);
+    }
 
 
 

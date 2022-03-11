@@ -32,7 +32,7 @@ public class PokerHand {
         return highNumber;
     }
 
-    public int getPairCardsScore() {
+    public int getPairCardsScore() { // This method is used in pair, two pairs and three of the same value
         int[] cardValues = new int[numberCards];
         int score = 0;
         for (int vari = 0; vari < cardValues.length; vari++) {

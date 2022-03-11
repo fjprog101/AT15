@@ -14,26 +14,35 @@ public class Game {
     public String whoWins() {
         String winner = "";
 
-        while (winner == "") {
-            if (pairs() == 1) {
-                winner = "Black wins";
+        // if (pairs() == 1) {
+        // winner = "Black wins";
 
-            } else if (pairs() == 2) {
-                winner = "White wins";
-                //break;
-            } else if (pairs() == tie4) {
-                winner = "Tie!";
-                //break;
-            } else if (highCard() == 1) {
-                winner = "Black wins";
-                //break;
-            } else if (highCard() == 2) {
-                winner = "White wins";
-                //break;
-            } else if (highCard() == tie3) {
-                winner = "Tie!";
-            }
+        // } else if (pairs() == 2) {
+        // winner = "White wins";
+        //
+        // } else if (pairs() == tie4) {
+        // winner = "Tie!";
+        //
+        // } else if (highCard() == 1) {
+        // winner = "Black wins";
+        //
+        // } else if (highCard() == 2) {
+        // winner = "White wins";
+        //
+        // } else if (highCard() == tie3) {
+        // winner = "Tie!";
+        // }
+
+        if (cardsWithTheSameValue() == 1) {
+            winner = "Black wins";
+        } else if (cardsWithTheSameValue() == 2) {
+            winner = "White wins";
+        } else if (highCard() == 1) {
+            winner = "Black wins";
+        } else if (highCard() == 2) {
+            winner = "White wins";
         }
+
         return winner;
     }
 
@@ -51,7 +60,7 @@ public class Game {
         return aux1;
     }
 
-    public int pairs() {
+    public int cardsWithTheSameValue() {
         int aux1 = 0;
         int auxH1 = h1.getPairCardsScore();
         int auxH2 = h2.getPairCardsScore();
