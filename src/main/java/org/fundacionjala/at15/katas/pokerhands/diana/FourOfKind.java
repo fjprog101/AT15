@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class FourOfKind extends CardAnalysis {
     private static final int EIGHT = 8;
-    private int range;
+    protected int range;
 
     public int analysisOfRule(ArrayList<Integer> valueOfCards) {
         int ind2 = 0;

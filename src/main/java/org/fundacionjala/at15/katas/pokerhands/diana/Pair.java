@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Pair extends CardAnalysis {
     private static final int TWO = 2;
-    private int range;
+    protected int range;
 
     @Override
     public int analysisOfRule(ArrayList<Integer> valueOfCards) {

@@ -12,7 +12,7 @@ public class Game {
         Card hands = new Card(blackHand);
         hands.countCards(blackHand);
         PokerRules pokerRulesBlack = new PokerRules(numeros, suits);
-        pokerRulesBlack.evaluateHand();
+        pokerRulesBlack.evaluateHand(numeros, suits);
         pokerRulesBlack.getRange();
     }
 
@@ -20,7 +20,7 @@ public class Game {
         Card hands = new Card(whiteHand);
         hands.countCards(whiteHand);
         PokerRules pokerRulesWhite = new PokerRules(numeros, suits);
-        pokerRulesWhite.evaluateHand();
+        pokerRulesWhite.evaluateHand(numeros, suits);
         pokerRulesWhite.getRange();
     }
 

@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class HighCard extends CardAnalysis {
     private static final int ONE = 1;
-    private int range;
+    protected int range;
 
     @Override
     public int analysisOfRule(ArrayList<Integer> valueOfCards) {
