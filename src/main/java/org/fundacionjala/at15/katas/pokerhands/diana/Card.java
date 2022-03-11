@@ -2,11 +2,15 @@ package org.fundacionjala.at15.katas.pokerhands.diana;
 
 import java.util.ArrayList;
 
-public class Hands {
+public class Card extends Deck {
     static final int ONE = 1;
     static final int TEN = 10;
     static final int ELEVEN = 11;
     static final int TWELVE = 12;
+
+    public Card(String[] newCompletedHand) {
+        super(newCompletedHand);
+    }
 
     public int countCards(String[] hand) {
         int count = hand.length;

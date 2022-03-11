@@ -9,7 +9,7 @@ public class Game {
     private ArrayList<String> suits;
 
     public void blackHand() {
-        Hands hands = new Hands();
+        Card hands = new Card(blackHand);
         hands.countCards(blackHand);
         PokerRules pokerRulesBlack = new PokerRules(numeros, suits);
         pokerRulesBlack.evaluateHand();
@@ -17,7 +17,7 @@ public class Game {
     }
 
     public void whiteHand() {
-        Hands hands = new Hands();
+        Card hands = new Card(whiteHand);
         hands.countCards(whiteHand);
         PokerRules pokerRulesWhite = new PokerRules(numeros, suits);
         pokerRulesWhite.evaluateHand();

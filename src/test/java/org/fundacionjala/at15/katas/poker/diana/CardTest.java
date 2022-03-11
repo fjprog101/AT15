@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.fundacionjala.at15.katas.pokerhands.diana.Hands;
+import org.fundacionjala.at15.katas.pokerhands.diana.Card;
 import org.junit.Test;
 
-public class HandsTest {
-    Hands hand = new Hands();
+public class CardTest {
     String blackHand[] = { "2H", "QD", "AS", "JC", "KD" };
+    Card hand = new Card(blackHand);
 
     @Test
     public void itShouldHaveFiveCards() {
