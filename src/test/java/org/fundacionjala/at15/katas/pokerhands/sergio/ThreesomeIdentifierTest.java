@@ -22,9 +22,10 @@ public class ThreesomeIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        ThreesomeIdentifier ThreesomeIdentificationTest = new ThreesomeIdentifier(new FrequencyIdentifier(cardList));
+        ThreesomeIdentifier threesomeIdentificationTest = new ThreesomeIdentifier();
+        threesomeIdentificationTest.theIdentification(cardList);
 
-        assertTrue(ThreesomeIdentificationTest.isThreesome());
+        assertTrue(threesomeIdentificationTest.isThreesome());
     }
 
     @Test
@@ -40,8 +41,9 @@ public class ThreesomeIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        ThreesomeIdentifier ThreesomeIdentificationTest = new ThreesomeIdentifier(new FrequencyIdentifier(cardList));
+        ThreesomeIdentifier threesomeIdentificationTest = new ThreesomeIdentifier();
+        threesomeIdentificationTest.theIdentification(cardList);
 
-        assertFalse(ThreesomeIdentificationTest.isThreesome());
+        assertFalse(threesomeIdentificationTest.isThreesome());
     }
 }

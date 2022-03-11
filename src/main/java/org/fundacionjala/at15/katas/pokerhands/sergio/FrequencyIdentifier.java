@@ -13,11 +13,6 @@ public class FrequencyIdentifier extends Identifier {
     private ArrayList<Integer> frequency = new ArrayList<>();
     private static final int NUMBER_5 = 5;
 
-    public FrequencyIdentifier(List<Card> newPokerHand) {
-        this.pokerHand = newPokerHand;
-        theIdentification();
-    }
-
     public ArrayList<Integer> getFrequency() {
         return frequency;
     }
@@ -32,7 +27,8 @@ public class FrequencyIdentifier extends Identifier {
         }
     }
 
-    public void theIdentification() {
+    public void theIdentification(List<Card> newPokerHand) {
+        this.pokerHand = newPokerHand;
         valuePokerHandFill();
         Arrays.sort(valuePokerHand);
         int checked = -1;

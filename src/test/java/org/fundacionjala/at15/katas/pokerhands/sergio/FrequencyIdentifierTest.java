@@ -20,7 +20,8 @@ public class FrequencyIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier(cardList);
+        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier();
+        frequencyIdentificationTest.theIdentification(cardList);
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(1);
         expectedList.add(1);
@@ -46,7 +47,8 @@ public class FrequencyIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier(cardList);
+        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier();
+        frequencyIdentificationTest.theIdentification(cardList);
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(1);
         expectedList.add(1);
@@ -70,7 +72,8 @@ public class FrequencyIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier(cardList);
+        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier();
+        frequencyIdentificationTest.theIdentification(cardList);
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(1);
         expectedList.add(4);
@@ -93,7 +96,8 @@ public class FrequencyIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier(cardList);
+        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier();
+        frequencyIdentificationTest.theIdentification(cardList);
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(2);
         expectedList.add(3);
@@ -116,7 +120,8 @@ public class FrequencyIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier(cardList);
+        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier();
+        frequencyIdentificationTest.theIdentification(cardList);
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(2);
         expectedList.add(2);
@@ -141,7 +146,8 @@ public class FrequencyIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier(cardList);
+        FrequencyIdentifier frequencyIdentificationTest = new FrequencyIdentifier();
+        frequencyIdentificationTest.theIdentification(cardList);
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(1);
         expectedList.add(1);

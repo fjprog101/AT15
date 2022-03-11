@@ -23,9 +23,8 @@ public class StraightFlushIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        StraightIdentifier straightIdentificationTest = new StraightIdentifier(cardList);
-        FlushIdentifier flushIdentificationTest = new FlushIdentifier(cardList);
-        StraightFlushIdentifier straightFlushIdentificationTest = new StraightFlushIdentifier(straightIdentificationTest, flushIdentificationTest);
+        StraightFlushIdentifier straightFlushIdentificationTest = new StraightFlushIdentifier();
+        straightFlushIdentificationTest.theIdentification(cardList);
 
         assertTrue(straightFlushIdentificationTest.isStraightFlush());
     }
@@ -43,9 +42,8 @@ public class StraightFlushIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        StraightIdentifier straightIdentificationTest = new StraightIdentifier(cardList);
-        FlushIdentifier flushIdentificationTest = new FlushIdentifier(cardList);
-        StraightFlushIdentifier straightFlushIdentificationTest = new StraightFlushIdentifier(straightIdentificationTest, flushIdentificationTest);
+        StraightFlushIdentifier straightFlushIdentificationTest = new StraightFlushIdentifier();
+        straightFlushIdentificationTest.theIdentification(cardList);
 
         assertFalse(straightFlushIdentificationTest.isStraightFlush());
     }
@@ -63,10 +61,8 @@ public class StraightFlushIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        StraightIdentifier straightIdentificationTest = new StraightIdentifier(cardList);
-        FlushIdentifier flushIdentificationTest = new FlushIdentifier(cardList);
-        StraightFlushIdentifier straightFlushIdentificationTest = new StraightFlushIdentifier(straightIdentificationTest, flushIdentificationTest);
-
+        StraightFlushIdentifier straightFlushIdentificationTest = new StraightFlushIdentifier();
+        straightFlushIdentificationTest.theIdentification(cardList);
         assertFalse(straightFlushIdentificationTest.isStraightFlush());
     }
 }

@@ -11,11 +11,6 @@ public class StraightIdentifier extends Identifier {
     private static final int NUMBER_4 = 4;
     private static final int NUMBER_5 = 5;
 
-    public StraightIdentifier(List<Card> newPokerHand) {
-        this.pokerHand = newPokerHand;
-        theIdentification();
-    }
-
     public boolean isStraight() {
         return isStraight;
     }
@@ -26,7 +21,8 @@ public class StraightIdentifier extends Identifier {
         }
     }
 
-    public void theIdentification() {
+    public void theIdentification(List<Card> newPokerHand) {
+        this.pokerHand = newPokerHand;
         arrayFill();
         int straightIndicator = 0;
         Arrays.sort(valuePokerHand);

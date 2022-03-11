@@ -22,7 +22,8 @@ public class OnlyPairIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        OnlyPairIdentifier onlyPairIdentificationTest = new OnlyPairIdentifier(new FrequencyIdentifier(cardList));
+        OnlyPairIdentifier onlyPairIdentificationTest = new OnlyPairIdentifier();
+        onlyPairIdentificationTest.theIdentification(cardList);
 
         assertTrue(onlyPairIdentificationTest.isOnlyPair());
     }
@@ -40,7 +41,8 @@ public class OnlyPairIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        OnlyPairIdentifier onlyPairIdentificationTest = new OnlyPairIdentifier(new FrequencyIdentifier(cardList));
+        OnlyPairIdentifier onlyPairIdentificationTest = new OnlyPairIdentifier();
+        onlyPairIdentificationTest.theIdentification(cardList);
 
         assertFalse(onlyPairIdentificationTest.isOnlyPair());
     }

@@ -22,7 +22,8 @@ public class FlushIdentifierTest {
         cardList.add(card4);
         cardList.add(card5);
 
-        FlushIdentifier identificationTest = new FlushIdentifier(cardList);
+        FlushIdentifier identificationTest = new FlushIdentifier();
+        identificationTest.theIdentification(cardList);
 
         assertTrue(identificationTest.getIsFlush());
     }
@@ -41,7 +42,8 @@ public class FlushIdentifierTest {
         cardList.add(card4);
         cardList.add(card5);
 
-        FlushIdentifier identificationTest = new FlushIdentifier(cardList);
+        FlushIdentifier identificationTest = new FlushIdentifier();
+        identificationTest.theIdentification(cardList);
 
         assertFalse(identificationTest.getIsFlush());
     }

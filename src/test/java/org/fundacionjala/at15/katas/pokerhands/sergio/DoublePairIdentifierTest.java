@@ -22,9 +22,10 @@ public class DoublePairIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        DoublePairIdentifier DoublePairIdentificationTest = new DoublePairIdentifier(new FrequencyIdentifier(cardList));
+        DoublePairIdentifier doublePairIdentificationTest = new DoublePairIdentifier();
+        doublePairIdentificationTest.theIdentification(cardList);
 
-        assertTrue(DoublePairIdentificationTest.isDoublePair());
+        assertTrue(doublePairIdentificationTest.isDoublePair());
     }
 
     @Test
@@ -40,8 +41,9 @@ public class DoublePairIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        DoublePairIdentifier DoublePairIdentificationTest = new DoublePairIdentifier(new FrequencyIdentifier(cardList));
+        DoublePairIdentifier doublePairIdentificationTest = new DoublePairIdentifier();
+        doublePairIdentificationTest.theIdentification(cardList);
 
-        assertFalse(DoublePairIdentificationTest.isDoublePair());
+        assertFalse(doublePairIdentificationTest.isDoublePair());
     }
 }
