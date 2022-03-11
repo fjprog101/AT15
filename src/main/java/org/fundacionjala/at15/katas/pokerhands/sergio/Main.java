@@ -4,19 +4,13 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-//        Card card1 = new Card("2", "D");
-//        Card card2 = new Card("3", "D");
-//        Card card3 = new Card("4", "D");
-//        Card card4 = new Card("5", "D");
-//        Card card5 = new Card("6", "D");
-//        List<Card> cardList = new ArrayList<>();
-//        cardList.add(card1);
-//        cardList.add(card2);
-//        cardList.add(card3);
-//        cardList.add(card4);
-//        cardList.add(card5);
-//        StraightIdentifier straightIdentificationTest = new StraightIdentifier(cardList);
-//        FlushIdentifier flushIdentificationTest = new FlushIdentifier(cardList);
-//        StraightFlushIdentifier straightFlushIdentificationTest = new StraightFlushIdentifier();
+
+//        List<Integer> numbers = new ArrayList<>();
+//        numbers.add(2);
+//        numbers.add(3);
+//        numbers.add(1);
+//        numbers.add(15);
+//        numbers.add(3);
+//        System.out.println(numbers);
     }
 }
