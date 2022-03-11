@@ -10,7 +10,6 @@ public class ValueHandMajorCard {
     private int major;
     private int pos;
     private int posAux = 0;
-    private boolean verified = false;
     private char[] majorCard;
     private int[] majorCardInt;
     private Converter valueCard = new Converter();
@@ -37,6 +36,7 @@ public class ValueHandMajorCard {
     }
 
     public boolean compareSuit(String[] hand) {
+        boolean verified = false;
         majorCard = valueCard.converterCharSuit(hand);
         if (majorCard[card1] != majorCard[card2] || majorCard[card1] != majorCard[card3]
             || majorCard[card1] != majorCard[card4] || majorCard[card1] != majorCard[card5]) {
@@ -46,6 +46,7 @@ public class ValueHandMajorCard {
     }
 
     public boolean compareCard1(String[] hand) {
+        boolean verified = false;
         majorCard = valueCard.converterCharValue(hand);
         if (majorCard[card1] != majorCard[card2] && majorCard[card1] != majorCard[card3]
             && majorCard[card1] != majorCard[card4] && majorCard[card1] != majorCard[card5]) {
@@ -55,6 +56,7 @@ public class ValueHandMajorCard {
     }
 
     public boolean compareCard2(String[] hand) {
+        boolean verified = false;
         majorCard = valueCard.converterCharValue(hand);
         if (majorCard[card2] != majorCard[card3] && majorCard[card2] != majorCard[card4]
             && majorCard[card2] != majorCard[card5]) {
@@ -64,6 +66,7 @@ public class ValueHandMajorCard {
     }
 
     public boolean compareCard3(String[] hand) {
+        boolean verified = false;
         majorCard = valueCard.converterCharValue(hand);
         if (majorCard[card3] != majorCard[card4] && majorCard[card3] != majorCard[card5]) {
             verified = true;
@@ -72,6 +75,7 @@ public class ValueHandMajorCard {
     }
 
     public boolean compareCard4(String[] hand) {
+        boolean verified = false;
         majorCard = valueCard.converterCharValue(hand);
         if (majorCard[card4] != majorCard[card5]) {
             verified = true;

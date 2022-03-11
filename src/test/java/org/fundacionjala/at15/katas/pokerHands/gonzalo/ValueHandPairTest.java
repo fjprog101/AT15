@@ -21,4 +21,20 @@ public class ValueHandPairTest {
         ValueHandPair value = new ValueHandPair();
         assertEquals(expected, value.comparePair(hand));
     }
+
+    @Test
+    public void itNotShouldBeOnePairTwoPair() {
+        String[] hand = {"2H", "2S", "AD", "5C", "5H"};
+        String expected = null;
+        ValueHandPair value = new ValueHandPair();
+        assertEquals(expected, value.comparePair(hand));
+    }
+
+    @Test
+    public void itNotShouldBeOnePairThreeOfKind() {
+        String[] hand = {"3H", "3S", "AD", "9C", "3H"};
+        String expected = null;
+        ValueHandPair value = new ValueHandPair();
+        assertEquals(expected, value.comparePair(hand));
+    }
 }
