@@ -70,4 +70,23 @@ public class HandRankTest {
         HandRank handRank = new HandRank();
         assertTrue(handRank.isThreeKind(myHand));
     }
+
+    @Test
+    public void itShouldVerifiesStrightHand() {
+        Card firstCard = new Card(5, 'C');
+        Card secondCard = new Card(6, 'S');
+        Card thirdCard = new Card(7, 'H');
+        Card fourthCard = new Card(8, 'C');
+        Card fifthCard = new Card(9, 'D');
+
+        List<Card> myHand = new ArrayList<Card>();
+        myHand.add(firstCard);
+        myHand.add(secondCard);
+        myHand.add(thirdCard);
+        myHand.add(fourthCard);
+        myHand.add(fifthCard);
+
+        HandRank handRank = new HandRank();
+        assertTrue(handRank.isStraight(myHand));
+    }
 }

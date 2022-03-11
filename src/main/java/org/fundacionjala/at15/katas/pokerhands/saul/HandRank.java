@@ -109,8 +109,25 @@ public class HandRank {
         return isThreeKind;
     }
 
-    private boolean isStraight(List<Card> hand) {
-        return false;
+    public boolean isStraight(List<Card> hand) {
+        boolean isStraight = false;
+        int counter = 0;
+
+        for (int index = 0; index < hand.size(); index++) {
+            int next = index + 1;
+            if (next < hand.size()) {
+                if (hand.get(index).getValue() - hand.get(next).getValue() == -1) {
+                    counter += 1;
+                    if (counter == 4) {
+                        isStraight = true;
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+
+        return isStraight;
     }
 
     private boolean isFlush(List<Card> hand) {
