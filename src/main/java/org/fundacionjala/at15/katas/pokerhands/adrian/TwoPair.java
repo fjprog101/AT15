@@ -35,8 +35,7 @@ public class TwoPair extends Hand {
 
     public String compareHandsWithTwoPairs(String hand1, String hand2) {
         String winner = "Ties";
-        if ((valueOfTwoPairs(hand1)[1] != 0) && (valueOfTwoPairs(hand2)[1] != 0)
-            && (valueOfTwoPairs(hand1)[0] != 0) && (valueOfTwoPairs(hand2)[0] != 0)) {
+        if ((valueOfTwoPairs(hand1)[1] != 0) && (valueOfTwoPairs(hand2)[1] != 0)) {
 
             if (valueOfTwoPairs(hand1)[0] == valueOfTwoPairs(hand2)[0]) {
                 if (valueOfTwoPairs(hand1)[1] == valueOfTwoPairs(hand2)[1]) {

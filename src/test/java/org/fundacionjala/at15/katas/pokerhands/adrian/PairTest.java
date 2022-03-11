@@ -15,6 +15,15 @@ public class PairTest {
     }
 
     @Test
+    public void theHandHasAPairTest() {
+        Pair pair = new Pair();
+        boolean result = pair.theHandHasAPair("QH 7D AS 5C 7D");
+        assertEquals(true, result);
+        result = pair.theHandHasAPair("QH 7D AS 5C 8D");
+        assertEquals(false, result);
+    }
+
+    @Test
     public void compareHandsWithPairsTest() {
         Pair pair = new Pair();
         String hand1 = "2H JD 3S JC AD";

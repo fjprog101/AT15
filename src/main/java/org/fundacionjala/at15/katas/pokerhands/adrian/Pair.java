@@ -12,6 +12,14 @@ public class Pair extends Hand {
         return result;
     }
 
+    public boolean theHandHasAPair(String hand) {
+        boolean result = false;
+        if (valueOfPairCard(hand) != 0) {
+            result = true;
+        }
+        return result;
+    }
+
     public String compareHandsWithPairs(String hand1, String hand2) {
         String winner = "Tie";
         if (valueOfPairCard(hand1) == valueOfPairCard(hand2)) {

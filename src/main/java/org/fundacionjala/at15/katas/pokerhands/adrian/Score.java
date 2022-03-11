@@ -4,6 +4,7 @@ public class Score {
     private int score1 = 0;
     private int score2 = 0;
     private final int points3 = 3;
+    private final int points4 = 4;
     public Score(String hand1, String hand2) {
         HighCard checkHighCard = new HighCard();
         String winner = checkHighCard.compareHandsWithHigherCard(hand1, hand2);
@@ -30,6 +31,15 @@ public class Score {
         }
         if (winner.equals(hand2)) {
             score2 = score2 + points3;
+        }
+
+        ThreeOfAKind threeOfAKind = new ThreeOfAKind();
+        winner = threeOfAKind.compareHandsWithThreeOfAKind(hand1, hand2);
+        if (winner.equals(hand1)) {
+            score1 = score1 + points4;
+        }
+        if (winner.equals(hand2)) {
+            score2 = score2 + points4;
         }
     }
 

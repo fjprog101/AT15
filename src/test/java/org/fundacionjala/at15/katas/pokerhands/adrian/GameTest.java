@@ -19,10 +19,9 @@ public class GameTest {
         String expectedResult = "White wins";
         assertEquals(expectedResult, result);
 
-        String hand3 = "1H 2D 3S 4C 9D";
-        String hand4 = "2C 3H 8S 7C 6H";
-        String result2 = game.comparePlayersHands(player1, hand3, player2, hand4);
-        String expectedResult2 = "Black wins";
-        assertEquals(expectedResult2, result2);
+        hand1 = "2H 4S KC 7D 5H";
+        hand2 = "2S 8S 6S QS 3S";
+        String result2 = game.comparePlayersHands(player1, hand1, player2, hand2);
+        assertEquals("Black wins", result2);
     }
 }
