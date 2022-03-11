@@ -91,12 +91,31 @@ public class HandRankTest {
     }
 
     @Test
+    public void itShouldVerifiesFlushHand() {
+        Card firstCard = new Card(3, 'S');
+        Card secondCard = new Card(6, 'S');
+        Card thirdCard = new Card(7, 'S');
+        Card fourthCard = new Card(8, 'S');
+        Card fifthCard = new Card(9, 'S');
+
+        List<Card> myHand = new ArrayList<Card>();
+        myHand.add(firstCard);
+        myHand.add(secondCard);
+        myHand.add(thirdCard);
+        myHand.add(fourthCard);
+        myHand.add(fifthCard);
+
+        HandRank handRank = new HandRank();
+        assertTrue(handRank.isFlush(myHand));
+    }
+
+    @Test
     public void itShouldVerifiesFullHouseHand() {
         Card firstCard = new Card(5, 'S');
         Card secondCard = new Card(5, 'S');
         Card thirdCard = new Card(9, 'S');
-        Card fourthCard = new Card(9, 'S');
-        Card fifthCard = new Card(9, 'S');
+        Card fourthCard = new Card(9, 'C');
+        Card fifthCard = new Card(9, 'H');
 
         List<Card> myHand = new ArrayList<Card>();
         myHand.add(firstCard);
