@@ -151,8 +151,14 @@ public class HandRank {
         return isFlush;
     }
 
-    private boolean isFullHouse(List<Card> hand) {
-        return false;
+    public boolean isFullHouse(List<Card> hand) {
+        boolean isFullHouse = false;
+
+        if (isPair(hand) && isThreeKind(hand)) {
+            isFullHouse = true;
+        }
+
+        return isFullHouse;
     }
 
     private boolean isFourKind(List<Card> hand) {
