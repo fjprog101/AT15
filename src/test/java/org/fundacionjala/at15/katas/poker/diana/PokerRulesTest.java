@@ -42,16 +42,16 @@ public class PokerRulesTest {
     @Test
     public void itShouldReturnTwoPairs() {
         ArrayList<Integer> numeros = new ArrayList<Integer>();
-        numeros.add(5);
-        numeros.add(5);
+        numeros.add(13);
+        numeros.add(7);
         numeros.add(5);
         numeros.add(7);
-        numeros.add(13);
+        numeros.add(5);
         PokerRules pokerRules = new PokerRules(numeros, suits);
         List<Integer> result = pokerRules.twoPair(numeros);
         List<Integer> expectedResult = new ArrayList<Integer>();
+        expectedResult.add(7);
         expectedResult.add(5);
-        // expectedResult.add(7);
         assertEquals(expectedResult, result);
     }
 

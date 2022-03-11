@@ -70,7 +70,8 @@ public class PokerRules {
                 }
             }
         }
-        return duplicateValues.stream().distinct().collect(Collectors.toList());
+        Collections.sort(duplicateValues, Collections.reverseOrder());
+        return duplicateValues;
     }
 
     public int threeOfAKind(ArrayList<Integer> valueOfCards) {
