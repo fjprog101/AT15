@@ -10,18 +10,17 @@ import org.fundacionjala.at15.katas.pokerhands.diana.Hands;
 import org.junit.Test;
 
 public class HandsTest {
+    Hands hand = new Hands();
+    String blackHand[] = { "2H", "3D", "5S", "9C", "KD" };
+
     @Test
     public void itShouldHaveFiveCards() {
-        Hands hand = new Hands();
-        String blackHand[] = { "2H", "3D", "5S", "9C", "KD" };
         int result = hand.countCards(blackHand);
         assertEquals(5, result);
     }
 
     @Test
     public void itShouldReturnTheValueOfTheCard() {
-        Hands hand = new Hands();
-        String blackHand[] = { "2H", "3D", "5S", "9C", "KD" };
         List<Integer> blackHandValues = Arrays.asList(2, 3, 5, 9, 13);
         ArrayList<Integer> result = hand.valueOfCards(blackHand);
         assertEquals(blackHandValues, result);
@@ -29,8 +28,6 @@ public class HandsTest {
 
     @Test
     public void itShouldReturnTheSuitOfTheCard() {
-        Hands hand = new Hands();
-        String blackHand[] = { "2H", "3D", "5S", "9C", "KD" };
         List<String> blackHandValues = Arrays.asList("H", "D", "S", "C", "D");
         ArrayList<String> result = hand.suitOfCards(blackHand);
         assertEquals(blackHandValues, result);
