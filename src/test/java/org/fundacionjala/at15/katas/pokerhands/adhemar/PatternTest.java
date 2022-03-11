@@ -270,67 +270,6 @@ public class PatternTest {
     }
 
     @Test
-    public void itShouldBeStraightFlush() {
-        Card[] cards1 = {
-            new Card("9", "C"),
-            new Card("T", "C"),
-            new Card("J", "C"),
-            new Card("Q", "C"),
-            new Card("K", "C")
-        };
-        Pattern pattern = new Pattern(cards1);
-
-        assertTrue(pattern.isStraightFlush());
-
-        Card[] cards2 = {
-            new Card("8", "C"),
-            new Card("T", "C"),
-            new Card("J", "C"),
-            new Card("Q", "C"),
-            new Card("K", "C")
-        };
-        pattern = new Pattern(cards2);
-
-        assertFalse(pattern.isStraightFlush());
-
-        Card[] cards3 = {
-            new Card("9", "C"),
-            new Card("T", "H"),
-            new Card("J", "D"),
-            new Card("Q", "C"),
-            new Card("K", "C")
-        };
-        pattern = new Pattern(cards3);
-
-        assertFalse(pattern.isStraightFlush());
-    }
-
-    @Test
-    public void itShoulBeFourOfAKind() {
-        Card[] cards1 = {
-            new Card("A", "S"),
-            new Card("A", "D"),
-            new Card("5", "D"),
-            new Card("A", "H"),
-            new Card("A", "D")
-        };
-        Pattern pattern = new Pattern(cards1);
-
-        assertTrue(pattern.isFourOfAKind());
-
-        Card[] cards2 = {
-            new Card("A", "S"),
-            new Card("T", "D"),
-            new Card("5", "D"),
-            new Card("A", "H"),
-            new Card("A", "D")
-        };
-        pattern = new Pattern(cards2);
-
-        assertFalse(pattern.isFourOfAKind());
-    }
-
-    @Test
     public void itShouldBeFullHouse() {
         Card[] cards1 = {
             new Card("A", "S"),
@@ -364,5 +303,66 @@ public class PatternTest {
         pattern = new Pattern(cards3);
 
         assertFalse(pattern.isFullHouse());
+    }
+
+    @Test
+    public void itShoulBeFourOfAKind() {
+        Card[] cards1 = {
+            new Card("A", "S"),
+            new Card("A", "D"),
+            new Card("5", "D"),
+            new Card("A", "H"),
+            new Card("A", "D")
+        };
+        Pattern pattern = new Pattern(cards1);
+
+        assertTrue(pattern.isFourOfAKind());
+
+        Card[] cards2 = {
+            new Card("A", "S"),
+            new Card("T", "D"),
+            new Card("5", "D"),
+            new Card("A", "H"),
+            new Card("A", "D")
+        };
+        pattern = new Pattern(cards2);
+
+        assertFalse(pattern.isFourOfAKind());
+    }
+
+    @Test
+    public void itShouldBeStraightFlush() {
+        Card[] cards1 = {
+            new Card("9", "C"),
+            new Card("T", "C"),
+            new Card("J", "C"),
+            new Card("Q", "C"),
+            new Card("K", "C")
+        };
+        Pattern pattern = new Pattern(cards1);
+
+        assertTrue(pattern.isStraightFlush());
+
+        Card[] cards2 = {
+            new Card("8", "C"),
+            new Card("T", "C"),
+            new Card("J", "C"),
+            new Card("Q", "C"),
+            new Card("K", "C")
+        };
+        pattern = new Pattern(cards2);
+
+        assertFalse(pattern.isStraightFlush());
+
+        Card[] cards3 = {
+            new Card("9", "C"),
+            new Card("T", "H"),
+            new Card("J", "D"),
+            new Card("Q", "C"),
+            new Card("K", "C")
+        };
+        pattern = new Pattern(cards3);
+
+        assertFalse(pattern.isStraightFlush());
     }
 }

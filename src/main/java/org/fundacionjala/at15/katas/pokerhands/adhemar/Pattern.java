@@ -82,27 +82,6 @@ public class Pattern {
         return true;
     }
 
-    public boolean isStraightFlush() {
-        return isFlush() && isStraight();
-    }
-
-    public int calculateTheHighestCard() {
-        int high = this.cards[0].calculateValue();
-        for (Card card : this.cards) {
-            high = card.calculateValue() > high ? card.calculateValue() : high;
-        }
-        return high;
-    }
-
-    public boolean isFourOfAKind() {
-        for (Group group : this.groups) {
-            if (group.getQuantity() == Values.FOUR.getValue()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public boolean isFullHouse() {
         boolean isThereTriple = false;
         boolean isPair = false;
@@ -115,5 +94,26 @@ public class Pattern {
             }
         }
         return isThereTriple && isPair;
+    }
+
+    public boolean isFourOfAKind() {
+        for (Group group : this.groups) {
+            if (group.getQuantity() == Values.FOUR.getValue()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isStraightFlush() {
+        return isFlush() && isStraight();
+    }
+
+    public int calculateTheHighestCard() {
+        int high = this.cards[0].calculateValue();
+        for (Card card : this.cards) {
+            high = card.calculateValue() > high ? card.calculateValue() : high;
+        }
+        return high;
     }
 }
