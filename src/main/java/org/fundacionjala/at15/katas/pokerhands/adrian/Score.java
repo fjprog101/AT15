@@ -17,31 +17,52 @@ public class Score {
         }
 
         Pair checkPairs = new Pair();
-        winner = checkPairs.compareHandsWithPairs(hand1, hand2);
-        if (winner.equals(hand1)) {
+        if (checkPairs.theHandHasAPair(hand1) && checkPairs.theHandHasAPair(hand2)) {
+            winner = checkPairs.compareHandsWithPairs(hand1, hand2);
+            if (winner.equals(hand1)) {
+                score1 = score1 + 2;
+            }
+            if (winner.equals(hand2)) {
+                score2 = score2 + 2;
+            }
+        } else if (checkPairs.theHandHasAPair(hand1)) {
             score1 = score1 + 2;
-        }
-        if (winner.equals(hand2)) {
+        } else if (checkPairs.theHandHasAPair(hand2)) {
             score2 = score2 + 2;
         }
 
+
         TwoPair checkTwoPairs = new TwoPair();
-        winner = checkTwoPairs.compareHandsWithTwoPairs(hand1, hand2);
-        if (winner.equals(hand1)) {
+        if (checkTwoPairs.theHandHasTwoPairs(hand1) && checkTwoPairs.theHandHasTwoPairs(hand2)) {
+            winner = checkTwoPairs.compareHandsWithTwoPairs(hand1, hand2);
+            if (winner.equals(hand1)) {
+                score1 = score1 + points3;
+            }
+            if (winner.equals(hand2)) {
+                score2 = score2 + points3;
+            }
+        } else if (checkTwoPairs.theHandHasTwoPairs(hand1)) {
             score1 = score1 + points3;
-        }
-        if (winner.equals(hand2)) {
+        } else if (checkTwoPairs.theHandHasTwoPairs(hand2)) {
             score2 = score2 + points3;
         }
 
+
         ThreeOfAKind threeOfAKind = new ThreeOfAKind();
-        winner = threeOfAKind.compareHandsWithThreeOfAKind(hand1, hand2);
-        if (winner.equals(hand1)) {
+        if (threeOfAKind.theHandHasThreeOfAKind(hand1) && threeOfAKind.theHandHasThreeOfAKind(hand2)) {
+            winner = threeOfAKind.compareHandsWithThreeOfAKind(hand1, hand2);
+            if (winner.equals(hand1)) {
+                score1 = score1 + points4;
+            }
+            if (winner.equals(hand2)) {
+                score2 = score2 + points4;
+            }
+        } else if (threeOfAKind.theHandHasThreeOfAKind(hand1)) {
             score1 = score1 + points4;
-        }
-        if (winner.equals(hand2)) {
+        } else if (threeOfAKind.theHandHasThreeOfAKind(hand2)) {
             score2 = score2 + points4;
         }
+
 
         Straight straight = new Straight();
         if (straight.theHandIsStraight(hand1) && straight.theHandIsStraight(hand2)) {

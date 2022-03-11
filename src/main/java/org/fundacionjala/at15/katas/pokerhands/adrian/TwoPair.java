@@ -33,28 +33,35 @@ public class TwoPair extends Hand {
         return result;
     }
 
+    public boolean theHandHasTwoPairs(String hand) {
+        boolean result = false;
+        if ((valueOfTwoPairs(hand)[0] != 0) && (valueOfTwoPairs(hand)[1] != 0)) {
+            result = true;
+        }
+        return result;
+    }
+
     public String compareHandsWithTwoPairs(String hand1, String hand2) {
         String winner = "Ties";
-        if ((valueOfTwoPairs(hand1)[1] != 0) && (valueOfTwoPairs(hand2)[1] != 0)) {
 
-            if (valueOfTwoPairs(hand1)[0] == valueOfTwoPairs(hand2)[0]) {
-                if (valueOfTwoPairs(hand1)[1] == valueOfTwoPairs(hand2)[1]) {
-                    return "Tie";
-                }
-                if (valueOfTwoPairs(hand1)[1] > valueOfTwoPairs(hand2)[1]) {
-                    winner = hand1;
-                }
-                if (valueOfTwoPairs(hand2)[1] > valueOfTwoPairs(hand1)[1]) {
-                    winner = hand2;
-                }
+        if (valueOfTwoPairs(hand1)[0] == valueOfTwoPairs(hand2)[0]) {
+            if (valueOfTwoPairs(hand1)[1] == valueOfTwoPairs(hand2)[1]) {
+                return "Tie";
             }
-            if (valueOfTwoPairs(hand1)[0] > valueOfTwoPairs(hand2)[0]) {
+            if (valueOfTwoPairs(hand1)[1] > valueOfTwoPairs(hand2)[1]) {
                 winner = hand1;
             }
-            if (valueOfTwoPairs(hand2)[0] > valueOfTwoPairs(hand1)[0]) {
+            if (valueOfTwoPairs(hand2)[1] > valueOfTwoPairs(hand1)[1]) {
                 winner = hand2;
             }
         }
+        if (valueOfTwoPairs(hand1)[0] > valueOfTwoPairs(hand2)[0]) {
+            winner = hand1;
+        }
+        if (valueOfTwoPairs(hand2)[0] > valueOfTwoPairs(hand1)[0]) {
+            winner = hand2;
+        }
+
         return winner;
     }
 }

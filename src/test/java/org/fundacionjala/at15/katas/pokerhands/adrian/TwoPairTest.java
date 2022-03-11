@@ -16,6 +16,15 @@ public class TwoPairTest {
     }
 
     @Test
+    public void theHandHasTwoPairsTest() {
+        TwoPair pairs = new TwoPair();
+        boolean result = pairs.theHandHasTwoPairs("2H 3D 4S 5C 7D");
+        assertEquals(false, result);
+        boolean result2 = pairs.theHandHasTwoPairs("8H TD 4S 8C 4D");
+        assertEquals(true, result2);
+    }
+
+    @Test
     public void compareHandsWithTwoPairsTest() {
         TwoPair pairs = new TwoPair();
         String result = pairs.compareHandsWithTwoPairs("9H TD TS 9C AD", "3H 4S 4C 3D 7H");
