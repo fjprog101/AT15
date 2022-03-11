@@ -65,6 +65,8 @@ public class HandTest {
         assertEquals(13, result);
         result = handsComparer.valueOfCard('A');
         assertEquals(14, result);
+        result = handsComparer.valueOfCard('/');
+        assertEquals(0, result);
     }
 
 }

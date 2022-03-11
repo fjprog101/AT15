@@ -36,5 +36,20 @@ public class ScoreTest {
         assertEquals(0, score6.getScore1());
         assertEquals(7, score6.getScore2());
 
+        //straight
+        //threeOfAKind
+        Score score7 = new Score("4H 5D 6S 7C 8D", "KH 5D 6S 7C 8D");
+        assertEquals(5, score7.getScore1());
+        assertEquals(1, score7.getScore2());
+        Score score7a = new Score("3H 4D 5S 6C QD", "3H 4D 5S 6C 7D");
+        assertEquals(1, score7a.getScore1());
+        assertEquals(5, score7a.getScore2());
+        Score score7b = new Score("3H 4D 5S 6C 7D", "4H 5D 6S 7C 8D");
+        assertEquals(0, score7b.getScore1());
+        assertEquals(6, score7b.getScore2());
+        Score score7c = new Score("7H 8D 9S TC JD", "4H 6D 5S 7C 8D");
+        assertEquals(6, score7c.getScore1());
+        assertEquals(0, score7c.getScore2());
+
     }
 }
