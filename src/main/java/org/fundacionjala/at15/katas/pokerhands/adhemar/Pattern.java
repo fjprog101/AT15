@@ -12,7 +12,7 @@ public class Pattern {
     }
 
     public boolean isHighCard() {
-        if (this.groups.size() == Values.FIVE.getValue() && !isFlush()) {
+        if (this.groups.size() == Values.FIVE && !isFlush()) {
             return true;
         }
         return false;
@@ -20,9 +20,9 @@ public class Pattern {
 
     public boolean isPair() {
         for (Group group : this.groups) {
-            if (this.groups.size() == Values.FOUR.getValue()
+            if (this.groups.size() == Values.FOUR
                 && !isFlush()
-                && group.getQuantity() == Values.TWO.getValue()) {
+                && group.getQuantity() == Values.TWO) {
                 return true;
             }
         }
@@ -32,11 +32,11 @@ public class Pattern {
     public boolean isTwoPairs() {
         int pairs = 0;
         for (Group group : this.groups) {
-            if (group.getQuantity() == Values.TWO.getValue()) {
+            if (group.getQuantity() == Values.TWO) {
                 pairs++;
             }
         }
-        if (pairs == Values.TWO.getValue() && !isFlush()) {
+        if (pairs == Values.TWO && !isFlush()) {
             return true;
         }
         return false;
@@ -44,7 +44,7 @@ public class Pattern {
 
     public boolean isThreeOfAKind() {
         for (Group group : this.groups) {
-            if (!isFlush() && group.getQuantity() == Values.THREE.getValue()) {
+            if (!isFlush() && group.getQuantity() == Values.THREE) {
                 return true;
             }
         }
@@ -57,12 +57,12 @@ public class Pattern {
 
     public boolean isStraight() {
         Card[] sortedCards = CardSorter.sort(this.cards);
-        int prevValue = sortedCards[0].calculateValue() - 1;
+        int prevValue = sortedCards[0].getIntValue() - 1;
         for (Card card : sortedCards) {
-            if (card.calculateValue() != prevValue + 1) {
+            if (card.getIntValue() != prevValue + 1) {
                 return false;
             }
-            prevValue = card.calculateValue();
+            prevValue = card.getIntValue();
         }
         return true;
     }
@@ -86,10 +86,10 @@ public class Pattern {
         boolean isThereTriple = false;
         boolean isPair = false;
         for (Group group : this.groups) {
-            if (group.getQuantity() == Values.THREE.getValue()) {
+            if (group.getQuantity() == Values.THREE) {
                 isThereTriple = true;
             }
-            if (group.getQuantity() == Values.TWO.getValue()) {
+            if (group.getQuantity() == Values.TWO) {
                 isPair = true;
             }
         }
@@ -98,7 +98,7 @@ public class Pattern {
 
     public boolean isFourOfAKind() {
         for (Group group : this.groups) {
-            if (group.getQuantity() == Values.FOUR.getValue()) {
+            if (group.getQuantity() == Values.FOUR) {
                 return true;
             }
         }
@@ -110,9 +110,9 @@ public class Pattern {
     }
 
     public int calculateTheHighestCard() {
-        int high = this.cards[0].calculateValue();
+        int high = this.cards[0].getIntValue();
         for (Card card : this.cards) {
-            high = card.calculateValue() > high ? card.calculateValue() : high;
+            high = card.getIntValue() > high ? card.getIntValue() : high;
         }
         return high;
     }

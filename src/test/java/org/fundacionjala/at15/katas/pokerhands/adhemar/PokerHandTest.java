@@ -30,7 +30,7 @@ public class PokerHandTest {
 
         assertEquals(theCard.getSuit(), thePokerHand.getCards()[4].getSuit());
         assertEquals(theCard.getStringValue(), thePokerHand.getCards()[4].getStringValue());
-        assertEquals(theCard.calculateValue(), thePokerHand.getCards()[4].calculateValue());
+        assertEquals(theCard.getIntValue(), thePokerHand.getCards()[4].getIntValue());
     }
 
     @Test
