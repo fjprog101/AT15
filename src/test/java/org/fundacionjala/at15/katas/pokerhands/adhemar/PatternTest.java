@@ -16,9 +16,9 @@ public class PatternTest {
             new Card("6", "H"),
             new Card("Q", "D")
         };
-        Pattern pattern = new Pattern(cards1);
+        PokerHand hand = new PokerHand(cards1);
 
-        assertEquals(14, pattern.calculateTheHighestCard());
+        assertEquals(14, hand.calculateTheHighestCard());
     }
 
     @Test
@@ -30,9 +30,9 @@ public class PatternTest {
             new Card("K", "H"),
             new Card("A", "D")
         };
-        Pattern pattern = new Pattern(cards1);
+        PokerHand hand = new PokerHand(cards1);
 
-        assertTrue(pattern.isHighCard());
+        assertTrue(hand.isHighCard());
 
         Card[] cards2 = {
             new Card("4", "S"),
@@ -41,9 +41,9 @@ public class PatternTest {
             new Card("K", "H"),
             new Card("A", "D")
         };
-        pattern = new Pattern(cards2);
+        hand = new PokerHand(cards2);
 
-        assertFalse(pattern.isHighCard());
+        assertFalse(hand.isHighCard());
 
         Card[] cards3 = {
             new Card("4", "S"),
@@ -52,9 +52,9 @@ public class PatternTest {
             new Card("K", "S"),
             new Card("A", "S")
         };
-        pattern = new Pattern(cards3);
+        hand = new PokerHand(cards3);
 
-        assertFalse(pattern.isHighCard());
+        assertFalse(hand.isHighCard());
     }
 
     @Test
@@ -66,9 +66,9 @@ public class PatternTest {
             new Card("4", "H"),
             new Card("A", "D")
         };
-        Pattern pattern = new Pattern(cards1);
+        PokerHand hand = new PokerHand(cards1);
 
-        assertTrue(pattern.isPair());
+        assertTrue(hand.isPair());
 
         Card[] cards2 = {
             new Card("3", "S"),
@@ -77,9 +77,9 @@ public class PatternTest {
             new Card("3", "H"),
             new Card("T", "D")
         };
-        pattern = new Pattern(cards2);
+        hand = new PokerHand(cards2);
 
-        assertFalse(pattern.isPair());
+        assertFalse(hand.isPair());
 
         Card[] cards3 = {
             new Card("3", "S"),
@@ -88,9 +88,9 @@ public class PatternTest {
             new Card("5", "H"),
             new Card("T", "D")
         };
-        pattern = new Pattern(cards3);
+        hand = new PokerHand(cards3);
 
-        assertFalse(pattern.isPair());
+        assertFalse(hand.isPair());
 
         Card[] cards4 = {
             new Card("3", "S"),
@@ -98,9 +98,9 @@ public class PatternTest {
             new Card("5", "D"),
             new Card("6", "H")
         };
-        pattern = new Pattern(cards4);
+        hand = new PokerHand(cards4);
 
-        assertFalse(pattern.isPair());
+        assertFalse(hand.isPair());
 
         Card[] cards5 = {
             new Card("3", "D"),
@@ -109,9 +109,9 @@ public class PatternTest {
             new Card("Q", "D"),
             new Card("T", "D")
         };
-        pattern = new Pattern(cards5);
+        hand = new PokerHand(cards5);
 
-        assertFalse(pattern.isPair());
+        assertFalse(hand.isPair());
     }
 
     @Test
@@ -123,9 +123,9 @@ public class PatternTest {
             new Card("A", "H"),
             new Card("A", "D")
         };
-        Pattern pattern = new Pattern(cards1);
+        PokerHand hand = new PokerHand(cards1);
 
-        assertTrue(pattern.isTwoPairs());
+        assertTrue(hand.isTwoPairs());
 
         Card[] cards2 = {
             new Card("3", "S"),
@@ -134,9 +134,9 @@ public class PatternTest {
             new Card("A", "H"),
             new Card("T", "D")
         };
-        pattern = new Pattern(cards2);
+        hand = new PokerHand(cards2);
 
-        assertFalse(pattern.isTwoPairs());
+        assertFalse(hand.isTwoPairs());
 
         Card[] cards = {
             new Card("3", "S"),
@@ -145,9 +145,9 @@ public class PatternTest {
             new Card("A", "S"),
             new Card("T", "S")
         };
-        pattern = new Pattern(cards);
+        hand = new PokerHand(cards);
 
-        assertFalse(pattern.isTwoPairs());
+        assertFalse(hand.isTwoPairs());
     }
 
     @Test
@@ -159,9 +159,9 @@ public class PatternTest {
             new Card("Q", "H"),
             new Card("A", "D")
         };
-        Pattern pattern = new Pattern(cards1);
+        PokerHand hand = new PokerHand(cards1);
 
-        assertTrue(pattern.isThreeOfAKind());
+        assertTrue(hand.isThreeOfAKind());
 
         Card[] cards2 = {
             new Card("Q", "S"),
@@ -170,9 +170,9 @@ public class PatternTest {
             new Card("A", "H"),
             new Card("A", "D")
         };
-        pattern = new Pattern(cards2);
+        hand = new PokerHand(cards2);
 
-        assertFalse(pattern.isThreeOfAKind());
+        assertFalse(hand.isThreeOfAKind());
 
         Card[] cards3 = {
             new Card("Q", "D"),
@@ -181,9 +181,9 @@ public class PatternTest {
             new Card("A", "D"),
             new Card("Q", "D")
         };
-        pattern = new Pattern(cards3);
+        hand = new PokerHand(cards3);
 
-        assertFalse(pattern.isThreeOfAKind());
+        assertFalse(hand.isThreeOfAKind());
     }
 
     @Test
@@ -195,9 +195,9 @@ public class PatternTest {
             new Card("6", "D"),
             new Card("7", "D")
         };
-        Pattern pattern = new Pattern(cards1);
+        PokerHand hand = new PokerHand(cards1);
 
-        assertTrue(pattern.isOnlyStraight());
+        assertTrue(hand.isOnlyStraight());
 
         Card[] cards2 = {
             new Card("3", "D"),
@@ -206,9 +206,9 @@ public class PatternTest {
             new Card("6", "D"),
             new Card("8", "D")
         };
-        pattern = new Pattern(cards2);
+        hand = new PokerHand(cards2);
 
-        assertFalse(pattern.isOnlyStraight());
+        assertFalse(hand.isOnlyStraight());
 
         Card[] cards3 = {
             new Card("T", "D"),
@@ -217,9 +217,9 @@ public class PatternTest {
             new Card("K", "D"),
             new Card("A", "D")
         };
-        pattern = new Pattern(cards3);
+        hand = new PokerHand(cards3);
 
-        assertFalse(pattern.isOnlyStraight());
+        assertFalse(hand.isOnlyStraight());
 
         Card[] cards4 = {
             new Card("T", "D"),
@@ -228,9 +228,9 @@ public class PatternTest {
             new Card("Q", "D"),
             new Card("A", "D")
         };
-        pattern = new Pattern(cards4);
+        hand = new PokerHand(cards4);
 
-        assertTrue(pattern.isOnlyStraight());
+        assertTrue(hand.isOnlyStraight());
     }
 
     @Test
@@ -242,9 +242,9 @@ public class PatternTest {
             new Card("6", "D"),
             new Card("7", "D")
         };
-        Pattern pattern = new Pattern(cards1);
+        PokerHand hand = new PokerHand(cards1);
 
-        assertFalse(pattern.isOnlyFlush());
+        assertFalse(hand.isOnlyFlush());
         
         Card[] cards2 = {
             new Card("2", "D"),
@@ -253,9 +253,9 @@ public class PatternTest {
             new Card("6", "D"),
             new Card("7", "D")
         };
-        pattern = new Pattern(cards2);
+        hand = new PokerHand(cards2);
 
-        assertTrue(pattern.isOnlyFlush());
+        assertTrue(hand.isOnlyFlush());
         
         Card[] cards3 = {
             new Card("2", "D"),
@@ -264,9 +264,9 @@ public class PatternTest {
             new Card("6", "H"),
             new Card("7", "D")
         };
-        pattern = new Pattern(cards3);
+        hand = new PokerHand(cards3);
 
-        assertFalse(pattern.isOnlyFlush());
+        assertFalse(hand.isOnlyFlush());
     }
 
     @Test
@@ -278,9 +278,9 @@ public class PatternTest {
             new Card("A", "H"),
             new Card("A", "D")
         };
-        Pattern pattern = new Pattern(cards1);
+        PokerHand hand = new PokerHand(cards1);
 
-        assertTrue(pattern.isFullHouse());
+        assertTrue(hand.isFullHouse());
 
         Card[] cards2 = {
             new Card("A", "S"),
@@ -289,9 +289,9 @@ public class PatternTest {
             new Card("A", "H"),
             new Card("2", "D")
         };
-        pattern = new Pattern(cards2);
+        hand = new PokerHand(cards2);
 
-        assertFalse(pattern.isFullHouse());
+        assertFalse(hand.isFullHouse());
 
         Card[] cards3 = {
             new Card("5", "S"),
@@ -300,9 +300,9 @@ public class PatternTest {
             new Card("A", "H"),
             new Card("2", "D")
         };
-        pattern = new Pattern(cards3);
+        hand = new PokerHand(cards3);
 
-        assertFalse(pattern.isFullHouse());
+        assertFalse(hand.isFullHouse());
     }
 
     @Test
@@ -314,9 +314,9 @@ public class PatternTest {
             new Card("A", "H"),
             new Card("A", "D")
         };
-        Pattern pattern = new Pattern(cards1);
+        PokerHand hand = new PokerHand(cards1);
 
-        assertTrue(pattern.isFourOfAKind());
+        assertTrue(hand.isFourOfAKind());
 
         Card[] cards2 = {
             new Card("A", "S"),
@@ -325,9 +325,9 @@ public class PatternTest {
             new Card("A", "H"),
             new Card("A", "D")
         };
-        pattern = new Pattern(cards2);
+        hand = new PokerHand(cards2);
 
-        assertFalse(pattern.isFourOfAKind());
+        assertFalse(hand.isFourOfAKind());
     }
 
     @Test
@@ -339,9 +339,9 @@ public class PatternTest {
             new Card("Q", "C"),
             new Card("K", "C")
         };
-        Pattern pattern = new Pattern(cards1);
+        PokerHand hand = new PokerHand(cards1);
 
-        assertTrue(pattern.isStraightFlush());
+        assertTrue(hand.isStraightFlush());
 
         Card[] cards2 = {
             new Card("8", "C"),
@@ -350,9 +350,9 @@ public class PatternTest {
             new Card("Q", "C"),
             new Card("K", "C")
         };
-        pattern = new Pattern(cards2);
+        hand = new PokerHand(cards2);
 
-        assertFalse(pattern.isStraightFlush());
+        assertFalse(hand.isStraightFlush());
 
         Card[] cards3 = {
             new Card("9", "C"),
@@ -361,8 +361,8 @@ public class PatternTest {
             new Card("Q", "C"),
             new Card("K", "C")
         };
-        pattern = new Pattern(cards3);
+        hand = new PokerHand(cards3);
 
-        assertFalse(pattern.isStraightFlush());
+        assertFalse(hand.isStraightFlush());
     }
 }

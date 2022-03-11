@@ -1,14 +1,9 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
-import java.util.ArrayList;
-
-public class Pattern {
-    private Card[] cards;
-    private ArrayList<Group> groups;
+public abstract class Pattern extends Grouper {
 
     public Pattern(Card[] cards) {
-        this.cards = cards;
-        this.groups = new Grouper(this.cards).getGroups();
+        super(cards);
     }
 
     public boolean isHighCard() {

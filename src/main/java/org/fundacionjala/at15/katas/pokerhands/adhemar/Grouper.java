@@ -2,9 +2,9 @@ package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
 import java.util.ArrayList;
 
-public class Grouper {
-    private Card[] cards;
-    private ArrayList<Group> groups;
+public abstract class Grouper {
+    protected Card[] cards;
+    protected ArrayList<Group> groups;
 
     public Grouper(Card[] cards) {
         this.cards = cards;
@@ -40,5 +40,9 @@ public class Grouper {
 
     public ArrayList<Group> getGroups() {
         return this.groups;
+    }
+
+    public Card[] getCards() {
+        return this.cards;
     }
 }

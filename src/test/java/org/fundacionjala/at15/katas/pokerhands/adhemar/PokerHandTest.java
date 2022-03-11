@@ -1,6 +1,5 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -8,14 +7,14 @@ import org.junit.Test;
 public class PokerHandTest {
     @Test
     public void itShouldHaveFiveCards() {
-        String[][] charCards = {{"2", "H"}
+        String[][] stringCards = {{"2", "H"}
             , {"3", "D"}
             , {"5", "S"}
             , {"9", "C"}
             , {"K", "D"}};
-        PokerHand thePokerHand = new PokerHand(charCards);
+        PokerHand thePokerHand = new PokerHand(new CardGenerator(stringCards).getCards());
 
-        assertArrayEquals(charCards, thePokerHand.getStringCards());
+        assertEquals(5, thePokerHand.getCards().length);
     }
 
     @Test
@@ -25,7 +24,7 @@ public class PokerHandTest {
             , {"5", "S"}
             , {"9", "C"}
             , {"K", "D"}};
-        PokerHand thePokerHand = new PokerHand(stringCards);
+        PokerHand thePokerHand = new PokerHand(new CardGenerator(stringCards).getCards());
         Card theCard = new Card("K", "D");
 
         assertEquals(theCard.getSuit(), thePokerHand.getCards()[4].getSuit());
@@ -40,7 +39,7 @@ public class PokerHandTest {
             , {"J", "S"}
             , {"Q", "C"}
             , {"A", "D"}};
-        PokerHand thePokerHand = new PokerHand(stringCards1);
+        PokerHand thePokerHand = new PokerHand(new CardGenerator(stringCards1).getCards());
 
         assertEquals("high card", thePokerHand.defineHand());
 
@@ -49,7 +48,7 @@ public class PokerHandTest {
             , {"J", "S"}
             , {"J", "C"}
             , {"A", "D"}};
-        thePokerHand = new PokerHand(stringCards2);
+        thePokerHand = new PokerHand(new CardGenerator(stringCards2).getCards());
 
         assertEquals("pair", thePokerHand.defineHand());
 
@@ -58,7 +57,7 @@ public class PokerHandTest {
             , {"J", "S"}
             , {"J", "C"}
             , {"A", "D"}};
-        thePokerHand = new PokerHand(stringCards3);
+        thePokerHand = new PokerHand(new CardGenerator(stringCards3).getCards());
 
         assertEquals("two pairs", thePokerHand.defineHand());
 
@@ -67,7 +66,7 @@ public class PokerHandTest {
             , {"J", "S"}
             , {"5", "C"}
             , {"A", "D"}};
-        thePokerHand = new PokerHand(stringCards4);
+        thePokerHand = new PokerHand(new CardGenerator(stringCards4).getCards());
 
         assertEquals("three of a kind", thePokerHand.defineHand());
 
@@ -76,7 +75,7 @@ public class PokerHandTest {
             , {"6", "S"}
             , {"5", "C"}
             , {"4", "D"}};
-        thePokerHand = new PokerHand(stringCards5);
+        thePokerHand = new PokerHand(new CardGenerator(stringCards5).getCards());
 
         assertEquals("straight", thePokerHand.defineHand());
 
@@ -85,7 +84,7 @@ public class PokerHandTest {
             , {"6", "H"}
             , {"A", "H"}
             , {"4", "H"}};
-        thePokerHand = new PokerHand(stringCards6);
+        thePokerHand = new PokerHand(new CardGenerator(stringCards6).getCards());
 
         assertEquals("flush", thePokerHand.defineHand());
 
@@ -94,7 +93,7 @@ public class PokerHandTest {
             , {"8", "C"}
             , {"A", "D"}
             , {"A", "H"}};
-        thePokerHand = new PokerHand(stringCards7);
+        thePokerHand = new PokerHand(new CardGenerator(stringCards7).getCards());
 
         assertEquals("full house", thePokerHand.defineHand());
 
@@ -103,7 +102,7 @@ public class PokerHandTest {
             , {"8", "C"}
             , {"8", "D"}
             , {"A", "H"}};
-        thePokerHand = new PokerHand(stringCards8);
+        thePokerHand = new PokerHand(new CardGenerator(stringCards8).getCards());
 
         assertEquals("four of a kind", thePokerHand.defineHand());
 
@@ -112,7 +111,7 @@ public class PokerHandTest {
             , {"9", "H"}
             , {"8", "H"}
             , {"7", "H"}};
-        thePokerHand = new PokerHand(stringCards9);
+        thePokerHand = new PokerHand(new CardGenerator(stringCards9).getCards());
 
         assertEquals("straight flush", thePokerHand.defineHand());
 
@@ -121,7 +120,7 @@ public class PokerHandTest {
             , {"T", "H"}
             , {"T", "H"}
             , {"T", "D"}};
-        thePokerHand = new PokerHand(stringCards10);
+        thePokerHand = new PokerHand(new CardGenerator(stringCards10).getCards());
 
         assertEquals("It doesn't match", thePokerHand.defineHand());
     }
