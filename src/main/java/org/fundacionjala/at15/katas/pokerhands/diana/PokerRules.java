@@ -56,6 +56,7 @@ public class PokerRules {
                 }
             }
         }
+        range = 2;
         return arrayValueCards[indPD];
     }
 
@@ -70,6 +71,7 @@ public class PokerRules {
                 }
             }
         }
+        range = 3;
         Collections.sort(duplicateValues, Collections.reverseOrder());
         return duplicateValues;
     }
@@ -88,6 +90,7 @@ public class PokerRules {
                 }
             }
         }
+        range = 4;
         return arrayValueCards[indPDN];
     }
 
@@ -104,10 +107,12 @@ public class PokerRules {
             }
             visited.add(inde);
         }
+        range = 5;
         return true;
     }
 
     public boolean flush(ArrayList<String> valueOfSuitCards) {
+        range = 6;
         return new HashSet<String>(valueOfSuitCards).size() <= 1;
     }
 
@@ -130,6 +135,7 @@ public class PokerRules {
             }
         }
         List<Integer> arrayAux = fullHousValues.stream().distinct().collect(Collectors.toList());
+        range = 7;
         return arrayAux.stream().sorted().collect(Collectors.toList());
     }
 
@@ -151,6 +157,7 @@ public class PokerRules {
                 }
             }
         }
+        range = 8;
         return arrayValueCards[indPDNu];
     }
 
@@ -170,6 +177,7 @@ public class PokerRules {
             }
             return true;
         }
+        range = 9;
         return false;
     }
 }
