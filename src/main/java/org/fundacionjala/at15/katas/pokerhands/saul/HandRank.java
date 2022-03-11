@@ -52,11 +52,38 @@ public class HandRank {
     }
 
     private boolean isPair(List<Card> hand) {
-        return false;
+        boolean isPair = false;
+
+        for (int index = 0; index < hand.size(); index++) {
+            int next = index + 1;
+            if (next < hand.size()) {
+                if (hand.get(index).compareTo(hand.get(next)) == 0) {
+                    isPair = true;
+                    break;
+                }
+            }
+        }
+        return isPair;
     }
 
     private boolean isTwoPairs(List<Card> hand) {
-        return false;
+        boolean isTwoPairs = false;
+        int counter = 0;
+        for (int index = 0; index < hand.size(); index++) {
+            int next = index + 1;
+            if (next < hand.size()) {
+                if (hand.get(index).compareTo(hand.get(next)) == 0) {
+                    counter += 1;
+                    index += 1;
+                    if (counter == 2) {
+                        isTwoPairs = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return isTwoPairs;
     }
 
     private boolean isThreeKind(List<Card> hand) {
