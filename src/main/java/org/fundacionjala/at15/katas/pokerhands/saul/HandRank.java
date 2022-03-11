@@ -51,7 +51,7 @@ public class HandRank {
         }
     }
 
-    private boolean isPair(List<Card> hand) {
+    public boolean isPair(List<Card> hand) {
         boolean isPair = false;
 
         for (int index = 0; index < hand.size(); index++) {
@@ -66,7 +66,7 @@ public class HandRank {
         return isPair;
     }
 
-    private boolean isTwoPairs(List<Card> hand) {
+    public boolean isTwoPairs(List<Card> hand) {
         boolean isTwoPairs = false;
         int counter = 0;
         for (int index = 0; index < hand.size(); index++) {

@@ -21,7 +21,7 @@ public class Card implements Comparable<Card> {
     public int compareTo(Card otherCard) {
         if (this.value < otherCard.getValue()) {
             return -1;
-        } else if(this.value > otherCard.getValue()) {
+        } else if (this.value > otherCard.getValue()) {
             return 1;
         }
 
