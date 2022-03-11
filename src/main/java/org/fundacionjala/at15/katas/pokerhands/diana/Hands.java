@@ -32,7 +32,6 @@ public class Hands {
                     case "K":
                         valueOfFirstPosition.add(THIRTEEN);
                     default:
-                        // valueOfFirstPosition.add(0);
                 }
             }
         }
