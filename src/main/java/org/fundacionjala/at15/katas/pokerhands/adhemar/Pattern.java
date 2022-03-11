@@ -67,6 +67,10 @@ public class Pattern {
         return true;
     }
 
+    public boolean isOnlyFlush() {
+        return !isStraight() && isFlush();
+    }
+
     public boolean isFlush() {
         String prevSuit = this.cards[0].getSuit();
         for (Card card : this.cards) {

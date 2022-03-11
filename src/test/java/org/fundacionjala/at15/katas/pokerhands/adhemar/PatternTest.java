@@ -234,7 +234,7 @@ public class PatternTest {
     }
 
     @Test
-    public void itShouldBeAllCardsWithTheSameSuit() {
+    public void itShouldBeOnlyFlush() {
         Card[] cards1 = {
             new Card("3", "D"),
             new Card("4", "D"),
@@ -244,18 +244,29 @@ public class PatternTest {
         };
         Pattern pattern = new Pattern(cards1);
 
-        assertTrue(pattern.isFlush());
+        assertFalse(pattern.isOnlyFlush());
         
         Card[] cards2 = {
-            new Card("3", "D"),
+            new Card("2", "D"),
             new Card("4", "D"),
-            new Card("5", "C"),
+            new Card("5", "D"),
             new Card("6", "D"),
             new Card("7", "D")
         };
         pattern = new Pattern(cards2);
 
-        assertFalse(pattern.isFlush());
+        assertTrue(pattern.isOnlyFlush());
+        
+        Card[] cards3 = {
+            new Card("2", "D"),
+            new Card("4", "D"),
+            new Card("5", "D"),
+            new Card("6", "H"),
+            new Card("7", "D")
+        };
+        pattern = new Pattern(cards3);
+
+        assertFalse(pattern.isOnlyFlush());
     }
 
     @Test
