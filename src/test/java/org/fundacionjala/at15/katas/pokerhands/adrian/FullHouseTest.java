@@ -6,11 +6,21 @@ import org.junit.Test;
 
 public class FullHouseTest {
     @Test
+    public void fullHouseTest() {
+        FullHouse fullHouse = new FullHouse();
+        assertEquals(5, fullHouse.fullHouse("5H 5S 5C 4D 4H")[0]);
+        assertEquals(4, fullHouse.fullHouse("5H 5S 5C 4D 4H")[1]);
+        assertEquals(3, fullHouse.fullHouse("5H 5S 5C 4D 4H")[2]);
+    }
+
+    @Test
     public void theHandIsFullHouseTest() {
         FullHouse fullHouse = new FullHouse();
         boolean result = fullHouse.theHandIsFullHouse("2H 4S 4C 2D 4H");
         assertEquals(true, result);
         result = fullHouse.theHandIsFullHouse("2H 4S 4C 2D 5H");
+        assertEquals(false, result);
+        result = fullHouse.theHandIsFullHouse("5H 5S 5C 5D 4H");
         assertEquals(false, result);
     }
 

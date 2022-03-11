@@ -97,5 +97,19 @@ public class ScoreTest {
         assertEquals(26, score9c.getScore1());
         assertEquals(0, score9c.getScore2());
 
+        //FourOfAKindTest
+        Score score2 = new Score("JH JD JS JC KD", "JH JD JS JC AD");
+        assertEquals(0, score2.getScore1());
+        assertEquals(31, score2.getScore2());
+        Score score2a = new Score("AH JD JS JC JD", "JH JD JS JC 2D");
+        assertEquals(31, score2a.getScore1());
+        assertEquals(0, score2a.getScore2());
+        Score score2b = new Score("JH JD JS JC 2D", "4H 7S 5C 8D 9H");
+        assertEquals(37, score2b.getScore1());
+        assertEquals(0, score2b.getScore2());
+        Score score2c = new Score("4C AC 3H 2C 7C", "5H 5S 5C 5D 4H");
+        assertEquals(1, score2c.getScore1());
+        assertEquals(39, score2c.getScore2());
+
     }
 }

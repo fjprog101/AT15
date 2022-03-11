@@ -8,6 +8,7 @@ public class Score {
     private final int straightPoints = 5;
     private final int flushPoints = 10;
     private final int fullHousePoints = 20;
+    private final int fourOfAKindPoints = 30;
     public Score(String hand1, String hand2) {
         HighCard checkHighCard = new HighCard();
         String winner = checkHighCard.compareHandsWithHigherCard(hand1, hand2);
@@ -109,6 +110,21 @@ public class Score {
             score1 = score1 + fullHousePoints;
         } else if (fullHouse.theHandIsFullHouse(hand2)) {
             score2 = score2 + fullHousePoints;
+        }
+
+        FourOfAKind fourOfAKind = new FourOfAKind();
+        if (fourOfAKind.theHandHasFourOfAKind(hand1) && fourOfAKind.theHandHasFourOfAKind(hand2)) {
+            winner = fourOfAKind.compareHandsFourOfAKind(hand1, hand2);
+            if (winner.equals(hand1)) {
+                score1 = score1 + fourOfAKindPoints;
+            }
+            if (winner.equals(hand2)) {
+                score2 = score2 + fourOfAKindPoints;
+            }
+        } else if (fourOfAKind.theHandHasFourOfAKind(hand1)) {
+            score1 = score1 + fourOfAKindPoints;
+        } else if (fourOfAKind.theHandHasFourOfAKind(hand2)) {
+            score2 = score2 + fourOfAKindPoints;
         }
     }
 

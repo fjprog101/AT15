@@ -24,13 +24,16 @@ public class FullHouse extends Hand {
             result[1] = proxyArray[0];
             counter++;
         }
+        if (result[1] != 0 && result[0] != result[1]) {
+            counter++;
+        }
         result[2] = counter;
         return result;
     }
 
     public boolean theHandIsFullHouse(String hand) {
         boolean result = false;
-        if (fullHouse(hand)[2] == 2) {
+        if (fullHouse(hand)[2] == INDEX_THREE) {
             result = true;
         }
         return result;
