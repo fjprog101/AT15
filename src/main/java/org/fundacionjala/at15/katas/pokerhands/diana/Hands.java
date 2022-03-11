@@ -25,12 +25,16 @@ public class Hands {
                 switch (valueFirst) {
                     case "A":
                         valueOfFirstPosition.add(ONE);
+                        break;
                     case "J":
                         valueOfFirstPosition.add(TEN);
+                        break;
                     case "Q":
                         valueOfFirstPosition.add(ELEVEN);
+                        break;
                     case "K":
                         valueOfFirstPosition.add(TWELVE);
+                        break;
                     default:
                 }
             }

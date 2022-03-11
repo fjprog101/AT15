@@ -11,7 +11,7 @@ import org.junit.Test;
 
 public class HandsTest {
     Hands hand = new Hands();
-    String blackHand[] = { "2H", "3D", "5S", "9C", "KD" };
+    String blackHand[] = { "2H", "QD", "AS", "JC", "KD" };
 
     @Test
     public void itShouldHaveFiveCards() {
@@ -21,7 +21,7 @@ public class HandsTest {
 
     @Test
     public void itShouldReturnTheValueOfTheCard() {
-        List<Integer> blackHandValues = Arrays.asList(2, 3, 5, 9, 12);
+        List<Integer> blackHandValues = Arrays.asList(2, 11, 1, 10, 12);
         ArrayList<Integer> result = hand.valueOfCards(blackHand);
         assertEquals(blackHandValues, result);
     }
