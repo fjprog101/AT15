@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class ScoreTest {
     @Test
-    public void compareHandsTest() {
+    public void compareScoreTest() {
         //tie
         Score score = new Score("2D 3H 5C 9S KH", "2D 3H 5C 9S KH");
         assertEquals(0, score.getScore1());
@@ -19,10 +19,10 @@ public class ScoreTest {
         Score score1c = new Score("AH 8S 8C 3D 7H", "2S 8C 7S 7H 6S");
         assertEquals(3, score1c.getScore1());
         assertEquals(0, score1c.getScore2());
-        Score score1a = new Score("2H 4S 4C 5D 3H", "2S 8S AS QS 3S");
+        Score score1a = new Score("2H 4S 4C 5D 3H", "2S 8S AH QS 3S");
         assertEquals(2, score1a.getScore1());
         assertEquals(1, score1a.getScore2());
-        Score score1b = new Score("2H 4S KC 5D 3H", "2S 8S AS 8S 3S");
+        Score score1b = new Score("2H 4S KC 5D 3H", "2S 8S AH 8S 3S");
         assertEquals(0, score1b.getScore1());
         assertEquals(3, score1b.getScore2());
 
@@ -36,6 +36,9 @@ public class ScoreTest {
         Score score3b = new Score("8H AD 4S 7C 6D","9H KD KS 9C 2D");
         assertEquals(1, score3b.getScore1());
         assertEquals(5, score3b.getScore2());
+        Score score3c = new Score("8H 4D 4S 8C 6D","4H 5D 6S 7C 8D");
+        assertEquals(3, score3c.getScore1());
+        assertEquals(5, score3c.getScore2());
 
 
         //threeOfAKind
@@ -65,6 +68,20 @@ public class ScoreTest {
         Score score7c = new Score("7H 8D 9S TC JD", "4H 6D 5S 7C 8D");
         assertEquals(6, score7c.getScore1());
         assertEquals(0, score7c.getScore2());
+
+        //flush
+        Score score8 = new Score("2H 7H 3H 5H 8H", "2H KD AS 7C 2D");
+        assertEquals(10, score8.getScore1());
+        assertEquals(3, score8.getScore2());
+        Score score8a = new Score("2D 3H 5C 9S KH", "2S 8S AS 8S 3S");
+        assertEquals(0, score8a.getScore1());
+        assertEquals(13, score8a.getScore2());
+        Score score8b = new Score("2H 7H 3H 5H 8H", "4S KS 8S 7S 2S");
+        assertEquals(0, score8b.getScore1());
+        assertEquals(11, score8b.getScore2());
+        Score score8c = new Score("4C 8C 9C TC JC", "3H 7H 4H 5H 8H");
+        assertEquals(11, score8c.getScore1());
+        assertEquals(0, score8c.getScore2());
 
     }
 }

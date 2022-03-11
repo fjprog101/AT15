@@ -6,6 +6,7 @@ public class Score {
     private final int points3 = 3;
     private final int points4 = 4;
     private final int points5 = 5;
+    private final int points10 = 10;
     public Score(String hand1, String hand2) {
         HighCard checkHighCard = new HighCard();
         String winner = checkHighCard.compareHandsWithHigherCard(hand1, hand2);
@@ -77,6 +78,21 @@ public class Score {
             score1 = score1 + points5;
         } else if (straight.theHandIsStraight(hand2)) {
             score2 = score2 + points5;
+        }
+
+        Flush flush = new Flush();
+        if (flush.theHandIsFlush(hand1) && flush.theHandIsFlush(hand2)) {
+            winner = flush.compareHandsWithFlush(hand1, hand2);
+            if (winner.equals(hand1)) {
+                score1 = score1 + points10;
+            }
+            if (winner.equals(hand2)) {
+                score2 = score2 + points10;
+            }
+        } else if (flush.theHandIsFlush(hand1)) {
+            score1 = score1 + points10;
+        } else if (flush.theHandIsFlush(hand2)) {
+            score2 = score2 + points10;
         }
     }
 

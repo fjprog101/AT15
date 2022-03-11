@@ -35,7 +35,7 @@ public class TwoPair extends Hand {
 
     public boolean theHandHasTwoPairs(String hand) {
         boolean result = false;
-        if ((valueOfTwoPairs(hand)[0] != 0) && (valueOfTwoPairs(hand)[1] != 0)) {
+        if ((valueOfTwoPairs(hand)[1] != 0) /*&& (valueOfTwoPairs(hand)[0] != 0)*/) {
             result = true;
         }
         return result;

@@ -27,13 +27,27 @@ public class HandTest {
     }
 
     @Test
-    public void itShouldReturnTheHighestCardOfHand() {
-        HighCard checkHighCard = new HighCard();
-        String hand1 = "2H 3D 5S 9C AD";
-        int winner = checkHighCard.sortedHand(hand1)[4];
-        int expectedResult = 14;
-        assertEquals(expectedResult, winner);
+    public void itShouldReturnTheSortedHand() {
+        Hand hand = new Hand();
+        int[] result = new int[5];
+        result = hand.sortedHand("2H KD AS 7C 2D");
+        int[] expectedResult = {2, 2, 7, 13, 14};
+        for (int ind = 0; ind <= 4; ind ++) {
+            assertEquals(expectedResult[ind], result[ind]);
+        }
     }
+
+    @Test
+    public void itShouldReturnTheSuitOfHand() {
+        Hand hand = new Hand();
+        char[] result = new char[5];
+        result = hand.handSuit("2C 3D 5H 9S KD");
+        char[] expectedResult = {'C', 'D', 'H', 'S', 'D'};
+        for (int ind = 0; ind <= 4; ind ++) {
+            assertEquals(expectedResult[ind], result[ind]);
+        }
+    }
+
 
     @Test
     public void valueOfCardTest() {

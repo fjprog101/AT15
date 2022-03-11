@@ -20,7 +20,7 @@ public class GameTest {
         assertEquals(expectedResult, result);
 
         hand1 = "2H 4S KC 7D 5H";
-        hand2 = "2S 8S 6S QS 3S";
+        hand2 = "2S 8S 6H QS 3S";
         String result2 = game.comparePlayersHands(player1, hand1, player2, hand2);
         assertEquals("Black wins", result2);
     }

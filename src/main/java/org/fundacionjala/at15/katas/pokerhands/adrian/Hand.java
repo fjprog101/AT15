@@ -21,8 +21,11 @@ public class Hand {
     protected static final int INDEX_THREE = 3;
     protected static final int INDEX_FOUR = 4;
     protected static final int INDEX_SIX = 6;
+    protected static final int INDEX_SEVEN = 7;
     protected static final int INDEX_NINE = 9;
+    protected static final int INDEX_TEN = 10;
     protected static final int INDEX_TWELVE = 12;
+    protected static final int INDEX_THIRTEEN = 13;
 
     public String compareHands(String hand1, String hand2) {
         Score score = new Score(hand1, hand2);
@@ -47,6 +50,12 @@ public class Hand {
         int[] array = {number1, number2, number3, number4, number5};
         Arrays.sort(array);
         return array;
+    }
+
+    public char[] handSuit(String hand) {
+        char[] suits = {hand.charAt(1), hand.charAt(INDEX_FOUR), hand.charAt(INDEX_SEVEN),
+                        hand.charAt(INDEX_TEN), hand.charAt(INDEX_THIRTEEN)};
+        return suits;
     }
 
     public int valueOfCard(Character character) {
