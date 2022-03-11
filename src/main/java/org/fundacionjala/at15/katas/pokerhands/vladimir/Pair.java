@@ -3,7 +3,7 @@ package org.fundacionjala.at15.katas.pokerhands.vladimir;
 public class Pair extends PokerHands {
 
     @Override
-    public String run(Hand blackHand, Hand whiteHand) {
+    public String sameHandComparation(Hand blackHand, Hand whiteHand) {
         Card highCardBlackHand = getPair(blackHand.getCards());
         Card highCardWhiteHand = getPair(whiteHand.getCards());
         if (highCardBlackHand.getValue() > highCardWhiteHand.getValue()) {

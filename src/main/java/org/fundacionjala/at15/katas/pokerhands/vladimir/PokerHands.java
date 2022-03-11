@@ -16,5 +16,5 @@ public abstract class PokerHands {
     protected final int handValue8 = 8;
     protected final int handValue9 = 9;
 
-    public abstract String run(Hand blackHand, Hand whiteHand);
+    public abstract String sameHandComparation(Hand blackHand, Hand whiteHand);
 }

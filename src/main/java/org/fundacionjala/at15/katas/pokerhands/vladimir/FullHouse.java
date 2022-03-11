@@ -3,7 +3,7 @@ package org.fundacionjala.at15.katas.pokerhands.vladimir;
 public class FullHouse extends PokerHands {
 
     @Override
-    public String run(Hand blackHand, Hand whiteHand) {
+    public String sameHandComparation(Hand blackHand, Hand whiteHand) {
         Card highCardBlackHand = getFullHouse(blackHand.getCards());
         Card highCardWhiteHand = getFullHouse(whiteHand.getCards());
         if (highCardBlackHand.getValue() > highCardWhiteHand.getValue()) {
