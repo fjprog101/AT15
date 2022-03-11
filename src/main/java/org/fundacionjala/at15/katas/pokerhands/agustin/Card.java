@@ -29,4 +29,5 @@ public abstract class Card {
     public void setValue(int valueParam) {
         this.value = valueParam;
     }
+
 }
