@@ -51,17 +51,4 @@ public class Converter {
         }
         return cardsValueInt;
     }
-
-    public int[] orderCards(int[] hand) {
-        for (int ind = 0; ind < hand.length; ind++) {
-            for (int aux = ind + 1; aux < ind; aux++)  {
-                if (hand[ind] > hand[aux]) {
-                    auxMin = hand[aux];
-                    hand[aux] = hand[ind];
-                    hand[ind] = auxMin;
-                }
-            }
-        }
-        return hand;
-    }
 }
