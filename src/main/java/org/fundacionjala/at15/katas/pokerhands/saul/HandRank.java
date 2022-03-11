@@ -96,7 +96,7 @@ public class HandRank {
                 if (hand.get(index).compareTo(hand.get(next)) == 0) {
                     counter += 1;
 
-                    if (counter == 2) {
+                    if (counter == TWO) {
                         isThreeKind = true;
                         break;
                     }
@@ -118,7 +118,7 @@ public class HandRank {
             if (next < hand.size()) {
                 if (hand.get(index).getValue() - hand.get(next).getValue() == -1) {
                     counter += 1;
-                    if (counter == 4) {
+                    if (counter == FOUR) {
                         isStraight = true;
                     }
                 } else {
@@ -130,8 +130,25 @@ public class HandRank {
         return isStraight;
     }
 
-    private boolean isFlush(List<Card> hand) {
-        return false;
+    public boolean isFlush(List<Card> hand) {
+        boolean isFlush = false;
+        int counter = 0;
+
+        for (int index = 0; index < hand.size(); index++) {
+            int next = index + 1;
+            if (next < hand.size()) {
+                if (hand.get(index).getSuit() == hand.get(next).getSuit()) {
+                    counter += 1;
+                    if (counter == FOUR) {
+                        isFlush = true;
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+
+        return isFlush;
     }
 
     private boolean isFullHouse(List<Card> hand) {
