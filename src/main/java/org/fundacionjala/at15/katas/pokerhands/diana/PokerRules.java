@@ -9,15 +9,15 @@ import java.util.stream.Collectors;
 
 public class PokerRules {
     static final int ZERO = 0;
-    // private ArrayList<Integer> numeros;
-    // private ArrayList<String> suit;
+    private ArrayList<Integer> numeros;
+    private ArrayList<String> suits;
     private int range;
     // public int cardHigh;
     // public int secondCardHigh;
 
-    public PokerRules(ArrayList<Integer> numeros, ArrayList<String> valueOfSecondPosition) {
-        // this.numeros = numeros;
-        // this.suit = suit;
+    public PokerRules(ArrayList<Integer> numeros, ArrayList<String> suits) {
+        this.numeros = numeros;
+        this.suits = suits;
         this.range = 0;
         // this.cardHigh = 0;
         // this.secondCardHigh = 0;
@@ -25,16 +25,15 @@ public class PokerRules {
     }
 
     public void evaluateHand() {
-        // highCard();
-        // pair();
-        // twoPair();
-        // threeOfAKind();
-        // straight();
-        // flush();
-        // fullHouse();
-        // fourOfAKind();
-        // straightFlush();
-
+        highCard(numeros);
+        pair(numeros);
+        twoPair(numeros);
+        threeOfAKind(numeros);
+        straight(numeros);
+        flush(suits);
+        fullHouse(numeros);
+        fourOfAKind(numeros);
+        straightFlush(numeros, suits);
     }
 
     public int getRange() {
@@ -71,7 +70,7 @@ public class PokerRules {
                 }
             }
         }
-        return duplicateValues;
+        return duplicateValues.stream().distinct().collect(Collectors.toList());
     }
 
     public int threeOfAKind(ArrayList<Integer> valueOfCards) {
