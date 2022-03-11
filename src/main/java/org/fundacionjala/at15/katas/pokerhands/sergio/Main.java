@@ -4,42 +4,19 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        // String[] black = {"AD", "JD", "TD", "QD", "KD"};
-        // Splitter splitterTest = new Splitter(black);
-        // splitterTest.theSplit();
-        // StraightFlushIdentifier theIdentificationTest = new
-        // StraightFlushIdentifier(splitterTest);
-        // theIdentificationTest.theIdentification();
-        // }
-        //     int[] valuePokerHand = { 4, 3, 4, 13, 3 };
-        //     int checked = -1;
-        //     int[] valuePokerHandChecked = new int[5];
-        //     ArrayList<Integer> value = new ArrayList<Integer>();
-        //     ArrayList<Integer> frequency = new ArrayList<Integer>();
-
-        //     for (int ind = 0; ind < valuePokerHand.length; ind++) {
-        //         int count = 1;
-        //         for (int ind2 = ind + 1; ind2 < valuePokerHand.length; ind2++) {
-        //             if (valuePokerHand[ind] == valuePokerHand[ind2]) {
-        //                 count++;
-        //                 valuePokerHandChecked[ind2] = checked;
-        //             }
-        //         }
-        //         if (valuePokerHandChecked[ind] != checked) {
-        //             valuePokerHandChecked[ind] = count;
-        //         }
-        //     }
-        //     for (int ind = 0; ind < valuePokerHandChecked.length; ind++) {
-        //         if (valuePokerHandChecked[ind] != checked) {
-        //             value.add(valuePokerHand[ind]);
-        //             frequency.add(valuePokerHandChecked[ind]);
-        //         }
-        //     }
-        //     System.out.println(value.get(0));
-        //     System.out.println(frequency.get(0));
-//        List<Card> number = new ArrayList<Card>();
-//        number.add(new Card("3","D"));
-//        number.add(new Card("2","H"));
-//        System.out.println(number);
+//        Card card1 = new Card("2", "D");
+//        Card card2 = new Card("3", "D");
+//        Card card3 = new Card("4", "D");
+//        Card card4 = new Card("5", "D");
+//        Card card5 = new Card("6", "D");
+//        List<Card> cardList = new ArrayList<>();
+//        cardList.add(card1);
+//        cardList.add(card2);
+//        cardList.add(card3);
+//        cardList.add(card4);
+//        cardList.add(card5);
+//        StraightIdentifier straightIdentificationTest = new StraightIdentifier(cardList);
+//        FlushIdentifier flushIdentificationTest = new FlushIdentifier(cardList);
+//        StraightFlushIdentifier straightFlushIdentificationTest = new StraightFlushIdentifier();
     }
 }

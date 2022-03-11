@@ -1,36 +1,24 @@
 package org.fundacionjala.at15.katas.pokerhands.sergio;
 
-import java.util.*;
-
 public class StraightFlushIdentifier extends Identifier {
+    private boolean isStraightFlush = false;
+    private StraightIdentifier straightIdentification;
+    private FlushIdentifier flushIdentification;
 
-//    private boolean isStraightFlush = false;
-//
-//
-//    public StraightFlushIdentifier(Identifier fluchIdentifier, Identifier StraightIdentifier) {
-//        this.valuePokerHand = pokerHandSplitted.getValuePokerHand();
-//        this.suitPokerHand = pokerHandSplitted.getSuitPokerHand();
-//    }
-//
-//    public boolean getIsStraightFlush() {
-//        return this.isStraightFlush;
-//    }
-//
-//    public boolean getIsFlush() {
-//        return this.isFlush;
-//    }
-//
-//    public boolean getIsStraight() {
-//        return isStraight;
-//    }
-//
-    public void theIdentification() {
-//        straightIdentifier();
-//        if (isFlush && isStraight) {
-//            isStraightFlush = true;
-//        }
+
+    public StraightFlushIdentifier(StraightIdentifier straightIdentification, FlushIdentifier flushIdentification) {
+        this.straightIdentification = straightIdentification;
+        this.flushIdentification = flushIdentification;
+        theIdentification();
     }
-//
 
+    public boolean isStraightFlush() {
+        return isStraightFlush;
+    }
 
+    public void theIdentification() {
+        if (flushIdentification.getIsFlush() && straightIdentification.isStraight()) {
+            isStraightFlush = true;
+        }
+    }
 }
