@@ -127,4 +127,23 @@ public class HandRankTest {
         HandRank handRank = new HandRank();
         assertTrue(handRank.isFourKind(myHand));
     }
+
+    @Test
+    public void itShouldVerifiesStraightFlushHand() {
+        Card firstCard = new Card(5, 'S');
+        Card secondCard = new Card(6, 'S');
+        Card thirdCard = new Card(7, 'S');
+        Card fourthCard = new Card(8, 'S');
+        Card fifthCard = new Card(9, 'S');
+
+        List<Card> myHand = new ArrayList<Card>();
+        myHand.add(firstCard);
+        myHand.add(secondCard);
+        myHand.add(thirdCard);
+        myHand.add(fourthCard);
+        myHand.add(fifthCard);
+
+        HandRank handRank = new HandRank();
+        assertTrue(handRank.isStraightFlush(myHand));
+    }
 }

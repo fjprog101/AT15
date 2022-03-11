@@ -184,8 +184,21 @@ public class HandRank {
         return isFourKind;
     }
 
-    private boolean isStraightFlush(List<Card> hand) {
-        return false;
+    public boolean isStraightFlush(List<Card> hand) {
+        boolean isStraightFlush = false;
+
+        if (isStraight(hand)) {
+            isStraightFlush = true;
+            char suit = hand.get(0).getSuit();
+            for (Card card : hand) {
+                if (card.getSuit() != suit) {
+                    isStraightFlush = false;
+                    break;
+                }
+            }
+        }
+
+        return isStraightFlush;
     }
 
     enum Rank {
