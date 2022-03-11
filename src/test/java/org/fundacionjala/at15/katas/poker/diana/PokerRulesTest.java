@@ -12,30 +12,6 @@ public class PokerRulesTest {
     ArrayList<Integer> numbers = new ArrayList<Integer>();
 
     @Test
-    public void itShouldReturnHighCard() {
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(5);
-        numbers.add(9);
-        numbers.add(13);
-        PokerRules pokerRules = new PokerRules(numbers, suits);
-        int result = pokerRules.highCard(numbers);
-        assertEquals(13, result);
-    }
-
-    @Test
-    public void itShouldReturnPair() {
-        numbers.add(5);
-        numbers.add(3);
-        numbers.add(5);
-        numbers.add(7);
-        numbers.add(13);
-        PokerRules pokerRules = new PokerRules(numbers, suits);
-        int result = pokerRules.pair(numbers);
-        assertEquals(5, result);
-    }
-
-    @Test
     public void itShouldReturnTwoPairs() {
         numbers.add(13);
         numbers.add(7);
@@ -48,18 +24,6 @@ public class PokerRulesTest {
         expectedResult.add(7);
         expectedResult.add(5);
         assertEquals(expectedResult, result);
-    }
-
-    @Test
-    public void itShouldReturnThreeOfAKind() {
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(2);
-        numbers.add(7);
-        numbers.add(2);
-        PokerRules pokerRules = new PokerRules(numbers, suits);
-        int result = pokerRules.threeOfAKind(numbers);
-        assertEquals(2, result);
     }
 
     @Test
@@ -99,18 +63,6 @@ public class PokerRulesTest {
         expectedResult.add(5);
         expectedResult.add(7);
         assertEquals(expectedResult, result);
-    }
-
-    @Test
-    public void itShouldReturnFourOfAKind() {
-        numbers.add(8);
-        numbers.add(8);
-        numbers.add(2);
-        numbers.add(8);
-        numbers.add(8);
-        PokerRules pokerRules = new PokerRules(numbers, suits);
-        int result = pokerRules.fourOfAKind(numbers);
-        assertEquals(8, result);
     }
 
     @Test

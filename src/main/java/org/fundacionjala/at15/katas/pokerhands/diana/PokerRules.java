@@ -29,39 +29,19 @@ public class PokerRules {
     }
 
     public void evaluateHand() {
-        highCard(number);
-        pair(number);
-        twoPair(number);
-        threeOfAKind(number);
-        straight(number);
-        flush(suit);
-        fullHouse(number);
-        fourOfAKind(number);
-        straightFlush(number, suit);
+        // highCard(number);
+        // pair(number);
+        // twoPair(number);
+        // threeOfAKind(number);
+        // straight(number);
+        // flush(suit);
+        // fullHouse(number);
+        // fourOfAKind(number);
+        // straightFlush(number, suit);
     }
 
     public int getRange() {
         return range;
-    }
-
-    public int highCard(ArrayList<Integer> valueOfCards) {
-        int valueHighCard = Collections.max(valueOfCards);
-        range = ONE;
-        return valueHighCard;
-    }
-
-    public int pair(ArrayList<Integer> valueOfCards) {
-        range = TWO;
-        int ind2 = 0;
-        int[] arrayValueCards = valueOfCards.stream().mapToInt(i -> i).toArray();
-        for (int ind1 = 0; ind1 < arrayValueCards.length - 1; ind1++) {
-            for (ind2 = ind1 + 1; ind2 < arrayValueCards.length; ind2++) {
-                if (arrayValueCards[ind1] == arrayValueCards[ind2]) {
-                    return arrayValueCards[ind2];
-                }
-            }
-        }
-        return arrayValueCards[ind2];
     }
 
     public List<Integer> twoPair(ArrayList<Integer> valueOfCards) {
@@ -78,24 +58,6 @@ public class PokerRules {
         range = THREE;
         Collections.sort(duplicateValues, Collections.reverseOrder());
         return duplicateValues;
-    }
-
-    public int threeOfAKind(ArrayList<Integer> valueOfCards) {
-        int ind2 = 0;
-        int ind3 = 0;
-        int[] arrayValueCards = valueOfCards.stream().mapToInt(i -> i).toArray();
-        for (int ind1 = 0; ind1 < arrayValueCards.length - 1; ind1++) {
-            for (ind2 = ind1 + 1; ind2 < arrayValueCards.length; ind2++) {
-                for (ind3 = ind2 + 1; ind3 < arrayValueCards.length; ind3++) {
-                    if ((arrayValueCards[ind1] == arrayValueCards[ind2])
-                            && (arrayValueCards[ind2] == arrayValueCards[ind3])) {
-                        return arrayValueCards[ind3];
-                    }
-                }
-            }
-        }
-        range = FOUR;
-        return arrayValueCards[ind3];
     }
 
     public boolean straight(ArrayList<Integer> valueOfCards) {
@@ -141,28 +103,6 @@ public class PokerRules {
         List<Integer> arrayAux = fullHouseValues.stream().distinct().collect(Collectors.toList());
         range = SEVEN;
         return arrayAux.stream().sorted().collect(Collectors.toList());
-    }
-
-    public int fourOfAKind(ArrayList<Integer> valueOfCards) {
-        int ind2 = 0;
-        int ind3 = 0;
-        int ind4 = 0;
-        int[] arrayValueCards = valueOfCards.stream().mapToInt(i -> i).toArray();
-        for (int ind1 = 0; ind1 < arrayValueCards.length - 1; ind1++) {
-            for (ind2 = ind1 + 1; ind2 < arrayValueCards.length; ind2++) {
-                for (ind3 = ind2 + 1; ind3 < arrayValueCards.length; ind3++) {
-                    for (ind4 = ind2 + 1; ind4 < arrayValueCards.length; ind4++) {
-                        if ((arrayValueCards[ind1] == arrayValueCards[ind2])
-                                && (arrayValueCards[ind2] == arrayValueCards[ind3])
-                                && (arrayValueCards[ind3] == arrayValueCards[ind4])) {
-                            return arrayValueCards[ind4];
-                        }
-                    }
-                }
-            }
-        }
-        range = EIGHT;
-        return arrayValueCards[ind4];
     }
 
     public boolean straightFlush(ArrayList<Integer> valueOfCards, ArrayList<String> valueOfSuitCards) {
