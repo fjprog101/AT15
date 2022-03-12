@@ -15,6 +15,10 @@ public class Player {
         return name;
     }
 
+    public List<Card> getPokerHand() {
+        return pokerHand;
+    }
+
     public Card getPokerHandCard(int ind) {
         return pokerHand.get(ind);
     }
