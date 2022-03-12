@@ -8,7 +8,7 @@ public class ValueHandStraightTest {
     @Test
     public void itShouldBeStraight() {
         String[] hand = {"2C", "6D", "4H", "3H", "5C"};
-        boolean expected = true;
+        String expected = "is Straight";
         ValueHandStraight value = new ValueHandStraight();
         assertEquals(expected, value.rankedHand(hand));
     }
@@ -16,7 +16,7 @@ public class ValueHandStraightTest {
     @Test
     public void itShouldBeNoStraight() {
         String[] hand = {"2C", "6D", "2H", "3H", "5C"};
-        boolean expected = false;
+        String expected = null;
         ValueHandStraight value = new ValueHandStraight();
         assertEquals(expected, value.rankedHand(hand));
     }
@@ -24,7 +24,7 @@ public class ValueHandStraightTest {
     @Test
     public void itShouldBeNoStraightIsFlush() {
         String[] hand = {"2H", "6H", "4H", "3H", "5H"};
-        boolean expected = false;
+        String expected = null;
         ValueHandStraight value = new ValueHandStraight();
         assertEquals(expected, value.rankedHand(hand));
     }
