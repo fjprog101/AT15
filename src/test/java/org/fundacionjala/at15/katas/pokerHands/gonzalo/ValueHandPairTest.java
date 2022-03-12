@@ -9,7 +9,7 @@ public class ValueHandPairTest {
     public void itShouldBeOnePair() {
         String[] hand = {"2H", "6S", "AD", "5C", "5H"};
         String expected = "pair";
-        ValueHandPair value = new ValueHandPair();
+        RankedHand value = new ValueHandPair();
         assertEquals(expected, value.rankedHand(hand));
     }
 
@@ -17,7 +17,7 @@ public class ValueHandPairTest {
     public void itNotShouldBeOnePair() {
         String[] hand = {"2H", "3S", "AD", "9C", "5H"};
         String expected = null;
-        ValueHandPair value = new ValueHandPair();
+        RankedHand value = new ValueHandPair();
         assertEquals(expected, value.rankedHand(hand));
     }
 
@@ -25,7 +25,7 @@ public class ValueHandPairTest {
     public void itNotShouldBeOnePairTwoPair() {
         String[] hand = {"2H", "2S", "AD", "5C", "5H"};
         String expected = null;
-        ValueHandPair value = new ValueHandPair();
+        RankedHand value = new ValueHandPair();
         assertEquals(expected, value.rankedHand(hand));
     }
 
@@ -33,7 +33,7 @@ public class ValueHandPairTest {
     public void itNotShouldBeOnePairThreeOfKind() {
         String[] hand = {"3H", "3S", "AD", "9C", "3H"};
         String expected = null;
-        ValueHandPair value = new ValueHandPair();
+        RankedHand value = new ValueHandPair();
         assertEquals(expected, value.rankedHand(hand));
     }
 }

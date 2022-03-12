@@ -9,7 +9,7 @@ public class ValueHandStraightTest {
     public void itShouldBeStraight() {
         String[] hand = {"2C", "6D", "4H", "3H", "5C"};
         String expected = "is Straight";
-        ValueHandStraight value = new ValueHandStraight();
+        RankedHand value = new ValueHandStraight();
         assertEquals(expected, value.rankedHand(hand));
     }
 
@@ -17,7 +17,7 @@ public class ValueHandStraightTest {
     public void itShouldBeNoStraight() {
         String[] hand = {"2C", "6D", "2H", "3H", "5C"};
         String expected = null;
-        ValueHandStraight value = new ValueHandStraight();
+        RankedHand value = new ValueHandStraight();
         assertEquals(expected, value.rankedHand(hand));
     }
 
@@ -25,7 +25,7 @@ public class ValueHandStraightTest {
     public void itShouldBeNoStraightIsFlush() {
         String[] hand = {"2H", "6H", "4H", "3H", "5H"};
         String expected = null;
-        ValueHandStraight value = new ValueHandStraight();
+        RankedHand value = new ValueHandStraight();
         assertEquals(expected, value.rankedHand(hand));
     }
 }
