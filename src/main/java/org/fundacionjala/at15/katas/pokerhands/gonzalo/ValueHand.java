@@ -1,10 +1,10 @@
 package org.fundacionjala.at15.katas.pokerhands.gonzalo;
 
-public class ValueHand extends Hand {
+public class ValueHand {
+
     private String value;
-    private ValueHandPair pair = new ValueHandPair();
 
     public String getValueHand(String[] hand) {
-        return null;
+        return value;
     }
 }

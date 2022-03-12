@@ -1,8 +1,7 @@
-package org.fundacionjala.at15.katas.pokerHands.gonzalo;
+package org.fundacionjala.at15.katas.pokerhands.gonzalo;
 
 import static org.junit.Assert.assertEquals;
 
-import org.fundacionjala.at15.katas.pokerhands.gonzalo.ValueHandPair;
 import org.junit.Test;
 
 public class ValueHandPairTest {
@@ -11,7 +10,7 @@ public class ValueHandPairTest {
         String[] hand = {"2H", "6S", "AD", "5C", "5H"};
         String expected = "pair";
         ValueHandPair value = new ValueHandPair();
-        assertEquals(expected, value.comparePair(hand));
+        assertEquals(expected, value.rankedHand(hand));
     }
 
     @Test
@@ -19,7 +18,7 @@ public class ValueHandPairTest {
         String[] hand = {"2H", "3S", "AD", "9C", "5H"};
         String expected = null;
         ValueHandPair value = new ValueHandPair();
-        assertEquals(expected, value.comparePair(hand));
+        assertEquals(expected, value.rankedHand(hand));
     }
 
     @Test
@@ -27,7 +26,7 @@ public class ValueHandPairTest {
         String[] hand = {"2H", "2S", "AD", "5C", "5H"};
         String expected = null;
         ValueHandPair value = new ValueHandPair();
-        assertEquals(expected, value.comparePair(hand));
+        assertEquals(expected, value.rankedHand(hand));
     }
 
     @Test
@@ -35,6 +34,6 @@ public class ValueHandPairTest {
         String[] hand = {"3H", "3S", "AD", "9C", "3H"};
         String expected = null;
         ValueHandPair value = new ValueHandPair();
-        assertEquals(expected, value.comparePair(hand));
+        assertEquals(expected, value.rankedHand(hand));
     }
 }

@@ -1,18 +1,17 @@
-package org.fundacionjala.at15.katas.pokerHands.gonzalo;
+package org.fundacionjala.at15.katas.pokerhands.gonzalo;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.fundacionjala.at15.katas.pokerhands.gonzalo.DeckOfCards;
 import org.junit.Test;
 
-public class cardsTest {
+public class DeckOfCardsTest {
     @Test
     public void itShouldBeCardsClub() {
         DeckOfCards deck = new DeckOfCards();
-        List<String>  clubs = new ArrayList<>();
+        List<String> clubs = new ArrayList<>();
         clubs.add("2C");
         clubs.add("3C");
         clubs.add("4C");
@@ -33,7 +32,7 @@ public class cardsTest {
     @Test
     public void itShouldBeCardsDiamons() {
         DeckOfCards deck = new DeckOfCards();
-        List<String>  diamons = new ArrayList<>();
+        List<String> diamons = new ArrayList<>();
         diamons.add("2D");
         diamons.add("3D");
         diamons.add("4D");
@@ -54,7 +53,7 @@ public class cardsTest {
     @Test
     public void itShouldBeCardsHearts() {
         DeckOfCards deck = new DeckOfCards();
-        List<String>  hearts = new ArrayList<>();
+        List<String> hearts = new ArrayList<>();
         hearts.add("2H");
         hearts.add("3H");
         hearts.add("4H");
@@ -75,7 +74,7 @@ public class cardsTest {
     @Test
     public void itShouldBeCardsSpades() {
         DeckOfCards deck = new DeckOfCards();
-        List<String>  spades = new ArrayList<>();
+        List<String> spades = new ArrayList<>();
         spades.add("2S");
         spades.add("3S");
         spades.add("4S");

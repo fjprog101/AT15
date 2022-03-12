@@ -7,7 +7,10 @@ public class Converter {
     private char valueThisCard;
     private char[] cardsValue;
     private int[] cardsValueInt;
-    private int auxMin;
+    private int auxMax = 0;
+    private int auxMin = 0;
+    private int major = 0;
+    private int less = 14;
 
     public char[] converterCharValue(String[] hand) {
         cardsValue = new char[cardsInHand];
@@ -50,5 +53,25 @@ public class Converter {
             }
         }
         return cardsValueInt;
+    }
+
+    public int getPositionMinorCard(int[] hand) {
+        for (int ind = 0; ind < hand.length; ind++) {
+            if (hand[ind] < less) {
+                less = hand[ind];
+                auxMin = ind;
+            }
+        }
+        return auxMin;
+    }
+
+    public int getPositionMajorCard(int[] hand) {
+        for (int ind = 0; ind < hand.length; ind++) {
+            if (hand[ind] > major) {
+                major = hand[ind];
+                auxMax = ind;
+            }
+        }
+        return auxMax;
     }
 }

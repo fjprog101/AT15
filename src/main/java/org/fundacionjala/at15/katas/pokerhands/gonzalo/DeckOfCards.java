@@ -3,11 +3,11 @@ package org.fundacionjala.at15.katas.pokerhands.gonzalo;
 import java.util.List;
 
 public class DeckOfCards {
-    private String clubs = "C";
-    private String diamonds = "D";
-    private String hearts = "H";
-    private String spades = "S";
-    private CardSuit suit;
+    private final String clubs = "C";
+    private final String diamonds = "D";
+    private final String hearts = "H";
+    private final String spades = "S";
+    private Cards suit;
 
     public List<String> clubsSuit() {
         suit = new CardSuit();
