@@ -4,6 +4,7 @@ public class Croupier {
     private Player player1;
     private Player player2;
     private String firstDecision;
+    private String finalDecision;
     private PointsAssigner player1Points;
     private PointsAssigner player2Points;
 

@@ -17,6 +17,10 @@ public class FrequencyIdentifier extends Identifier {
         return frequency;
     }
 
+    public int[] getValuePokerHand() {
+        return valuePokerHand;
+    }
+
     public List<Card> getPokerHand() {
         return pokerHand;
     }
