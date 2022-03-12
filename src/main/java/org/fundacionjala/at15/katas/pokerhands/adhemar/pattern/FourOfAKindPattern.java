@@ -1,4 +1,6 @@
-package org.fundacionjala.at15.katas.pokerhands.adhemar;
+package org.fundacionjala.at15.katas.pokerhands.adhemar.pattern;
+
+import org.fundacionjala.at15.katas.pokerhands.adhemar.*;
 
 public class FourOfAKindPattern extends Pattern {
     public FourOfAKindPattern(Card[] cards) {

@@ -1,8 +1,9 @@
-package org.fundacionjala.at15.katas.pokerhands.adhemar;
+package org.fundacionjala.at15.katas.pokerhands.adhemar.pattern;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.fundacionjala.at15.katas.pokerhands.adhemar.Card;
 import org.junit.Test;
 
 public class FullHousePatternTest {

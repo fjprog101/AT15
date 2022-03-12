@@ -1,6 +1,8 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
 import static org.junit.Assert.assertEquals;
+
+import org.fundacionjala.at15.katas.pokerhands.adhemar.pattern.PairPattern;
 import org.junit.Test;
 
 public class GrouperTest {

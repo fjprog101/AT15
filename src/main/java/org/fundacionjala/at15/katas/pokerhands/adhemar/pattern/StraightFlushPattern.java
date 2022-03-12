@@ -1,4 +1,6 @@
-package org.fundacionjala.at15.katas.pokerhands.adhemar;
+package org.fundacionjala.at15.katas.pokerhands.adhemar.pattern;
+
+import org.fundacionjala.at15.katas.pokerhands.adhemar.*;
 
 public class StraightFlushPattern extends Pattern {
     public StraightFlushPattern(Card[] cards) {

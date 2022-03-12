@@ -1,5 +1,7 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
+import org.fundacionjala.at15.katas.pokerhands.adhemar.pattern.*;
+
 public class PokerHand {
     private Card[] cards;
     private Hand hand;
