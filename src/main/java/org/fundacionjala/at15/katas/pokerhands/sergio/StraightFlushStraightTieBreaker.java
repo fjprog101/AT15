@@ -2,7 +2,7 @@ package org.fundacionjala.at15.katas.pokerhands.sergio;
 
 import java.util.Arrays;
 
-public class StraightFlushTieBreaker extends TieBreaker {
+public class StraightFlushStraightTieBreaker extends TieBreaker {
     private int[] valuePokerHand1 = new int[NUMBER_5];
     private int[] valuePokerHand2 = new int[NUMBER_5];
 
