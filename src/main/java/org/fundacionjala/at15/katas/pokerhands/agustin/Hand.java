@@ -3,11 +3,12 @@ package org.fundacionjala.at15.katas.pokerhands.agustin;
 public class Hand {
 
     private Card highestCard = new Card();
-
-    private Card[] cardCollection;
+    private String handNotation = "";
+    private final Card[] cardCollection;
 
     public Hand(Card[] cardCollection) {
         this.cardCollection = cardCollection;
+        setHandNotation();
     }
 
     public void setHighestCard() {
@@ -22,11 +23,17 @@ public class Hand {
         return cardCollection;
     }
 
-    public void setCardCollection(Card[] param) {
-        this.cardCollection = param;
-    }
-
     public Card getHighestCard() {
         return highestCard;
+    }
+
+    public void setHandNotation() {
+        for (Card card : cardCollection) {
+            handNotation = handNotation.concat(card.getCardNotation() + " ");
+        }
+    }
+
+    public String getHandNotation() {
+        return handNotation;
     }
 }

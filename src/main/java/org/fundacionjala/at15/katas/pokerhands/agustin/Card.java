@@ -32,4 +32,8 @@ public class Card {
     public void setValue(int param) {
         this.value = param;
     }
+
+    public String getCardNotation() {
+        return this.notation + this.suit;
+    }
 }

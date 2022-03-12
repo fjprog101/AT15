@@ -20,4 +20,16 @@ public class CardTest {
         assertEquals(value, card.getValue());
         assertEquals(notation, card.getNotation());
     }
+
+    @Test
+    public void itShouldHaveFullNotation() {
+        String fullNotation = "8C";
+
+        Card card = new Card();
+        card.setValue(Notation.EIGHT.getValue());
+        card.setSuit(Suit.CLUB.getSuit());
+        card.setNotation(Notation.EIGHT.getNotation());
+
+        assertEquals(fullNotation, card.getCardNotation());
+    }
 }
