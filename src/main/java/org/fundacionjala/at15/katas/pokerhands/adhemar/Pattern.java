@@ -30,10 +30,10 @@ public abstract class Pattern extends Grouper {
         return true;
     }
 
-    public int calculateTheHighestCard() {
-        int high = this.cards[0].getIntValue();
-        for (Card card : this.cards) {
-            high = card.getIntValue() > high ? card.getIntValue() : high;
+    public static Card calculateTheHighestCard(Card[] cards) {
+        Card high = cards[0];
+        for (Card card : cards) {
+            high = card.getIntValue() > high.getIntValue() ? card : high;
         }
         return high;
     }
