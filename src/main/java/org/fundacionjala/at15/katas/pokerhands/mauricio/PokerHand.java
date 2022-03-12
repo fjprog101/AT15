@@ -7,6 +7,7 @@ public class PokerHand {
     private List<Card> cards;
 
     private final int numberCards = 5;
+    private final int score50ForFlush = 50;
 
     public PokerHand(Card card1, Card card2, Card card3, Card card4, Card card5) {
         cards = new ArrayList<>();
@@ -48,5 +49,25 @@ public class PokerHand {
             }
         }
         return score;
+    }
+
+    public int getFlushScore() {
+        String cardSuits = getSuits();
+        int score = 0;
+        String hearts = "HHHHH";
+        if (hearts.equals(cardSuits)) {
+            score = score50ForFlush;
+        }
+        return score;
+    }
+
+    public String getSuits() {
+        String[] cardSuits = new String[numberCards];
+        String card = "";
+        for (int vari = 0; vari < cardSuits.length; vari++) {
+            card = cards.get(vari).getSuit() + card;
+
+        }
+        return card;
     }
 }

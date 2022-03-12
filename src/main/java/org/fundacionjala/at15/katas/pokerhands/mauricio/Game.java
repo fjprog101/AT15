@@ -14,26 +14,11 @@ public class Game {
     public String whoWins() {
         String winner = "";
 
-        // if (pairs() == 1) {
-        // winner = "Black wins";
-
-        // } else if (pairs() == 2) {
-        // winner = "White wins";
-        //
-        // } else if (pairs() == tie4) {
-        // winner = "Tie!";
-        //
-        // } else if (highCard() == 1) {
-        // winner = "Black wins";
-        //
-        // } else if (highCard() == 2) {
-        // winner = "White wins";
-        //
-        // } else if (highCard() == tie3) {
-        // winner = "Tie!";
-        // }
-
-        if (cardsWithTheSameValue() == 1) {
+        if (flushCards() == 1) { //Ordered from high to low poker hand rank
+            winner = "Black wins";
+        } else if (flushCards() == 2) {
+            winner = "White wins";
+        } else if (cardsWithTheSameValue() == 1) {
             winner = "Black wins";
         } else if (cardsWithTheSameValue() == 2) {
             winner = "White wins";
@@ -42,7 +27,6 @@ public class Game {
         } else if (highCard() == 2) {
             winner = "White wins";
         }
-
         return winner;
     }
 
@@ -64,6 +48,20 @@ public class Game {
         int aux1 = 0;
         int auxH1 = h1.getPairCardsScore();
         int auxH2 = h2.getPairCardsScore();
+        if (auxH1 > auxH2) { // 1 = wins black, 2 = wins white, 3 = empate
+            aux1 = 1;
+        } else if (auxH1 < auxH2) {
+            aux1 = 2;
+        } else if (auxH1 == auxH2) {
+            aux1 = tie4;
+        }
+        return aux1;
+    }
+
+    public int flushCards() {
+        int aux1 = 0;
+        int auxH1 = h1.getFlushScore();
+        int auxH2 = h2.getFlushScore();
         if (auxH1 > auxH2) { // 1 = wins black, 2 = wins white, 3 = empate
             aux1 = 1;
         } else if (auxH1 < auxH2) {

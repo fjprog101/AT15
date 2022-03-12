@@ -22,6 +22,10 @@ public  class Card {
         this.suit = suit;
     }
 
+    public String getSuit() {
+        return suit;
+    }
+
     public int getValueOfCard() {
         int result = 0;
         switch (value) {
