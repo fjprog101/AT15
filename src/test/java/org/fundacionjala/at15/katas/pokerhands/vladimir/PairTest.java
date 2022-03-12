@@ -21,8 +21,8 @@ public class PairTest {
         card2[3] = new Card("6", "S");
         card2[4] = new Card("J", "S");
         Hand whiteHand = new Hand(card2);
-        Game game = new Game();
-        String result = game.playGame(new Pair(), blackHand, whiteHand);
+        SameKindOfHand game = new SameKindOfHand();
+        String result = game.sameHand(new Pair(), blackHand, whiteHand);
         String expected = "Black hand wins";
         assertEquals(expected, result);
     }

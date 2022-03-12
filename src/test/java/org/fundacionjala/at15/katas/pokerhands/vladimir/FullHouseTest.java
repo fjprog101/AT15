@@ -21,8 +21,8 @@ public class FullHouseTest {
         card2[3] = new Card("J", "S");
         card2[4] = new Card("Q", "S");
         Hand whiteHand = new Hand(card2);
-        Game game = new Game();
-        String result = game.playGame(new FullHouse(), blackHand, whiteHand);
+        SameKindOfHand game = new SameKindOfHand();
+        String result = game.sameHand(new FullHouse(), blackHand, whiteHand);
         String expected = "Black hand wins";
         assertEquals(expected, result);
     }

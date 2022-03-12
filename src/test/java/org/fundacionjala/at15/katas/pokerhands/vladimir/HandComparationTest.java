@@ -150,14 +150,36 @@ public class HandComparationTest {
         card1[4] = new Card("Q", "S");
         Hand blackHand = new Hand(card1);
         Card[] card2 = new Card[5];
-        card2[0] = new Card("5", "C");
-        card2[1] = new Card("6", "C");
-        card2[2] = new Card("7", "C");
-        card2[3] = new Card("8", "C");
+        card2[0] = new Card("K", "C");
+        card2[1] = new Card("K", "D");
+        card2[2] = new Card("K", "H");
+        card2[3] = new Card("K", "S");
         card2[4] = new Card("9", "C");
         Hand whiteHand = new Hand(card2);
         HandsComparation handsComparation = new HandsComparation(blackHand, whiteHand);
         String result = handsComparation.compare();
+        String expected = "White hand wins";
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void itShouldReturnTheWinnerOfSameHandComparation() {
+        Card[] card1 = new Card[5];
+        card1[0] = new Card("5", "C");
+        card1[1] = new Card("5", "D");
+        card1[2] = new Card("7", "D");
+        card1[3] = new Card("9", "H");
+        card1[4] = new Card("9", "S");
+        Hand blackHand = new Hand(card1);
+        Card[] card2 = new Card[5];
+        card2[0] = new Card("2", "C");
+        card2[1] = new Card("2", "C");
+        card2[2] = new Card("4", "D");
+        card2[3] = new Card("K", "H");
+        card2[4] = new Card("K", "S");
+        Hand whiteHand = new Hand(card2);
+        HandsComparation handsComparation = new HandsComparation(blackHand, whiteHand);
+        String result = handsComparation.sameHandComparation(blackHand, whiteHand);
         String expected = "White hand wins";
         assertEquals(expected, result);
     }

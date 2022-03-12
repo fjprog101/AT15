@@ -21,8 +21,8 @@ public class PokerTest {
         card2[3] = new Card("5", "S");
         card2[4] = new Card("5", "S");
         Hand whiteHand = new Hand(card2);
-        Game game = new Game();
-        String result = game.playGame(new Poker(), blackHand, whiteHand);
+        SameKindOfHand game = new SameKindOfHand();
+        String result = game.sameHand(new Poker(), blackHand, whiteHand);
         String expected = "Black hand wins";
         assertEquals(expected, result);
     }

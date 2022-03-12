@@ -21,8 +21,8 @@ public class StraightFlushTest {
         card2[3] = new Card("Q", "H");
         card2[4] = new Card("K", "H");
         Hand whiteHand = new Hand(card2);
-        Game game = new Game();
-        String result = game.playGame(new StraightFlush(), blackHand, whiteHand);
+        SameKindOfHand game = new SameKindOfHand();
+        String result = game.sameHand(new StraightFlush(), blackHand, whiteHand);
         String expected = "Black hand wins";
         assertEquals(expected, result);
     }

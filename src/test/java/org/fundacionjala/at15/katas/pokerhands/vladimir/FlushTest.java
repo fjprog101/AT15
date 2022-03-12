@@ -21,8 +21,8 @@ public class FlushTest {
         card2[3] = new Card("6", "C");
         card2[4] = new Card("Q", "C");
         Hand whiteHand = new Hand(card2);
-        Game game = new Game();
-        String result = game.playGame(new Flush(), blackHand, whiteHand);
+        SameKindOfHand game = new SameKindOfHand();
+        String result = game.sameHand(new Flush(), blackHand, whiteHand);
         String expected = "White hand wins";
         assertEquals(expected, result);
     }
