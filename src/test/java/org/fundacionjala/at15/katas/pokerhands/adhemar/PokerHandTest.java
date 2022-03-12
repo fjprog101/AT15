@@ -7,24 +7,16 @@ import org.junit.Test;
 public class PokerHandTest {
     @Test
     public void itShouldHaveFiveCards() {
-        String[][] stringCards = {{"2", "H"}
-            , {"3", "D"}
-            , {"5", "S"}
-            , {"9", "C"}
-            , {"K", "D"}};
-        PokerHand thePokerHand = new PokerHand(new CardGenerator(stringCards).getCards());
+        String[] stringHand = {"2H", "3D", "5S", "9C", "KD"};
+        PokerHand thePokerHand = new PokerHand(new CardGenerator(stringHand).getCards());
 
         assertEquals(5, thePokerHand.getCards().length);
     }
 
     @Test
     public void itShouldCreateCards() {
-        String[][] stringCards = {{"2", "H"}
-            , {"3", "D"}
-            , {"5", "S"}
-            , {"9", "C"}
-            , {"K", "D"}};
-        PokerHand thePokerHand = new PokerHand(new CardGenerator(stringCards).getCards());
+        String[] stringHand = {"2H", "3D", "5S", "9C", "KD"};
+        PokerHand thePokerHand = new PokerHand(new CardGenerator(stringHand).getCards());
         Card theCard = new Card("K", "D");
 
         assertEquals(theCard.getSuit(), thePokerHand.getCards()[4].getSuit());
@@ -34,93 +26,53 @@ public class PokerHandTest {
 
     @Test
     public void isShouldDefineHand() {
-        String[][] stringCards1 = {{"2", "H"}
-            , {"K", "D"}
-            , {"J", "S"}
-            , {"Q", "C"}
-            , {"A", "D"}};
-        PokerHand thePokerHand = new PokerHand(new CardGenerator(stringCards1).getCards());
+        String[] stringHand1 = {"2H", "KD", "JS", "QC", "AD"};
+        PokerHand thePokerHand = new PokerHand(new CardGenerator(stringHand1).getCards());
 
         assertEquals("high card", thePokerHand.defineHand());
 
-        String[][] stringCards2 = {{"2", "H"}
-            , {"K", "D"}
-            , {"J", "S"}
-            , {"J", "C"}
-            , {"A", "D"}};
-        thePokerHand = new PokerHand(new CardGenerator(stringCards2).getCards());
+        String[] stringHand2 = {"2H", "KD", "JS", "JC", "AD"};
+        thePokerHand = new PokerHand(new CardGenerator(stringHand2).getCards());
 
         assertEquals("pair", thePokerHand.defineHand());
 
-        String[][] stringCards3 = {{"2", "H"}
-            , {"A", "D"}
-            , {"J", "S"}
-            , {"J", "C"}
-            , {"A", "D"}};
-        thePokerHand = new PokerHand(new CardGenerator(stringCards3).getCards());
+        String[] stringHand3 = {"2H", "AD", "JS", "JC", "AD"};
+        thePokerHand = new PokerHand(new CardGenerator(stringHand3).getCards());
 
         assertEquals("two pairs", thePokerHand.defineHand());
 
-        String[][] stringCards4 = {{"A", "H"}
-            , {"A", "D"}
-            , {"J", "S"}
-            , {"5", "C"}
-            , {"A", "D"}};
-        thePokerHand = new PokerHand(new CardGenerator(stringCards4).getCards());
+        String[] stringHand4 = {"AH", "AD", "JS", "5C", "AD"};
+        thePokerHand = new PokerHand(new CardGenerator(stringHand4).getCards());
 
         assertEquals("three of a kind", thePokerHand.defineHand());
 
-        String[][] stringCards5 = {{"8", "H"}
-            , {"7", "D"}
-            , {"6", "S"}
-            , {"5", "C"}
-            , {"4", "D"}};
-        thePokerHand = new PokerHand(new CardGenerator(stringCards5).getCards());
+        String[] stringHand5 = {"8H", "7D", "6S", "5C", "4D"};
+        thePokerHand = new PokerHand(new CardGenerator(stringHand5).getCards());
 
         assertEquals("straight", thePokerHand.defineHand());
 
-        String[][] stringCards6 = {{"8", "H"}
-            , {"7", "H"}
-            , {"6", "H"}
-            , {"A", "H"}
-            , {"4", "H"}};
-        thePokerHand = new PokerHand(new CardGenerator(stringCards6).getCards());
+        String[] stringHand6 = {"8H", "7H", "6H", "AH", "4H"};
+        thePokerHand = new PokerHand(new CardGenerator(stringHand6).getCards());
 
         assertEquals("flush", thePokerHand.defineHand());
 
-        String[][] stringCards7 = {{"8", "H"}
-            , {"8", "H"}
-            , {"8", "C"}
-            , {"A", "D"}
-            , {"A", "H"}};
-        thePokerHand = new PokerHand(new CardGenerator(stringCards7).getCards());
+        String[] stringHand7 = {"8H", "8H", "8C", "AD", "AH"};
+        thePokerHand = new PokerHand(new CardGenerator(stringHand7).getCards());
 
         assertEquals("full house", thePokerHand.defineHand());
 
-        String[][] stringCards8 = {{"8", "H"}
-            , {"8", "H"}
-            , {"8", "C"}
-            , {"8", "D"}
-            , {"A", "H"}};
-        thePokerHand = new PokerHand(new CardGenerator(stringCards8).getCards());
+        String[] stringHand8 = {"8H", "8H", "8C", "8D", "AH"};
+        thePokerHand = new PokerHand(new CardGenerator(stringHand8).getCards());
 
         assertEquals("four of a kind", thePokerHand.defineHand());
 
-        String[][] stringCards9 = {{"J", "H"}
-            , {"T", "H"}
-            , {"9", "H"}
-            , {"8", "H"}
-            , {"7", "H"}};
-        thePokerHand = new PokerHand(new CardGenerator(stringCards9).getCards());
+        String[] stringHand9 = {"JH", "TH", "9H", "8H", "7H"};
+        thePokerHand = new PokerHand(new CardGenerator(stringHand9).getCards());
 
         assertEquals("straight flush", thePokerHand.defineHand());
 
-        String[][] stringCards10 = {{"T", "H"}
-            , {"T", "H"}
-            , {"T", "H"}
-            , {"T", "H"}
-            , {"T", "D"}};
-        thePokerHand = new PokerHand(new CardGenerator(stringCards10).getCards());
+        String[] stringHand10 = {"TH", "TH", "TH", "TH", "TD"};
+        thePokerHand = new PokerHand(new CardGenerator(stringHand10).getCards());
 
         assertEquals("It doesn't match", thePokerHand.defineHand());
     }

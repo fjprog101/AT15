@@ -30,7 +30,7 @@ public abstract class Grouper {
         for (Group group : this.groups) {
             int counter = 0;
             for (Card card : this.cards) {
-                if (group.getStringValue() == card.getStringValue()) {
+                if (group.getStringValue().equals(card.getStringValue())) {
                     counter++;
                 }
             }

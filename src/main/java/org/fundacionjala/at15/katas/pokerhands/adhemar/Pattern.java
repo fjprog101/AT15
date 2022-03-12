@@ -69,7 +69,7 @@ public abstract class Pattern extends Grouper {
     public boolean isFlush() {
         String prevSuit = this.cards[0].getSuit();
         for (Card card : this.cards) {
-            if (prevSuit != card.getSuit()) {
+            if (!prevSuit.equals(card.getSuit())) {
                 return false;
             }
             prevSuit = card.getSuit();
