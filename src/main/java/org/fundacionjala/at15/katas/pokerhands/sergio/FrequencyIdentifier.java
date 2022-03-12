@@ -9,12 +9,16 @@ public class FrequencyIdentifier extends Identifier {
     private List<Card> pokerHand = new ArrayList<>();
     private int[] valuePokerHandChecked = new int[NUMBER_5];
     private int[] valuePokerHand = new int[NUMBER_5];
-    private ArrayList<Integer> value = new ArrayList<>();
-    private ArrayList<Integer> frequency = new ArrayList<>();
+    private List<Integer> value = new ArrayList<>();
+    private List<Integer> frequency = new ArrayList<>();
     private static final int NUMBER_5 = 5;
 
-    public ArrayList<Integer> getFrequency() {
+    public List<Integer> getFrequency() {
         return frequency;
+    }
+
+    public List<Integer> getValue() {
+        return value;
     }
 
     public int[] getValuePokerHand() {
