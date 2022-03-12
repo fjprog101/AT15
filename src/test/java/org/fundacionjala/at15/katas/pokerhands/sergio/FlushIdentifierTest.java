@@ -22,10 +22,10 @@ public class FlushIdentifierTest {
         cardList.add(card4);
         cardList.add(card5);
 
-        FlushIdentifier identificationTest = new FlushIdentifier();
+        Identifier identificationTest = new FlushIdentifier();
         identificationTest.theIdentification(cardList);
 
-        assertTrue(identificationTest.getIsFlush());
+        assertTrue(identificationTest.isFlush());
     }
 
     @Test
@@ -42,9 +42,9 @@ public class FlushIdentifierTest {
         cardList.add(card4);
         cardList.add(card5);
 
-        FlushIdentifier identificationTest = new FlushIdentifier();
+        Identifier identificationTest = new FlushIdentifier();
         identificationTest.theIdentification(cardList);
 
-        assertFalse(identificationTest.getIsFlush());
+        assertFalse(identificationTest.isFlush());
     }
 }

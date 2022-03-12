@@ -22,7 +22,7 @@ public class FullHouseIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        FullHouseIdentifier fullHouseIdentificationTest = new FullHouseIdentifier();
+        Identifier fullHouseIdentificationTest = new FullHouseIdentifier();
         fullHouseIdentificationTest.theIdentification(cardList);
 
         assertTrue(fullHouseIdentificationTest.isFullHouse());
@@ -41,7 +41,7 @@ public class FullHouseIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        FullHouseIdentifier fullHouseIdentificationTest = new FullHouseIdentifier();
+        Identifier fullHouseIdentificationTest = new FullHouseIdentifier();
         fullHouseIdentificationTest.theIdentification(cardList);
 
         assertFalse(fullHouseIdentificationTest.isFullHouse());
@@ -60,7 +60,7 @@ public class FullHouseIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        FullHouseIdentifier fullHouseIdentificationTest = new FullHouseIdentifier();
+        Identifier fullHouseIdentificationTest = new FullHouseIdentifier();
         fullHouseIdentificationTest.theIdentification(cardList);
 
         assertFalse(fullHouseIdentificationTest.isFullHouse());

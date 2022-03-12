@@ -5,13 +5,8 @@ import java.util.List;
 
 
 public class FlushIdentifier extends Identifier {
-    private boolean isFlush = false;
+    //private boolean isFlush = false;
     private List<Card> pokerHand = new ArrayList<>();
-    private static final int NUMBER_4 = 4;
-
-    public boolean getIsFlush() {
-        return isFlush;
-    }
 
     public void theIdentification(List<Card> newPokerHand) {
         this.pokerHand = newPokerHand;
@@ -22,7 +17,7 @@ public class FlushIdentifier extends Identifier {
             }
         }
         if (equalIndicator == NUMBER_4) {
-            isFlush = true;
+            setFlush(true);
         }
     }
 }

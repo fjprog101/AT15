@@ -21,7 +21,7 @@ public class StraightIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        StraightIdentifier identificationTest = new StraightIdentifier();
+        Identifier identificationTest = new StraightIdentifier();
         identificationTest.theIdentification(cardList);
 
         assertTrue(identificationTest.isStraight());
@@ -40,8 +40,7 @@ public class StraightIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        StraightIdentifier identificationTest = new StraightIdentifier();
-        identificationTest.theIdentification(cardList);
+        Identifier identificationTest = new StraightIdentifier();
 
         assertFalse(identificationTest.isStraight());
     }

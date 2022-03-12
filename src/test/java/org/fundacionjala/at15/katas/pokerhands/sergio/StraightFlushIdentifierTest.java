@@ -42,7 +42,7 @@ public class StraightFlushIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        StraightFlushIdentifier straightFlushIdentificationTest = new StraightFlushIdentifier();
+        Identifier straightFlushIdentificationTest = new StraightFlushIdentifier();
         straightFlushIdentificationTest.theIdentification(cardList);
 
         assertFalse(straightFlushIdentificationTest.isStraightFlush());
@@ -61,7 +61,7 @@ public class StraightFlushIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        StraightFlushIdentifier straightFlushIdentificationTest = new StraightFlushIdentifier();
+        Identifier straightFlushIdentificationTest = new StraightFlushIdentifier();
         straightFlushIdentificationTest.theIdentification(cardList);
         assertFalse(straightFlushIdentificationTest.isStraightFlush());
     }

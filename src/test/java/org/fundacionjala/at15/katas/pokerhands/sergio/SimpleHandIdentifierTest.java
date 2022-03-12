@@ -23,7 +23,7 @@ public class SimpleHandIdentifierTest {
         cardList.add(card4);
         cardList.add(card5);
 
-        SimpleHandIdentifier simpleHandIdentificationTest = new SimpleHandIdentifier();
+        Identifier simpleHandIdentificationTest = new SimpleHandIdentifier();
         simpleHandIdentificationTest.theIdentification(cardList);
 
         assertTrue(simpleHandIdentificationTest.isSimpleHand());
@@ -42,7 +42,7 @@ public class SimpleHandIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        SimpleHandIdentifier simpleHandIdentificationTest = new SimpleHandIdentifier();
+        Identifier simpleHandIdentificationTest = new SimpleHandIdentifier();
         simpleHandIdentificationTest.theIdentification(cardList);
 
         assertFalse(simpleHandIdentificationTest.isSimpleHand());

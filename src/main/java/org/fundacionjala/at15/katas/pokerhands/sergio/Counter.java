@@ -1,7 +1,14 @@
 package org.fundacionjala.at15.katas.pokerhands.sergio;
 
-public abstract class Counter {
+public class Counter {
+//    Identifier poker;
+//    Identifier full;
+//    Identifier straight;
+//    Identifier flush;
+//    Identifier straightFlush;
+//    Identifier threesome;
+//    Identifier
 
-    public abstract int sumValue(int[] handValue);
+    //public int value(int[] handValue);
 
 }

@@ -5,15 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class StraightIdentifier extends Identifier {
-    private boolean isStraight = false;
     private List<Card> pokerHand = new ArrayList<>();
     private int[] valuePokerHand = new int[NUMBER_5];
-    private static final int NUMBER_4 = 4;
-    private static final int NUMBER_5 = 5;
-
-    public boolean isStraight() {
-        return isStraight;
-    }
 
     private void arrayFill() {
         for (int ind = 0; ind < NUMBER_5; ind++) {
@@ -32,7 +25,7 @@ public class StraightIdentifier extends Identifier {
             }
         }
         if (straightIndicator == NUMBER_4) {
-            isStraight = true;
+            setStraight(true);
         }
 
     }

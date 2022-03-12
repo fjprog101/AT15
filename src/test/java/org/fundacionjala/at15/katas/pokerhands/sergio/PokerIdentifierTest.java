@@ -21,7 +21,7 @@ public class PokerIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        PokerIdentifier pokerIdentificationTest = new PokerIdentifier();
+        Identifier pokerIdentificationTest = new PokerIdentifier();
         pokerIdentificationTest.theIdentification(cardList);
 
         assertTrue(pokerIdentificationTest.isPoker());
@@ -40,7 +40,7 @@ public class PokerIdentifierTest {
         cardList.add(card3);
         cardList.add(card4);
         cardList.add(card5);
-        PokerIdentifier pokerIdentificationTest = new PokerIdentifier();
+        Identifier pokerIdentificationTest = new PokerIdentifier();
         pokerIdentificationTest.theIdentification(cardList);
 
         assertFalse(pokerIdentificationTest.isPoker());

@@ -4,13 +4,7 @@ import java.util.List;
 
 public class OnlyPairIdentifier extends Identifier {
     private List<Card> pokerHand;
-    private boolean isOnlyPair = false;
     private DoublePairIdentifier doublePairIdentification;
-
-
-    public boolean isOnlyPair() {
-        return isOnlyPair;
-    }
 
     public void theIdentification(List<Card> newPokerHand) {
         this.pokerHand = newPokerHand;
@@ -21,7 +15,7 @@ public class OnlyPairIdentifier extends Identifier {
         boolean onePair = frequency.getFrequency().contains(2);
 
         if (onePair && !doublePairIdentification.isDoublePair()) {
-            isOnlyPair = true;
+            setOnlyPair(true);
         }
     }
 }

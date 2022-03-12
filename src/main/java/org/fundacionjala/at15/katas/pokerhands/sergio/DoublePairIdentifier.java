@@ -4,13 +4,7 @@ import java.util.List;
 
 public class DoublePairIdentifier extends Identifier {
     private List<Card> pokerHand;
-    private boolean isDoublePair = false;
-    private static final int NUMBER_3 = 3;
     private boolean onePair = false;
-
-    public boolean isDoublePair() {
-        return isDoublePair;
-    }
 
     public void theIdentification(List<Card> newPokerHand) {
         this.pokerHand = newPokerHand;
@@ -30,7 +24,7 @@ public class DoublePairIdentifier extends Identifier {
             }
         }
         if (counter == 1) {
-            isDoublePair = true;
+            setDoublePair(true);
         }
     }
 }
