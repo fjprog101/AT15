@@ -6,16 +6,16 @@ public class PokerHand extends Pattern {
     }
 
     public String defineHand() {
-        String hand = this.isStraightFlush() ? "straight flush"
-                    : this.isFourOfAKind() ? "four of a kind"
-                    : this.isFullHouse() ? "full house"
-                    : this.isOnlyFlush() ? "flush"
-                    : this.isOnlyStraight() ? "straight"
-                    : this.isThreeOfAKind() ? "three of a kind"
-                    : this.isTwoPairs() ? "two pairs"
-                    : this.isPair() ? "pair"
-                    : this.isHighCard() ? "high card"
-                    : "It doesn't match";
-        return hand;
+        HandsList hand = this.isStraightFlush() ? HandsList.STRAIGHT_FLUSH
+                    : this.isFourOfAKind() ? HandsList.FOUR
+                    : this.isFullHouse() ? HandsList.FULL
+                    : this.isOnlyFlush() ? HandsList.FLUSH
+                    : this.isOnlyStraight() ? HandsList.STRAIGHT
+                    : this.isThreeOfAKind() ? HandsList.THREE
+                    : this.isTwoPairs() ? HandsList.TWO_PAIRS
+                    : this.isPair() ? HandsList.PAIR
+                    : this.isHighCard() ? HandsList.HIGH
+                    : HandsList.NONE;
+        return hand.getHandName();
     }
 }
