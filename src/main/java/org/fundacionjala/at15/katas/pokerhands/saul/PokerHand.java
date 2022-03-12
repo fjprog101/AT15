@@ -2,38 +2,31 @@ package org.fundacionjala.at15.katas.pokerhands.saul;
 
 import java.util.List;
 
-public class PokerHand implements Comparable<PokerHand> {
-    private List<Card> pokerHand;
+public class PokerHand extends Hand {
     private HandRank rank;
 
-    public PokerHand(List<Card> pokerHand) {
-        this.pokerHand = pokerHand;
+    public PokerHand(List<Card> cards) {
+        super(cards);
         rank = new HandRank();
-        rank.setRank(pokerHand);
-        rank.setValue(pokerHand);
+        calculateHandRank();
     }
 
-    public List<Card> getHand() {
-        return pokerHand;
+    @Override
+    public void calculateHandRank() {
+        rank.calculateRank(cards);
+        rank.calculateValue(cards);
     }
 
-    public int getHandValue() {
-        return rank.getValue();
-    }
-
-    public void setRank() {
-        rank.setRank(pokerHand);
-    }
-
-    public HandRank getRank() {
+    @Override
+    public HandRank getHandRank() {
         return rank;
     }
 
     @Override
-    public int compareTo(PokerHand otherHand) {
-        if (rank.getValue() < otherHand.getHandValue()) {
+    public int compareTo(Hand otherHand) {
+        if (rank.getValue() < otherHand.getHandRank().getValue()) {
             return -1;
-        } else if (rank.getValue() > otherHand.getHandValue()) {
+        } else if (rank.getValue() > otherHand.getHandRank().getValue()) {
             return 1;
         } else {
             return 0;

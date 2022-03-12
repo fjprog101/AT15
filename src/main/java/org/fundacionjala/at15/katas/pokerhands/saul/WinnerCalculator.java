@@ -4,19 +4,19 @@ import java.util.*;
 
 public class WinnerCalculator {
 
-    public int getWinner(PokerHand firstHand, PokerHand secondHand) {
+    public int getWinner(Hand firstHand, Hand secondHand) {
         int result = 0;
         if (firstHand.compareTo(secondHand) < 0) {
             result = 1;
         } else if (firstHand.compareTo(secondHand) > 0) {
             result = -1;
         } else {
-            result = getWinner(firstHand, secondHand, firstHand.getRank());
+            result = getWinner(firstHand, secondHand, firstHand.getHandRank());
         }
         return result;
     }
 
-    public int getWinner(PokerHand firstHand, PokerHand secondHand, HandRank rank) {
+    private int getWinner(Hand firstHand, Hand secondHand, HandRank rank) {
         int result = 0;
         switch (rank.getRank()) {
             case HIGH_CARD:
@@ -29,9 +29,9 @@ public class WinnerCalculator {
         return result;
     }
 
-    public int highestCardWinner(PokerHand firstHand, PokerHand secondHand) {
-        List<Card> blackHand = firstHand.getHand();
-        List<Card> whiteHand = secondHand.getHand();
+    public int highestCardWinner(Hand firstHand, Hand secondHand) {
+        List<Card> blackHand = firstHand.getCards();
+        List<Card> whiteHand = secondHand.getCards();
         Collections.reverse(blackHand);
         Collections.reverse(whiteHand);
         int result = 0;

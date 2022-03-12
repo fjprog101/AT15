@@ -24,7 +24,7 @@ public class PokerHandTest {
         myHand.add(fifthCard);
 
         PokerHand pokerHand = new PokerHand(myHand);
-        assertNotNull(pokerHand.getHand());
+        assertNotNull(pokerHand.getCards());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class PokerHandTest {
         myHand.add(fifthCard);
 
         PokerHand pokerHand = new PokerHand(myHand);
-        assertEquals(1, pokerHand.getHandValue());
+        assertEquals(1, pokerHand.getHandRank().getValue());
     }
 
     @Test

@@ -20,7 +20,7 @@ public class HandRank {
         return rank;
     }
 
-    public void setRank(List<Card> hand) {
+    public void calculateRank(List<Card> hand) {
         if (isStraightFlush(hand)) {
             rank = Rank.STRAIGHT_FLUSH;
         } else if (isFourKind(hand)) {
@@ -42,7 +42,7 @@ public class HandRank {
         }
     }
 
-    public void setValue(List<Card> hand) {
+    public void calculateValue(List<Card> hand) {
         switch (rank) {
             case STRAIGHT_FLUSH:
                 value = NINE;
