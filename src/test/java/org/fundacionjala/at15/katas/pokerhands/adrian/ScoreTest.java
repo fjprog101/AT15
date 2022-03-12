@@ -111,5 +111,20 @@ public class ScoreTest {
         assertEquals(1, score2c.getScore1());
         assertEquals(39, score2c.getScore2());
 
+        //StraightFlush
+        Score score4 = new Score("2H 4H 3H 5H 6H", "4S 5S 8S 7S 6S");
+        assertEquals(100, score4.getScore1());
+        assertEquals(116, score4.getScore2());
+        Score score4a = new Score("QC 8C 9C TC JC", "3H 7H 4H 5H 6H");
+        assertEquals(116, score4a.getScore1());
+        assertEquals(100, score4a.getScore2());
+        Score score4b = new Score("QC 8C 9C TC JC", "4H 7S 5C 8D 9H");
+        assertEquals(116, score4b.getScore1());
+        assertEquals(0, score4b.getScore2());
+        Score score4c = new Score("2H 4H 3H 5H 6H", "JH JD JS JC KD");
+        assertEquals(115, score4c.getScore1());
+        assertEquals(40, score4c.getScore2());
+
+
     }
 }

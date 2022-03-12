@@ -32,7 +32,7 @@ public class Hand {
         String absolutWinner = "";
 
         if (score.getScore1() == score.getScore2()) {
-            return "It is a tie";
+            return "Tie";
         } else if (score.getScore1() > score.getScore2()) {
             absolutWinner = hand1;
         } else {

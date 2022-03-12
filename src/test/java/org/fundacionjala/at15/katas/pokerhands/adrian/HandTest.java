@@ -23,7 +23,7 @@ public class HandTest {
         hand1 = "2H 3D 5S 9C KD";
         hand2 = "2D 3H 5C 9S KH";
         result = handsComparer.compareHands(hand1, hand2);
-        assertEquals("It is a tie", result);
+        assertEquals("Tie", result);
     }
 
     @Test

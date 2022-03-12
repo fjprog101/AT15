@@ -7,8 +7,10 @@ public class Game {
 
         if (winner.equals(hand1)) {
             return player1 + " wins";
-        } else {
+        } else if (winner.equals(hand2)) {
             return player2 + " wins";
+        } else {
+            return winner;
         }
     }
 }
