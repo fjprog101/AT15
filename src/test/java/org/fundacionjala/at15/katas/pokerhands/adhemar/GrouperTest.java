@@ -1,7 +1,6 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
 public class GrouperTest {
@@ -14,7 +13,7 @@ public class GrouperTest {
             new Card("3", "H"),
             new Card("3", "D")
         };
-        PokerHand hand = new PokerHand(cards1);
+        Pattern hand = new PairPattern(cards1);
 
         assertEquals("3", hand.getGroups().get(0).getStringValue());
         assertEquals("A", hand.getGroups().get(1).getStringValue());
@@ -30,7 +29,7 @@ public class GrouperTest {
             new Card("3", "H"),
             new Card("3", "D")
         };
-        PokerHand hand = new PokerHand(cards1);
+        Pattern hand = new PairPattern(cards1);
 
         assertEquals(3, hand.getGroups().get(0).getQuantity());
         assertEquals(1, hand.getGroups().get(1).getQuantity());

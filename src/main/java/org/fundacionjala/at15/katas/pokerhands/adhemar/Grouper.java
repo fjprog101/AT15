@@ -41,8 +41,4 @@ public abstract class Grouper {
     public ArrayList<Group> getGroups() {
         return this.groups;
     }
-
-    public Card[] getCards() {
-        return this.cards;
-    }
 }

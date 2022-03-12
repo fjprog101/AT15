@@ -1,54 +1,11 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
 public abstract class Pattern extends Grouper {
-
     public Pattern(Card[] cards) {
         super(cards);
     }
 
-    public boolean isHighCard() {
-        if (this.groups.size() == Values.FIVE && !isFlush()) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isPair() {
-        for (Group group : this.groups) {
-            if (this.groups.size() == Values.FOUR
-                && !isFlush()
-                && group.getQuantity() == Values.TWO) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean isTwoPairs() {
-        int pairs = 0;
-        for (Group group : this.groups) {
-            if (group.getQuantity() == Values.TWO) {
-                pairs++;
-            }
-        }
-        if (pairs == Values.TWO && !isFlush()) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isThreeOfAKind() {
-        for (Group group : this.groups) {
-            if (!isFlush() && group.getQuantity() == Values.THREE) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean isOnlyStraight() {
-        return isStraight() && !isFlush();
-    }
+    public abstract boolean match();
 
     public boolean isStraight() {
         Card[] sortedCards = CardSorter.sort(this.cards);
@@ -62,10 +19,6 @@ public abstract class Pattern extends Grouper {
         return true;
     }
 
-    public boolean isOnlyFlush() {
-        return !isStraight() && isFlush();
-    }
-
     public boolean isFlush() {
         String prevSuit = this.cards[0].getSuit();
         for (Card card : this.cards) {
@@ -75,33 +28,6 @@ public abstract class Pattern extends Grouper {
             prevSuit = card.getSuit();
         }
         return true;
-    }
-
-    public boolean isFullHouse() {
-        boolean isThereTriple = false;
-        boolean isPair = false;
-        for (Group group : this.groups) {
-            if (group.getQuantity() == Values.THREE) {
-                isThereTriple = true;
-            }
-            if (group.getQuantity() == Values.TWO) {
-                isPair = true;
-            }
-        }
-        return isThereTriple && isPair;
-    }
-
-    public boolean isFourOfAKind() {
-        for (Group group : this.groups) {
-            if (group.getQuantity() == Values.FOUR) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean isStraightFlush() {
-        return isFlush() && isStraight();
     }
 
     public int calculateTheHighestCard() {
