@@ -8,7 +8,7 @@ public abstract class Pattern extends Grouper {
     public abstract boolean match();
 
     public boolean isStraight() {
-        Card[] sortedCards = CardSorter.sort(this.cards);
+        Card[] sortedCards = HandFunctions.sort(this.cards);
         int prevValue = sortedCards[0].getIntValue() - 1;
         for (Card card : sortedCards) {
             if (card.getIntValue() != prevValue + 1) {
@@ -28,13 +28,5 @@ public abstract class Pattern extends Grouper {
             prevSuit = card.getSuit();
         }
         return true;
-    }
-
-    public static Card calculateTheHighestCard(Card[] cards) {
-        Card high = cards[0];
-        for (Card card : cards) {
-            high = card.getIntValue() > high.getIntValue() ? card : high;
-        }
-        return high;
     }
 }
