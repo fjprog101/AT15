@@ -4,6 +4,7 @@ public abstract class TieBreaker {
     protected Player player1;
     protected Player player2;
     protected String finalDecision;
+    protected static final int NUMBER_3 = 3;
     protected static final int NUMBER_4 = 4;
     protected static final int NUMBER_5 = 5;
 
