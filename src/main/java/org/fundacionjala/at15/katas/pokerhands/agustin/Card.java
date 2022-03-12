@@ -21,15 +21,15 @@ public class Card {
         return value;
     }
 
-    public void setSuit(String suit) {
-        this.suit = suit;
+    public void setSuit(String param) {
+        this.suit = param;
     }
 
-    public void setNotation(String notation) {
-        this.notation = notation;
+    public void setNotation(String param) {
+        this.notation = param;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setValue(int param) {
+        this.value = param;
     }
 }
