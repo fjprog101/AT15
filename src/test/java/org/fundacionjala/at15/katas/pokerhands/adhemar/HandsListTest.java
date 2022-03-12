@@ -7,7 +7,7 @@ import org.junit.Test;
 public class HandsListTest {
     @Test
     public void itShouldRank() {
-        HandsList hand = HandsList.FLUSH;
+        Hand hand = Hand.FLUSH;
 
         assertEquals(6, hand.getRank());
     }

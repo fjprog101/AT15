@@ -1,6 +1,6 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
-public enum HandsList {
+public enum Hand {
     NONE("It doesn't match", 0),
     HIGH("high card", 1),
     PAIR("pair", 2),
@@ -15,7 +15,7 @@ public enum HandsList {
     private final String handName;
     private final int rank;
 
-    HandsList(String handName, int rank) {
+    Hand(String handName, int rank) {
         this.handName = handName;
         this.rank = rank;
     }
