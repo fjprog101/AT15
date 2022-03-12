@@ -7,7 +7,7 @@ import org.junit.Test;
 public class CardGeneratorTest {
     @Test
     public void itShouldGenerateCards() {
-        String[] stringHand = {"2C","4D", "6H", "8S", "TC"};
+        String stringHand = "2C 4D 6H 8S TC";
 
         CardGenerator theCards = new CardGenerator(stringHand);
 

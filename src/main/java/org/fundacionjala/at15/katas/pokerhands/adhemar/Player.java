@@ -4,7 +4,7 @@ public class Player {
     private String name;
     private PokerHand pokerHand;
 
-    public Player(String name, String[] stringHand) {
+    public Player(String name, String stringHand) {
         this.name = name;
         this.pokerHand = new PokerHand(new CardGenerator(stringHand).getCards());
     }

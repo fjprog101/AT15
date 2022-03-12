@@ -1,12 +1,12 @@
 package org.fundacionjala.at15.katas.pokerhands.adhemar;
 
-public class CardGenerator {
+public final class CardGenerator {
     private String[] stringHand;
     private Card[] cards;
 
-    public CardGenerator(String[] stringHand) {
-        this.stringHand = stringHand;
-        this.cards = new Card[stringHand.length];
+    public CardGenerator(String stringHand) {
+        this.stringHand = stringHand.split(" ");
+        this.cards = new Card[this.stringHand.length];
         createCards();
     }
 
