@@ -16,18 +16,8 @@ public class Compare {
     public boolean compareSuit(String[] hand) {
         boolean verified = false;
         majorCard = valueCard.converterCharSuit(hand);
-        if (majorCard[card1] != majorCard[card2] || majorCard[card1] != majorCard[card3]
-            || majorCard[card1] != majorCard[card4] || majorCard[card1] != majorCard[card5]) {
-            verified = true;
-        }
-        return verified;
-    }
-
-    public boolean compareStraight(String[] hand) {
-        boolean verified = false;
-        final int diference = 4;
-        majorCard = valueCard.converterCharSuit(hand);
-        if (majorCard[card5] - majorCard[card1] > diference) {
+        if (majorCard[card1] == majorCard[card2] && majorCard[card1] == majorCard[card3]
+            && majorCard[card1] == majorCard[card4] && majorCard[card1] == majorCard[card5]) {
             verified = true;
         }
         return verified;
@@ -77,7 +67,7 @@ public class Compare {
         cardsInt = valueCard.converterInt(majorCard);
         max = valueCard.getPositionMajorCard(cardsInt);
         min = valueCard.getPositionMinorCard(cardsInt);
-        if (max - min == difference) {
+        if (cardsInt[max] - cardsInt[min] == difference) {
             verified = true;
         }
         return verified;

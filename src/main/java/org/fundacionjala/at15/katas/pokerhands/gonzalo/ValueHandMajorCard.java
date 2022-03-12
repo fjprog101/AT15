@@ -10,7 +10,7 @@ public class ValueHandMajorCard extends RankedHand {
 
     public String rankedHand(String[] hand) {
         pos = position(hand);
-        if (compare.compareSuit(hand) && compare.compareCard1(hand) && compare.compareCard2(hand)
+        if (!compare.compareSuit(hand) && compare.compareCard1(hand) && compare.compareCard2(hand)
             && compare.compareCard3(hand) && compare.compareCard4(hand) && !compare.isStraight(hand)) {
             cardMajor =  hand[pos];
         }
