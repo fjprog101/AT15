@@ -6,7 +6,6 @@ public class Card {
     protected int value;
 
     public Card() {
-
     }
 
     public String getSuit() {
