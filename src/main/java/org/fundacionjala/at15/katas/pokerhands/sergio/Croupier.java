@@ -32,7 +32,6 @@ public class Croupier {
         this.player1Points = new PointsAssigner(player1.getPokerHand());
         this.player2Points = new PointsAssigner(player2.getPokerHand());
 
-
         if (player1Points.getHandPoints() > player2Points.getHandPoints()) {
             firstDecision = player1.getName();
         } else if (player1Points.getHandPoints() < player2Points.getHandPoints()) {
