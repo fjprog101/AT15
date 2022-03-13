@@ -15,4 +15,28 @@ public class GameTest {
 
         assertEquals(2, theGame.getPlayers().length);
     }
+
+    @Test
+    public void itShouldGetAWinner() {
+        Player[] players = {
+            new Player("Black", "2H 3D 5S 9C KD"),
+            new Player("White", "2C 2H 4S 8C AH")
+        };
+        Game theGame = new Game(players);
+
+        assertEquals("White", theGame.getWinner().getName());
+        assertEquals("pair", theGame.getWinner().getPokerHand().getHand().getHandName());
+        assertEquals("White wins. - with pair", theGame.getResult());
+    }
+
+    @Test
+    public void itShouldBeTie() {
+        Player[] players = {
+            new Player("Black", "2H 3D 5S 9C KD"),
+            new Player("White", "2C 3H 4S 8C AH")
+        };
+        Game theGame = new Game(players);
+
+        assertEquals("Tie.", theGame.getResult());
+    }
 }

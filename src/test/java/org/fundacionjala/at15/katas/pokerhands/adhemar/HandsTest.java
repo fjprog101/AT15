@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class HandsListTest {
+public class HandsTest {
     @Test
     public void itShouldRank() {
         Hand hand = Hand.FLUSH;
