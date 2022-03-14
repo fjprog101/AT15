@@ -16,12 +16,12 @@ public class Straight extends HandAnalysis {
         if (maxValueInHand - minValueInHand != valueOfCards.size() - 1) {
             return false;
         }
-        Set<Integer> numberCardsNoRepeted = new HashSet<>();
+        Set<Integer> numberCardsNoRepeated = new HashSet<>();
         for (int ind1 : valueOfCards) {
-            if (numberCardsNoRepeted.contains(ind1)) {
+            if (numberCardsNoRepeated.contains(ind1)) {
                 return false;
             }
-            numberCardsNoRepeted.add(ind1);
+            numberCardsNoRepeated.add(ind1);
         }
         rank = FIVE;
         return true;
