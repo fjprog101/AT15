@@ -16,6 +16,11 @@ test {
         exceptionFormat "full"
     }
 }
+task runPokerHandJimy (dependsOn: 'classes', type: JavaExec) {
+    main = 'org.fundacionjala.at15.katas.pokerhands.jimy.Main'
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+}
 
 checkstyle {
     toolVersion '8.34'
