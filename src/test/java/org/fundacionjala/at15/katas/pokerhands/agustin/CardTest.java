@@ -1,5 +1,5 @@
 package org.fundacionjala.at15.katas.pokerhands.agustin;
-import org.fundacionjala.at15.katas.pokerhands.agustin.Cards.*;
+import org.fundacionjala.at15.katas.pokerhands.agustin.Values.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

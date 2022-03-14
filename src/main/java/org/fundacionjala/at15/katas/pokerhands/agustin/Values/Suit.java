@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.katas.pokerhands.agustin.Cards;
+package org.fundacionjala.at15.katas.pokerhands.agustin.Values;
 
 public enum Suit {
     CLUB("C"),

@@ -1,5 +1,5 @@
 package org.fundacionjala.at15.katas.pokerhands.agustin;
-import org.fundacionjala.at15.katas.pokerhands.agustin.Cards.Notation;
+import org.fundacionjala.at15.katas.pokerhands.agustin.Values.Notation;
 
 public class Hand extends CardSet {
 
@@ -29,14 +29,10 @@ public class Hand extends CardSet {
         }
         return pairs == Notation.TWO.getValue();
     }
-}
 
-//    Card[] pair = {};
-//    Card[] twoPair = {};
-//    Card[] threeOfAKind = {};
-//    Card[] straight = {};
-//    Card[] flush = {};
-//    Card[] full = {};
-//    Card[] fourOfAKind = {};
-//    Card[] straightFlush = {};
+    public boolean threeOfAKind() {
+
+        return false;
+    }
+}
 

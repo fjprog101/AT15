@@ -1,7 +1,7 @@
 package org.fundacionjala.at15.katas.pokerhands.agustin;
 
-import org.fundacionjala.at15.katas.pokerhands.agustin.Cards.Notation;
-import org.fundacionjala.at15.katas.pokerhands.agustin.Cards.Suit;
+import org.fundacionjala.at15.katas.pokerhands.agustin.Values.Notation;
+import org.fundacionjala.at15.katas.pokerhands.agustin.Values.Suit;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
