@@ -5,7 +5,6 @@ import java.util.List;
 
 public class PokerHand {
     private List<Card> cards;
-
     private final int numberCards = 5;
     private final int score50ForFlush = 50;
 
@@ -66,7 +65,6 @@ public class PokerHand {
         String card = "";
         for (int vari = 0; vari < cardSuits.length; vari++) {
             card = cards.get(vari).getSuit() + card;
-
         }
         return card;
     }
