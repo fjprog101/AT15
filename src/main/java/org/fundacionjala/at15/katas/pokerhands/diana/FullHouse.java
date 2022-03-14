@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class FullHouse extends HandAnalysis {
     private static final int SEVEN = 7;
-    protected int range;
+    protected int rank;
 
     @Override
     public boolean analysisOfRule(ArrayList<Integer> valueOfCards, ArrayList<String> valueOfSuits) {
@@ -28,7 +28,7 @@ public class FullHouse extends HandAnalysis {
             }
         }
         List<Integer> arrayAux = fullHouseValues.stream().distinct().collect(Collectors.toList());
-        range = SEVEN;
+        rank = SEVEN;
         List<Integer> aux = arrayAux.stream().sorted().collect(Collectors.toList());
         if (aux == null || aux.size() <= 1) {
             return false;

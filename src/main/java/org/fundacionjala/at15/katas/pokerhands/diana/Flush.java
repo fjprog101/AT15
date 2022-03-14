@@ -5,11 +5,11 @@ import java.util.HashSet;
 
 public class Flush extends HandAnalysis {
     private static final int SIX = 6;
-    protected int range;
+    protected int rank;
 
     @Override
     public boolean analysisOfRule(ArrayList<Integer> valueOfCards, ArrayList<String> valueOfSuits) {
-        range = SIX;
+        rank = SIX;
         return new HashSet<String>(valueOfSuits).size() <= 1;
     }
 

@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Straight extends HandAnalysis {
     private static final int FIVE = 5;
-    protected int range;
+    protected int rank;
 
     @Override
     public boolean analysisOfRule(ArrayList<Integer> valueOfCards, ArrayList<String> valueOfSuits) {
@@ -23,7 +23,7 @@ public class Straight extends HandAnalysis {
             }
             numberCardsNoRepeted.add(ind1);
         }
-        range = FIVE;
+        rank = FIVE;
         return true;
     }
 }

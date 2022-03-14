@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class PokerRules {
     protected ArrayList<Integer> number;
     private ArrayList<String> suit;
-    private int range;
+    private int rank;
 
     private HighCard highCard = new HighCard();
     private Pair pair = new Pair();
@@ -20,7 +20,7 @@ public class PokerRules {
     public PokerRules(ArrayList<Integer> number, ArrayList<String> suit) {
         this.number = number;
         this.suit = suit;
-        this.range = 0;
+        this.rank = 0;
     }
 
     public void evaluateHand(ArrayList<Integer> numbers, ArrayList<String> suits) {
@@ -36,6 +36,6 @@ public class PokerRules {
     }
 
     public int getRange() {
-        return range;
+        return rank;
     }
 }

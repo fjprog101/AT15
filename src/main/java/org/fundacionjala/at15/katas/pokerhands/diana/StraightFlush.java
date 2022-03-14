@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class StraightFlush extends HandAnalysis {
     private static final int NINE = 9;
-    protected int range;
+    protected int rank;
 
     @Override
     public boolean analysisOfRule(ArrayList<Integer> valueOfCards, ArrayList<String> valueOfSuits) {
@@ -26,7 +26,7 @@ public class StraightFlush extends HandAnalysis {
             }
             return true;
         }
-        range = NINE;
+        rank = NINE;
         return false;
     }
 

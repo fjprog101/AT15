@@ -6,7 +6,7 @@ import java.util.List;
 
 public class TwoPair extends HandAnalysis {
     private static final int THREE = 3;
-    protected int range;
+    protected int rank;
 
     @Override
     public boolean analysisOfRule(ArrayList<Integer> valueOfCards, ArrayList<String> valueOfSuits) {
@@ -20,7 +20,7 @@ public class TwoPair extends HandAnalysis {
                 }
             }
         }
-        range = THREE;
+        rank = THREE;
         Collections.sort(duplicateValues, Collections.reverseOrder());
         if (duplicateValues == null || duplicateValues.size() <= 1) {
             return false;

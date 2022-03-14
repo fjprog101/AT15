@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Pair extends CardAnalysis {
     private static final int TWO = 2;
-    protected int range;
+    protected int rank;
 
     @Override
     public int analysisOfRule(ArrayList<Integer> valueOfCards) {
-        range = TWO;
+        rank = TWO;
         int ind2 = 0;
         int[] arrayValueCards = valueOfCards.stream().mapToInt(i -> i).toArray();
         for (int ind1 = 0; ind1 < arrayValueCards.length - 1; ind1++) {
