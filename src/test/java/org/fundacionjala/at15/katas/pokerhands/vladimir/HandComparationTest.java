@@ -15,7 +15,7 @@ public class HandComparationTest {
         card[4] = new Card("A", "S");
         Hand hand = new Hand(card);
         HandsComparation handsComparation = new HandsComparation();
-        int value = handsComparation.handTipe(hand);
+        int value = handsComparation.handType(hand);
         int expected = 1;
         assertEquals(expected, value);
     }
@@ -30,7 +30,7 @@ public class HandComparationTest {
         card[4] = new Card("A", "S");
         Hand hand = new Hand(card);
         HandsComparation handsComparation = new HandsComparation();
-        int value = handsComparation.handTipe(hand);
+        int value = handsComparation.handType(hand);
         int expected = 2;
         assertEquals(expected, value);
     }
@@ -45,7 +45,7 @@ public class HandComparationTest {
         card[4] = new Card("A", "S");
         Hand hand = new Hand(card);
         HandsComparation handsComparation = new HandsComparation();
-        int value = handsComparation.handTipe(hand);
+        int value = handsComparation.handType(hand);
         int expected = 3;
         assertEquals(expected, value);
     }
@@ -60,7 +60,7 @@ public class HandComparationTest {
         card[4] = new Card("A", "S");
         Hand hand = new Hand(card);
         HandsComparation handsComparation = new HandsComparation();
-        int value = handsComparation.handTipe(hand);
+        int value = handsComparation.handType(hand);
         int expected = 4;
         assertEquals(expected, value);
     }
@@ -75,7 +75,7 @@ public class HandComparationTest {
         card[4] = new Card("6", "S");
         Hand hand = new Hand(card);
         HandsComparation handsComparation = new HandsComparation();
-        int value = handsComparation.handTipe(hand);
+        int value = handsComparation.handType(hand);
         int expected = 5;
         assertEquals(expected, value);
     }
@@ -90,7 +90,7 @@ public class HandComparationTest {
         card[4] = new Card("8", "C");
         Hand hand = new Hand(card);
         HandsComparation handsComparation = new HandsComparation();
-        int value = handsComparation.handTipe(hand);
+        int value = handsComparation.handType(hand);
         int expected = 6;
         assertEquals(expected, value);
     }
@@ -105,7 +105,7 @@ public class HandComparationTest {
         card[4] = new Card("2", "S");
         Hand hand = new Hand(card);
         HandsComparation handsComparation = new HandsComparation();
-        int value = handsComparation.handTipe(hand);
+        int value = handsComparation.handType(hand);
         int expected = 7;
         assertEquals(expected, value);
     }
@@ -120,7 +120,7 @@ public class HandComparationTest {
         card[4] = new Card("A", "S");
         Hand hand = new Hand(card);
         HandsComparation handsComparation = new HandsComparation();
-        int value = handsComparation.handTipe(hand);
+        int value = handsComparation.handType(hand);
         int expected = 8;
         assertEquals(expected, value);
     }
@@ -135,7 +135,7 @@ public class HandComparationTest {
         card[4] = new Card("A", "D");
         Hand hand = new Hand(card);
         HandsComparation handsComparation = new HandsComparation();
-        int value = handsComparation.handTipe(hand);
+        int value = handsComparation.handType(hand);
         int expected = 9;
         assertEquals(expected, value);
     }

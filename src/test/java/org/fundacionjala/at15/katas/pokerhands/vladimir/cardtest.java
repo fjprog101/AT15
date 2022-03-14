@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class cardtest {
+public class Cardtest {
     @Test
     public void itShouldJoinValueAndSuit() {
         Card card = new Card("A", "C");

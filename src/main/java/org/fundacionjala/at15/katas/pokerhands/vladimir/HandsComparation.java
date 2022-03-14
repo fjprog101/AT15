@@ -24,9 +24,9 @@ public class HandsComparation extends PokerHands {
     }
 
     public String compare() {
-        if (handTipe(blackHand) > handTipe(whiteHand)) {
+        if (handType(blackHand) > handType(whiteHand)) {
             return "Black hand wins";
-        } else if (handTipe(blackHand) < handTipe(whiteHand)) {
+        } else if (handType(blackHand) < handType(whiteHand)) {
             return "White hand wins";
         } else {
             return sameHandComparation(blackHand, whiteHand);
@@ -57,7 +57,7 @@ public class HandsComparation extends PokerHands {
         return null;
     }
 
-    public int handTipe(Hand hand) {
+    public int handType(Hand hand) {
         int value = 0;
         if (highCard.isHighCard(hand) != 0) {
             return highCard.isHighCard(hand);
