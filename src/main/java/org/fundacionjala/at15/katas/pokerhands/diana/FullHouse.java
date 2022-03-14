@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 public class FullHouse extends HandAnalysis {
     private static final int SEVEN = 7;
-    protected int rank;
 
     @Override
     public boolean analysisOfRule(ArrayList<Integer> valueOfCards, ArrayList<String> valueOfSuits) {

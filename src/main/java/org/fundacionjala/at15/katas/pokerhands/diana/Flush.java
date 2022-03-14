@@ -5,7 +5,6 @@ import java.util.HashSet;
 
 public class Flush extends HandAnalysis {
     private static final int SIX = 6;
-    protected int rank;
 
     @Override
     public boolean analysisOfRule(ArrayList<Integer> valueOfCards, ArrayList<String> valueOfSuits) {

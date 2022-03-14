@@ -6,7 +6,6 @@ import java.util.List;
 
 public class TwoPair extends HandAnalysis {
     private static final int THREE = 3;
-    protected int rank;
 
     @Override
     public boolean analysisOfRule(ArrayList<Integer> valueOfCards, ArrayList<String> valueOfSuits) {
