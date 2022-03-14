@@ -5,10 +5,10 @@ public class ValueHandPair extends RankedHand {
     //private char[] cardsValue;
     private int count = 0;
     private int pair = 1;
-    private String valueHand;
+    private boolean valuePair;
     private Converter valueCard = new Converter();
 
-    public String rankedHand(String[] hand) {
+    public boolean rankedHand(String[] hand) {
         char[] value = valueCard.converterCharValue(hand);
         final int nextCard = 1;
         for (int ind = 0; ind < value.length; ind++) {
@@ -20,8 +20,8 @@ public class ValueHandPair extends RankedHand {
             }
         }
         if (count == pair) {
-            valueHand = "pair";
+            valuePair = true;
         }
-        return valueHand;
+        return valuePair;
     }
 }

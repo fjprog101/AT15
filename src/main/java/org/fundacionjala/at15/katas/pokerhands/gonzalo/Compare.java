@@ -2,10 +2,6 @@ package org.fundacionjala.at15.katas.pokerhands.gonzalo;
 
 public class Compare {
     private final int card1 = 0;
-    private final int card2 = 1;
-    private final int card3 = 2;
-    private final int card4 = 3;
-    private final int card5 = 4;
     private final int difference = 4;
     private int max;
     private int min;
@@ -16,49 +12,21 @@ public class Compare {
     public boolean compareSuit(String[] hand) {
         boolean verified = false;
         majorCard = valueCard.converterCharSuit(hand);
-        if (majorCard[card1] == majorCard[card2] && majorCard[card1] == majorCard[card3]
-            && majorCard[card1] == majorCard[card4] && majorCard[card1] == majorCard[card5]) {
+        if (xCardsHaveTheSameValue(majorCard, card1) == difference) {
             verified = true;
         }
         return verified;
     }
 
-    public boolean compareCard1(String[] hand) {
-        boolean verified = false;
-        majorCard = valueCard.converterCharValue(hand);
-        if (majorCard[card1] != majorCard[card2] && majorCard[card1] != majorCard[card3]
-            && majorCard[card1] != majorCard[card4] && majorCard[card1] != majorCard[card5]) {
-            verified = true;
+    public int xCardsHaveTheSameValue(char[] hand, int initialCard) {
+        int count = 0;
+        int initial =  initialCard + 1;
+        for (int ind = initial; ind < hand.length; ind++) {
+            if (hand[initialCard] == hand[ind]) {
+                count++;
+            }
         }
-        return verified;
-    }
-
-    public boolean compareCard2(String[] hand) {
-        boolean verified = false;
-        majorCard = valueCard.converterCharValue(hand);
-        if (majorCard[card2] != majorCard[card3] && majorCard[card2] != majorCard[card4]
-            && majorCard[card2] != majorCard[card5]) {
-            verified = true;
-        }
-        return verified;
-    }
-
-    public boolean compareCard3(String[] hand) {
-        boolean verified = false;
-        majorCard = valueCard.converterCharValue(hand);
-        if (majorCard[card3] != majorCard[card4] && majorCard[card3] != majorCard[card5]) {
-            verified = true;
-        }
-        return verified;
-    }
-
-    public boolean compareCard4(String[] hand) {
-        boolean verified = false;
-        majorCard = valueCard.converterCharValue(hand);
-        if (majorCard[card4] != majorCard[card5]) {
-            verified = true;
-        }
-        return verified;
+        return count;
     }
 
     public boolean isStraight(String[] hand) {
@@ -68,6 +36,20 @@ public class Compare {
         max = valueCard.getPositionMajorCard(cardsInt);
         min = valueCard.getPositionMinorCard(cardsInt);
         if (cardsInt[max] - cardsInt[min] == difference) {
+            verified = true;
+        }
+        return verified;
+    }
+
+    public boolean cardNoSameValue(String[] hand) {
+        final int sameValue = 0;
+        int count = 0;
+        boolean verified = false;
+        majorCard = valueCard.converterCharValue(hand);
+        for (int ind = 0; ind < majorCard.length; ind++) {
+            count = count + xCardsHaveTheSameValue(majorCard, ind);
+        }
+        if (count == sameValue) {
             verified = true;
         }
         return verified;

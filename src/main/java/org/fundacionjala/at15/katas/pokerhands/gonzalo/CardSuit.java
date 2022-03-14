@@ -3,7 +3,7 @@ package org.fundacionjala.at15.katas.pokerhands.gonzalo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardSuit extends Cards {
+public class CardSuit extends CreateCards {
     private final int numberOfCards = 13;
     private List<String> suitCard;
 

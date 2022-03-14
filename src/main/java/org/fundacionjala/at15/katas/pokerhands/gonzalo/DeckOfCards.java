@@ -7,7 +7,7 @@ public class DeckOfCards {
     private final String diamonds = "D";
     private final String hearts = "H";
     private final String spades = "S";
-    private Cards suit;
+    private CreateCards suit;
 
     public List<String> clubsSuit() {
         suit = new CardSuit();

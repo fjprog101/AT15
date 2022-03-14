@@ -1,6 +1,8 @@
 package org.fundacionjala.at15.katas.pokerhands.gonzalo;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -9,16 +11,14 @@ public class CompareTest {
     @Test
     public void itShouldBeFlush() {
         String[] hand = {"2H", "6H", "AH", "KH", "5H"};
-        boolean expected = true;
         Compare compare = new Compare();
-        assertEquals(expected, compare.compareSuit(hand));
+        assertTrue(compare.compareSuit(hand));
     }
     @Test
     public void itShouldBeNoFlush() {
         String[] hand = {"2H", "6H", "AS", "KH", "5H"};
-        boolean expected = false;
         Compare compare = new Compare();
-        assertEquals(expected, compare.compareSuit(hand));
+        assertFalse(compare.compareSuit(hand));
     }
 
 
@@ -26,83 +26,45 @@ public class CompareTest {
     @Test
     public void itShouldBeStraight() {
         String[] hand = {"2C", "6D", "4H", "3H", "5C"};
-        boolean expected = true;
         Compare compare = new Compare();
-        assertEquals(expected, compare.isStraight(hand));
+        assertTrue(compare.isStraight(hand));
     }
     @Test
     public void itShouldBeNoStraight() {
         String[] hand = {"2C", "6D", "AH", "3H", "5C"};
-        boolean expected = false;
         Compare compare = new Compare();
-        assertEquals(expected, compare.isStraight(hand));
+        assertFalse(compare.isStraight(hand));
     }
 
 
 
     @Test
-    public void itShouldBeNoEqualsCardsCompareCard1() {
-        String[] hand = {"2C", "6D", "AH", "3H", "5C"};
-        boolean expected = true;
+    public void itShouldBeCardsHaveTheSameValue() {
+        char[] hand = {'2', '2', '6', '5', '2'};
+        int expected = 2;
         Compare compare = new Compare();
-        assertEquals(expected, compare.compareCard1(hand));
+        assertEquals(expected, compare.xCardsHaveTheSameValue(hand, 0));
     }
     @Test
-    public void itShouldBeEqualsCardsCompareCard1() {
-        String[] hand = {"2C", "6D", "AH", "3H", "2C"};
-        boolean expected = false;
+    public void itShouldBeCardsNoHaveTheSameValue() {
+        char[] hand = {'2', '4', '9', '3', '5'};
+        int expected = 0;
         Compare compare = new Compare();
-        assertEquals(expected, compare.compareCard1(hand));
-    }
-
-
-
-    @Test
-    public void itShouldBeNoEqualsCardsCompareCard2() {
-        String[] hand = {"2C", "6D", "AH", "3H", "5C"};
-        boolean expected = true;
-        Compare compare = new Compare();
-        assertEquals(expected, compare.compareCard2(hand));
-    }
-    @Test
-    public void itShouldBeEqualsCardsCompareCard2() {
-        String[] hand = {"2C", "6D", "AH", "6H", "5C"};
-        boolean expected = false;
-        Compare compare = new Compare();
-        assertEquals(expected, compare.compareCard2(hand));
+        assertEquals(expected, compare.xCardsHaveTheSameValue(hand, 0));
     }
 
 
 
     @Test
-    public void itShouldBeNoEqualsCardsCompareCard3() {
-        String[] hand = {"2C", "6D", "AH", "3H", "5C"};
-        boolean expected = true;
+    public void itShouldBeNoSameValue() {
+        String[] hand = {"AH", "3H", "4H", "5H", "6H"};
         Compare compare = new Compare();
-        assertEquals(expected, compare.compareCard3(hand));
+        assertTrue(compare.cardNoSameValue(hand));
     }
     @Test
-    public void itShouldBeEqualsCardsCompareCard3() {
-        String[] hand = {"2C", "6D", "AH", "3H", "AC"};
-        boolean expected = false;
+    public void itShouldBeSameValue() {
+        String[] hand = {"AD", "AH", "4H", "5H", "6H"};
         Compare compare = new Compare();
-        assertEquals(expected, compare.compareCard3(hand));
-    }
-
-
-
-    @Test
-    public void itShouldBeNoEqualsCardsCompareCard4() {
-        String[] hand = {"2C", "6D", "AH", "3H", "5C"};
-        boolean expected = true;
-        Compare compare = new Compare();
-        assertEquals(expected, compare.compareCard4(hand));
-    }
-    @Test
-    public void itShouldBeEqualsCardsCompareCard4() {
-        String[] hand = {"2C", "6D", "AH", "3H", "3C"};
-        boolean expected = false;
-        Compare compare = new Compare();
-        assertEquals(expected, compare.compareCard4(hand));
+        assertFalse(compare.cardNoSameValue(hand));
     }
 }
