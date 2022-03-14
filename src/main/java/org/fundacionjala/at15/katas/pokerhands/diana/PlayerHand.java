@@ -1,9 +1,9 @@
 package org.fundacionjala.at15.katas.pokerhands.diana;
 
-public class Deck {
+public class PlayerHand {
     protected String[] completedHand;
 
-    public Deck(String[] newCompletedHand) {
+    public PlayerHand(String[] newCompletedHand) {
         this.completedHand = newCompletedHand;
     }
 

@@ -2,7 +2,7 @@ package org.fundacionjala.at15.katas.pokerhands.diana;
 
 import java.util.ArrayList;
 
-public class Card extends Deck {
+public class Card extends PlayerHand {
     static final int ONE = 1;
     static final int TEN = 10;
     static final int ELEVEN = 11;
