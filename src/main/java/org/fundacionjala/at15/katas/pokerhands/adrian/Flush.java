@@ -1,7 +1,9 @@
 package org.fundacionjala.at15.katas.pokerhands.adrian;
 
-public class Flush extends Hand {
-
+public class Flush extends HandHandler {
+    private final int flushPoints = 10;
+    private int score1;
+    private int score2;
     public boolean theHandIsFlush(String hand) {
         boolean result = false;
         int counter = 0;
@@ -29,5 +31,27 @@ public class Flush extends Hand {
             }
         }
         return winner;
+    }
+
+    public void compareHandFlush(String hand1, String hand2) {
+        if (theHandIsFlush(hand1) && theHandIsFlush(hand2)) {
+            String winner = compareHandsWithFlush(hand1, hand2);
+            if (winner.equals(hand1)) {
+                score1 = score1 + flushPoints;
+            }
+            if (winner.equals(hand2)) {
+                score2 = score2 + flushPoints;
+            }
+        } else if (theHandIsFlush(hand1)) {
+            score1 = score1 + flushPoints;
+        } else if (theHandIsFlush(hand2)) {
+            score2 = score2 + flushPoints;
+        }
+    }
+    public int getScore1() {
+        return this.score1;
+    }
+    public int getScore2() {
+        return this.score2;
     }
 }

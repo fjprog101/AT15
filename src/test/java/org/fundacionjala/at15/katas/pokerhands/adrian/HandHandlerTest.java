@@ -4,11 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class HandTest {
+public class HandHandlerTest {
 
     @Test
     public void compareHandsTest() {
-        Hand handsComparer = new Hand();
+        HandHandler handsComparer = new HandHandler();
         String hand1 = "2H 3D 5S 9C KD";
         String hand2 = "2C 3H 4S 8C AH";
         String result = handsComparer.compareHands(hand1, hand2);
@@ -28,7 +28,7 @@ public class HandTest {
 
     @Test
     public void itShouldReturnTheSortedHand() {
-        Hand hand = new Hand();
+        HandHandler hand = new HandHandler();
         int[] result = new int[5];
         result = hand.sortedHand("2H KD AS 7C 2D");
         int[] expectedResult = {2, 2, 7, 13, 14};
@@ -39,7 +39,7 @@ public class HandTest {
 
     @Test
     public void itShouldReturnTheSuitOfHand() {
-        Hand hand = new Hand();
+        HandHandler hand = new HandHandler();
         char[] result = new char[5];
         result = hand.handSuit("2C 3D 5H 9S KD");
         char[] expectedResult = {'C', 'D', 'H', 'S', 'D'};
@@ -51,7 +51,7 @@ public class HandTest {
 
     @Test
     public void valueOfCardTest() {
-        Hand handsComparer = new Hand();
+        HandHandler handsComparer = new HandHandler();
         int result;
         result = handsComparer.valueOfCard('2');
         assertEquals(2, result);

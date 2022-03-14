@@ -1,7 +1,9 @@
 package org.fundacionjala.at15.katas.pokerhands.adrian;
 
-public class FullHouse extends Hand {
-
+public class FullHouse extends HandHandler {
+    private final int fullHousePoints = 20;
+    private int score1;
+    private int score2;
     public int[] fullHouse(String hand) {
         int[] result = new int[INDEX_THREE];
         int counter = 0;
@@ -58,4 +60,25 @@ public class FullHouse extends Hand {
         return winner;
     }
 
+    public void compareFullHouse(String hand1, String hand2) {
+        if (theHandIsFullHouse(hand1) && theHandIsFullHouse(hand2)) {
+            String winner = compareHandsFullHouse(hand1, hand2);
+            if (winner.equals(hand1)) {
+                score1 = score1 + fullHousePoints;
+            }
+            if (winner.equals(hand2)) {
+                score2 = score2 + fullHousePoints;
+            }
+        } else if (theHandIsFullHouse(hand1)) {
+            score1 = score1 + fullHousePoints;
+        } else if (theHandIsFullHouse(hand2)) {
+            score2 = score2 + fullHousePoints;
+        }
+    }
+    public int getScore1() {
+        return this.score1;
+    }
+    public int getScore2() {
+        return this.score2;
+    }
 }

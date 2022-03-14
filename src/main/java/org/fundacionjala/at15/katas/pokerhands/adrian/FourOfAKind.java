@@ -1,7 +1,9 @@
 package org.fundacionjala.at15.katas.pokerhands.adrian;
 
-public class FourOfAKind  extends Hand {
-
+public class FourOfAKind  extends HandHandler {
+    private final int fourOfAKindPoints = 30;
+    private int score1;
+    private int score2;
     public int[] valueFourOfAKind(String hand) {
         int[] result = new int[2];
         int indexFour = 0;
@@ -48,5 +50,27 @@ public class FourOfAKind  extends Hand {
             winner = hand2;
         }
         return winner;
+    }
+
+    public void compareFourOfAKind(String hand1, String hand2) {
+        if (theHandHasFourOfAKind(hand1) && theHandHasFourOfAKind(hand2)) {
+            String winner = compareHandsFourOfAKind(hand1, hand2);
+            if (winner.equals(hand1)) {
+                score1 = score1 + fourOfAKindPoints;
+            }
+            if (winner.equals(hand2)) {
+                score2 = score2 + fourOfAKindPoints;
+            }
+        } else if (theHandHasFourOfAKind(hand1)) {
+            score1 = score1 + fourOfAKindPoints;
+        } else if (theHandHasFourOfAKind(hand2)) {
+            score2 = score2 + fourOfAKindPoints;
+        }
+    }
+    public int getScore1() {
+        return this.score1;
+    }
+    public int getScore2() {
+        return this.score2;
     }
 }

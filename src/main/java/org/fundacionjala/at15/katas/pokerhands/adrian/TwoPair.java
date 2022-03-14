@@ -1,8 +1,11 @@
 package org.fundacionjala.at15.katas.pokerhands.adrian;
 
-public class TwoPair extends Hand {
+public class TwoPair extends HandHandler {
+    private final int twoPairPoints = 3;
     private int valuePair1 = 0;
     private int valuePair2 = 0;
+    private int score1;
+    private int score2;
     public int[] valueOfTwoPairs(String hand) {
         int[] result = new int[2];
         int indexPair1 = 0;
@@ -63,5 +66,27 @@ public class TwoPair extends Hand {
         }
 
         return winner;
+    }
+
+    public void compareHandTwoPairs(String hand1, String hand2) {
+        if (theHandHasTwoPairs(hand1) && theHandHasTwoPairs(hand2)) {
+            String winner = compareHandsWithTwoPairs(hand1, hand2);
+            if (winner.equals(hand1)) {
+                score1 = score1 + twoPairPoints;
+            }
+            if (winner.equals(hand2)) {
+                score2 = score2 + twoPairPoints;
+            }
+        } else if (theHandHasTwoPairs(hand1)) {
+            score1 = score1 + twoPairPoints;
+        } else if (theHandHasTwoPairs(hand2)) {
+            score2 = score2 + twoPairPoints;
+        }
+    }
+    public int getScore1() {
+        return this.score1;
+    }
+    public int getScore2() {
+        return this.score2;
     }
 }
