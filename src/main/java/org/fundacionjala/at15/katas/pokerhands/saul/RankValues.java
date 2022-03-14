@@ -1,6 +1,6 @@
 package org.fundacionjala.at15.katas.pokerhands.saul;
 
-public final class Constants {
+public final class RankValues {
     static final int ONE = 1;
     static final int TWO = 2;
     static final int THREE = 3;

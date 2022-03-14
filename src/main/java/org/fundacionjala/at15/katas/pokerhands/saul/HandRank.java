@@ -1,6 +1,6 @@
 package org.fundacionjala.at15.katas.pokerhands.saul;
 
-import static org.fundacionjala.at15.katas.pokerhands.saul.Constants.*;
+import static org.fundacionjala.at15.katas.pokerhands.saul.RankValues.*;
 
 import java.util.List;
 

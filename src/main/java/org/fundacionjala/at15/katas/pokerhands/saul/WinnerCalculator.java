@@ -23,9 +23,18 @@ public class WinnerCalculator {
                 result = highestCardWinner(firstHand, secondHand);
                 break;
 
+            case PAIR:
+                result = highestPairWinner(firstHand, secondHand);
+
             default:
                 break;
         }
+        return result;
+    }
+
+    private int highestPairWinner(Hand firstHand, Hand secondHand) {
+        int result = 0;
+
         return result;
     }
 
