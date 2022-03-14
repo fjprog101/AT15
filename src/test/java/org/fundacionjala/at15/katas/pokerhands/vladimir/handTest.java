@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class HandTest {
+public class handTest {
 
     @Test
     public void itShouldReturnaHand() {
