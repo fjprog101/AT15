@@ -11,12 +11,19 @@ import org.junit.Test;
 
 public class CardTest {
     String blackHand[] = { "2H", "QD", "AS", "JC", "KD" };
+    String wrongBlackHand[] = { "2H", "QD", "AS", "JC", "KD", "6C" };
     Card hand = new Card(blackHand);
 
     @Test
     public void itShouldHaveFiveCards() {
         int result = hand.countCards(blackHand);
         assertEquals(5, result);
+    }
+
+    @Test
+    public void itShouldNotHaveFiveCards() {
+        int result = hand.countCards(wrongBlackHand);
+        assertEquals(6, result);
     }
 
     @Test

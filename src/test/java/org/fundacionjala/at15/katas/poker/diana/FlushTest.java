@@ -1,6 +1,8 @@
 package org.fundacionjala.at15.katas.poker.diana;
 
 import org.fundacionjala.at15.katas.pokerhands.diana.Flush;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -20,6 +22,18 @@ public class FlushTest {
         Flush flush = new Flush();
         boolean result = flush.analysisOfRule(numbers, suits);
         assertTrue(result);
+    }
+
+    @Test
+    public void itShouldNotReturnFlush() {
+        suits.add("D");
+        suits.add("D");
+        suits.add("C");
+        suits.add("D");
+        suits.add("D");
+        Flush flush = new Flush();
+        boolean result = flush.analysisOfRule(numbers, suits);
+        assertFalse(result);
     }
 
 }

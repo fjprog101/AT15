@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class FourOfKindTest {
     @Test
-    public void itShouldReturnHighCard() {
+    public void itShouldReturnFourOfKind() {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         numbers.add(8);
         numbers.add(8);
@@ -18,4 +18,17 @@ public class FourOfKindTest {
         int result = fourOfKind.analysisOfRule(numbers);
         assertEquals(8, result);
     }
+
+    // @Test
+    // public void itShouldNotReturnFourOfKind() {
+    // ArrayList<Integer> numbers = new ArrayList<Integer>();
+    // numbers.add(6);
+    // numbers.add(5);
+    // numbers.add(2);
+    // numbers.add(3);
+    // numbers.add(8);
+    // FourOfKind fourOfKind = new FourOfKind();
+    // int result = fourOfKind.analysisOfRule(numbers);
+    // assertEquals(3, result);
+    // }
 }
