@@ -8,13 +8,15 @@ public abstract class ObjectCollection {
 
     public ObjectCollection(Card[] cardSet) {
         this.cardSet = cardSet;
-        this.coll = new ArrayList<CardCollection>();
+        this.coll = new ArrayList<>();
+        filterByValue();
+        addItem();
 
     }
 
     public void filterByValue() {
 
-        ArrayList<Integer> arrTemp = new ArrayList<Integer>();
+        ArrayList<Integer> arrTemp = new ArrayList<>();
         int value;
 
         for (Card card : this.cardSet) {
@@ -25,6 +27,18 @@ public abstract class ObjectCollection {
             }
         }
         arrTemp = null;
+    }
+
+    public void addItem() {
+        for (CardCollection collection : this.coll) {
+            int count = 0;
+            for (Card card : this.cardSet) {
+                if (collection.getValue() == card.getValue()) {
+                    count++;
+                }
+            }
+            collection.setQuantity(count);
+        }
     }
 
     public ArrayList<CardCollection> getColl() {
