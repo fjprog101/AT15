@@ -19,4 +19,15 @@ public class HandUtils extends ObjectCollection {
         return true;
     }
 
+    public boolean isFlush() {
+        String prev = this.cardSet[0].getSuit();
+        for (Card card : this.cardSet) {
+            if (!prev.equals(card.getSuit())) {
+                return false;
+            } else {
+                prev = card.getSuit();
+            }
+        }
+        return true;
+    }
 }
