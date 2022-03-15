@@ -1,10 +1,9 @@
 package org.fundacionjala.at15.katas.pokerhands.vladimir;
 
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
-public class CardTest {
+public class CardClassTest {
     @Test
     public void itShouldJoinValueAndSuit() {
         Card card = new Card("A", "C");
