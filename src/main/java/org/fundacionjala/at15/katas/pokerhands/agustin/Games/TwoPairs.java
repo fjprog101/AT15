@@ -9,7 +9,7 @@ public class TwoPairs extends HandUtils {
         super(cards);
     }
 
-    public boolean match() {
+    public boolean check() {
         int pairs = 0;
         for (CardCollection collection : this.coll) {
             if (collection.getQuantity() == Notation.TWO.getValue()) {

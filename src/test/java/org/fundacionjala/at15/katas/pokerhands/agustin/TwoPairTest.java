@@ -1,14 +1,14 @@
 package org.fundacionjala.at15.katas.pokerhands.agustin;
 
-import org.fundacionjala.at15.katas.pokerhands.agustin.Games.Pair;
+import org.fundacionjala.at15.katas.pokerhands.agustin.Games.TwoPairs;
 import org.fundacionjala.at15.katas.pokerhands.agustin.Values.*;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
-public class PairTest {
+public class TwoPairTest {
     @Test
-    public void itShouldReturnPairTrue() {
+    public void itShouldReturnTwoPairsTrue() {
         Card one = new Card();
         one.setValue(Notation.TWO.getValue());
         one.setSuit(Suit.HEARTS.getSuit());
@@ -25,9 +25,9 @@ public class PairTest {
         three.setNotation(Notation.FIVE.getNotation());
 
         Card four = new Card();
-        four.setValue(Notation.NINE.getValue());
+        four.setValue(Notation.FIVE.getValue());
         four.setSuit(Suit.CLUB.getSuit());
-        four.setNotation(Notation.NINE.getNotation());
+        four.setNotation(Notation.FIVE.getNotation());
 
         Card five = new Card();
         five.setValue(Notation.KING.getValue());
@@ -35,22 +35,22 @@ public class PairTest {
         five.setNotation(Notation.KING.getNotation());
 
         Card[] cardCollection = {one,two,three,four,five};
-        Pair white = new Pair(cardCollection);
+        TwoPairs white = new TwoPairs(cardCollection);
 
         assertTrue(white.check());
     }
 
     @Test
-    public void itShouldReturnPairFalse() {
+    public void itShouldReturnTwoPairsFalse() {
         Card one = new Card();
         one.setValue(Notation.TWO.getValue());
         one.setSuit(Suit.HEARTS.getSuit());
         one.setNotation(Notation.TWO.getNotation());
 
         Card two = new Card();
-        two.setValue(Notation.THREE.getValue());
+        two.setValue(Notation.TWO.getValue());
         two.setSuit(Suit.DIAMONDS.getSuit());
-        two.setNotation(Notation.THREE.getNotation());
+        two.setNotation(Notation.TWO.getNotation());
 
         Card three = new Card();
         three.setValue(Notation.FIVE.getValue());
@@ -58,9 +58,9 @@ public class PairTest {
         three.setNotation(Notation.FIVE.getNotation());
 
         Card four = new Card();
-        four.setValue(Notation.NINE.getValue());
+        four.setValue(Notation.KING.getValue());
         four.setSuit(Suit.CLUB.getSuit());
-        four.setNotation(Notation.NINE.getNotation());
+        four.setNotation(Notation.KING.getNotation());
 
         Card five = new Card();
         five.setValue(Notation.KING.getValue());
@@ -68,8 +68,8 @@ public class PairTest {
         five.setNotation(Notation.KING.getNotation());
 
         Card[] cardCollection = {one,two,three,four,five};
-        Pair white = new Pair(cardCollection);
+        TwoPairs white = new TwoPairs(cardCollection);
 
-        assertFalse(white.check());
+        assertTrue(white.check());
     }
 }
