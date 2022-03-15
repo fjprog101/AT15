@@ -1,7 +1,6 @@
 package org.fundacionjala.at15.katas.pokerhands.jimy;
 
 import java.util.Vector;
-
 public class PokerHand {
     private Vector<Card> cards;
     private int combination;
