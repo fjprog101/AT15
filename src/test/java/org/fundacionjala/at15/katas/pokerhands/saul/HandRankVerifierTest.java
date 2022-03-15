@@ -3,20 +3,11 @@ package org.fundacionjala.at15.katas.pokerhands.saul;
 import static org.junit.Assert.*;
 
 import java.util.*;
-
-import org.fundacionjala.at15.katas.pokerhands.saul.HandRank.Rank;
 import org.junit.Test;
 
-public class HandRankTest {
+public class HandRankVerifierTest {
     @Test
-    public void itShouldHaveAValue() {
-        HandRank handRank = new HandRank();
-
-        assertEquals(0, handRank.getValue());
-    }
-
-    @Test
-    public void itShouldCalculatePairCardRank() {
+    public void itShouldVerifiesPairCards() {
         Card firstCard = new Card(1, 'C');
         Card secondCard = new Card(2, 'S');
         Card thirdCard = new Card(8, 'H');
@@ -30,13 +21,11 @@ public class HandRankTest {
         myHand.add(fourthCard);
         myHand.add(fifthCard);
 
-        HandRank handRank = new HandRank();
-        handRank.calculateRank(myHand);
-        assertEquals(Rank.PAIR, handRank.getRank());
+        assertTrue(HandTypeVerifier.isPair(myHand));
     }
 
     @Test
-    public void itShouldCalculateTwoPairCards() {
+    public void itShouldVerifiesTwoPairCards() {
         Card firstCard = new Card(2, 'C');
         Card secondCard = new Card(2, 'S');
         Card thirdCard = new Card(5, 'H');
@@ -50,18 +39,16 @@ public class HandRankTest {
         myHand.add(fourthCard);
         myHand.add(fifthCard);
 
-        HandRank handRank = new HandRank();
-        handRank.calculateRank(myHand);
-        assertEquals(Rank.TWO_PAIRS, handRank.getRank());
+        assertTrue(HandTypeVerifier.isTwoPairs(myHand));
     }
 
     @Test
-    public void itShouldCalculateThreeOfAKind() {
-        Card firstCard = new Card(2, 'H');
-        Card secondCard = new Card(4, 'S');
-        Card thirdCard = new Card(3, 'H');
-        Card fourthCard = new Card(3, 'C');
-        Card fifthCard = new Card(3, 'D');
+    public void itShouldVerifiesThreeOfAKind() {
+        Card firstCard = new Card(2, 'C');
+        Card secondCard = new Card(2, 'S');
+        Card thirdCard = new Card(8, 'H');
+        Card fourthCard = new Card(8, 'C');
+        Card fifthCard = new Card(8, 'D');
 
         List<Card> myHand = new ArrayList<Card>();
         myHand.add(firstCard);
@@ -70,13 +57,11 @@ public class HandRankTest {
         myHand.add(fourthCard);
         myHand.add(fifthCard);
 
-        HandRank handRank = new HandRank();
-        handRank.calculateRank(myHand);
-        assertEquals(Rank.THREE_KIND, handRank.getRank());
+        assertTrue(HandTypeVerifier.isThreeKind(myHand));
     }
 
     @Test
-    public void itShouldCalculateStrightHand() {
+    public void itShouldVerifiesStrightHand() {
         Card firstCard = new Card(5, 'C');
         Card secondCard = new Card(6, 'S');
         Card thirdCard = new Card(7, 'H');
@@ -90,13 +75,11 @@ public class HandRankTest {
         myHand.add(fourthCard);
         myHand.add(fifthCard);
 
-        HandRank handRank = new HandRank();
-        handRank.calculateRank(myHand);
-        assertEquals(Rank.STRAIGHT, handRank.getRank());
+        assertTrue(HandTypeVerifier.isStraight(myHand));
     }
 
     @Test
-    public void itShouldCalculateFlushHand() {
+    public void itShouldVerifiesFlushHand() {
         Card firstCard = new Card(3, 'S');
         Card secondCard = new Card(6, 'S');
         Card thirdCard = new Card(7, 'S');
@@ -110,13 +93,11 @@ public class HandRankTest {
         myHand.add(fourthCard);
         myHand.add(fifthCard);
 
-        HandRank handRank = new HandRank();
-        handRank.calculateRank(myHand);
-        assertEquals(Rank.FLUSH, handRank.getRank());
+        assertTrue(HandTypeVerifier.isFlush(myHand));
     }
 
     @Test
-    public void itShouldCalculateFullHouseHand() {
+    public void itShouldVerifiesFullHouseHand() {
         Card firstCard = new Card(5, 'S');
         Card secondCard = new Card(5, 'S');
         Card thirdCard = new Card(9, 'S');
@@ -130,13 +111,11 @@ public class HandRankTest {
         myHand.add(fourthCard);
         myHand.add(fifthCard);
 
-        HandRank handRank = new HandRank();
-        handRank.calculateRank(myHand);
-        assertEquals(Rank.FULL_HOUSE, handRank.getRank());
+        assertTrue(HandTypeVerifier.isFullHouse(myHand));
     }
 
     @Test
-    public void itShouldCcalculateFourKindHand() {
+    public void itShouldVerifiesFourKindHand() {
         Card firstCard = new Card(5, 'S');
         Card secondCard = new Card(9, 'S');
         Card thirdCard = new Card(9, 'S');
@@ -150,9 +129,7 @@ public class HandRankTest {
         myHand.add(fourthCard);
         myHand.add(fifthCard);
 
-        HandRank handRank = new HandRank();
-        handRank.calculateRank(myHand);
-        assertEquals(Rank.FOUR_KIND, handRank.getRank());
+        assertTrue(HandTypeVerifier.isFourKind(myHand));
     }
 
     @Test
@@ -170,8 +147,6 @@ public class HandRankTest {
         myHand.add(fourthCard);
         myHand.add(fifthCard);
 
-        HandRank handRank = new HandRank();
-        handRank.calculateRank(myHand);
-        assertEquals(Rank.STRAIGHT_FLUSH, handRank.getRank());
+        assertTrue(HandTypeVerifier.isStraightFlush(myHand));
     }
 }
