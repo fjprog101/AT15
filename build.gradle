@@ -36,3 +36,8 @@ check.dependsOn jacocoTestReport
 
 test.finalizedBy("checkstyleMain")
 test.finalizedBy("jacocoTestReport")
+
+task runPokerHandsMauricio (dependsOn: 'classes', type: JavaExec) {
+    main = 'org.fundacionjala.at15.katas.pokerhands.mauricio.Main'
+    classpath = sourceSets.main.runtimeClasspath
+}
