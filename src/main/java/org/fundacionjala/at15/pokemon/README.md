@@ -3,4 +3,4 @@ Pokémon have been, from the very beginning, spoken of as friends and partners t
 
 The purpose of this project is to represent the Pokémon world and all its elements. Check User Stories below:
 
-- [Stories 1](./Stories 1.md)
+- [Stories 1](Stories 1.md)
