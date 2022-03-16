@@ -1,5 +1,5 @@
 package org.fundacionjala.at15.katas.pokerhands.jimy;
-public class PokerHandsDeck extends RankCard {
+public class PokerGame extends RankCard {
     private PokerHand playerOne;
     private PokerHand playerTwo;
     private final int numCards = 5;
@@ -10,7 +10,7 @@ public class PokerHandsDeck extends RankCard {
     private final int seven = 7;
     private final int eight = 8;
     private final int fourteen = 14;
-    public PokerHandsDeck(String line) {
+    public PokerGame(String line) {
         String black = line.substring(line.indexOf(":") + 1, line.indexOf("White:"));
         String white = line.substring(line.lastIndexOf(":") + 1);
         String[] playerOneCards = black.trim().split(" ");

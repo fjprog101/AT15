@@ -8,10 +8,13 @@ public class Card {
     private final int twel = 12;
     private final int thert = 13;
     private final int ace = 14;
-
+    private String inp;
     public Card(String input) {
-        suit = input.charAt(input.length() - 1);
-        String aux = input.substring(0, input.length() - 1);
+        this.inp = input;
+    }
+    public int getValue() {
+        suit = inp.charAt(inp.length() - 1);
+        String aux = inp.substring(0, inp.length() - 1);
         if (Character.isDigit(aux.charAt(0))) {
             value = Integer.valueOf(aux);
         } else {
@@ -36,8 +39,6 @@ public class Card {
                     break;
             }
         }
-    }
-    public int getValue() {
         return value;
     }
     public char getSuit() {
