@@ -78,7 +78,7 @@ public class PokerGame extends RankCard {
         }
     }
     private String resolveTie() {
-        for (int index = numCards; index >= 0; index--) {
+        for (int index = numCards - 1; index >= 0; index--) {
             if (playerOne.getValue(index) == playerTwo.getValue(index)) {
                 continue;
             }
