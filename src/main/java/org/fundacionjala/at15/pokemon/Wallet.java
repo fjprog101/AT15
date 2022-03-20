@@ -4,7 +4,6 @@ public class Wallet {
 
     private int moneyInWallet;
     private final int moneyAtTheBeginning = 100;
-    // private int money;
 
     public Wallet() {
         this.moneyInWallet = moneyAtTheBeginning;
