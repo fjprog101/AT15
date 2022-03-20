@@ -4,19 +4,19 @@ public class Wallet {
 
     private int moneyInWallet;
     private final int moneyAtTheBeginning = 100;
-    static final int BONUS = 50;
+    // private int money;
 
-    public Wallet() {
+    public Wallet(int money) {
         this.moneyInWallet = moneyAtTheBeginning;
     }
 
-    public int winBattle() {
-        return moneyInWallet + BONUS;
+    public int winMoney(int money) {
+        return moneyInWallet + money;
     }
 
-    public int loseBattle() {
-        if (moneyInWallet >= BONUS) {
-            moneyInWallet = moneyInWallet - BONUS;
+    public int spendMoney(int money) {
+        if (moneyInWallet >= money) {
+            moneyInWallet = moneyInWallet - money;
         }
         return moneyInWallet;
     }
