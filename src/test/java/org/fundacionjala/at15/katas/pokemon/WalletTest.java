@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class WalletTest {
     private final int money = 50;
-    Wallet wallet = new Wallet(money);
+    Wallet wallet = new Wallet();
 
     @Test
     public void itshouldAddBonus() {

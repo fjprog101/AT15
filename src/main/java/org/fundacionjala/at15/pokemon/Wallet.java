@@ -6,7 +6,7 @@ public class Wallet {
     private final int moneyAtTheBeginning = 100;
     // private int money;
 
-    public Wallet(int money) {
+    public Wallet() {
         this.moneyInWallet = moneyAtTheBeginning;
     }
 
