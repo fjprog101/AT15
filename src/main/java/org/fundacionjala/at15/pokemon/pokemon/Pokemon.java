@@ -46,6 +46,10 @@ public class Pokemon {
         twentyPercentCheck();
     }
 
+    public void setCurrentHealthPointsWithPotion() {
+        this.currentHealthPoints = this.maxHealthPoints;
+    }
+
     public void setMoveToList(Move newMove, int position1To4) {
         this.movementList[position1To4 - 1] = newMove;
     }
