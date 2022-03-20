@@ -11,7 +11,7 @@ public abstract class Item {
         return cost;
     }
 
-    public void setCost(int cost) {
-        this.cost = cost;
+    public void setCost(int newCost) {
+        this.cost = newCost;
     }
 }
