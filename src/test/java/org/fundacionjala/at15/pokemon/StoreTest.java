@@ -11,17 +11,21 @@ public class StoreTest {
     public void itShouldGiveAPokeballAndChargeCost() {
         ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
         int initialSize = pokeballs.size();
-        Store.buyPokeball(pokeballs);
+        Wallet wallet = new Wallet();
+        Store.buyPokeball(pokeballs, wallet);
 
         assertEquals(initialSize + 1, pokeballs.size());
+        assertEquals(80, wallet.getMoneyInWallet());
     }
 
     @Test
     public void itShouldGiveAPotionAndChargeCost() {
         ArrayList<Potion> potions = new ArrayList<Potion>();
         int initialSize = potions.size();
-        Store.buyPokeball(potions);
+        Wallet wallet = new Wallet();
+        Store.buyPokeball(potions, wallet);
 
         assertEquals(initialSize + 1, potions.size());
+        assertEquals(60, wallet.getMoneyInWallet());
     }
 }
