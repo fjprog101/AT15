@@ -1,6 +1,5 @@
-package org.fundacionjala.at15.katas.pokemon;
+package org.fundacionjala.at15.pokemon;
 
-import org.fundacionjala.at15.pokemon.Wallet;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -25,5 +24,4 @@ public class WalletTest {
     public void itshouldReturnMoneyInWallet() {
         assertEquals(100, wallet.getMoneyInWallet());
     }
-
 }
