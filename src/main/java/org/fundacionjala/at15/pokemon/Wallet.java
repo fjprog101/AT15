@@ -10,15 +10,14 @@ public class Wallet {
         this.moneyInWallet = moneyAtTheBeginning;
     }
 
-    public int winMoney(int money) {
-        return moneyInWallet + money;
+    public void winMoney(int money) {
+        moneyInWallet = moneyInWallet + money;
     }
 
-    public int spendMoney(int money) {
+    public void spendMoney(int money) {
         if (moneyInWallet >= money) {
             moneyInWallet = moneyInWallet - money;
         }
-        return moneyInWallet;
     }
 
     public int getMoneyInWallet() {

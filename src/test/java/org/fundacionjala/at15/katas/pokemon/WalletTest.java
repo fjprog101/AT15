@@ -11,12 +11,14 @@ public class WalletTest {
 
     @Test
     public void itshouldAddBonus() {
-        assertEquals(150, wallet.winMoney(money));
+        wallet.winMoney(money);
+        assertEquals(150, wallet.getMoneyInWallet());
     }
 
     @Test
     public void itshouldTakeOffBonus() {
-        assertEquals(50, wallet.spendMoney(money));
+        wallet.spendMoney(money);
+        assertEquals(50, wallet.getMoneyInWallet());
     }
 
     @Test
