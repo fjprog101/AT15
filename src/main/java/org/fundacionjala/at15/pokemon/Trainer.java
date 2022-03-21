@@ -1,39 +1,53 @@
 package org.fundacionjala.at15.pokemon;
 
+import java.util.ArrayList;
+
 public class Trainer {
-    private final int limit = 6;
+    private String name;
     private Wallet wallet = new Wallet();
-    private String[] teamPokemon = new String[limit];
-    private int numberOfPokeballs = 0;
-    private int numberOfPotions = 0;
+    private PokemonTeam pokemonTeam;
+    private ArrayList<HealingPotion> healingPotions = new ArrayList<HealingPotion>();
+    //private ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
 
-    public Trainer() {
-
+    //initial pokemon for trainer and trainer name
+    public Trainer(Pokemon pokemon, String newName) {
+        this.pokemonTeam = new PokemonTeam(pokemon);
+        this.name = newName;
     }
 
-    public boolean usePokeball() {
-        if (numberOfPokeballs == 0) {
-            return false;
-        } else {
-            numberOfPokeballs--;
-            return true;
+    //get current pokemon used
+    public Pokemon currentPokemon(int current) {
+        return pokemonTeam.getPokemonTeam().get(current);
+    }
+
+    //use the healing potion in the current pokemon
+    public void useHealingPotion(int current) {
+        if (healingPotions.size() != 0) {
+            HealingPotion currentPotion = healingPotions.get(healingPotions.size() - 1);
+            currentPotion.restoreHpToMax(currentPokemon(current));
+            healingPotions.remove(healingPotions.size() - 1);
         }
     }
 
-    public boolean usePotion() {
-        if (numberOfPotions == 0) {
-            return false;
-        } else {
-            numberOfPotions--;
-            return true;
-        }
+
+
+    public String getName() {
+        return name;
     }
 
-    public int getNumberOfPokeballs() {
-        return numberOfPokeballs;
+    public Wallet getWallet() {
+        return wallet;
     }
 
-    public int getNumberOfPotions() {
-        return numberOfPotions;
+    public PokemonTeam getPokemonTeam() {
+        return pokemonTeam;
     }
+
+    public ArrayList getHealingPotion() {
+        return healingPotions;
+    }
+
+    /*public ArrayList getPokeballs() {
+        return pokeballs;
+    }*/
 }
