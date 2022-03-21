@@ -5,7 +5,6 @@ public abstract class Move {
     // protected int currentPowerPoints;
     protected int potency;
 //    protected int precision; for later
-
 //    For later
 //    public int getMaxPowerPoints() {
 //        return maxPowerPoints;
