@@ -1,6 +1,4 @@
-package org.fundacionjala.at15.pokemon.pokemon;
-
-import org.fundacionjala.at15.pokemon.pokemon.moves.Move;
+package org.fundacionjala.at15.pokemon;
 
 public class Pokemon {
     private static final int MAX_QUANTITY_MOVES = 4;

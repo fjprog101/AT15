@@ -1,11 +1,6 @@
-package pokemon;
-
-import org.fundacionjala.at15.pokemon.pokemon.Pokemon;
+package org.fundacionjala.at15.pokemon;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-import org.fundacionjala.at15.pokemon.pokemon.moves.Move;
-import org.fundacionjala.at15.pokemon.pokemon.moves.Tackle;
 import org.junit.Test;
 
 public class PokemonTest {

@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.pokemon.pokemon.moves;
+package org.fundacionjala.at15.pokemon;
 
 public abstract class Move {
     // protected int maxPowerPoints; for later
