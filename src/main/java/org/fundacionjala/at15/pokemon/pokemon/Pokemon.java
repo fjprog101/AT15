@@ -5,9 +5,9 @@ import org.fundacionjala.at15.pokemon.pokemon.moves.Move;
 public class Pokemon {
     private static final int MAX_QUANTITY_MOVES = 4;
     private static final double TWENTY_PERCENT = 0.20;
-    private int maxHealthPoints;
-    private int currentHealthPoints;
-    private double twentyPercentMaxHealthPoints;
+    private int maxHitPoints;
+    private int currentHitPoints;
+    private double twentyPercentMaxHitPoints;
     // the next attributes are for the future
 //    private int experience;
 //    private int level;
@@ -19,17 +19,17 @@ public class Pokemon {
     private boolean is20Percent = false;
 
     public Pokemon(int newMaxHP) {
-        this.maxHealthPoints = newMaxHP;
-        this.currentHealthPoints = maxHealthPoints;
+        this.maxHitPoints = newMaxHP;
+        this.currentHitPoints = maxHitPoints;
 
     }
 
-    public int getMaxHealthPoints() {
-        return maxHealthPoints;
+    public int getMaxHitPoints() {
+        return maxHitPoints;
     }
 
-    public int getCurrentHealthPoints() {
-        return currentHealthPoints;
+    public int getCurrentHitPoints() {
+        return currentHitPoints;
     }
 
     public Move getMove(int listPosition) {
@@ -40,26 +40,26 @@ public class Pokemon {
         return is20Percent;
     }
 
-    public void setCurrentHealthPoints(int damageReceived) {
-        this.currentHealthPoints = this.currentHealthPoints - damageReceived;
-        twentyPercentMaxHealthPoints();
+    public void setCurrentHitPoints(int damageReceived) {
+        this.currentHitPoints = this.currentHitPoints - damageReceived;
+        twentyPercentMaxHitPoints();
         twentyPercentCheck();
     }
 
     public void setCurrentHealthPointsWithPotion() {
-        this.currentHealthPoints = this.maxHealthPoints;
+        this.currentHitPoints = this.maxHitPoints;
     }
 
     public void setMoveToList(Move newMove, int position1To4) {
         this.movementList[position1To4 - 1] = newMove;
     }
 
-    private void twentyPercentMaxHealthPoints() {
-        this.twentyPercentMaxHealthPoints = maxHealthPoints * TWENTY_PERCENT;
+    private void twentyPercentMaxHitPoints() {
+        this.twentyPercentMaxHitPoints = maxHitPoints * TWENTY_PERCENT;
     }
 
     private void twentyPercentCheck() {
-        if (currentHealthPoints <= twentyPercentMaxHealthPoints) {
+        if (currentHitPoints <= twentyPercentMaxHitPoints) {
             is20Percent = true;
         }
     }
