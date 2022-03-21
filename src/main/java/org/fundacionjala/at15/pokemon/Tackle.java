@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.pokemon.pokemon.moves;
+package org.fundacionjala.at15.pokemon;
 
 public class Tackle extends Move {
     //private static final int TACKLE_PP = 35; for later

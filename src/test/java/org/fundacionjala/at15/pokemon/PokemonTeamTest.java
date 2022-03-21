@@ -7,20 +7,22 @@ import org.junit.Test;
 public class PokemonTeamTest {
     @Test
     public void theTeamPokemonShouldStartWithOnePokemon() {
-        PokemonTeam team = new PokemonTeam("Pikachu");
-        assertEquals("Pikachu", team.getPokemonTeam().get(0));
+        Pokemon pikachu = new Pokemon(100);
+        PokemonTeam team = new PokemonTeam(pikachu);
+        assertEquals(pikachu, team.getPokemonTeam().get(0));
     }
 
     @Test
     public void itShouldAddAPokemonOnlyIfTheTeamHasLessThanSixPokemons() {
-        PokemonTeam team = new PokemonTeam("Pikachu");
-        team.addPokemon("pokemon3");
-        team.addPokemon("pokemon3");
-        team.addPokemon("pokemon4");
-        team.addPokemon("pokemon5");
-        team.addPokemon("Charmander");
-        assertEquals("Charmander", team.getPokemonTeam().get(5));
-        team.addPokemon("pokemon7");
+        PokemonTeam team = new PokemonTeam(new Pokemon(1));
+        team.addPokemon(new Pokemon(2));
+        team.addPokemon(new Pokemon(3));
+        team.addPokemon(new Pokemon(4));
+        team.addPokemon(new Pokemon(5));
+        Pokemon charmander = new Pokemon(150);
+        team.addPokemon(charmander);
+        assertEquals(charmander, team.getPokemonTeam().get(5));
+        team.addPokemon(new Pokemon(7));
         assertEquals(6, team.getPokemonTeam().size());
     }
 }
