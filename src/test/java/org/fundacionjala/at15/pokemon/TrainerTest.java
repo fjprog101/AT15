@@ -6,18 +6,17 @@ import org.junit.Test;
 public class TrainerTest {
     @Test
     public void itShouldReturnCurrentPokemon() {
-        Pokemon pokemon = new Pokemon(100);
+        Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
-        Pokemon expectedPokemon = new Pokemon(100);
+        Pokemon expectedPokemon = new Pokemon(100, "pikachu");
         int actual = trainer.currentPokemon(0).getHitPoints().getMaxHitPoints();
         int expected = expectedPokemon.getHitPoints().getMaxHitPoints();
         assertEquals(expected, actual);
-
     }
 
     @Test
     public void itShouldRemoveOneHealingPotion() {
-        Pokemon pokemon = new Pokemon(100);
+        Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         HealingPotion healingPotion1 = new HealingPotion();
         HealingPotion healingPotion2 = new HealingPotion();
@@ -29,9 +28,9 @@ public class TrainerTest {
 
     @Test
     public void itShouldRemoveOnePokeball() {
-        Pokemon pokemon = new Pokemon(100);
+        Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
-        Pokemon wildPokemon = new Pokemon(10);
+        Pokemon wildPokemon = new Pokemon(10, "pikachu");
         Pokeball pokeball1 = new Pokeball();
         Pokeball pokeball2 = new Pokeball();
         trainer.getPokeballs().add(pokeball1);

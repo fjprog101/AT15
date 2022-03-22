@@ -7,10 +7,12 @@ public class Pokemon {
 
     private Move[] movementList = new Move[MAX_QUANTITY_MOVES];
 
-    public Pokemon(int newMaxHP) {
+    private String pokemonName;
+
+    public Pokemon(int newMaxHP, String pokemonName) {
 
         hitPoints = new HitPoints(newMaxHP);
-
+        this.pokemonName = pokemonName;
     }
 
     public Move getMove(int listPosition) {
@@ -25,6 +27,8 @@ public class Pokemon {
         return this.hitPoints;
     }
 
-
+    public String getPokemonName() {
+        return this.pokemonName;
+    }
 
 }

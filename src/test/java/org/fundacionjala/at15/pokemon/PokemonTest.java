@@ -7,7 +7,7 @@ public class PokemonTest {
 
     @Test
     public void itShouldHaveMoves() {
-        Pokemon pikachu = new Pokemon(200);
+        Pokemon pikachu = new Pokemon(200, "pikachu");
         Move tackle = new Tackle();
         pikachu.setMoveToList(tackle,1);
 
