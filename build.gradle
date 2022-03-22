@@ -17,10 +17,19 @@ test {
     }
 }
 
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['org/fundacionjala/at15/katas/**'])
+        }))
+    }
+}
+
 checkstyle {
     toolVersion '8.34'
     configFile file('config/checkstyle/checkstyle.xml')
     checkstyleMain.source = "src/main/"
+    checkstyleMain.excludes = ["**/katas/**"]
     checkstyleMain.excludes = ["**/src/test/**"]
 }
 
@@ -31,8 +40,6 @@ checkstyleMain {
 checkstyleTest {
     source = 'src/main/java'
 }
-
-check.dependsOn jacocoTestReport
 
 test.finalizedBy("checkstyleMain")
 test.finalizedBy("jacocoTestReport")
