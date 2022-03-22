@@ -10,8 +10,10 @@ public class DamageReceivedTest {
         int maxHitPoints = 1000;
         int attackDamage = 100;
         int afterHp = 900;
-        DamageReceived damage = new DamageReceived(maxHitPoints, attackDamage);
-        assertEquals(afterHp, damage.getHp());
+        Pokemon pokemon = new Pokemon(maxHitPoints, "pokemon");
+        DamageReceived damage = new DamageReceived(attackDamage);
+        damage.affectHP(pokemon);
+        assertEquals(afterHp, pokemon.getHitPoints().getCurrentHitPoints());
     }
 
     @Test
@@ -19,7 +21,9 @@ public class DamageReceivedTest {
         int currentHitPoints = 80;
         int attackDamage = 100;
         int afterHp = 0;
-        DamageReceived damage = new DamageReceived(currentHitPoints, attackDamage);
-        assertEquals(afterHp, damage.getHp());
+        Pokemon pokemon = new Pokemon(currentHitPoints, "pokemon");
+        DamageReceived damage = new DamageReceived(attackDamage);
+        damage.affectHP(pokemon);
+        assertEquals(afterHp, pokemon.getHitPoints().getCurrentHitPoints());
     }
 }
