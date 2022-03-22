@@ -7,7 +7,7 @@ public class Trainer {
     private Wallet wallet = new Wallet();
     private PokemonTeam pokemonTeam;
     private ArrayList<HealingPotion> healingPotions = new ArrayList<HealingPotion>();
-    //private ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
+    private ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
 
     //initial pokemon for trainer and trainer name
     public Trainer(Pokemon pokemon, String newName) {
@@ -29,7 +29,18 @@ public class Trainer {
         }
     }
 
+    //use pokeball on wild pokemon
+    public void usePokeball(Pokemon pokemon) {
+        boolean verification = true;//just for now
 
+        if (pokeballs.size() != 0) {
+            Pokeball currentPokeball = pokeballs.get(pokeballs.size() - 1);
+            if (verification) {
+                pokemonTeam.addPokemon(pokemon);
+            }
+            pokeballs.remove(pokeballs.size() - 1);
+        }
+    }
 
     public String getName() {
         return name;
@@ -47,7 +58,7 @@ public class Trainer {
         return healingPotions;
     }
 
-    /*public ArrayList getPokeballs() {
+    public ArrayList getPokeballs() {
         return pokeballs;
-    }*/
+    }
 }
