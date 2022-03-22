@@ -31,11 +31,9 @@ public class Trainer {
 
     //use pokeball on wild pokemon
     public void usePokeball(Pokemon pokemon) {
-        boolean verification = true;//just for now
-
         if (pokeballs.size() != 0) {
             Pokeball currentPokeball = pokeballs.get(pokeballs.size() - 1);
-            if (verification) {
+            if (currentPokeball.catchPokemon(pokemon)) {
                 pokemonTeam.addPokemon(pokemon);
             }
             pokeballs.remove(pokeballs.size() - 1);
