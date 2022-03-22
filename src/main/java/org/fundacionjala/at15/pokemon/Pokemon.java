@@ -42,7 +42,7 @@ public class Pokemon {
         this.currentHitPoints = hitPoints;
     }
 
-    public void setCurrentHealthPointsWithPotion() {
+    public void heal() {
         this.currentHitPoints = this.maxHitPoints;
     }
 

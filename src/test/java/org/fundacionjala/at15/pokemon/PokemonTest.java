@@ -34,5 +34,14 @@ public class PokemonTest {
         assertTrue(pikachu.is20Percent());
     }
 
+    @Test
+    public void itShouldHealHP() {
+        Pokemon pikachu = new Pokemon(10);
+        pikachu.setCurrentHitPoints(2);
+        pikachu.heal();
+
+        assertEquals(10, pikachu.getCurrentHitPoints());
+    }
+
 
 }

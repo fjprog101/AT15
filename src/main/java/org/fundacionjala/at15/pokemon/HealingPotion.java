@@ -11,7 +11,7 @@ public class HealingPotion extends Item {
     public void restoreHpToMax(Pokemon p1) {
 
         if (p1.getCurrentHitPoints() < p1.getMaxHitPoints()) {
-            p1.setCurrentHealthPointsWithPotion();
+            p1.heal();
         }
     }
 }
