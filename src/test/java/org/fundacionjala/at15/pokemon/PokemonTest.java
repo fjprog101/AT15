@@ -14,7 +14,7 @@ public class PokemonTest {
     public void itShouldChangeCurrentHP() {
         Pokemon pikachu = new Pokemon(200);
         pikachu.setCurrentHitPoints(150);
-        assertEquals(50, pikachu.getCurrentHitPoints());
+        assertEquals(150, pikachu.getCurrentHitPoints());
     }
 
     @Test
@@ -28,10 +28,19 @@ public class PokemonTest {
 
     @Test
     public void itShouldKnowIf20Percent() {
-        Pokemon pikachu = new Pokemon(200);
-        pikachu.setCurrentHitPoints(160);
+        Pokemon pikachu = new Pokemon(10);
+        pikachu.setCurrentHitPoints(2);
 
         assertTrue(pikachu.is20Percent());
+    }
+
+    @Test
+    public void itShouldHealHP() {
+        Pokemon pikachu = new Pokemon(10);
+        pikachu.setCurrentHitPoints(2);
+        pikachu.heal();
+
+        assertEquals(10, pikachu.getCurrentHitPoints());
     }
 
 

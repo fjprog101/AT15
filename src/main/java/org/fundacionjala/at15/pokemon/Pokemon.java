@@ -2,10 +2,10 @@ package org.fundacionjala.at15.pokemon;
 
 public class Pokemon {
     private static final int MAX_QUANTITY_MOVES = 4;
-    private static final double TWENTY_PERCENT = 0.20;
-    private int maxHitPoints;
+    private static final int PERCENTAGE = 100;
+    private static final int TWENTY_PERCENTAGE = 20;
+    private final int maxHitPoints;
     private int currentHitPoints;
-    private double twentyPercentMaxHitPoints;
     // the next attributes are for the future
 //    private int experience;
 //    private int level;
@@ -35,16 +35,14 @@ public class Pokemon {
     }
 
     public boolean is20Percent() {
-        return is20Percent;
+        return currentHitPoints * PERCENTAGE / maxHitPoints <= TWENTY_PERCENTAGE;
     }
 
-    public void setCurrentHitPoints(int damageReceived) {
-        this.currentHitPoints = this.currentHitPoints - damageReceived;
-        twentyPercentMaxHitPoints();
-        twentyPercentCheck();
+    public void setCurrentHitPoints(int hitPoints) {
+        this.currentHitPoints = hitPoints;
     }
 
-    public void setCurrentHealthPointsWithPotion() {
+    public void heal() {
         this.currentHitPoints = this.maxHitPoints;
     }
 
@@ -52,14 +50,5 @@ public class Pokemon {
         this.movementList[position1To4 - 1] = newMove;
     }
 
-    private void twentyPercentMaxHitPoints() {
-        this.twentyPercentMaxHitPoints = maxHitPoints * TWENTY_PERCENT;
-    }
-
-    private void twentyPercentCheck() {
-        if (currentHitPoints <= twentyPercentMaxHitPoints) {
-            is20Percent = true;
-        }
-    }
 
 }
