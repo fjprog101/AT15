@@ -1,6 +1,6 @@
 package org.fundacionjala.at15.pokemon;
 
-public class HealingPotion extends Item {
+public class HealingPotion extends Item implements HPAffecter {
     public static final int POTION_COST = 40;
 
     public HealingPotion() {
@@ -8,10 +8,11 @@ public class HealingPotion extends Item {
         this.setCost(POTION_COST);
     }
 
-    public void restoreHpToMax(Pokemon p1) {
+    @Override
+    public void affectHP(Pokemon pokemon) {
 
-        if (p1.getCurrentHitPoints() < p1.getMaxHitPoints()) {
-            p1.heal();
-        }
+        pokemon.getHitPoints().fullRestore();
+
     }
+
 }

@@ -13,9 +13,9 @@ public class PokeballTest {
 
     @Test
     public void itShouldCheckPokemonHP() {
-        Pokemon pikachu = new Pokemon(10);
-        pikachu.setCurrentHitPoints(2);
+        Pokemon pikachu = new Pokemon(10, "pikachu");
         Pokeball ball = new Pokeball();
+        pikachu.getHitPoints().setCurrentHitPoints(2);
         assertTrue(ball.catchPokemon(pikachu));
     }
 }
