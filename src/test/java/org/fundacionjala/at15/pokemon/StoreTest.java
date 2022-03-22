@@ -7,16 +7,16 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 public class StoreTest {
-    // @Test
-    // public void itShouldGiveAPokeballAndChargeCost() {
-    //     ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
-    //     int initialSize = pokeballs.size();
-    //     Wallet wallet = new Wallet();
-    //     Store.buyPokeball(pokeballs, wallet);
+    @Test
+    public void itShouldGiveAPokeballAndChargeCost() {
+        ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
+        int initialSize = pokeballs.size();
+        Wallet wallet = new Wallet();
+        Store.buyPokeball(pokeballs, wallet);
 
-    //     assertEquals(initialSize + 1, pokeballs.size());
-    //     assertEquals(80, wallet.getMoneyInWallet());
-    // }
+        assertEquals(initialSize + 1, pokeballs.size());
+        assertEquals(80, wallet.getMoneyInWallet());
+    }
 
     @Test
     public void itShouldGiveAPotionAndChargeCost() {
