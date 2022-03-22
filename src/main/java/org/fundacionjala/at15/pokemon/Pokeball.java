@@ -8,7 +8,7 @@ public class Pokeball extends Item {
     }
 
     public boolean catchPokemon(Pokemon poke) {
-        return poke.is20Percent();
+        return poke.getHitPoints().is20Percent();
     }
 
 }

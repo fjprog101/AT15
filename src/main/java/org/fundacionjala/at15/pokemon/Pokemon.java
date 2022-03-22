@@ -3,7 +3,7 @@ package org.fundacionjala.at15.pokemon;
 public class Pokemon {
     private static final int MAX_QUANTITY_MOVES = 4;
 
-    public HitPoints hitPoints;
+    private HitPoints hitPoints;
 
     private Move[] movementList = new Move[MAX_QUANTITY_MOVES];
 
@@ -24,5 +24,7 @@ public class Pokemon {
     public HitPoints getHitPoints() {
         return this.hitPoints;
     }
+
+
 
 }

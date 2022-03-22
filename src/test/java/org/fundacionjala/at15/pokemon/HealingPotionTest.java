@@ -15,10 +15,10 @@ public class HealingPotionTest {
     @Test
     public void itShouldRestoreHitPointOfAPokemon() {
         Pokemon pikachu = new Pokemon(200);
-        pikachu.setCurrentHitPoints(150);
-        HealingPotion potion1 = new HealingPotion();
-        potion1.restoreHpToMax(pikachu);
-        assertEquals(200, pikachu.getCurrentHitPoints());
+        pikachu.getHitPoints().setCurrentHitPoints(10);
+        pikachu.getHitPoints().fullRestore();
+        assertEquals(200, pikachu.getHitPoints().getCurrentHitPoints());
+
     }
 
 }

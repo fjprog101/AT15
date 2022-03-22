@@ -24,7 +24,7 @@ public class Trainer {
     public void useHealingPotion(int current) {
         if (healingPotions.size() != 0) {
             HealingPotion currentPotion = healingPotions.get(healingPotions.size() - 1);
-            currentPotion.restoreHpToMax(currentPokemon(current));
+            currentPotion.affectHP(currentPokemon(current));
             healingPotions.remove(healingPotions.size() - 1);
         }
     }

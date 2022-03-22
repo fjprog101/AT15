@@ -9,9 +9,10 @@ public class TrainerTest {
         Pokemon pokemon = new Pokemon(100);
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon expectedPokemon = new Pokemon(100);
-        int actual = trainer.currentPokemon(0).getMaxHitPoints();
-        int expected = expectedPokemon.getMaxHitPoints();
+        int actual = trainer.currentPokemon(0).getHitPoints().getMaxHitPoints();
+        int expected = expectedPokemon.getHitPoints().getMaxHitPoints();
         assertEquals(expected, actual);
+
     }
 
     @Test
