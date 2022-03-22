@@ -7,5 +7,8 @@ public class Pokeball extends Item {
         this.cost = COST;
     }
 
+    public boolean catchPokemon(Pokemon poke) {
+        return poke.is20Percent();
+    }
 
 }
