@@ -30,9 +30,14 @@ checkstyle {
     configFile file('config/checkstyle/checkstyle.xml')
     checkstyleMain.source = "src/main/"
     checkstyleMain.excludes = ["**/katas/**"]
+    checkstyleMain.excludes = ["**/src/test/**"]
 }
 
 checkstyleMain {
+    source = 'src/main/java'
+}
+
+checkstyleTest {
     source = 'src/main/java'
 }
 
