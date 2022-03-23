@@ -13,6 +13,8 @@ public class Pokemon {
 
         hitPoints = new HitPoints(newMaxHP);
         this.pokemonName = pokemonName;
+        Move tackle = new Tackle();
+        this.movementList[0] = tackle;
     }
 
     public Move getMove(int listPosition) {
