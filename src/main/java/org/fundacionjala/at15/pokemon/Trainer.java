@@ -52,11 +52,11 @@ public class Trainer {
         return pokemonTeam;
     }
 
-    public ArrayList getHealingPotion() {
+    public ArrayList<HealingPotion> getHealingPotion() {
         return healingPotions;
     }
 
-    public ArrayList getPokeballs() {
+    public ArrayList<Pokeball> getPokeballs() {
         return pokeballs;
     }
 }
