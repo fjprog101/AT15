@@ -57,11 +57,13 @@ public class TrainerBattle extends Battle {
 
     //get the winner and win money and lose money
     public Trainer getWinner() {
-        trainer1.getWallet().winMoney(money);
-        trainer2.getWallet().loseMoney(money);
         if (turn % 2 != 0) {
+            trainer1.getWallet().winMoney(money);
+            trainer2.getWallet().loseMoney(money);
             return trainer1;
         } else {
+            trainer2.getWallet().winMoney(money);
+            trainer1.getWallet().loseMoney(money);
             return trainer2;
         }
     }
