@@ -7,10 +7,17 @@ public class PokemonTest {
 
     @Test
     public void itShouldHaveMoves() {
-        Pokemon pikachu = new Pokemon(200, "pikachu");
+        Pokemon genericPokemon = new Pokemon(200, "pikachu");
         Move tackle = new Tackle();
-        pikachu.setMoveToList(tackle,1);
+        genericPokemon.setMoveToList(tackle,1);
 
-        assertEquals(tackle, pikachu.getMove(1));
+        assertEquals(tackle, genericPokemon.getMove(1));
+    }
+
+    @Test
+    public void itShouldHaveName() {
+        Pokemon genericPokemon = new Pokemon(200, "pikachu");
+
+        assertEquals("pikachu", genericPokemon.getPokemonName());
     }
 }
