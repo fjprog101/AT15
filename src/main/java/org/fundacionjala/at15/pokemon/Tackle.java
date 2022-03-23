@@ -10,4 +10,8 @@ public class Tackle extends Move {
 //        this.currentPowerPoints = maxPowerPoints; for later
     }
 
+    public int getPotency() {
+        return potency;
+    }
+
 }
