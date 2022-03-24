@@ -17,16 +17,16 @@ public class TrainerBatlleTest {
         assertEquals("Squirtle", actual);
     }
 
-    /*@Test
+    @Test
     public void itShouldReturnAWinner() {
         Pokemon pokemon1 = new Pokemon(100, "pikachu");
         Trainer trainer1 = new Trainer(pokemon1, "Trainer1");
-        Pokemon pokemon2 = new Pokemon(100, "Squirtle");
+        Pokemon pokemon2 = new Pokemon(200, "Squirtle");
         Trainer trainer2 = new Trainer(pokemon2, "Trainer2");
         TrainerBattle trainerBattle = new TrainerBattle(trainer1, trainer2);
         trainerBattle.fight();
         Trainer winner = trainerBattle.getWinner();
         String winnerName = winner.getName();
-        assertEquals("Trainer1", winnerName);
-    }*/
+        assertEquals("Trainer2", winnerName);
+    }
 }
