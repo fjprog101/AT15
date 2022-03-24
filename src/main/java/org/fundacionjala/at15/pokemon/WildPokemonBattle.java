@@ -15,9 +15,9 @@ public class WildPokemonBattle extends Battle {
     public Pokemon getActualPokemon(Trainer trainer1) {
         int actualHitPoints;
         PokemonTeam team = trainer1.getPokemonTeam();
-        Pokemon actualPokemon = team.getPokemonTeam().get(0);
-        for (int index = 0; index < team.getPokemonTeam().size(); index++) {
-            actualPokemon = team.getPokemonTeam().get(index);
+        Pokemon actualPokemon = team.getPokemonsOfTeam().get(0);
+        for (int index = 0; index < team.getPokemonsOfTeam().size(); index++) {
+            actualPokemon = team.getPokemonsOfTeam().get(index);
             actualHitPoints = actualPokemon.getHitPoints().getCurrentHitPoints();
             if (actualHitPoints > 0) {
                 return actualPokemon;
@@ -26,7 +26,6 @@ public class WildPokemonBattle extends Battle {
         pokemonLeft = true;
         return actualPokemon;
     }
-
     public int getpotency(Pokemon pokemon) {
         Move move = pokemon.getMove(1);
         return move.getPotency();
