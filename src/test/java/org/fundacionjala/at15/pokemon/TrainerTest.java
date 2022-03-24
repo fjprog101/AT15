@@ -1,6 +1,8 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 public class TrainerTest {
@@ -28,6 +30,31 @@ public class TrainerTest {
 
     @Test
     public void itShouldRemoveOnePokeball() {
+        Pokemon pokemon = new Pokemon(100, "pikachu");
+        Trainer trainer = new Trainer(pokemon, "Trainer1");
+        Pokemon wildPokemon = new Pokemon(100, "pikachu");
+        wildPokemon.getHitPoints().setCurrentHitPoints(10);
+        Pokeball pokeball1 = new Pokeball();
+        trainer.getPokeballs().add(pokeball1);
+        trainer.usePokeball(wildPokemon);
+        assertEquals(2,trainer.getPokemonTeam().getPokemonsOfTeam().size());
+    }
+
+    @Test
+    public void itShouldHave0Pokeballs() {
+        Pokemon pokemon = new Pokemon(100, "pikachu");
+        Trainer trainer = new Trainer(pokemon, "Trainer1");
+        Pokemon wildPokemon = new Pokemon(100, "pikachu");
+        wildPokemon.getHitPoints().setCurrentHitPoints(10);
+
+        trainer.getPokeballs().clear();
+
+        trainer.usePokeball(wildPokemon);
+        assertEquals(0, trainer.getPokeballs().size());
+    }
+
+    @Test
+    public void itShouldAddPokemon() {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon wildPokemon = new Pokemon(10, "pikachu");
