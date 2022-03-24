@@ -49,4 +49,28 @@ public class StoreTest {
         assertEquals(initialSize - 1, trainer.getHealingPotion().size());
         assertEquals(100, trainer.getWallet().getMoneyInWallet());
     }
+
+    @Test
+    public void itShouldNotAllowTrainerSellPokeball() {
+        Pokemon pokemon = new Pokemon(100, "pokemon");
+        Trainer trainer = new Trainer(pokemon, "trainer");
+        for (int index = 0; index < 6; index++) {
+            Store.sellPokeball(trainer);
+        }
+        Store.sellPokeball(trainer);
+
+        assertEquals(0, trainer.getPokeballs().size());
+        assertEquals(200, trainer.getWallet().getMoneyInWallet());
+    }
+
+    @Test
+    public void itShouldNotAllowTrainerSellPotion() {
+        Pokemon pokemon = new Pokemon(100, "pokemon");
+        Trainer trainer = new Trainer(pokemon, "trainer");
+        int initialSize = trainer.getHealingPotion().size();
+        Store.sellHealingPotion(trainer);
+
+        assertEquals(initialSize, trainer.getHealingPotion().size());
+        assertEquals(100, trainer.getWallet().getMoneyInWallet());
+    }
 }
