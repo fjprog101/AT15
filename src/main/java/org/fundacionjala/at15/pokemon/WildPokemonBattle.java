@@ -3,11 +3,9 @@ package org.fundacionjala.at15.pokemon;
 public class WildPokemonBattle extends Battle {
 
     private Pokemon wildPokemon;
-    private Pokemon actualPokemon;
     private Trainer trainer;
     private boolean wildPokemonCapture = false;
     private boolean pokemonLeft = false;
-    private final double datTwo = 0.2;
     private int turn = 0;
     public WildPokemonBattle(Trainer trainer, Pokemon pokemon) {
         this.trainer = trainer;
@@ -17,6 +15,7 @@ public class WildPokemonBattle extends Battle {
     public Pokemon getActualPokemon(Trainer trainer1) {
         int actualHitPoints;
         PokemonTeam team = trainer1.getPokemonTeam();
+        Pokemon actualPokemon = team.getPokemonTeam().get(0);
         for (int index = 0; index < team.getPokemonTeam().size(); index++) {
             actualPokemon = team.getPokemonTeam().get(index);
             actualHitPoints = actualPokemon.getHitPoints().getCurrentHitPoints();
@@ -35,7 +34,6 @@ public class WildPokemonBattle extends Battle {
 
     @Override
     public void fight() {
-        int twentyPercentHP = (int) (wildPokemon.getHitPoints().getCurrentHitPoints() * datTwo);
         Pokemon myPokemon = getActualPokemon(trainer);
         DamageReceived damage;
         do {
@@ -46,7 +44,7 @@ public class WildPokemonBattle extends Battle {
             } else {
                 damage = new DamageReceived(getpotency(wildPokemon));
                 damage.affectHP(myPokemon);
-                if (wildPokemon.getHitPoints().getCurrentHitPoints() <= twentyPercentHP) {
+                if (wildPokemon.getHitPoints().is20Percent()) {
                     trainer.usePokeball(wildPokemon);
                     wildPokemonCapture = true;
                     break;
@@ -56,7 +54,7 @@ public class WildPokemonBattle extends Battle {
         } while (!pokemonLeft);
     }
 
-    public boolean getResult() {
-        return this.wildPokemonCapture;
+    public Boolean isCaptured() {
+        return wildPokemonCapture;
     }
 }
