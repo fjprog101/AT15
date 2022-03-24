@@ -43,11 +43,11 @@ public class Town {
         return gym;
     }
 
-    public ArrayList<Pokemon> getPokemonsOfTheTown() {
+    public ArrayList<Pokemon> getWildPokemons() {
         return wildPokemons;
     }
 
-    public ArrayList<Trainer> getTrainersOfTheTown() {
+    public ArrayList<Trainer> getTrainers() {
         return trainers;
     }
 

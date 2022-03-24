@@ -10,7 +10,7 @@ public class TownTest {
     public void itShouldAddPokemonsToTown() {
         Town paleta = new Town();
         paleta.addWildPokemonsToTown(2);
-        String pokemonName = paleta.getPokemonsOfTheTown().get(0).getPokemonName();
+        String pokemonName = paleta.getWildPokemons().get(0).getPokemonName();
         String expected = "Pokemon";
         assertEquals(expected, pokemonName);
 
@@ -21,7 +21,7 @@ public class TownTest {
         Town paleta = new Town();
         paleta.addTrainersToTown(4);
 
-        int numberOfTrainer = paleta.getTrainersOfTheTown().size();
+        int numberOfTrainer = paleta.getTrainers().size();
         int expected = 4;
         assertEquals(expected, numberOfTrainer);
 
@@ -44,7 +44,7 @@ public class TownTest {
         assertEquals(pokemonCenter.getClass(), paleta.getCenter().getClass());
     }
     @Test
-    public void itShouldAddAToGymTown() {
+    public void itShouldAddAGymTown() {
         Town paleta = new Town();
         Gym pokemonGym = new Gym();
         paleta.getStore().getClass();
