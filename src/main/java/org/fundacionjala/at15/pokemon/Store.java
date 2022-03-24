@@ -13,4 +13,14 @@ public class Store {
         potions.add(new HealingPotion());
         wallet.spendMoney(HealingPotion.POTION_COST);
     }
+
+    public static void sellPokeball(ArrayList<Pokeball> pokeballs, Wallet wallet) {
+        pokeballs.remove(0);
+        wallet.winMoney(Pokeball.POKEBALL_COST);
+    }
+
+    public static void sellHealingPotion(ArrayList<HealingPotion> potions, Wallet wallet) {
+        potions.remove(0);
+        wallet.winMoney(HealingPotion.POTION_COST);
+    }
 }

@@ -28,4 +28,28 @@ public class StoreTest {
         assertEquals(initialSize + 1, potions.size());
         assertEquals(60, wallet.getMoneyInWallet());
     }
+
+    @Test
+    public void itShouldAllowTrainerSellPokeball() {
+        ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
+        pokeballs.add(new Pokeball());
+        int initialSize = pokeballs.size();
+        Wallet wallet = new Wallet();
+        Store.sellPokeball(pokeballs, wallet);
+
+        assertEquals(initialSize - 1, pokeballs.size());
+        assertEquals(120, wallet.getMoneyInWallet());
+    }
+
+    @Test
+    public void itShouldAllowTrainerSellPotion() {
+        ArrayList<HealingPotion> potions = new ArrayList<HealingPotion>();
+        potions.add(new HealingPotion());
+        int initialSize = potions.size();
+        Wallet wallet = new Wallet();
+        Store.sellHealingPotion(potions, wallet);
+
+        assertEquals(initialSize - 1, potions.size());
+        assertEquals(140, wallet.getMoneyInWallet());
+    }
 }
