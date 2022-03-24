@@ -6,13 +6,21 @@ public class Trainer {
     private String name;
     private Wallet wallet = new Wallet();
     private PokemonTeam pokemonTeam;
+    private int badge;
     private ArrayList<HealingPotion> healingPotions = new ArrayList<HealingPotion>();
     private ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
 
     //initial pokemon for trainer and trainer name
     public Trainer(Pokemon pokemon, String newName) {
+        Pokeball pokeball = new Pokeball();
         this.pokemonTeam = new PokemonTeam(pokemon);
         this.name = newName;
+        this.pokeballs.add(pokeball);
+        this.pokeballs.add(pokeball);
+        this.pokeballs.add(pokeball);
+        this.pokeballs.add(pokeball);
+        this.pokeballs.add(pokeball);
+        this.badge = 0;
     }
 
     //get current pokemon used
@@ -40,12 +48,20 @@ public class Trainer {
         }
     }
 
+    public void winBadge() {
+        badge++;
+    }
+
     public String getName() {
         return name;
     }
 
     public Wallet getWallet() {
         return wallet;
+    }
+
+    public int getBadge() {
+        return badge;
     }
 
     public PokemonTeam getPokemonTeam() {
