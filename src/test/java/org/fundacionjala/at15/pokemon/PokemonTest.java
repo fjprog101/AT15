@@ -20,4 +20,11 @@ public class PokemonTest {
 
         assertEquals("pikachu", genericPokemon.getPokemonName());
     }
+
+    @Test
+    public void itShouldHaveOnlyFourMoves() {
+        Pokemon genericPokemon = new Pokemon(200, "pikachu");
+
+        assertEquals(4, genericPokemon.getMovementList().length);
+    }
 }

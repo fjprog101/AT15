@@ -17,6 +17,10 @@ public class Pokemon {
         this.movementList[0] = tackle;
     }
 
+    public Move[] getMovementList() {
+        return movementList;
+    }
+
     public Move getMove(int listPosition) {
         return movementList[listPosition - 1];
     }
