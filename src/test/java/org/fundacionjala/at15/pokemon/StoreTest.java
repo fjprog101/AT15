@@ -2,54 +2,51 @@ package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-
 import org.junit.Test;
 
 public class StoreTest {
     @Test
     public void itShouldGiveAPokeballAndChargeCost() {
-        ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
-        int initialSize = pokeballs.size();
-        Wallet wallet = new Wallet();
-        Store.buyPokeball(pokeballs, wallet);
+        Pokemon pokemon = new Pokemon(100, "pokemon");
+        Trainer trainer = new Trainer(pokemon, "trainer");
+        int initialSize = trainer.getPokeballs().size();
+        Store.buyPokeball(trainer);
 
-        assertEquals(initialSize + 1, pokeballs.size());
-        assertEquals(80, wallet.getMoneyInWallet());
+        assertEquals(initialSize + 1, trainer.getPokeballs().size());
+        assertEquals(80, trainer.getWallet().getMoneyInWallet());
     }
 
     @Test
     public void itShouldGiveAPotionAndChargeCost() {
-        ArrayList<HealingPotion> potions = new ArrayList<HealingPotion>();
-        int initialSize = potions.size();
-        Wallet wallet = new Wallet();
-        Store.buyHealingPotion(potions, wallet);
+        Pokemon pokemon = new Pokemon(100, "pokemon");
+        Trainer trainer = new Trainer(pokemon, "trainer");
+        int initialSize = trainer.getHealingPotion().size();
+        Store.buyHealingPotion(trainer);
 
-        assertEquals(initialSize + 1, potions.size());
-        assertEquals(60, wallet.getMoneyInWallet());
+        assertEquals(initialSize + 1, trainer.getHealingPotion().size());
+        assertEquals(60, trainer.getWallet().getMoneyInWallet());
     }
 
     @Test
     public void itShouldAllowTrainerSellPokeball() {
-        ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
-        pokeballs.add(new Pokeball());
-        int initialSize = pokeballs.size();
-        Wallet wallet = new Wallet();
-        Store.sellPokeball(pokeballs, wallet);
+        Pokemon pokemon = new Pokemon(100, "pokemon");
+        Trainer trainer = new Trainer(pokemon, "trainer");
+        int initialSize = trainer.getPokeballs().size();
+        Store.sellPokeball(trainer);
 
-        assertEquals(initialSize - 1, pokeballs.size());
-        assertEquals(120, wallet.getMoneyInWallet());
+        assertEquals(initialSize - 1, trainer.getPokeballs().size());
+        assertEquals(120, trainer.getWallet().getMoneyInWallet());
     }
 
     @Test
     public void itShouldAllowTrainerSellPotion() {
-        ArrayList<HealingPotion> potions = new ArrayList<HealingPotion>();
-        potions.add(new HealingPotion());
-        int initialSize = potions.size();
-        Wallet wallet = new Wallet();
-        Store.sellHealingPotion(potions, wallet);
+        Pokemon pokemon = new Pokemon(100, "pokemon");
+        Trainer trainer = new Trainer(pokemon, "trainer");
+        Store.buyHealingPotion(trainer);
+        int initialSize = trainer.getHealingPotion().size();
+        Store.sellHealingPotion(trainer);
 
-        assertEquals(initialSize - 1, potions.size());
-        assertEquals(140, wallet.getMoneyInWallet());
+        assertEquals(initialSize - 1, trainer.getHealingPotion().size());
+        assertEquals(100, trainer.getWallet().getMoneyInWallet());
     }
 }
