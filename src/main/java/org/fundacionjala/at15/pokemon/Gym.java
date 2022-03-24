@@ -31,4 +31,9 @@ public class Gym {
     public ArrayList<Trainer> getTrainers() {
         return this.trainers;
     }
+
+    public Trainer getGymLeader() {
+        int size = getTrainers().size() - 1;
+        return getTrainers().get(size);
+    }
 }

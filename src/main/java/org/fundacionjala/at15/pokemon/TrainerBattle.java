@@ -16,9 +16,9 @@ public class TrainerBattle extends Battle {
     public Pokemon getPokemonAvailable(Trainer trainer) {
         int currentHitPoints;
         PokemonTeam pokemonTeam = trainer.getPokemonTeam();
-        Pokemon currentPokemon = pokemonTeam.getPokemonTeam().get(0);
-        for (int ind = 0; ind < pokemonTeam.getPokemonTeam().size(); ind++) {
-            currentPokemon = pokemonTeam.getPokemonTeam().get(ind);
+        Pokemon currentPokemon = pokemonTeam.getPokemonsOfTeam().get(0);
+        for (int ind = 0; ind < pokemonTeam.getPokemonsOfTeam().size(); ind++) {
+            currentPokemon = pokemonTeam.getPokemonsOfTeam().get(ind);
             currentHitPoints = currentPokemon.getHitPoints().getCurrentHitPoints();
             if (currentHitPoints > 0) {
                 return currentPokemon;

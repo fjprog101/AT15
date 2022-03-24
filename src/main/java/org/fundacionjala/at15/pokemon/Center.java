@@ -6,7 +6,7 @@ public class Center implements HPAffecter {
     private ArrayList<Pokemon> pokemonTeam = new ArrayList<Pokemon>();
 
     public void healTeam(PokemonTeam team) {
-        this.pokemonTeam = team.getPokemonTeam();
+        this.pokemonTeam = team.getPokemonsOfTeam();
         for (int ind = 0; ind < pokemonTeam.size(); ind++) {
             affectHP(pokemonTeam.get(ind));
         }
