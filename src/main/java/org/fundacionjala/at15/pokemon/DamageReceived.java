@@ -11,10 +11,10 @@ public class DamageReceived implements HPAffecter {
 
     public void affectHP(Pokemon pokemon) {
         currentHitPoints = pokemon.getHitPoints().getCurrentHitPoints();
-        if (currentHitPoints > faint && currentHitPoints > potency) {
+        if (currentHitPoints > potency) {
             currentHitPoints = currentHitPoints - potency;
             pokemon.getHitPoints().setCurrentHitPoints(currentHitPoints);
-        } else if (currentHitPoints > faint && currentHitPoints < potency) {
+        } else if (currentHitPoints > faint && currentHitPoints <= potency) {
             currentHitPoints = faint;
             pokemon.getHitPoints().setCurrentHitPoints(currentHitPoints);
         }

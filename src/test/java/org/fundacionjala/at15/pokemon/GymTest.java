@@ -39,7 +39,7 @@ public class GymTest {
 
     @Test
     public void itShouldHaveATournamentLoser() {
-        Pokemon pikachu = new Pokemon(10, "Pikachu");
+        Pokemon pikachu = new Pokemon(200, "Pikachu");
         Trainer trainer = new Trainer(pikachu, "Ash Ketchup");
         Gym gym = new Gym();
 
