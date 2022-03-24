@@ -11,21 +11,12 @@ public class Gym {
     private Pokemon pokemon2 = new Pokemon(hitpoints, "pokemon2");
     private Trainer lowerRankingMember2 = new Trainer(pokemon2, "lowerRankingMember2");
 
-    private ArrayList<PokemonTeam> gymPokemonTeams = new ArrayList<PokemonTeam>();
     private ArrayList<Trainer> trainers = new ArrayList<Trainer>();
 
     public Gym() {
         trainers.add(lowerRankingMember2);
         trainers.add(lowerRankingMember1);
         trainers.add(gymLeader);
-        gymPokemonTeams.add(lowerRankingMember2.getPokemonTeam());
-        gymPokemonTeams.add(lowerRankingMember1.getPokemonTeam());
-        gymPokemonTeams.add(gymLeader.getPokemonTeam());
-    }
-
-
-    public ArrayList<PokemonTeam> getGymPokemonTeams() {
-        return this.gymPokemonTeams;
     }
 
     public ArrayList<Trainer> getTrainers() {
@@ -35,5 +26,25 @@ public class Gym {
     public Trainer getGymLeader() {
         int size = getTrainers().size() - 1;
         return getTrainers().get(size);
+    }
+
+    public boolean startTournament(Trainer trainer) {
+        boolean isWinner = true;
+
+        for (int index = 0; index < trainers.size(); index++) {
+            TrainerBattle battle = new TrainerBattle(trainer, trainers.get(index));
+            battle.fight();
+
+            if (trainer.equals(battle.getWinner())) {
+                if (index == trainers.size() - 1) {
+                    trainer.winBadge();
+                }
+            } else {
+                isWinner = false;
+                break;
+            }
+        }
+
+        return isWinner;
     }
 }
