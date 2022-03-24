@@ -36,6 +36,16 @@ public class TrainerTest {
         trainer.getPokeballs().add(pokeball1);
         trainer.getPokeballs().add(pokeball2);
         trainer.usePokeball(wildPokemon);
-        assertEquals(1, trainer.getPokeballs().size());
+        assertEquals(6, trainer.getPokeballs().size());
+    }
+
+    @Test
+    public void itShouldAddABadge() {
+        Pokemon pokemon = new Pokemon(100, "pikachu");
+        Trainer trainer = new Trainer(pokemon, "Trainer1");
+        trainer.winBadge();
+        int actualBadge = trainer.getBadge();
+        int expectedBadge = 1;
+        assertEquals(expectedBadge, actualBadge);
     }
 }

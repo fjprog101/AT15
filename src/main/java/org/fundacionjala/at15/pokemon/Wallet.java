@@ -19,6 +19,14 @@ public class Wallet {
         }
     }
 
+    public void loseMoney(int money) {
+        if (moneyInWallet <= money) {
+            moneyInWallet = 0;
+        } else {
+            moneyInWallet = moneyInWallet - money;
+        }
+    }
+
     public int getMoneyInWallet() {
         return moneyInWallet;
     }
