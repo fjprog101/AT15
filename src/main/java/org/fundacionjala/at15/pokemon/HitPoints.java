@@ -33,9 +33,6 @@ public class HitPoints {
 
     }
 
-    public void reduce(int attack) {
-
-    }
 
     public boolean is20Percent() {
         return currentHitPoints * PERCENTAGE / maxHitPoints <= TWENTY_PERCENTAGE;

@@ -41,15 +41,16 @@ public class TrainerTest {
     }
 
     @Test
-    public void itShouldHave0pokeballs() {
+    public void itShouldHave0Pokeballs() {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon wildPokemon = new Pokemon(100, "pikachu");
         wildPokemon.getHitPoints().setCurrentHitPoints(10);
 
-        for (int ind = 0; ind < trainer.getPokeballs().size(); ind++) {
-            //Store.
-        }
+        trainer.getPokeballs().clear();
+
+        trainer.usePokeball(wildPokemon);
+        assertEquals(0, trainer.getPokeballs().size());
     }
 
     @Test
