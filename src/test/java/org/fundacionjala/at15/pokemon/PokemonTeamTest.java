@@ -9,7 +9,7 @@ public class PokemonTeamTest {
     public void theTeamPokemonShouldStartWithOnePokemon() {
         Pokemon pikachu = new Pokemon(100, "pikachu");
         PokemonTeam team = new PokemonTeam(pikachu);
-        assertEquals(pikachu, team.getPokemonTeam().get(0));
+        assertEquals(pikachu, team.getPokemonsOfTeam().get(0));
     }
 
     @Test
@@ -21,8 +21,8 @@ public class PokemonTeamTest {
         team.addPokemon(new Pokemon(5, "pikachu"));
         Pokemon charmander = new Pokemon(150, "pikachu");
         team.addPokemon(charmander);
-        assertEquals(charmander, team.getPokemonTeam().get(5));
+        assertEquals(charmander, team.getPokemonsOfTeam().get(5));
         team.addPokemon(new Pokemon(7, "pikachu"));
-        assertEquals(6, team.getPokemonTeam().size());
+        assertEquals(6, team.getPokemonsOfTeam().size());
     }
 }

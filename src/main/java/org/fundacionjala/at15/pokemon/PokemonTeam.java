@@ -16,7 +16,7 @@ public class PokemonTeam {
         }
     }
 
-    public ArrayList<Pokemon> getPokemonTeam() {
+    public ArrayList<Pokemon> getPokemonsOfTeam() {
         return this.pokemonTeam;
     }
 }

@@ -25,7 +25,7 @@ public class Trainer {
 
     //get current pokemon used
     public Pokemon currentPokemon(int current) {
-        return pokemonTeam.getPokemonTeam().get(current);
+        return pokemonTeam.getPokemonsOfTeam().get(current);
     }
 
     //use the healing potion in the current pokemon
@@ -53,11 +53,11 @@ public class Trainer {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public Wallet getWallet() {
-        return wallet;
+        return this.wallet;
     }
 
     public int getBadge() {
@@ -65,14 +65,14 @@ public class Trainer {
     }
 
     public PokemonTeam getPokemonTeam() {
-        return pokemonTeam;
+        return this.pokemonTeam;
     }
 
     public ArrayList<HealingPotion> getHealingPotion() {
-        return healingPotions;
+        return this.healingPotions;
     }
 
     public ArrayList<Pokeball> getPokeballs() {
-        return pokeballs;
+        return this.pokeballs;
     }
 }
