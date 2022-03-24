@@ -36,6 +36,6 @@ public class TrainerTest {
         trainer.getPokeballs().add(pokeball1);
         trainer.getPokeballs().add(pokeball2);
         trainer.usePokeball(wildPokemon);
-        assertEquals(1, trainer.getPokeballs().size());
+        assertEquals(6, trainer.getPokeballs().size());
     }
 }
