@@ -1,16 +1,28 @@
 package org.fundacionjala.at15.pokemon;
 
-import java.util.ArrayList;
-
 public class Store {
 
-    public static void buyPokeball(ArrayList<Pokeball> pokeballs, Wallet wallet) {
-        pokeballs.add(new Pokeball());
-        wallet.spendMoney(Pokeball.POKEBALL_COST);
+    public static void buyPokeball(Trainer trainer) {
+        trainer.getPokeballs().add(new Pokeball());
+        trainer.getWallet().spendMoney(Pokeball.POKEBALL_COST);
     }
 
-    public static void buyHealingPotion(ArrayList<HealingPotion> potions, Wallet wallet) {
-        potions.add(new HealingPotion());
-        wallet.spendMoney(HealingPotion.POTION_COST);
+    public static void buyHealingPotion(Trainer trainer) {
+        trainer.getHealingPotion().add(new HealingPotion());
+        trainer.getWallet().spendMoney(HealingPotion.POTION_COST);
+    }
+
+    public static void sellPokeball(Trainer trainer) {
+        if (trainer.getPokeballs().size() > 0) {
+            trainer.getPokeballs().remove(0);
+            trainer.getWallet().winMoney(Pokeball.POKEBALL_COST);
+        }
+    }
+
+    public static void sellHealingPotion(Trainer trainer) {
+        if (trainer.getHealingPotion().size() > 0) {
+            trainer.getHealingPotion().remove(0);
+            trainer.getWallet().winMoney(HealingPotion.POTION_COST);
+        }
     }
 }
