@@ -33,7 +33,6 @@ public class Gym {
 
         for (int index = 0; index < trainers.size(); index++) {
             TrainerBattle battle = new TrainerBattle(trainer, trainers.get(index));
-            System.out.println(trainer.getPokemonTeam().getPokemonsOfTeam().get(0).getHitPoints().getCurrentHitPoints());
             battle.fight();
 
             if (trainer.equals(battle.getWinner())) {
