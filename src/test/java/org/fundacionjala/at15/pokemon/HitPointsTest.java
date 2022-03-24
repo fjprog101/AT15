@@ -37,4 +37,11 @@ public class HitPointsTest {
         assertEquals(200, hitPoints.getCurrentHitPoints());
     }
 
+    @Test
+    public void itShouldSetMaxHitPoints() {
+        HitPoints hp = new HitPoints(200);
+        hp.setMaxHitPoints(300);
+        assertEquals(300, hp.getMaxHitPoints());
+    }
+
 }
