@@ -7,6 +7,8 @@ repositories {
 }
 
 dependencies {
+    implementation 'info.picocli:picocli:4.6.3'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
     testImplementation 'junit:junit:4.12'
 }
 
@@ -46,5 +48,15 @@ test.finalizedBy("jacocoTestReport")
 
 task runPokerHandsMauricio (dependsOn: 'classes', type: JavaExec) {
     main = 'org.fundacionjala.at15.katas.pokerhands.mauricio.Main'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runJSON (dependsOn: 'classes', type: JavaExec) {
+    main = 'org.fundacionjala.at15.pokemon.json.Writer'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runCli (dependsOn: 'classes', type: JavaExec) {
+    main = 'org.fundacionjala.at15.pokemon.cli.ASCIIArt'
     classpath = sourceSets.main.runtimeClasspath
 }
