@@ -10,6 +10,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'info.picocli:picocli:4.6.3'
     implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 }
 
 test {
@@ -48,5 +49,15 @@ test.finalizedBy("jacocoTestReport")
 
 task runPokemonCli (dependsOn: 'classes', type: JavaExec) {
     main = 'org.fundacionjala.at15.pokemon.commands.PokemonCli'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runJsonWriter (dependsOn: 'classes', type: JavaExec) {
+    main = 'org.fundacionjala.at15.pokemon.JSON.Writer'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runJsonReader (dependsOn: 'classes', type: JavaExec) {
+    main = 'org.fundacionjala.at15.pokemon.JSON.Reader'
     classpath = sourceSets.main.runtimeClasspath
 }
