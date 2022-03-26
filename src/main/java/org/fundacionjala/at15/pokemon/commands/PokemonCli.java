@@ -28,8 +28,8 @@ class PokemonCommand implements Runnable {
     public void run() {
         Pokemon newPokemon = new Pokemon(hitpoints, name);
         System.out.println(
-            "Pokemon created: \n" +
-            "Name: " + newPokemon.getPokemonName() + "\n" +
-            "HitPoints: " + newPokemon.getHitPoints().getCurrentHitPoints());
+            "Pokemon created: \n"
+            + "Name: " + newPokemon.getPokemonName() + "\n"
+            + "HitPoints: " + newPokemon.getHitPoints().getCurrentHitPoints());
     }
 }
