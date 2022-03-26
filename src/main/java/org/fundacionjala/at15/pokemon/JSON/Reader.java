@@ -19,11 +19,11 @@ public class Reader {
             //Read JSON file
             Object obj = jsonParser.parse(reader);
 
-            JSONArray employeeList = (JSONArray) obj;
+            JSONArray pokemonList = (JSONArray) obj;
             //System.out.println(employeeList);
 
             //Iterate over employee array
-            employeeList.forEach(emp -> parseEmployeeObject((JSONObject) emp));
+            pokemonList.forEach(emp -> parseEmployeeObject((JSONObject) emp));
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -34,21 +34,21 @@ public class Reader {
         }
     }
 
-    private static void parseEmployeeObject(JSONObject employee) {
+    private static void parseEmployeeObject(JSONObject pokemon) {
         System.out.println();
         //Get employee object within list
-        JSONObject employeeObject = (JSONObject) employee.get("employee");
+        JSONObject pokemonObject = (JSONObject) pokemon.get("pokemon");
 
         //Get employee first name
-        String firstName = (String) employeeObject.get("firstName");
+        String firstName = (String) pokemonObject.get("Name");
         System.out.println(firstName);
 
         //Get employee last name
-        String lastName = (String) employeeObject.get("lastName");
+        Long lastName = (Long) pokemonObject.get("CurrentHitPoints");
         System.out.println(lastName);
 
         //Get employee website name
-        String website = (String) employeeObject.get("website");
+        Long website = (Long) pokemonObject.get("MaxHitPoints");
         System.out.println(website);
     }
 }
