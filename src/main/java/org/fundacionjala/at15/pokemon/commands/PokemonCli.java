@@ -1,7 +1,7 @@
 package org.fundacionjala.at15.pokemon.commands;
 
 import org.fundacionjala.at15.pokemon.Pokemon;
-
+import org.fundacionjala.at15.pokemon.ID.Identifier;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
@@ -18,18 +18,20 @@ public class PokemonCli {
 @Command(name = "pokemon", description = "Create Pokemons data")
 class PokemonCommand implements Runnable {
 
-    @Option(names = { "-name" }, description = "Pokemon name")
+    @Option(names = { "-name" }, required = true, description = "Pokemon name")
     private String name;
 
-    @Option(names = { "-hitpoints" }, description = "Pokemon HitPoints")
+    @Option(names = { "-hitpoints" }, required = true, description = "Pokemon HitPoints")
     private int hitpoints;
 
     @Override
     public void run() {
         Pokemon newPokemon = new Pokemon(hitpoints, name);
+        String hCode = Identifier.generateIdPokemon(newPokemon);
         System.out.println(
             "Pokemon created: \n"
             + "Name: " + newPokemon.getPokemonName() + "\n"
-            + "HitPoints: " + newPokemon.getHitPoints().getCurrentHitPoints());
+            + "HitPoints: " + newPokemon.getHitPoints().getCurrentHitPoints() + "\n"
+            + "ID: " + hCode);
     }
 }
