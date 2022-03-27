@@ -7,7 +7,7 @@ import org.fundacionjala.at15.pokemon.Trainer;
 
 public class Identifier {
 
-    public String generateIdPokemon(Pokemon pokemon) {
+    public static String generateIdPokemon(Pokemon pokemon) {
         String identifier = "pkm";
         int hCode = pokemon.hashCode();
         String identifierPkm = Integer.toString(hCode);
@@ -15,7 +15,7 @@ public class Identifier {
         return identifier;
     }
 
-    public String generateIdTrainer(Trainer trainer) {
+    public static String generateIdTrainer(Trainer trainer) {
         String identifier = "trn";
         int hCode = trainer.hashCode();
         String identifierTrn = Integer.toString(hCode);
@@ -23,7 +23,7 @@ public class Identifier {
         return identifier;
     }
 
-    public String generateIdBattle(Battle battle) {
+    public static String generateIdBattle(Battle battle) {
         String identifier = "btt";
         int hCode = battle.hashCode();
         String identifierBtt = Integer.toString(hCode);
@@ -31,7 +31,7 @@ public class Identifier {
         return identifier;
     }
 
-    public String generateIdTown(Town town) {
+    public static String generateIdTown(Town town) {
         String identifier = "twn";
         int hCode = town.hashCode();
         String identifierTwn = Integer.toString(hCode);
