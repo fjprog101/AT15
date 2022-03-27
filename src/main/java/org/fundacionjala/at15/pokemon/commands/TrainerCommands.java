@@ -13,14 +13,14 @@ public class TrainerCommands implements Callable<Integer> {
 
     @Option(names = {"-name", "-n"}, description = "trainer name")
     @Parameters(paramLabel = "NAME")
-    String trainerName;
+    private String trainerName;
 
     @Option(names = {"-pokeID", "-pID"}, description = "add pokemon to trainer")
     @Parameters(paramLabel = "POKEMON-ID")
-    Pokemon pokemon;
+    private Pokemon pokemon;
 
     @Override
-    public Integer call(){
+    public Integer call() {
         Trainer trainer = new Trainer(pokemon, trainerName);
         String hCode = Identifier.generateIdTrainer(trainer);
         System.out.println(

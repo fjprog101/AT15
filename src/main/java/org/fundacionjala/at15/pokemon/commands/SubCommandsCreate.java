@@ -1,10 +1,11 @@
 package org.fundacionjala.at15.pokemon.commands;
 
-import picocli.CommandLine;
+import picocli.CommandLine.Command;
 
 import java.util.concurrent.Callable;
 
-@CommandLine.Command(name = ":create", subcommands = {PokemonCommands.class, TrainerCommands.class}, description = "Entry point to create objects in Pokemon world")
+@Command(name = ":create", subcommands = {PokemonCommands.class, TrainerCommands.class},
+        description = "Entry point to create objects in Pokemon world")
 class SubCommandsCreate implements Callable<Integer> {
 
     @Override
