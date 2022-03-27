@@ -5,6 +5,7 @@ import org.fundacionjala.at15.pokemon.ID.Identifier;
 import org.fundacionjala.at15.pokemon.Trainer;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 
 import java.util.concurrent.Callable;
@@ -22,14 +23,13 @@ public class PokemonCli {
 class SubCommandsMethods implements Callable<Integer> {
 
     @Command(name = ":pokemon", description = "create a pokemon")
+    public Integer pokemon(
+            @Option(names = {"-name", "-n"}, description = "pokemon name")
+            @Parameters(paramLabel = "NAME") String pokemonName,
+            @Option(names = {"-hitPoints", "-hp"}, description = "pokemon Hit-Points")
+            @Parameters(paramLabel = "HIT-POINTS") int hitPoints) {
 
-    @Parameters(arity = "2")
-    private String pokemonName;
-    private int hitpoints;
-
-    public Integer pokemon() {
-
-        Pokemon newPokemon = new Pokemon(hitpoints, pokemonName);
+        Pokemon newPokemon = new Pokemon(hitPoints, pokemonName);
         String hCode = Identifier.generateIdPokemon(newPokemon);
         System.out.println(
                 "Pokemon created: \n"
@@ -40,12 +40,12 @@ class SubCommandsMethods implements Callable<Integer> {
     }
 
     @Command(name = ":trainer", description = "create a trainer")
-
-    @Parameters(arity = "2")
-    private Pokemon pokemon;
-    private String trainerName;
-
-    public Integer trainer() {
+    public Integer trainer(
+            @Option(names = {"-name", "-n"}, description = "trainer name")
+            @Parameters(paramLabel = "NAME") String trainerName,
+            @Option(names = {"-pokeID", "-pID"}, description = "add pokemon to trainer")
+            @Parameters(paramLabel = "POKEMON-ID") Pokemon pokemon
+    ) {
         Trainer trainer = new Trainer(pokemon, trainerName);
         String hCode = Identifier.generateIdTrainer(trainer);
         System.out.println(
