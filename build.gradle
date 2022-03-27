@@ -9,11 +9,6 @@ repositories {
 dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'info.picocli:picocli:4.6.3'
-    annotationProcessor 'info.picocli:picocli-codegen:4.6.3'
-}
-
-compileJava {
-    options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
 }
 
 test {
@@ -50,7 +45,7 @@ checkstyleTest {
 test.finalizedBy("checkstyleMain")
 test.finalizedBy("jacocoTestReport")
 
-task runPokerHandsMauricio (dependsOn: 'classes', type: JavaExec) {
-    main = 'org.fundacionjala.at15.katas.pokerhands.mauricio.Main'
+task runPokemonCli (dependsOn: 'classes', type: JavaExec) {
+    main = 'org.fundacionjala.at15.pokemon.commands.PokemonCli'
     classpath = sourceSets.main.runtimeClasspath
 }
