@@ -52,12 +52,7 @@ task runPokemonCli (dependsOn: 'classes', type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 }
 
-task runJsonWriter (dependsOn: 'classes', type: JavaExec) {
-    main = 'org.fundacionjala.at15.pokemon.JSON.Writer'
-    classpath = sourceSets.main.runtimeClasspath
-}
-
 task runJsonReader (dependsOn: 'classes', type: JavaExec) {
-    main = 'org.fundacionjala.at15.pokemon.JSON.Reader'
+    main = 'org.fundacionjala.at15.pokemon.io.Reader'
     classpath = sourceSets.main.runtimeClasspath
 }
