@@ -1,11 +1,12 @@
 package org.fundacionjala.at15.pokemon;
 
+import static org.fundacionjala.at15.pokemon.constants.TrainerBattle.*;
+
 public class TrainerBattle extends Battle {
     private Trainer trainer1;
     private Trainer trainer2;
     private boolean battleOver = false;
     private int turn = 0;
-    private final int money = 50;
 
     public TrainerBattle(Trainer newTrainer1, Trainer newTrainer2) {
         this.trainer1 = newTrainer1;
@@ -58,12 +59,12 @@ public class TrainerBattle extends Battle {
     //get the winner and win money and lose money
     public Trainer getWinner() {
         if (turn % 2 != 0) {
-            trainer1.getWallet().winMoney(money);
-            trainer2.getWallet().loseMoney(money);
+            trainer1.getWallet().winMoney(MONEY);
+            trainer2.getWallet().loseMoney(MONEY);
             return trainer1;
         } else {
-            trainer2.getWallet().winMoney(money);
-            trainer1.getWallet().loseMoney(money);
+            trainer2.getWallet().winMoney(MONEY);
+            trainer1.getWallet().loseMoney(MONEY);
             return trainer2;
         }
     }

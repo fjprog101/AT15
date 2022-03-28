@@ -1,12 +1,12 @@
 package org.fundacionjala.at15.pokemon;
 
+import static org.fundacionjala.at15.pokemon.constants.Town.*;
 import java.util.ArrayList;
 
 public class Town {
     private ArrayList<Pokemon> wildPokemons;
     private ArrayList<Trainer> trainers;
     private Store store;
-    private static final int POKEMON_HP = 100;
     private Center center;
     private Gym gym;
 
@@ -20,13 +20,13 @@ public class Town {
 
     public void addWildPokemonsToTown(int wildPokemonsTotal) {
         for (int ind = 0; ind < wildPokemonsTotal; ind++) {
-            wildPokemons.add(ind, new Pokemon(POKEMON_HP, "Pokemon"));
+            wildPokemons.add(ind, new Pokemon(STANDAR_POKEMON_HP, "Pokemon"));
         }
     }
 
     public void addTrainersToTown(int trainersTotal) {
         for (int ind = 0; ind < trainersTotal; ind++) {
-            Pokemon pokemon = new Pokemon(POKEMON_HP, "Pikachu");
+            Pokemon pokemon = new Pokemon(STANDAR_POKEMON_HP, "Pikachu");
             trainers.add(ind, new Trainer(pokemon, "Trainer"));
         }
     }

@@ -1,11 +1,10 @@
 package org.fundacionjala.at15.pokemon;
 
+import static org.fundacionjala.at15.pokemon.constants.HitPoints.*;
+
 public class HitPoints {
     private int maxHitPoints;
     private int currentHitPoints;
-
-    private static final int PERCENTAGE = 100;
-    private static final int TWENTY_PERCENTAGE = 20;
 
     public HitPoints(int maxHp) {
         this.maxHitPoints = maxHp;
