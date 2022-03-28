@@ -9,9 +9,12 @@ public class TownTest {
     @Test
     public void itShouldAddPokemonsToTown() {
         Town paleta = new Town();
-        paleta.addWildPokemonsToTown(2);
+        Pokemon wildPokemon1 = new Pokemon(100, "Pikachu");
+        Pokemon wildPokemon2 = new Pokemon(100, "Squirtle");
+
+        paleta.addWildPokemonsToTown(wildPokemon1, wildPokemon2);
         String pokemonName = paleta.getWildPokemons().get(0).getPokemonName();
-        String expected = "Pokemon";
+        String expected = "Pikachu";
         assertEquals(expected, pokemonName);
 
     }
@@ -19,10 +22,12 @@ public class TownTest {
     @Test
     public void itShouldAddTrainersToTown() {
         Town paleta = new Town();
-        paleta.addTrainersToTown(4);
+        Trainer trainer1 = new Trainer(new Pokemon(100, "Pikachu"), "Ash");
+        Trainer trainer2 = new Trainer(new Pokemon(100, "Squirtle"), "Brook");
+        paleta.addTrainersToTown(trainer1, trainer2);
 
         int numberOfTrainer = paleta.getTrainers().size();
-        int expected = 4;
+        int expected = 2;
         assertEquals(expected, numberOfTrainer);
 
     }
