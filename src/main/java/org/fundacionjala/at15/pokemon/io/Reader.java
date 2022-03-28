@@ -20,6 +20,15 @@ public final class Reader {
             if (entity.getPath().getPathString() == "/.pkm/pokemon") {
                 parsePokemonObject((JSONObject) obj);
             }
+            if (entity.getPath().getPathString() == "/.pkm/trainer") {
+                parseTrainerObject((JSONObject) obj);
+            }
+            if (entity.getPath().getPathString() == "/.pkm/battle") {
+                parseBattleObject((JSONObject) obj);
+            }
+            if (entity.getPath().getPathString() == "/.pkm/town") {
+                parseTownObject((JSONObject) obj);
+            }
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -35,11 +44,14 @@ public final class Reader {
         Pokemon pokemon = new Pokemon(hitPoints, "Pikachu");
         Writer.writeToJson(pokemon);
         readJson(pokemon);
+
+        Trainer trainer = new Trainer(pokemon, "Ash");
+        Writer.writeToJson(trainer);
+        readJson(trainer);
     }
 
     private static void parsePokemonObject(JSONObject entity) {
         System.out.println();
-
         String identifier = (String) entity.get("identifier");
         System.out.println("id: " + identifier);
 
@@ -50,5 +62,29 @@ public final class Reader {
         Long currentHitPoints = (Long) pokemonObject.get("currentHitPoints");
         Long maxHitPoints = (Long) pokemonObject.get("maxHitPoints");
         System.out.println("hitpoints: " + currentHitPoints + "/" + maxHitPoints);
+    }
+
+    private static void parseTrainerObject(JSONObject entity) {
+        System.out.println();
+        String identifier = (String) entity.get("identifier");
+        System.out.println("id: " + identifier);
+
+        String name = (String) entity.get("name");
+        System.out.println("name: " + name);
+
+        Long badges = (Long) entity.get("badge");
+        System.out.println("badges: " + badges);
+
+        JSONObject walletObject = (JSONObject) entity.get("wallet");
+        Long moneyInWallet = (Long) walletObject.get("moneyInWallet");
+        System.out.println("money: " + moneyInWallet);
+    }
+
+    private static void parseBattleObject(JSONObject entity) {
+
+    }
+
+    private static void parseTownObject(JSONObject entity) {
+
     }
 }
