@@ -13,9 +13,9 @@ public class Trainer extends Entity {
     private ArrayList<HealingPotion> healingPotions = new ArrayList<HealingPotion>();
     private ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
 
-    //initial pokemon for trainer and trainer name
+    // initial pokemon for trainer and trainer name
     public Trainer(Pokemon pokemon, String newName) {
-        this.identifier = Identifier.generateIdTrainer(this);
+        this.identifier = Identifier.generateId(this);
         this.path = TRAINER;
         Pokeball pokeball = new Pokeball();
         this.pokemonTeam = new PokemonTeam(pokemon);
@@ -28,12 +28,12 @@ public class Trainer extends Entity {
         this.badge = 0;
     }
 
-    //get current pokemon used
+    // get current pokemon used
     public Pokemon currentPokemon(int current) {
         return pokemonTeam.getPokemonsOfTeam().get(current);
     }
 
-    //use the healing potion in the current pokemon
+    // use the healing potion in the current pokemon
     public void useHealingPotion(int current) {
         if (healingPotions.size() != 0) {
             HealingPotion currentPotion = healingPotions.get(healingPotions.size() - 1);
@@ -42,7 +42,7 @@ public class Trainer extends Entity {
         }
     }
 
-    //use pokeball on wild pokemon
+    // use pokeball on wild pokemon
     public void usePokeball(Pokemon pokemon) {
         if (pokeballs.size() != 0) {
             Pokeball currentPokeball = pokeballs.get(pokeballs.size() - 1);
@@ -79,5 +79,9 @@ public class Trainer extends Entity {
 
     public ArrayList<Pokeball> getPokeballs() {
         return this.pokeballs;
+    }
+
+    public String getPrefix() {
+        return "trn";
     }
 }

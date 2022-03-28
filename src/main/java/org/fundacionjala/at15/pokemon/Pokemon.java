@@ -11,7 +11,7 @@ public class Pokemon extends Entity {
     private String pokemonName;
 
     public Pokemon(int newMaxHP, String pokemonName) {
-        this.identifier = Identifier.generateIdPokemon(this);
+        this.identifier = Identifier.generateId(this);
         this.path = POKEMON;
         hitPoints = new HitPoints(newMaxHP);
         this.pokemonName = pokemonName;
@@ -37,5 +37,9 @@ public class Pokemon extends Entity {
 
     public String getPokemonName() {
         return this.pokemonName;
+    }
+
+    public String getPrefix() {
+        return "pkm";
     }
 }

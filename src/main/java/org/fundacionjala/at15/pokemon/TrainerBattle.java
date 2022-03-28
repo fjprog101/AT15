@@ -13,12 +13,12 @@ public class TrainerBattle extends Battle {
 
     public TrainerBattle(Trainer newTrainer1, Trainer newTrainer2) {
         this.path = BATTLE;
-        this.identifier = Identifier.generateIdBattle(this);
+        this.identifier = Identifier.generateId(this);
         this.trainer1 = newTrainer1;
         this.trainer2 = newTrainer2;
     }
 
-    //get pokemon available starting with the first (0)
+    // get pokemon available starting with the first (0)
     public Pokemon getPokemonAvailable(Trainer trainer) {
         int currentHitPoints;
         PokemonTeam pokemonTeam = trainer.getPokemonTeam();
@@ -34,7 +34,7 @@ public class TrainerBattle extends Battle {
         return currentPokemon;
     }
 
-    //get potency of movement pokemon
+    // get potency of movement pokemon
     public int getpotency(Pokemon pokemon) {
         Move move = pokemon.getMove(1);
         return move.getPotency();
@@ -46,7 +46,7 @@ public class TrainerBattle extends Battle {
         Pokemon pokemonTrainer2 = getPokemonAvailable(trainer2);
         DamageReceived damageReceived;
         do {
-            //if the turn is even, trainer1 attacks first
+            // if the turn is even, trainer1 attacks first
             turn++;
             if (turn % 2 != 0) {
                 damageReceived = new DamageReceived(getpotency(pokemonTrainer1));
@@ -58,10 +58,11 @@ public class TrainerBattle extends Battle {
             pokemonTrainer1 = getPokemonAvailable(trainer1);
             pokemonTrainer2 = getPokemonAvailable(trainer2);
         } while (!battleOver);
-        //if the turn in wich the battle is over is odd, trainer 1 wins. Even, trainer 2 wins
+        // if the turn in wich the battle is over is odd, trainer 1 wins. Even, trainer
+        // 2 wins
     }
 
-    //get the winner and win money and lose money
+    // get the winner and win money and lose money
     public Trainer getWinner() {
         if (turn % 2 != 0) {
             trainer1.getWallet().winMoney(MONEY);
@@ -72,5 +73,9 @@ public class TrainerBattle extends Battle {
             trainer1.getWallet().loseMoney(MONEY);
             return trainer2;
         }
+    }
+
+    public String getPrefix() {
+        return "btt";
     }
 }

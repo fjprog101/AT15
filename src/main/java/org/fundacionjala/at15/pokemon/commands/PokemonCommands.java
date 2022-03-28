@@ -9,16 +9,16 @@ import java.util.concurrent.Callable;
 @Command(name = ":pokemon", description = "Entry point to create objects in Pokemon world")
 public class PokemonCommands implements Callable<Integer> {
 
-    @Option(names = {"-name", "-n"}, description = "pokemon name", defaultValue = "Pikachu")
+    @Option(names = { "-name", "-n" }, description = "pokemon name", defaultValue = "Pikachu")
     private String pokemonName;
 
-    @Option(names = {"-hitPoints", "-hp"}, description = "pokemon Hit-Points", defaultValue = "100")
+    @Option(names = { "-hitPoints", "-hp" }, description = "pokemon Hit-Points", defaultValue = "100")
     private int hitPoints;
 
     @Override
     public Integer call() {
         Pokemon newPokemon = new Pokemon(hitPoints, pokemonName);
-        String hCode = Identifier.generateIdPokemon(newPokemon);
+        String hCode = Identifier.generateId(newPokemon);
         System.out.println(
                 "Pokemon created: \n"
                         + "Name: " + newPokemon.getPokemonName() + "\n"
