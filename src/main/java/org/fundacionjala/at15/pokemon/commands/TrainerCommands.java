@@ -4,7 +4,6 @@ import org.fundacionjala.at15.pokemon.ID.Identifier;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
 import picocli.CommandLine.Option;
-import picocli.CommandLine.Parameters;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
@@ -12,11 +11,9 @@ import java.util.concurrent.Callable;
 public class TrainerCommands implements Callable<Integer> {
 
     @Option(names = {"-name", "-n"}, description = "trainer name")
-    @Parameters(paramLabel = "NAME")
     private String trainerName;
 
     @Option(names = {"-pokeID", "-pID"}, description = "add pokemon to trainer")
-    @Parameters(paramLabel = "POKEMON-ID")
     private Pokemon pokemon;
 
     @Override
