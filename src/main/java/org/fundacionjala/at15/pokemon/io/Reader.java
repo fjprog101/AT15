@@ -11,12 +11,14 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public final class Reader {
+    private static String result = "";
     public static void readJson(Entity entity) {
         JSONParser jsonParser = new JSONParser();
         File inputFile = new File(System.getProperty("user.home") + "/" + entity.getPath().getPathString() + "/" + entity.getIdentifier() + ".json");
 
         try (FileReader reader = new FileReader(inputFile)) {
             Object obj = jsonParser.parse(reader);
+
             if (entity.getPath().getPathString() == "/.pkm/pokemon") {
                 parsePokemonObject((JSONObject) obj);
             }
@@ -71,6 +73,8 @@ public final class Reader {
         Long currentHitPoints = (Long) pokemonObject.get("currentHitPoints");
         Long maxHitPoints = (Long) pokemonObject.get("maxHitPoints");
         System.out.println("hitpoints: " + currentHitPoints + "/" + maxHitPoints);
+
+        result = "id: " + identifier + " name: " + name + " hitpoints: " + currentHitPoints + "/" + maxHitPoints;
     }
 
     private static void parseTrainerObject(JSONObject entity) {
@@ -115,5 +119,9 @@ public final class Reader {
         JSONObject gymLeader = (JSONObject) gym.get("gymLeader");
         String leaderName = (String) gymLeader.get("name");
         System.out.println("town's gym leader name: " + leaderName);
+    }
+
+    public static String getResult() {
+        return Reader.result;
     }
 }
