@@ -1,7 +1,6 @@
 package org.fundacionjala.at15.pokemon.commands;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
-import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Town;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
