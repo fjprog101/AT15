@@ -22,8 +22,7 @@ public class TrainerCommands implements Callable<Integer> {
     @Override
     public Integer call() {
         Trainer trainer = new Trainer(pokemon, trainerName);
-        Identifier identifier = new Identifier();
-        String hCode = identifier.generateIdTrainer(trainer);
+        String hCode = Identifier.generateIdTrainer(trainer);
         System.out.println(
                 "Trainer " + trainer.getName() + " created" + "\n"
                         + pokemon.hashCode() + " added to pokemon team" + "\n"
