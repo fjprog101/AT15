@@ -1,16 +1,18 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.fundacionjala.at15.pokemon.constants.Pokemon.*;
+import static org.fundacionjala.at15.pokemon.io.Path.*;
 
-public class Pokemon {
+import org.fundacionjala.at15.pokemon.ID.Identifier;
+
+public class Pokemon extends Entity {
     private HitPoints hitPoints;
-
     private Move[] movementList = new Move[MAX_QUANTITY_MOVES];
-
     private String pokemonName;
 
     public Pokemon(int newMaxHP, String pokemonName) {
-
+        this.identifier = Identifier.generateIdPokemon(this);
+        this.path = POKEMON;
         hitPoints = new HitPoints(newMaxHP);
         this.pokemonName = pokemonName;
         Move tackle = new Tackle();
