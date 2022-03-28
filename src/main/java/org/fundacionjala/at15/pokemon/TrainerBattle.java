@@ -2,6 +2,8 @@ package org.fundacionjala.at15.pokemon;
 
 import static org.fundacionjala.at15.pokemon.constants.TrainerBattle.*;
 
+import org.fundacionjala.at15.pokemon.ID.Identifier;
+
 public class TrainerBattle extends Battle {
     private Trainer trainer1;
     private Trainer trainer2;
@@ -9,6 +11,7 @@ public class TrainerBattle extends Battle {
     private int turn = 0;
 
     public TrainerBattle(Trainer newTrainer1, Trainer newTrainer2) {
+        this.identifier = Identifier.generateIdBattle(this);
         this.trainer1 = newTrainer1;
         this.trainer2 = newTrainer2;
     }
