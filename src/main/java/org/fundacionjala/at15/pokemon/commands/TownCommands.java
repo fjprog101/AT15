@@ -11,11 +11,13 @@ import java.util.concurrent.Callable;
 @Command(name = ":town", description = "Create a Pokemon Town")
 public class TownCommands implements Callable<Integer> {
 
+
     @Option(names = {"-addwpok", "-addwpkm"}, description = "Add a Wild Pokemon in town")
     private Pokemon wildPokemon;
 
     @Option(names = {"-addtrainers#"}, description = "Add a trainer in town")
     private Trainer trainer;
+
 
     @Override
     public Integer call() {
