@@ -9,6 +9,7 @@ repositories {
 dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'info.picocli:picocli:4.6.3'
+    implementation 'com.google.code.gson:gson:2.9.0'
 }
 
 test {
