@@ -6,13 +6,13 @@ public enum Path {
     BATTLE("/.pkm/battle"),
     TOWN("/.pkm/town");
 
-    private final String path;
+    private final String pathString;
 
-    Path(String path) {
-        this.path = path;
+    Path(String pathString) {
+        this.pathString = pathString;
     }
 
-    public String getPath() {
-        return this.path;
+    public String getPathString() {
+        return this.pathString;
     }
 }

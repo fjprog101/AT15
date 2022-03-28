@@ -1,6 +1,7 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.fundacionjala.at15.pokemon.constants.Pokemon.*;
+import static org.fundacionjala.at15.pokemon.io.Path.*;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
 
@@ -11,6 +12,7 @@ public class Pokemon extends Entity {
 
     public Pokemon(int newMaxHP, String pokemonName) {
         this.identifier = Identifier.generateIdPokemon(this);
+        this.path = POKEMON;
         hitPoints = new HitPoints(newMaxHP);
         this.pokemonName = pokemonName;
         Move tackle = new Tackle();

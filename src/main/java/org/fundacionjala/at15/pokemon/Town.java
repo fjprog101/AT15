@@ -3,6 +3,7 @@ package org.fundacionjala.at15.pokemon;
 import java.util.ArrayList;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
+import static org.fundacionjala.at15.pokemon.io.Path.*;
 
 public class Town extends Entity {
     private ArrayList<Pokemon> wildPokemons;
@@ -12,6 +13,7 @@ public class Town extends Entity {
     private Gym gym;
 
     public Town() {
+        this.path = TOWN;
         this.identifier = Identifier.generateIdTown(this);
         wildPokemons = new ArrayList<Pokemon>();
         trainers = new ArrayList<Trainer>();

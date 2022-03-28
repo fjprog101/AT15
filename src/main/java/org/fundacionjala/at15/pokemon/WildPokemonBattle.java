@@ -1,6 +1,7 @@
 package org.fundacionjala.at15.pokemon;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
+import static org.fundacionjala.at15.pokemon.io.Path.*;
 
 public class WildPokemonBattle extends Battle {
     private Trainer trainer;
@@ -9,6 +10,7 @@ public class WildPokemonBattle extends Battle {
     private boolean pokemonLeft = false;
     private int turn = 0;
     public WildPokemonBattle(Trainer trainer, Pokemon pokemon) {
+        this.path = BATTLE;
         this.identifier = Identifier.generateIdBattle(this);
         this.trainer = trainer;
         this.wildPokemon = pokemon;

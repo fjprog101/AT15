@@ -7,8 +7,8 @@ import com.google.gson.Gson;
 import org.fundacionjala.at15.pokemon.Entity;
 
 public final class Writer {
-    public static void writeToJson(Entity entity, Path entityPath) {
-        File path = new File(System.getProperty("user.home") + entityPath.getPath());
+    public static void writeToJson(Entity entity) {
+        File path = new File(System.getProperty("user.home") + entity.getPath().getPathString());
         checkFolder(path);
         String fileName = entity.getIdentifier();
         String jsonString = new Gson().toJson(entity);
