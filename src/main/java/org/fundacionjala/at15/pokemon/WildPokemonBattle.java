@@ -30,7 +30,6 @@ public class WildPokemonBattle extends Battle {
     }
     @Override
     public void fight() {
-        // TODO Auto-generated method stub
         Pokemon myPokemon = getActualPokemon(trainer);
         DamageReceived damage;
         do {

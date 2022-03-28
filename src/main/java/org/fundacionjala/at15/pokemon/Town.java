@@ -1,5 +1,6 @@
 package org.fundacionjala.at15.pokemon;
 
+import static org.fundacionjala.at15.pokemon.constants.Town.*;
 import java.util.ArrayList;
 
 public class Town {

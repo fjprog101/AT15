@@ -1,9 +1,10 @@
 package org.fundacionjala.at15.pokemon;
 
+import static org.fundacionjala.at15.pokemon.constants.DamageReceived.*;
+
 public class DamageReceived implements HPAffecter {
     private int potency;
     private int currentHitPoints;
-    private final int faint = 0;
 
     public DamageReceived(int potency) {
         this.potency = potency;
@@ -14,8 +15,8 @@ public class DamageReceived implements HPAffecter {
         if (currentHitPoints > potency) {
             currentHitPoints = currentHitPoints - potency;
             pokemon.getHitPoints().setCurrentHitPoints(currentHitPoints);
-        } else if (currentHitPoints > faint && currentHitPoints <= potency) {
-            currentHitPoints = faint;
+        } else if (currentHitPoints > FAINT && currentHitPoints <= potency) {
+            currentHitPoints = FAINT;
             pokemon.getHitPoints().setCurrentHitPoints(currentHitPoints);
         }
     }
