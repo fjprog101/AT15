@@ -13,8 +13,7 @@ public class IdentifierTest {
         Pokemon pokemon = new Pokemon(1000, "Pikachu");
         int hCode = pokemon.hashCode();
         String expected = "pkm" + Integer.toString(hCode);
-        Identifier ide = new Identifier();
-        assertEquals(expected, ide.generateIdPokemon(pokemon));
+        assertEquals(expected, Identifier.generateId(pokemon));
     }
 
     @Test
@@ -23,8 +22,7 @@ public class IdentifierTest {
         Pokemon pokemon1 = new Pokemon(1000, "Pikachu");
         int hCode = pokemon1.hashCode();
         String expected = "pkm" + Integer.toString(hCode);
-        Identifier ide = new Identifier();
-        assertNotEquals(expected, ide.generateIdPokemon(pokemon));
+        assertNotEquals(expected, Identifier.generateId(pokemon));
     }
 
     @Test
@@ -33,8 +31,7 @@ public class IdentifierTest {
         Trainer trainer = new Trainer(pokemon, "Ash");
         int hCode = trainer.hashCode();
         String expected = "trn" + Integer.toString(hCode);
-        Identifier ide = new Identifier();
-        assertEquals(expected, ide.generateIdTrainer(trainer));
+        assertEquals(expected, Identifier.generateId(trainer));
     }
 
     @Test
@@ -45,8 +42,7 @@ public class IdentifierTest {
         Trainer trainer1 = new Trainer(pokemon1, "Ash");
         int hCode = trainer1.hashCode();
         String expected = "trn" + Integer.toString(hCode);
-        Identifier ide = new Identifier();
-        assertNotEquals(expected, ide.generateIdTrainer(trainer));
+        assertNotEquals(expected, Identifier.generateId(trainer));
     }
 
     @Test
@@ -58,8 +54,7 @@ public class IdentifierTest {
         Battle battle = new TrainerBattle(trainer1, trainer2);
         int hCode1 = battle.hashCode();
         String expected = "btt" + Integer.toString(hCode1);
-        Identifier ide = new Identifier();
-        assertEquals(expected, ide.generateIdBattle(battle));
+        assertEquals(expected, Identifier.generateId(battle));
     }
 
     @Test
@@ -77,8 +72,7 @@ public class IdentifierTest {
         int hCode = battle2.hashCode();
 
         String expected = "btt" + Integer.toString(hCode);
-        Identifier ide = new Identifier();
-        assertNotEquals(expected, ide.generateIdBattle(battle1));
+        assertNotEquals(expected, Identifier.generateId(battle1));
     }
 
     @Test
@@ -86,8 +80,7 @@ public class IdentifierTest {
         Town paleta = new Town();
         int hCode = paleta.hashCode();
         String expected = "twn" + Integer.toString(hCode);
-        Identifier ide = new Identifier();
-        assertEquals(expected, ide.generateIdTown(paleta));
+        assertEquals(expected, Identifier.generateId(paleta));
     }
 
     @Test
@@ -96,7 +89,6 @@ public class IdentifierTest {
         Town paleta2 = new Town();
         int hCode = paleta2.hashCode();
         String expected = "twn" + Integer.toString(hCode);
-        Identifier ide = new Identifier();
-        assertNotEquals(expected, ide.generateIdTown(paleta1));
+        assertNotEquals(expected, Identifier.generateId(paleta1));
     }
 }

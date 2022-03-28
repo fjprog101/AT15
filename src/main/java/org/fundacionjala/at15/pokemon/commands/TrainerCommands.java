@@ -10,21 +10,20 @@ import java.util.concurrent.Callable;
 @Command(name = ":trainer", description = "create a trainer")
 public class TrainerCommands implements Callable<Integer> {
 
-    @Option(names = {"-name", "-n"}, description = "trainer name")
+    @Option(names = { "-name", "-n" }, description = "trainer name")
     private String trainerName;
 
-    @Option(names = {"-pokeID", "-pID"}, description = "add pokemon to trainer")
+    @Option(names = { "-pokeID", "-pID" }, description = "add pokemon to trainer")
     private Pokemon pokemon;
 
     @Override
     public Integer call() {
         Trainer trainer = new Trainer(pokemon, trainerName);
-        String hCode = Identifier.generateIdTrainer(trainer);
+        String hCode = Identifier.generateId(trainer);
         System.out.println(
                 "Trainer " + trainer.getName() + " created" + "\n"
-                        + pokemon.hashCode() + " added to pokemon team" + "\n"
-                        + "ID: " + hCode
-        );
+                        + pokemon.getIdentifier() + " added to pokemon team" + "\n"
+                        + "ID: " + hCode);
         return 0;
     }
 }

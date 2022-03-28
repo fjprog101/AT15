@@ -14,7 +14,7 @@ public class Town extends Entity {
 
     public Town() {
         this.path = TOWN;
-        this.identifier = Identifier.generateIdTown(this);
+        this.identifier = Identifier.generateId(this);
         wildPokemons = new ArrayList<Pokemon>();
         trainers = new ArrayList<Trainer>();
         store = new Store();
@@ -54,4 +54,7 @@ public class Town extends Entity {
         return trainers;
     }
 
+    public String getPrefix() {
+        return "twn";
+    }
 }

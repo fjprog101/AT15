@@ -9,12 +9,14 @@ public class WildPokemonBattle extends Battle {
     private boolean wildPokemonCapture = false;
     private boolean pokemonLeft = false;
     private int turn = 0;
+
     public WildPokemonBattle(Trainer trainer, Pokemon pokemon) {
         this.path = BATTLE;
-        this.identifier = Identifier.generateIdBattle(this);
+        this.identifier = Identifier.generateId(this);
         this.trainer = trainer;
         this.wildPokemon = pokemon;
     }
+
     public Pokemon getActualPokemon(Trainer trainer1) {
         int actualHitPoints;
         PokemonTeam team = trainer1.getPokemonTeam();
@@ -29,10 +31,12 @@ public class WildPokemonBattle extends Battle {
         pokemonLeft = true;
         return actualPokemon;
     }
+
     public int getpotency(Pokemon pokemon) {
         Move move = pokemon.getMove(1);
         return move.getPotency();
     }
+
     @Override
     public void fight() {
         Pokemon myPokemon = getActualPokemon(trainer);
@@ -54,7 +58,12 @@ public class WildPokemonBattle extends Battle {
             myPokemon = getActualPokemon(trainer);
         } while (!pokemonLeft);
     }
+
     public Boolean isCaptured() {
         return wildPokemonCapture;
+    }
+
+    public String getPrefix() {
+        return "wbt";
     }
 }

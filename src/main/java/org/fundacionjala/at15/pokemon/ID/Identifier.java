@@ -1,41 +1,12 @@
 package org.fundacionjala.at15.pokemon.ID;
 
-import org.fundacionjala.at15.pokemon.Battle;
-import org.fundacionjala.at15.pokemon.Pokemon;
-import org.fundacionjala.at15.pokemon.Town;
-import org.fundacionjala.at15.pokemon.Trainer;
+import org.fundacionjala.at15.pokemon.Entity;
 
 public class Identifier {
 
-    public static String generateIdPokemon(Pokemon pokemon) {
-        String identifier = "pkm";
-        int hCode = pokemon.hashCode();
-        String identifierPkm = Integer.toString(hCode);
-        identifier = identifier + identifierPkm;
-        return identifier;
-    }
-
-    public static String generateIdTrainer(Trainer trainer) {
-        String identifier = "trn";
-        int hCode = trainer.hashCode();
-        String identifierTrn = Integer.toString(hCode);
-        identifier = identifier + identifierTrn;
-        return identifier;
-    }
-
-    public static String generateIdBattle(Battle battle) {
-        String identifier = "btt";
-        int hCode = battle.hashCode();
-        String identifierBtt = Integer.toString(hCode);
-        identifier = identifier + identifierBtt;
-        return identifier;
-    }
-
-    public static String generateIdTown(Town town) {
-        String identifier = "twn";
-        int hCode = town.hashCode();
-        String identifierTwn = Integer.toString(hCode);
-        identifier = identifier + identifierTwn;
-        return identifier;
+    public static String generateId(Entity entity) {
+        int hCode = entity.hashCode();
+        String identifier = Integer.toString(hCode);
+        return entity.getPrefix() + identifier;
     }
 }
