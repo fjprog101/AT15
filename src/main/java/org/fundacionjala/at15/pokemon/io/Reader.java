@@ -48,6 +48,15 @@ public final class Reader {
         Trainer trainer = new Trainer(pokemon, "Ash");
         Writer.writeToJson(trainer);
         readJson(trainer);
+
+        Trainer trainer2 = new Trainer(pokemon, "Brooke");
+        TrainerBattle battle = new TrainerBattle(trainer, trainer2);
+        Writer.writeToJson(battle);
+        readJson(battle);
+
+        Town town = new Town();
+        Writer.writeToJson(town);
+        readJson(town);
     }
 
     private static void parsePokemonObject(JSONObject entity) {
@@ -81,10 +90,30 @@ public final class Reader {
     }
 
     private static void parseBattleObject(JSONObject entity) {
+        System.out.println();
+        String identifier = (String) entity.get("identifier");
+        System.out.println("id: " + identifier);
 
+        JSONObject trainer1Object = (JSONObject) entity.get("trainer1");
+        String name = (String) trainer1Object.get("name");
+        System.out.println("trainer1 name: " + name);
+
+        JSONObject trainer2Object = (JSONObject) entity.get("trainer2");
+        String name2 = (String) trainer2Object.get("name");
+        System.out.println("trainer2 name: " + name2);
+
+        Boolean battleOver = (Boolean) entity.get("battleOver");
+        System.out.println("isBattleOver: " + battleOver);
     }
 
     private static void parseTownObject(JSONObject entity) {
+        System.out.println();
+        String identifier = (String) entity.get("identifier");
+        System.out.println("id: " + identifier);
 
+        JSONObject gym = (JSONObject) entity.get("gym");
+        JSONObject gymLeader = (JSONObject) gym.get("gymLeader");
+        String leaderName = (String) gymLeader.get("name");
+        System.out.println("town's gym leader name: " + leaderName);
     }
 }
