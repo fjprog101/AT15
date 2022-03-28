@@ -1,8 +1,8 @@
 package org.fundacionjala.at15.pokemon;
 
-public class Pokeball extends Item {
-    static final int POKEBALL_COST = 20;
+import static org.fundacionjala.at15.pokemon.constants.Pokeball.*;
 
+public class Pokeball extends Item {
     public Pokeball() {
         this.cost = POKEBALL_COST;
     }
@@ -10,5 +10,4 @@ public class Pokeball extends Item {
     public boolean catchPokemon(Pokemon poke) {
         return poke.getHitPoints().is20Percent();
     }
-
 }

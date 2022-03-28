@@ -1,8 +1,8 @@
 package org.fundacionjala.at15.pokemon;
 
-public class Pokemon {
-    private static final int MAX_QUANTITY_MOVES = 4;
+import static org.fundacionjala.at15.pokemon.constants.Pokemon.*;
 
+public class Pokemon {
     private HitPoints hitPoints;
 
     private Move[] movementList = new Move[MAX_QUANTITY_MOVES];
@@ -36,5 +36,4 @@ public class Pokemon {
     public String getPokemonName() {
         return this.pokemonName;
     }
-
 }
