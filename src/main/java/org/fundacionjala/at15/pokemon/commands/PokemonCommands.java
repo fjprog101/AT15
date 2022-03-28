@@ -21,7 +21,8 @@ public class PokemonCommands implements Callable<Integer> {
     @Override
     public Integer call() {
         Pokemon newPokemon = new Pokemon(hitPoints, pokemonName);
-        String hCode = Identifier.generateIdPokemon(newPokemon);
+        Identifier identifier = new Identifier();
+        String hCode = identifier.generateIdPokemon(newPokemon);
         System.out.println(
                 "Pokemon created: \n"
                         + "Name: " + newPokemon.getPokemonName() + "\n"
@@ -29,5 +30,5 @@ public class PokemonCommands implements Callable<Integer> {
                         + "ID: " + hCode);
         return 0;
     }
-
 }
+
