@@ -15,4 +15,12 @@ public class ReaderTest {
         String expected = "id: " + pokemon.getIdentifier() + " name: Charizard hitpoints: 100/100";
         assertEquals(expected, getResult());
     }
+    @Test
+    public void itShouldReadATrainerFile() {
+        // Trainer pokemon = new Pokemon(100, "Charizard");
+        // Writer.writeToJson(pokemon);
+        // readJson(pokemon);
+        // String expected = "id: " + pokemon.getIdentifier() + " name: Charizard hitpoints: 100/100";
+        // assertEquals(expected, getResult());
+    }
 }
