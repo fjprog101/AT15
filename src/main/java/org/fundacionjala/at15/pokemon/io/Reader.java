@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import org.fundacionjala.at15.pokemon.Entity;
 import org.fundacionjala.at15.pokemon.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -18,7 +17,9 @@ public final class Reader {
 
         try (FileReader reader = new FileReader(inputFile)) {
             Object obj = jsonParser.parse(reader);
-            parseEmployeeObject((JSONObject) obj);
+            if (entity.getPath().getPathString() == "/.pkm/pokemon") {
+                parsePokemonObject((JSONObject) obj);
+            }
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -36,7 +37,7 @@ public final class Reader {
         readJson(pokemon);
     }
 
-    private static void parseEmployeeObject(JSONObject entity) {
+    private static void parsePokemonObject(JSONObject entity) {
         System.out.println();
 
         String identifier = (String) entity.get("identifier");
