@@ -26,7 +26,6 @@ public class PokemonCommands implements Callable<Integer> {
                         + "Name: " + newPokemon.getPokemonName() + "\n"
                         + "HitPoints: " + newPokemon.getHitPoints().getCurrentHitPoints() + "\n"
                         + "ID: " + hCode);
-                        System.out.println(newPokemon);
         return 0;
     }
 
