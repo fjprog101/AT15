@@ -3,6 +3,7 @@ package org.fundacionjala.at15.pokemon.commands;
 import org.fundacionjala.at15.pokemon.ID.Identifier;
 import org.fundacionjala.at15.pokemon.io.Writer;
 import org.fundacionjala.at15.pokemon.Pokemon;
+import org.fundacionjala.at15.pokemon.io.Writer;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;

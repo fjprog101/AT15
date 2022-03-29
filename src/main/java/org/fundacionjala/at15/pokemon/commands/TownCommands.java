@@ -1,5 +1,6 @@
 package org.fundacionjala.at15.pokemon.commands;
 
+import com.google.gson.Gson;
 import org.fundacionjala.at15.pokemon.ID.Identifier;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Town;
@@ -26,19 +27,21 @@ public class TownCommands implements Callable<Integer> {
         String hCode = identifier.generateId(newTown);
         newTown.addWildPokemonsToTown(wildPokemon);
         newTown.addTrainersToTown(trainer);
-        System.out.println("Town created: \n"
-                + "WildPokemonsList: ");
-        for (int ind = 0; ind < newTown.getWildPokemons().size(); ind++) {
-            System.out.println(newTown.getWildPokemons().get(ind).getPokemonName() + " "
-                    + newTown.getWildPokemons().get(ind).getIdentifier());
-        }
-        System.out.println("Trainers: ");
-        for (int ind2 = 0; ind2 < newTown.getTrainers().size(); ind2++) {
-            System.out.println(newTown.getTrainers().get(ind2).getName() + " "
-                    + newTown.getTrainers().get(ind2).getIdentifier());
-        }
-        System.out.println("ID" + hCode + "\n"
-                + "Store\nPokemon Center\nPokemon Gym");
+        String townJson = new Gson().toJson(newTown);
+
+//        System.out.println("Town created: \n"
+//                + "WildPokemonsList: ");
+//        for (int ind = 0; ind < newTown.getWildPokemons().size(); ind++) {
+//            System.out.println(newTown.getWildPokemons().get(ind).getPokemonName() + " "
+//                    + newTown.getWildPokemons().get(ind).getIdentifier());
+//        }
+//        System.out.println("Trainers: ");
+//        for (int ind2 = 0; ind2 < newTown.getTrainers().size(); ind2++) {
+//            System.out.println(newTown.getTrainers().get(ind2).getName() + " "
+//                    + newTown.getTrainers().get(ind2).getIdentifier());
+//        }
+//        System.out.println("ID" + hCode + "\n"
+//                + "Store\nPokemon Center\nPokemon Gym");
         return 0;
     }
 
