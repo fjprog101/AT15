@@ -10,6 +10,7 @@ public class ReaderTest {
     @Test
     public void itShouldReadAPokemonFile() {
         Pokemon pokemon = new Pokemon(100, "Charizard");
+
         Writer.writeToJson(pokemon);
         readJson(pokemon);
         String expected = "id: " + pokemon.getIdentifier() + " name: Charizard hitpoints: 100/100";
