@@ -16,7 +16,7 @@ public class Pokemon extends Entity {
         this.path = POKEMON;
         hitPoints = new HitPoints(newMaxHP);
         this.pokemonName = pokemonName;
-        Move tackle = new Tackle();
+        Move tackle = new Move();
         this.movementList.add(tackle);
     }
 

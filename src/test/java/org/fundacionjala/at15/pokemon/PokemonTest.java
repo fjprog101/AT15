@@ -7,7 +7,7 @@ public class PokemonTest {
     @Test
     public void itShouldHaveMoves() {
         Pokemon genericPokemon = new Pokemon(200, "pikachu");
-        Move tackle = new Tackle();
+        Move tackle = new Move();
         genericPokemon.setMoveToList(tackle);
 
         assertEquals(tackle, genericPokemon.getMove(1));
@@ -23,7 +23,7 @@ public class PokemonTest {
     @Test
     public void itShouldHaveOnlyFourMoves() {
         Pokemon genericPokemon = new Pokemon(200, "pikachu");
-        Move move = new Tackle();
+        Move move = new Move();
         genericPokemon.setMoveToList(move);
         genericPokemon.setMoveToList(move);
         genericPokemon.setMoveToList(move);
