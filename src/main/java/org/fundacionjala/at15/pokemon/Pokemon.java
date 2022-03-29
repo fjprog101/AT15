@@ -1,13 +1,14 @@
 package org.fundacionjala.at15.pokemon;
 
-import static org.fundacionjala.at15.pokemon.constants.Pokemon.*;
 import static org.fundacionjala.at15.pokemon.io.Path.*;
+
+import java.util.ArrayList;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
 
 public class Pokemon extends Entity {
     private HitPoints hitPoints;
-    private Move[] movementList = new Move[MAX_QUANTITY_MOVES];
+    private ArrayList<Move> movementList = new ArrayList<Move>();
     private String pokemonName;
 
     public Pokemon(int newMaxHP, String pokemonName) {
@@ -16,19 +17,21 @@ public class Pokemon extends Entity {
         hitPoints = new HitPoints(newMaxHP);
         this.pokemonName = pokemonName;
         Move tackle = new Tackle();
-        this.movementList[0] = tackle;
+        this.movementList.add(0, tackle);
     }
 
-    public Move[] getMovementList() {
+    public ArrayList<Move> getMovementList() {
         return movementList;
     }
 
-    public Move getMove(int listPosition) {
-        return movementList[listPosition - 1];
+    //esta clase tiene conflicto
+    public Move getMove(int listMove) {
+        int moveDefault = 0;
+        return movementList.get(moveDefault);
     }
 
-    public void setMoveToList(Move newMove, int position1To4) {
-        this.movementList[position1To4 - 1] = newMove;
+    public void setMoveToList(int position1To4, Move newMove) {
+        this.movementList.add(position1To4, newMove);
     }
 
     public HitPoints getHitPoints() {
