@@ -17,6 +17,7 @@ public class TownCommands implements Callable<Integer> {
     @Option(names = {"-addtrainers#"}, description = "Add a trainer in town")
     private Trainer trainer;
 
+
     @Override
     public Integer call() {
         Town newTown = new Town();
