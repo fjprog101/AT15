@@ -41,6 +41,7 @@ public final class Reader {
         }
     }
 
+    /*
     public static void main(String[] args) {
         final int hitPoints = 100;
         Pokemon pokemon = new Pokemon(hitPoints, "Pikachu");
@@ -59,7 +60,7 @@ public final class Reader {
         Town town = new Town();
         Writer.writeToJson(town);
         readJson(town);
-    }
+    }*/
 
     private static void parsePokemonObject(JSONObject entity) {
         System.out.println();
@@ -91,6 +92,7 @@ public final class Reader {
         JSONObject walletObject = (JSONObject) entity.get("wallet");
         Long moneyInWallet = (Long) walletObject.get("moneyInWallet");
         System.out.println("money: " + moneyInWallet);
+        result = "id: " + identifier + " name: " + name + " badges: " + badges + " money: " + moneyInWallet;
     }
 
     private static void parseBattleObject(JSONObject entity) {
@@ -108,6 +110,7 @@ public final class Reader {
 
         Boolean battleOver = (Boolean) entity.get("battleOver");
         System.out.println("isBattleOver: " + battleOver);
+        result = "id: " + identifier + " trainer1 name: " + name + " trainer2 name: " + name2 + " isBattleOver: " + battleOver;
     }
 
     private static void parseTownObject(JSONObject entity) {
@@ -119,6 +122,7 @@ public final class Reader {
         JSONObject gymLeader = (JSONObject) gym.get("gymLeader");
         String leaderName = (String) gymLeader.get("name");
         System.out.println("town's gym leader name: " + leaderName);
+        result = "id: " + identifier + " town's gym leader name: " + leaderName;
     }
 
     public static String getResult() {
