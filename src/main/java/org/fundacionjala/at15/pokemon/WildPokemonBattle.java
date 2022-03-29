@@ -33,7 +33,7 @@ public class WildPokemonBattle extends Battle {
     }
 
     public int getpotency(Pokemon pokemon) {
-        Move move = pokemon.getMove(1);
+        Move move = pokemon.getMove(0);
         return move.getPotency();
     }
 

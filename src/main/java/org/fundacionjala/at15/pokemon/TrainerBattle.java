@@ -36,7 +36,7 @@ public class TrainerBattle extends Battle {
 
     // get potency of movement pokemon
     public int getpotency(Pokemon pokemon) {
-        Move move = pokemon.getMove(1);
+        Move move = pokemon.getMove(0);
         return move.getPotency();
     }
 

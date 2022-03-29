@@ -17,7 +17,7 @@ public class Pokemon extends Entity {
         hitPoints = new HitPoints(newMaxHP);
         this.pokemonName = pokemonName;
         Move tackle = new Tackle();
-        this.movementList.add(0, tackle);
+        this.movementList.add(tackle);
     }
 
     public ArrayList<Move> getMovementList() {
@@ -25,13 +25,16 @@ public class Pokemon extends Entity {
     }
 
     //esta clase tiene conflicto
-    public Move getMove(int listMove) {
-        int moveDefault = 0;
-        return movementList.get(moveDefault);
+    public Move getMove(int move) {
+        //int moveDefault = 0;
+        return movementList.get(move);
     }
 
-    public void setMoveToList(int position1To4, Move newMove) {
-        this.movementList.add(position1To4, newMove);
+    public void setMoveToList(Move newMove) {
+        final int numberOfMoves = 4;
+        if (movementList.size() < numberOfMoves) {
+            this.movementList.add(newMove);
+        }
     }
 
     public HitPoints getHitPoints() {
