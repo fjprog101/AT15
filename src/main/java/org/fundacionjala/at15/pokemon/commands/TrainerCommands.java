@@ -1,6 +1,7 @@
 package org.fundacionjala.at15.pokemon.commands;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
+import org.fundacionjala.at15.pokemon.io.*;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
 import picocli.CommandLine.Option;
@@ -14,15 +15,18 @@ public class TrainerCommands implements Callable<Integer> {
     private String trainerName;
 
     @Option(names = { "-pokeID", "-pID" }, description = "add pokemon to trainer")
-    private Pokemon pokemon;
+    private String pokemonId;
 
     @Override
     public Integer call() {
-        Trainer trainer = new Trainer(pokemon, trainerName);
+        Pokemon poke = (Pokemon) Reader.readJson(pokemonId);
+
+        Trainer trainer = new Trainer(poke, trainerName);
+        Writer.writeToJson(trainer);
         String hCode = Identifier.generateId(trainer);
         System.out.println(
                 "Trainer " + trainer.getName() + " created" + "\n"
-                        + pokemon.getIdentifier() + " added to pokemon team" + "\n"
+                        + poke.getIdentifier() + " added to pokemon team" + "\n"
                         + "ID: " + hCode);
         return 0;
     }
