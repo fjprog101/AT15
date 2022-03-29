@@ -1,34 +1,57 @@
 package org.fundacionjala.at15.pokemon.io;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+//import java.util.Map;
+
+import com.google.gson.Gson;
+//import com.google.gson.JsonElement;
 
 import org.fundacionjala.at15.pokemon.*;
+import static org.fundacionjala.at15.pokemon.io.Path.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public final class Reader {
     private static String result = "";
-    public static void readJson(Entity entity) {
+    private static final int THREE = 3;
+    public static void readJson(String fileName) {
+        File path = getPath(fileName);
+        String subName = fileName.substring(0, THREE);
         JSONParser jsonParser = new JSONParser();
-        File inputFile = new File(System.getProperty("user.home") + "/" + entity.getPath().getPathString() + "/" + entity.getIdentifier() + ".json");
 
-        try (FileReader reader = new FileReader(inputFile)) {
+        String line = "";
+        try {
+            BufferedReader input = new BufferedReader(new FileReader(path));
+            line = input.readLine();
+            input.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace(System.out);
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
+        Trainer entity = new Gson().fromJson(line, Trainer.class);
+        //JsonElement mJson =  jsonParser.parse(line);
+
+        try (FileReader reader = new FileReader(path)) {
             Object obj = jsonParser.parse(reader);
+            //JsonElement mJson = (JsonElement) obj;
+            //Pokemon entity = new Gson().fromJson(mJson, Pokemon.class);
 
-            if (entity.getPath().getPathString() == "/.pkm/pokemon") {
+            if (subName.equals("pkm")) {
                 parsePokemonObject((JSONObject) obj);
             }
-            if (entity.getPath().getPathString() == "/.pkm/trainer") {
+            if (subName.equals("trn")) {
                 parseTrainerObject((JSONObject) obj);
             }
-            if (entity.getPath().getPathString() == "/.pkm/battle") {
+            if (subName.equals("btt")) {
                 parseBattleObject((JSONObject) obj);
             }
-            if (entity.getPath().getPathString() == "/.pkm/town") {
+            if (subName.equals("twn")) {
                 parseTownObject((JSONObject) obj);
             }
 
@@ -41,26 +64,28 @@ public final class Reader {
         }
     }
 
-    /*
+
     public static void main(String[] args) {
-        final int hitPoints = 100;
-        Pokemon pokemon = new Pokemon(hitPoints, "Pikachu");
-        Writer.writeToJson(pokemon);
-        readJson(pokemon);
+        readJson("trn142555199");
+        //readJson("pkm1452445207");
+    }
 
-        Trainer trainer = new Trainer(pokemon, "Ash");
-        Writer.writeToJson(trainer);
-        readJson(trainer);
-
-        Trainer trainer2 = new Trainer(pokemon, "Brooke");
-        TrainerBattle battle = new TrainerBattle(trainer, trainer2);
-        Writer.writeToJson(battle);
-        readJson(battle);
-
-        Town town = new Town();
-        Writer.writeToJson(town);
-        readJson(town);
-    }*/
+    public static File getPath(String fileName) {
+        String subName = fileName.substring(0, THREE);
+        switch (subName) {
+            case "pkm":
+                return new File(System.getProperty("user.home") + "/" + POKEMON.getPathString() + "/" + fileName + ".json");
+            case "trn":
+                return new File(System.getProperty("user.home") + "/" + TRAINER.getPathString() + "/" + fileName + ".json");
+            case "btt":
+            case "wbt":
+                return new File(System.getProperty("user.home") + "/" + BATTLE.getPathString() + "/" + fileName + ".json");
+            case "twn":
+                return new File(System.getProperty("user.home") + "/" + TOWN.getPathString() + "/" + fileName + ".json");
+            default:
+                return null;
+        }
+    }
 
     private static void parsePokemonObject(JSONObject entity) {
         System.out.println();
