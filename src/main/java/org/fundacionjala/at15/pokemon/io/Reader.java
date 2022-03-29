@@ -47,8 +47,8 @@ public final class Reader {
                 return entity;
             }
             if (subName.equals("btt")) {
-                parseBattleObject((JSONObject) obj);
-                Battle entity = new Gson().fromJson(line, Battle.class);
+                parseTrainerBattleObject((JSONObject) obj);
+                TrainerBattle entity = new Gson().fromJson(line, TrainerBattle.class);
                 return entity;
             }
             if (subName.equals("twn")) {
@@ -66,11 +66,6 @@ public final class Reader {
         return null;
     }
 
-
-    public static void main(String[] args) {
-        Entity entity = readJson("trn142555199");
-    }
-
     public static File getPath(String fileName) {
         String subName = fileName.substring(0, THREE);
         switch (subName) {
@@ -79,7 +74,6 @@ public final class Reader {
             case "trn":
                 return new File(System.getProperty("user.home") + "/" + TRAINER.getPathString() + "/" + fileName + ".json");
             case "btt":
-            case "wbt":
                 return new File(System.getProperty("user.home") + "/" + BATTLE.getPathString() + "/" + fileName + ".json");
             case "twn":
                 return new File(System.getProperty("user.home") + "/" + TOWN.getPathString() + "/" + fileName + ".json");
@@ -121,7 +115,7 @@ public final class Reader {
         result = "id: " + identifier + " name: " + name + " badges: " + badges + " money: " + moneyInWallet;
     }
 
-    private static void parseBattleObject(JSONObject entity) {
+    private static void parseTrainerBattleObject(JSONObject entity) {
         System.out.println();
         String identifier = (String) entity.get("identifier");
         System.out.println("id: " + identifier);
@@ -153,5 +147,11 @@ public final class Reader {
 
     public static String getResult() {
         return Reader.result;
+    }
+
+    public static void main(String[] args) {
+        Entity entity = readJson("trn142555199");
+        Trainer trainer = (Trainer) entity;
+        System.out.println(trainer.getName());
     }
 }
