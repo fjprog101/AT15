@@ -150,7 +150,10 @@ public final class Reader {
     }
 
     public static void main(String[] args) {
-        Entity entity = readJson("trn142555199");
+        Pokemon pikachu = new Pokemon(1, "Pikachu");
+        Trainer ash = new Trainer(pikachu, "Ash");
+        Writer.writeToJson(ash);
+        Entity entity = readJson(ash.getIdentifier());
         Trainer trainer = (Trainer) entity;
         System.out.println(trainer.getName());
     }
