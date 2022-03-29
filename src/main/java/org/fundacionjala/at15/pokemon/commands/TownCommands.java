@@ -24,9 +24,9 @@ public class TownCommands implements Callable<Integer> {
         String hCode = identifier.generateId(newTown);
         newTown.addWildPokemonsToTown(wildPokemon);
         newTown.addTrainersToTown(trainer);
-        System.out.println("Town created: \n" +
-                "WildPokemonsList: ");
-        for (int ind = 0; ind < newTown.getWildPokemons().size(); ind ++) {
+        System.out.println("Town created: \n"
+                + "WildPokemonsList: ");
+        for (int ind = 0; ind < newTown.getWildPokemons().size(); ind++) {
             System.out.println(newTown.getWildPokemons().get(ind).getPokemonName() + " "
                     + newTown.getWildPokemons().get(ind).getIdentifier());
         }
