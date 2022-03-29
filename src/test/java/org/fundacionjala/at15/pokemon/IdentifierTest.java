@@ -1,7 +1,7 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotSame;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
 import org.junit.Test;
@@ -22,7 +22,7 @@ public class IdentifierTest {
         Pokemon pokemon1 = new Pokemon(1000, "Pikachu");
         int hCode = pokemon1.hashCode();
         String expected = "pkm" + Integer.toString(hCode);
-        assertNotEquals(expected, Identifier.generateId(pokemon));
+        assertNotSame(expected, Identifier.generateId(pokemon));
     }
 
     @Test
@@ -42,7 +42,7 @@ public class IdentifierTest {
         Trainer trainer1 = new Trainer(pokemon1, "Ash");
         int hCode = trainer1.hashCode();
         String expected = "trn" + Integer.toString(hCode);
-        assertNotEquals(expected, Identifier.generateId(trainer));
+        assertNotSame(expected, Identifier.generateId(trainer));
     }
 
     @Test
@@ -72,7 +72,7 @@ public class IdentifierTest {
         int hCode = battle2.hashCode();
 
         String expected = "btt" + Integer.toString(hCode);
-        assertNotEquals(expected, Identifier.generateId(battle1));
+        assertNotSame(expected, Identifier.generateId(battle1));
     }
 
     @Test
@@ -89,6 +89,6 @@ public class IdentifierTest {
         Town paleta2 = new Town();
         int hCode = paleta2.hashCode();
         String expected = "twn" + Integer.toString(hCode);
-        assertNotEquals(expected, Identifier.generateId(paleta1));
+        assertNotSame(expected, Identifier.generateId(paleta1));
     }
 }

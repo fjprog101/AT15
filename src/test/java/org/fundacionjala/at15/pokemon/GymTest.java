@@ -32,7 +32,6 @@ public class GymTest {
         Pokemon pikachu = new Pokemon(500, "Pikachu");
         Trainer trainer = new Trainer(pikachu, "Ash Ketchup");
         Gym gym = new Gym();
-
         boolean isWinner = gym.startTournament(trainer);
         assertTrue(isWinner);
     }
@@ -42,7 +41,6 @@ public class GymTest {
         Pokemon pikachu = new Pokemon(200, "Pikachu");
         Trainer trainer = new Trainer(pikachu, "Ash Ketchup");
         Gym gym = new Gym();
-
         boolean isWinner = gym.startTournament(trainer);
         assertFalse(isWinner);
     }

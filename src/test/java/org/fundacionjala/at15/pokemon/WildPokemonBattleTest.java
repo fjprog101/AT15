@@ -1,6 +1,7 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -13,7 +14,7 @@ public class WildPokemonBattleTest {
         WildPokemonBattle battle = new WildPokemonBattle(trainer, wildPokemon);
         battle.fight();
         boolean wildPokemonIsCapture = battle.isCaptured();
-        assertEquals(true, wildPokemonIsCapture);
+        assertTrue(wildPokemonIsCapture);
     }
     @Test
     public void itShouldGetActualPokemon() {
