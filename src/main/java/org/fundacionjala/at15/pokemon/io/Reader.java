@@ -5,10 +5,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-//import java.util.Map;
 
 import com.google.gson.Gson;
-//import com.google.gson.JsonElement;
 
 import org.fundacionjala.at15.pokemon.*;
 import static org.fundacionjala.at15.pokemon.io.Path.*;
@@ -19,7 +17,8 @@ import org.json.simple.parser.ParseException;
 public final class Reader {
     private static String result = "";
     private static final int THREE = 3;
-    public static void readJson(String fileName) {
+
+    public static Entity readJson(String fileName) {
         File path = getPath(fileName);
         String subName = fileName.substring(0, THREE);
         JSONParser jsonParser = new JSONParser();
@@ -34,27 +33,29 @@ public final class Reader {
         } catch (IOException e) {
             e.printStackTrace(System.out);
         }
-        Trainer entity = new Gson().fromJson(line, Trainer.class);
-        //JsonElement mJson =  jsonParser.parse(line);
 
         try (FileReader reader = new FileReader(path)) {
             Object obj = jsonParser.parse(reader);
-            //JsonElement mJson = (JsonElement) obj;
-            //Pokemon entity = new Gson().fromJson(mJson, Pokemon.class);
-
             if (subName.equals("pkm")) {
                 parsePokemonObject((JSONObject) obj);
+                Pokemon entity = new Gson().fromJson(line, Pokemon.class);
+                return entity;
             }
             if (subName.equals("trn")) {
                 parseTrainerObject((JSONObject) obj);
+                Trainer entity = new Gson().fromJson(line, Trainer.class);
+                return entity;
             }
             if (subName.equals("btt")) {
                 parseBattleObject((JSONObject) obj);
+                Battle entity = new Gson().fromJson(line, Battle.class);
+                return entity;
             }
             if (subName.equals("twn")) {
                 parseTownObject((JSONObject) obj);
+                Town entity = new Gson().fromJson(line, Town.class);
+                return entity;
             }
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -62,12 +63,12 @@ public final class Reader {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
 
     public static void main(String[] args) {
-        readJson("trn142555199");
-        //readJson("pkm1452445207");
+        Entity entity = readJson("trn142555199");
     }
 
     public static File getPath(String fileName) {
