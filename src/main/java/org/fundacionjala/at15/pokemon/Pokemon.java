@@ -24,9 +24,7 @@ public class Pokemon extends Entity {
         return movementList;
     }
 
-    //esta clase tiene conflicto
     public Move getMove(int move) {
-        //int moveDefault = 0;
         return movementList.get(move);
     }
 
