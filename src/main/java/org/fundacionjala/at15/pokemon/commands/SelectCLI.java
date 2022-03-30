@@ -6,7 +6,7 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
 @Command(name = "select", description = "Select a Pokemon")
-public class SubCommandSelect implements Callable<Integer> {
+public class SelectCLI implements Callable<Integer> {
     @Option(names = { "-id" }, description = "Pokemon ID")
     private String pokemonID;
 

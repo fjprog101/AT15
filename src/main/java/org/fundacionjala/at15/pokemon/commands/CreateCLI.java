@@ -4,9 +4,9 @@ import picocli.CommandLine.Command;
 
 import java.util.concurrent.Callable;
 
-@Command(name = "create", subcommands = {PokemonCreateCLI.class, TrainerCreateCLI.class},
+@Command(name = "admin:create", subcommands = {PokemonCreateCLI.class, TrainerCreateCLI.class},
         description = "Create objects")
-class SubCommandsCreate implements Callable<Integer> {
+class CreateCLI implements Callable<Integer> {
 
     @Override
     public Integer call() {

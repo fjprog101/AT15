@@ -4,7 +4,7 @@ import picocli.CommandLine.*;
 
 import java.util.concurrent.Callable;
 
-@Command(name = "trainer", subcommands = { SubCommandsPokemon.class}, description = "select, pokemon & catch")
+@Command(name = "trainer", subcommands = { PokemonBehaviorCLI.class}, description = "select, pokemon & catch")
 public class TrainerBehaviorCLI implements Callable<Integer> {
 
     @Override
