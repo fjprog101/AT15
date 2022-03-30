@@ -8,7 +8,6 @@ import org.fundacionjala.at15.pokemon.io.Reader;
 import org.fundacionjala.at15.pokemon.io.Writer;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
-
 import java.util.concurrent.Callable;
 
 @Command(name = ":town", description = "Create a Pokemon Town")
@@ -40,6 +39,7 @@ public class TownCommands implements Callable<Integer> {
     private String trainerID4;
 
 
+
     @Override
     public Integer call() {
         Town newTown = new Town();
@@ -69,6 +69,7 @@ public class TownCommands implements Callable<Integer> {
 //        }
 //        System.out.println("ID" + hCode + "\n"
 //                + "Store\nPokemon Center\nPokemon Gym");
+
         return 0;
     }
 
