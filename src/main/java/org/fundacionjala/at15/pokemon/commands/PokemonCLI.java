@@ -4,11 +4,13 @@ import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
 @Command(name = "pkm", subcommands = { CreateCLI.class, PokemonBehaviorCLI.class, TrainerBehaviorCLI.class,
-    CommandLine.HelpCommand.class }, description = "Create data for the Pokemon World")
+        CommandLine.HelpCommand.class }, description = "Create data for the Pokemon World")
 public class PokemonCLI {
     public static void main(String[] args) {
+        if (args == null) {
+            System.out.println("More arguments are needed");
+        }
         int exitCode = new CommandLine(new PokemonCLI()).execute(args);
         System.exit(exitCode);
     }
 }
-
