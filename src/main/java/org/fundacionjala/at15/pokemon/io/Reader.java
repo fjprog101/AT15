@@ -9,7 +9,7 @@ import java.io.IOException;
 import com.google.gson.Gson;
 
 import org.fundacionjala.at15.pokemon.*;
-import static org.fundacionjala.at15.pokemon.io.Path.*;
+import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -73,13 +73,13 @@ public final class Reader {
         String subName = fileName.substring(0, THREE);
         switch (subName) {
             case "pkm":
-                return new File(System.getProperty("user.home") + "/" + POKEMON.getPathString() + "/" + fileName + ".json");
+                return new File(POKEMON.getPath() + "/" + fileName + ".json");
             case "trn":
-                return new File(System.getProperty("user.home") + "/" + TRAINER.getPathString() + "/" + fileName + ".json");
+                return new File(TRAINER.getPath() + "/" + fileName + ".json");
             case "btt":
-                return new File(System.getProperty("user.home") + "/" + BATTLE.getPathString() + "/" + fileName + ".json");
+                return new File(BATTLE.getPath() + "/" + fileName + ".json");
             case "twn":
-                return new File(System.getProperty("user.home") + "/" + TOWN.getPathString() + "/" + fileName + ".json");
+                return new File(TOWN.getPath() + "/" + fileName + ".json");
             default:
                 return null;
         }
@@ -87,7 +87,7 @@ public final class Reader {
 
     private static void parsePokemonObject(JSONObject entity) {
         System.out.println();
-        String identifier = (String) entity.get("identifier");
+        String identifier = (String) entity.get("id");
         System.out.println("id: " + identifier);
 
         String name = (String) entity.get("pokemonName");
@@ -103,7 +103,7 @@ public final class Reader {
 
     private static void parseTrainerObject(JSONObject entity) {
         System.out.println();
-        String identifier = (String) entity.get("identifier");
+        String identifier = (String) entity.get("id");
         System.out.println("id: " + identifier);
 
         String name = (String) entity.get("name");
@@ -120,7 +120,7 @@ public final class Reader {
 
     private static void parseTrainerBattleObject(JSONObject entity) {
         System.out.println();
-        String identifier = (String) entity.get("identifier");
+        String identifier = (String) entity.get("id");
         System.out.println("id: " + identifier);
 
         JSONObject trainer1Object = (JSONObject) entity.get("trainer1");
@@ -138,7 +138,7 @@ public final class Reader {
 
     private static void parseTownObject(JSONObject entity) {
         System.out.println();
-        String identifier = (String) entity.get("identifier");
+        String identifier = (String) entity.get("id");
         System.out.println("id: " + identifier);
 
         JSONObject gym = (JSONObject) entity.get("gym");
@@ -156,7 +156,7 @@ public final class Reader {
         Pokemon pikachu = new Pokemon(1, "Pikachu");
         Trainer ash = new Trainer(pikachu, "Ash");
         Writer.writeToJson(ash);
-        Entity entity = readJson(ash.getIdentifier());
+        Entity entity = readJson(ash.getId());
         Trainer trainer = (Trainer) entity;
         System.out.println(trainer.getName());
     }

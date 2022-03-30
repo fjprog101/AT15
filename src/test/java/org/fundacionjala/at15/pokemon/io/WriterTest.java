@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.*;
 
-import static org.fundacionjala.at15.pokemon.io.Path.*;
+import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import org.junit.Test;
 
 public class WriterTest {
@@ -19,7 +19,7 @@ public class WriterTest {
 
         writeToJson(pokemon);
 
-        File inputFile = new File(System.getProperty("user.home") + "/" + POKEMON.getPathString() + "/" + pokemon.getIdentifier() + ".json");
+        File inputFile = new File(POKEMON.getPath() + "/" + pokemon.getId() + ".json");
         String line = "";
         try {
             BufferedReader input = new BufferedReader(new FileReader(inputFile));

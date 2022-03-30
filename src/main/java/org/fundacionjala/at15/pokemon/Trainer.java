@@ -3,7 +3,7 @@ package org.fundacionjala.at15.pokemon;
 import java.util.ArrayList;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
-import static org.fundacionjala.at15.pokemon.io.Path.*;
+import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
 public class Trainer extends Entity {
     private String name;
@@ -15,8 +15,8 @@ public class Trainer extends Entity {
 
     // initial pokemon for trainer and trainer name
     public Trainer(Pokemon pokemon, String newName) {
-        this.identifier = Identifier.generateId(this);
-        this.path = TRAINER;
+        this.id = Identifier.generateId(this);
+        this.type = TRAINER;
         Pokeball pokeball = new Pokeball();
         this.pokemonTeam = new PokemonTeam(pokemon);
         this.name = newName;

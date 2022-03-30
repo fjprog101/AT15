@@ -1,5 +1,5 @@
 package org.fundacionjala.at15.pokemon;
-import static org.fundacionjala.at15.pokemon.io.Path.*;
+import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
@@ -10,7 +10,7 @@ import org.junit.Test;
 public class QueryTest {
     /*@Test
     public void itShouldGetTheFiles() {
-        String pathDirectory = System.getProperty("user.home") + POKEMON.getPathString();
+        String pathDirectory = POKEMON.getPath();
         ArrayList<String> names = Query.getFiles(pathDirectory);
         ArrayList<String> expecteds = new ArrayList<String>();
         expecteds.add("Diana");

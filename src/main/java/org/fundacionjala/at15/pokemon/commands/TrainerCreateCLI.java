@@ -26,7 +26,7 @@ public class TrainerCreateCLI implements Callable<Integer> {
         String hCode = Identifier.generateId(trainer);
         System.out.println(
                 "Trainer " + trainer.getName() + " created" + "\n"
-                        + poke.getIdentifier() + " added to pokemon team" + "\n"
+                        + poke.getId() + " added to pokemon team" + "\n"
                         + "ID: " + hCode);
         return 0;
     }
