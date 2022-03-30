@@ -8,7 +8,7 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
-@Command(name = ":trainer", description = "create a trainer")
+@Command(name = "trainer", description = "create a trainer")
 public class TrainerCreateCLI implements Callable<Integer> {
 
     @Option(names = { "-name", "-n" }, description = "trainer name")

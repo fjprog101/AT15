@@ -8,13 +8,13 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
-@Command(name = ":wildbattle", description = "create a battle with a wild pokemon")
+@Command(name = "wildbattle", description = "create a battle with a wild pokemon")
 public class WildPokemonBattleCLI implements Callable<Integer> {
 
-    @Option(names = { "-btltrID"}, description = "trainer ID")
+    @Option(names = { "-btltrID" }, description = "trainer ID")
     private String trainerID;
 
-    @Option(names = { "-btlpokeID"}, description = "Wild pokemon ID")
+    @Option(names = { "-btlpokeID" }, description = "Wild pokemon ID")
     private String pokemonID;
 
     @Override
