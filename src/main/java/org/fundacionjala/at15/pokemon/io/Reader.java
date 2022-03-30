@@ -73,13 +73,13 @@ public final class Reader {
         String subName = fileName.substring(0, THREE);
         switch (subName) {
             case "pkm":
-                return new File(System.getProperty("user.home") + "/" + POKEMON.getPathString() + "/" + fileName + ".json");
+                return new File(System.getProperty("user.home") + "/" + POKEMON.getPath() + "/" + fileName + ".json");
             case "trn":
-                return new File(System.getProperty("user.home") + "/" + TRAINER.getPathString() + "/" + fileName + ".json");
+                return new File(System.getProperty("user.home") + "/" + TRAINER.getPath() + "/" + fileName + ".json");
             case "btt":
-                return new File(System.getProperty("user.home") + "/" + BATTLE.getPathString() + "/" + fileName + ".json");
+                return new File(System.getProperty("user.home") + "/" + BATTLE.getPath() + "/" + fileName + ".json");
             case "twn":
-                return new File(System.getProperty("user.home") + "/" + TOWN.getPathString() + "/" + fileName + ".json");
+                return new File(System.getProperty("user.home") + "/" + TOWN.getPath() + "/" + fileName + ".json");
             default:
                 return null;
         }

@@ -13,7 +13,7 @@ public class Pokemon extends Entity {
 
     public Pokemon(int newMaxHP, String pokemonName) {
         this.identifier = Identifier.generateId(this);
-        this.path = POKEMON;
+        this.type = POKEMON;
         hitPoints = new HitPoints(newMaxHP);
         this.pokemonName = pokemonName;
         Move tackle = new Move();

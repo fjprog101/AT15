@@ -12,7 +12,7 @@ public class TrainerBattle extends Battle {
     private int turn = 0;
 
     public TrainerBattle(Trainer newTrainer1, Trainer newTrainer2) {
-        this.path = BATTLE;
+        this.type = BATTLE;
         this.identifier = Identifier.generateId(this);
         this.trainer1 = newTrainer1;
         this.trainer2 = newTrainer2;

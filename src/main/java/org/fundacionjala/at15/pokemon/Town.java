@@ -13,7 +13,7 @@ public class Town extends Entity {
     private Gym gym;
 
     public Town() {
-        this.path = TOWN;
+        this.type = TOWN;
         this.identifier = Identifier.generateId(this);
         wildPokemons = new ArrayList<Pokemon>();
         trainers = new ArrayList<Trainer>();

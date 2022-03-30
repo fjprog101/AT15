@@ -6,13 +6,13 @@ public enum EntityType {
     BATTLE("/.pkm/battle"),
     TOWN("/.pkm/town");
 
-    private final String pathString;
+    private final String path;
 
-    EntityType(String pathString) {
-        this.pathString = pathString;
+    EntityType(String path) {
+        this.path = path;
     }
 
-    public String getPathString() {
-        return this.pathString;
+    public String getPath() {
+        return this.path;
     }
 }

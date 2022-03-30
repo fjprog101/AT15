@@ -11,7 +11,7 @@ public class WildPokemonBattle extends Battle {
     private int turn = 0;
 
     public WildPokemonBattle(Trainer trainer, Pokemon pokemon) {
-        this.path = BATTLE;
+        this.type = BATTLE;
         this.identifier = Identifier.generateId(this);
         this.trainer = trainer;
         this.wildPokemon = pokemon;
