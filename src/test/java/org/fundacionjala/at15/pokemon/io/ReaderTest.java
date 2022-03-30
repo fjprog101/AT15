@@ -3,6 +3,7 @@ package org.fundacionjala.at15.pokemon.io;
 import static org.fundacionjala.at15.pokemon.io.Reader.*;
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -80,7 +81,9 @@ public class ReaderTest {
         file.write(jsonString);
         file.flush();
         file.close();
-        String fileString = jSonStringReader(getPath(fileName));
+
+        File path = getPath(fileName);
+        String fileString = jSonStringReader(path);
 
         String expected = "{"+"\"hitPoints\""+":{"+"\"maxHitPoints\""+":100,"+"\"currentHitPoints\""+":100},"+"\"movementList\""+":[{"+"\"potency\""+":40}],"+"\"pokemonName\""+":"+"\"Pikachu\""+","+"\"identifier\""+":"+ "\"" + fileName + "\"" +","+"\"path\""+":"+"\"POKEMON\""+"}";
         assertEquals(expected, fileString);
