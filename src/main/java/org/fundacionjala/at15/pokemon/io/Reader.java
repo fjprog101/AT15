@@ -22,18 +22,7 @@ public final class Reader {
         File path = getPath(fileName);
         String subName = fileName.substring(0, THREE);
         JSONParser jsonParser = new JSONParser();
-
-        String line = "";
-        try {
-            BufferedReader input = new BufferedReader(new FileReader(path));
-            line = input.readLine();
-            input.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace(System.out);
-        } catch (IOException e) {
-            e.printStackTrace(System.out);
-        }
-
+        String line = jSonStringReader(path);
         try (FileReader reader = new FileReader(path)) {
             Object obj = jsonParser.parse(reader);
             if (subName.equals("pkm")) {
@@ -64,6 +53,20 @@ public final class Reader {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static String jSonStringReader(File path) {
+        String line = "";
+        try {
+            BufferedReader input = new BufferedReader(new FileReader(path));
+            line = input.readLine();
+            input.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace(System.out);
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
+        return line;
     }
 
     public static File getPath(String fileName) {
