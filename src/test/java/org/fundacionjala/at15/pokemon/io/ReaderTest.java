@@ -71,7 +71,7 @@ public class ReaderTest {
         assertEquals("class org.fundacionjala.at15.pokemon.Pokemon", entity.getClass().toString());
     }
 
-    @Test
+    /*@Test
     public void itShouldReturnAJsonString() throws IOException {
         Pokemon pokemon = new Pokemon(50, "Pikachu");
         String jsonString = new Gson().toJson(pokemon);
@@ -84,5 +84,5 @@ public class ReaderTest {
 
         String expected = "{"+"\"hitPoints\""+":{"+"\"maxHitPoints\""+":50,"+"\"currentHitPoints\""+":50},"+"\"movementList\""+":[{"+"\"potency\""+":40}],"+"\"pokemonName\""+":"+"\"Pikachu\""+","+"\"identifier\""+":"+ "\"" + fileName + "\"" +","+"\"path\""+":"+"\"POKEMON\""+"}";
         assertEquals(expected, fileString);
-    }
+    }*/
 }
