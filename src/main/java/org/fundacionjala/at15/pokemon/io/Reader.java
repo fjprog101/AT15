@@ -9,7 +9,7 @@ import java.io.IOException;
 import com.google.gson.Gson;
 
 import org.fundacionjala.at15.pokemon.*;
-import static org.fundacionjala.at15.pokemon.io.Path.*;
+import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;

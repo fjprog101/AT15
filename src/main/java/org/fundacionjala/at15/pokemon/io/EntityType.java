@@ -1,6 +1,6 @@
 package org.fundacionjala.at15.pokemon.io;
 
-public enum Path {
+public enum EntityType {
     POKEMON("/.pkm/pokemon"),
     TRAINER("/.pkm/trainer"),
     BATTLE("/.pkm/battle"),
@@ -8,7 +8,7 @@ public enum Path {
 
     private final String pathString;
 
-    Path(String pathString) {
+    EntityType(String pathString) {
         this.pathString = pathString;
     }
 

@@ -1,6 +1,6 @@
 package org.fundacionjala.at15.pokemon;
 
-import static org.fundacionjala.at15.pokemon.io.Path.*;
+import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
 import java.util.ArrayList;
 

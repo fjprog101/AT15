@@ -3,7 +3,7 @@ package org.fundacionjala.at15.pokemon;
 import java.io.File;
 import static org.fundacionjala.at15.pokemon.io.Reader.*;
 
-import org.fundacionjala.at15.pokemon.io.Path;
+import org.fundacionjala.at15.pokemon.io.EntityType;
 import java.util.ArrayList;
 
 public class Query {
@@ -19,7 +19,7 @@ public class Query {
         return listFile;
     }
 
-    public static ArrayList<String> getMatches(Path entityType, String name) {
+    public static ArrayList<String> getMatches(EntityType entityType, String name) {
         String path = System.getProperty("user.home") + entityType.getPathString();
         ArrayList<String> fileNames = getFiles(path);
         ArrayList<String> selectedFiles = new ArrayList<String>();

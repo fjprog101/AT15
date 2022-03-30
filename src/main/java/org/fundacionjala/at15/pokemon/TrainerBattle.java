@@ -3,7 +3,7 @@ package org.fundacionjala.at15.pokemon;
 import static org.fundacionjala.at15.pokemon.constants.TrainerBattle.*;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
-import static org.fundacionjala.at15.pokemon.io.Path.*;
+import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
 public class TrainerBattle extends Battle {
     private Trainer trainer1;

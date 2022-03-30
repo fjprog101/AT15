@@ -1,5 +1,5 @@
 package org.fundacionjala.at15.pokemon;
-import static org.fundacionjala.at15.pokemon.io.Path.*;
+import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 

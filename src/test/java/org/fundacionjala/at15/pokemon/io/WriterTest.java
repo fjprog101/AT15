@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.*;
 
-import static org.fundacionjala.at15.pokemon.io.Path.*;
+import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import org.junit.Test;
 
 public class WriterTest {

@@ -3,7 +3,7 @@ package org.fundacionjala.at15.pokemon;
 import java.util.ArrayList;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
-import static org.fundacionjala.at15.pokemon.io.Path.*;
+import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
 public class Trainer extends Entity {
     private String name;

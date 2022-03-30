@@ -1,7 +1,7 @@
 package org.fundacionjala.at15.pokemon;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
-import static org.fundacionjala.at15.pokemon.io.Path.*;
+import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
 public class WildPokemonBattle extends Battle {
     private Trainer trainer;
