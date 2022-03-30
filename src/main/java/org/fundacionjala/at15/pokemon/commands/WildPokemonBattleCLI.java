@@ -9,7 +9,7 @@ import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
 @Command(name = ":wildbattle", description = "create a battle with a wild pokemon")
-public class WildPokemonBattleCommands implements Callable<Integer> {
+public class WildPokemonBattleCLI implements Callable<Integer> {
 
     @Option(names = { "-btltrID"}, description = "trainer ID")
     private String trainerID;

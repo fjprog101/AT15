@@ -8,7 +8,7 @@ import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
 @Command(name = ":pokemon", description = "Entry point to create objects in Pokemon world")
-public class PokemonCommands implements Callable<Integer> {
+public class PokemonCreateCLI implements Callable<Integer> {
 
     @Option(names = { "-name", "-n" }, description = "pokemon name", defaultValue = "Pikachu")
     private String pokemonName;
