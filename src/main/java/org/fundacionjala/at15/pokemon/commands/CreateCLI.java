@@ -4,8 +4,8 @@ import picocli.CommandLine.Command;
 
 import java.util.concurrent.Callable;
 
-@Command(name = ":create", subcommands = {PokemonCreateCLI.class, TrainerCreateCLI.class, TownCLI.class,
-        TrainerBattleCLI.class, WildPokemonBattleCLI.class},
+@Command(name = "admin:create", subcommands = { PokemonCreateCLI.class, TrainerCreateCLI.class, TownCLI.class,
+        TrainerBattleCLI.class, WildPokemonBattleCLI.class },
 
         description = "Entry point to create objects in Pokemon world")
 class CreateCLI implements Callable<Integer> {

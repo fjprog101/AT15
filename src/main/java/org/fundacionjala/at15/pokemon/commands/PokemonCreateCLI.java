@@ -7,7 +7,7 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
-@Command(name = ":pokemon", description = "Entry point to create objects in Pokemon world")
+@Command(name = "pokemon", description = "Entry point to create objects in Pokemon world")
 public class PokemonCreateCLI implements Callable<Integer> {
 
     @Option(names = { "-name", "-n" }, description = "pokemon name", defaultValue = "Pikachu")
