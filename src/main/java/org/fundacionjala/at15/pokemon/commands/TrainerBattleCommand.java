@@ -1,8 +1,6 @@
 package org.fundacionjala.at15.pokemon.commands;
 
-import org.fundacionjala.at15.pokemon.ID.Identifier;
 import org.fundacionjala.at15.pokemon.io.*;
-import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.TrainerBattle;
 
