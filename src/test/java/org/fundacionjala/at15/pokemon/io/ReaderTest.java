@@ -3,6 +3,11 @@ package org.fundacionjala.at15.pokemon.io;
 import static org.fundacionjala.at15.pokemon.io.Reader.*;
 import static org.junit.Assert.assertEquals;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
+import com.google.gson.Gson;
+
 import org.fundacionjala.at15.pokemon.*;
 import org.junit.Test;
 
@@ -50,5 +55,34 @@ public class ReaderTest {
         readJson(town.getId());
         String expected = "id: " + town.getId() + " town's gym leader name: gymLeader";
         assertEquals(expected, getResult());
+    }
+
+    @Test
+    public void itShouldReturnAnfEntity() throws IOException {
+        Pokemon pokemon = new Pokemon(100, "Charizard");
+        String jsonString = new Gson().toJson(pokemon);
+        String fileName = pokemon.getIdentifier();
+        FileWriter file = new FileWriter(getPath(fileName));
+        file.write(jsonString);
+        file.flush();
+        file.close();
+
+        Entity entity = readJson(pokemon.getIdentifier());
+        assertEquals("class org.fundacionjala.at15.pokemon.Pokemon", entity.getClass().toString());
+    }
+
+    @Test
+    public void itShouldReturnAJsonString() throws IOException {
+        Pokemon pokemon = new Pokemon(50, "Pikachu");
+        String jsonString = new Gson().toJson(pokemon);
+        String fileName = pokemon.getIdentifier();
+        FileWriter file = new FileWriter(getPath(fileName));
+        file.write(jsonString);
+        file.flush();
+        file.close();
+        String fileString = jSonStringReader(getPath(fileName));
+
+        String expected = "{"+"\"hitPoints\""+":{"+"\"maxHitPoints\""+":50,"+"\"currentHitPoints\""+":50},"+"\"movementList\""+":[{"+"\"potency\""+":40}],"+"\"pokemonName\""+":"+"\"Pikachu\""+","+"\"identifier\""+":"+ "\"" + fileName + "\"" +","+"\"path\""+":"+"\"POKEMON\""+"}";
+        assertEquals(expected, fileString);
     }
 }
