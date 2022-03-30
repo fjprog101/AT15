@@ -14,7 +14,7 @@ public class Town extends Entity {
 
     public Town() {
         this.type = TOWN;
-        this.identifier = Identifier.generateId(this);
+        this.id = Identifier.generateId(this);
         wildPokemons = new ArrayList<Pokemon>();
         trainers = new ArrayList<Trainer>();
         store = new Store();

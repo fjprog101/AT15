@@ -11,8 +11,8 @@ public class ReaderTest {
     public void itShouldReadAPokemonFile() {
         Pokemon pokemon = new Pokemon(100, "Charizard");
         Writer.writeToJson(pokemon);
-        readJson(pokemon.getIdentifier());
-        String expected = "id: " + pokemon.getIdentifier() + " name: Charizard hitpoints: 100/100";
+        readJson(pokemon.getId());
+        String expected = "id: " + pokemon.getId() + " name: Charizard hitpoints: 100/100";
         assertEquals(expected, getResult());
     }
 
@@ -22,9 +22,9 @@ public class ReaderTest {
         Pokemon pokemon = new Pokemon(hitPoints, "Pikachu");
         Trainer trainer = new Trainer(pokemon, "Ash");
         Writer.writeToJson(trainer);
-        String fileName = trainer.getIdentifier();
+        String fileName = trainer.getId();
         readJson(fileName);
-        String expected = "id: " + trainer.getIdentifier() + " name: Ash badges: 0 money: 100";
+        String expected = "id: " + trainer.getId() + " name: Ash badges: 0 money: 100";
         assertEquals(expected, getResult());
     }
 
@@ -37,9 +37,9 @@ public class ReaderTest {
 
         TrainerBattle battle = new TrainerBattle(trainer, trainer2);
         Writer.writeToJson(battle);
-        readJson(battle.getIdentifier());
+        readJson(battle.getId());
 
-        String expected = "id: " + battle.getIdentifier() + " trainer1 name: Ash trainer2 name: Brooke isBattleOver: false";
+        String expected = "id: " + battle.getId() + " trainer1 name: Ash trainer2 name: Brooke isBattleOver: false";
         assertEquals(expected, getResult());
     }
 
@@ -47,8 +47,8 @@ public class ReaderTest {
     public void itShouldReadATown() {
         Town town = new Town();
         Writer.writeToJson(town);
-        readJson(town.getIdentifier());
-        String expected = "id: " + town.getIdentifier() + " town's gym leader name: gymLeader";
+        readJson(town.getId());
+        String expected = "id: " + town.getId() + " town's gym leader name: gymLeader";
         assertEquals(expected, getResult());
     }
 }

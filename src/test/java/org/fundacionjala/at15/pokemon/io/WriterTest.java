@@ -19,7 +19,7 @@ public class WriterTest {
 
         writeToJson(pokemon);
 
-        File inputFile = new File(System.getProperty("user.home") + "/" + POKEMON.getPath() + "/" + pokemon.getIdentifier() + ".json");
+        File inputFile = new File(POKEMON.getPath() + "/" + pokemon.getId() + ".json");
         String line = "";
         try {
             BufferedReader input = new BufferedReader(new FileReader(inputFile));

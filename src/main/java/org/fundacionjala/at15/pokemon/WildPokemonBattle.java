@@ -12,7 +12,7 @@ public class WildPokemonBattle extends Battle {
 
     public WildPokemonBattle(Trainer trainer, Pokemon pokemon) {
         this.type = BATTLE;
-        this.identifier = Identifier.generateId(this);
+        this.id = Identifier.generateId(this);
         this.trainer = trainer;
         this.wildPokemon = pokemon;
     }

@@ -4,11 +4,11 @@ import org.fundacionjala.at15.pokemon.ID.Prefixer;
 import org.fundacionjala.at15.pokemon.io.EntityType;
 
 public abstract class Entity implements Prefixer {
-    protected String identifier;
+    protected String id;
     protected EntityType type;
 
-    public String getIdentifier() {
-        return this.identifier;
+    public String getId() {
+        return this.id;
     }
 
     public EntityType getType() {

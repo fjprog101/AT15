@@ -15,7 +15,7 @@ public class Trainer extends Entity {
 
     // initial pokemon for trainer and trainer name
     public Trainer(Pokemon pokemon, String newName) {
-        this.identifier = Identifier.generateId(this);
+        this.id = Identifier.generateId(this);
         this.type = TRAINER;
         Pokeball pokeball = new Pokeball();
         this.pokemonTeam = new PokemonTeam(pokemon);

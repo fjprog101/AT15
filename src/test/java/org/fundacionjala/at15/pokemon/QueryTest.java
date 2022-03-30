@@ -10,7 +10,7 @@ import org.junit.Test;
 public class QueryTest {
     /*@Test
     public void itShouldGetTheFiles() {
-        String pathDirectory = System.getProperty("user.home") + POKEMON.getPathString();
+        String pathDirectory = POKEMON.getPath();
         ArrayList<String> names = Query.getFiles(pathDirectory);
         ArrayList<String> expecteds = new ArrayList<String>();
         expecteds.add("Diana");

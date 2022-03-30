@@ -20,7 +20,7 @@ public class Query {
     }
 
     public static ArrayList<String> getMatches(EntityType entityType, String name) {
-        String path = System.getProperty("user.home") + entityType.getPath();
+        String path = entityType.getPath();
         ArrayList<String> fileNames = getFiles(path);
         ArrayList<String> selectedFiles = new ArrayList<String>();
         for (String names : fileNames) {

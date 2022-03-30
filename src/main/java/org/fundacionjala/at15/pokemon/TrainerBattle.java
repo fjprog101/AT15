@@ -13,7 +13,7 @@ public class TrainerBattle extends Battle {
 
     public TrainerBattle(Trainer newTrainer1, Trainer newTrainer2) {
         this.type = BATTLE;
-        this.identifier = Identifier.generateId(this);
+        this.id = Identifier.generateId(this);
         this.trainer1 = newTrainer1;
         this.trainer2 = newTrainer2;
     }
