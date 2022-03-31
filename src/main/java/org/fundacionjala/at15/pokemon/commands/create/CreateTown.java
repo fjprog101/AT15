@@ -10,7 +10,7 @@ import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
 @Command(name = "town", description = "Create a town")
-public class TownCLI implements Callable<Integer> {
+public class CreateTown implements Callable<Integer> {
     private String idCreateTown;
 
     @Option(names = {"-addwpok", "-tp"}, description = "Add a Wild Pokemon in town")

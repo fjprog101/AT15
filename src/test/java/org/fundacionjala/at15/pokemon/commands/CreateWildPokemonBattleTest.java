@@ -2,26 +2,26 @@ package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assume.assumeTrue;
 
-import org.fundacionjala.at15.pokemon.commands.create.PokemonCreateCLI;
-import org.fundacionjala.at15.pokemon.commands.create.TrainerCreateCLI;
-import org.fundacionjala.at15.pokemon.commands.create.WildPokemonBattleCLI;
+import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
+import org.fundacionjala.at15.pokemon.commands.create.CreateTrainer;
+import org.fundacionjala.at15.pokemon.commands.create.CreateWildPokemonBattle;
 import org.junit.Test;
 import picocli.CommandLine;
 
-public class WildPokemonBattleCLITest {
+public class CreateWildPokemonBattleTest {
     @Test
     public void commandShouldCreateAPokemonBetweenTrainerBattleJsonFile() {
-        PokemonCreateCLI pokemon1 = new PokemonCreateCLI();
+        CreatePokemon pokemon1 = new CreatePokemon();
         new CommandLine(pokemon1).parseArgs("-n", "pikachu", "-hp", "200");
         pokemon1.call();
-        TrainerCreateCLI trainer1 = new TrainerCreateCLI();
+        CreateTrainer trainer1 = new CreateTrainer();
         new CommandLine(trainer1).parseArgs("-n", "Ash1", "-pID", pokemon1.getIdPokemonCreated());
         trainer1.call();
-        PokemonCreateCLI pokemon2 = new PokemonCreateCLI();
+        CreatePokemon pokemon2 = new CreatePokemon();
         new CommandLine(pokemon2).parseArgs("-n", "squirtle", "-hp", "250");
         pokemon2.call();
 
-        WildPokemonBattleCLI wildBattleCLI = new WildPokemonBattleCLI();
+        CreateWildPokemonBattle wildBattleCLI = new CreateWildPokemonBattle();
         new CommandLine(wildBattleCLI).parseArgs("-bt", trainer1.getIdTrainerCreated(), "-bp", pokemon2.getIdPokemonCreated());
         wildBattleCLI.call();
 

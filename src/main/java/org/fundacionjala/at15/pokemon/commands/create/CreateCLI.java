@@ -4,15 +4,15 @@ import picocli.CommandLine.Command;
 
 import java.util.concurrent.Callable;
 
-@Command(name = "admin:create", subcommands = { PokemonCreateCLI.class, TrainerCreateCLI.class, TownCLI.class,
-        TrainerBattleCLI.class, WildPokemonBattleCLI.class },
+@Command(name = "create", subcommands = { CreatePokemon.class, CreateTrainer.class, CreateTown.class,
+        CreateTrainerBattle.class, CreateWildPokemonBattle.class },
 
-        description = "Entry point to create objects in Pokemon world")
+        description = "Create objects")
 public class CreateCLI implements Callable<Integer> {
 
     @Override
     public Integer call() {
-        System.out.println("Subcommand :pokemon, :trainer, :town needed, :wildbattle :trainerBattle");
+        System.out.println("Exit code 1: Subcommand needed");
         return 0;
     }
 }
