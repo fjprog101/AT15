@@ -42,9 +42,9 @@ public class IdentifierTest {
 
     @Test
     public void itShouldBeDifferentIdForTheDifferentTown() {
-        Town paleta1 = new Town();
-        Town paleta2 = new Town();
+        Town town1 = new Town();
+        Town town2 = new Town();
 
-        assertNotSame(Identifier.generateId(paleta1), Identifier.generateId(paleta2));
+        assertNotSame(Identifier.generateId(town1), Identifier.generateId(town2));
     }
 }
