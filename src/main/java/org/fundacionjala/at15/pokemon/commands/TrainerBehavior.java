@@ -4,13 +4,13 @@ import java.util.concurrent.Callable;
 
 import picocli.CommandLine.Command;
 
-@Command(name = "trainer", subcommands = { PokemonBehavior.class,
+@Command(name = "trainer", subcommands = { SubCommandSelect.class, PokemonBehavior.class,
         SubCommandCatch.class }, description = "Entry point to trainer behavior")
 public class TrainerBehavior implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        System.out.println("Subcommands: pokemon, catch");
+        System.out.println("Subcommands: select, pokemon, catch");
         return null;
     }
 
