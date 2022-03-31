@@ -9,7 +9,7 @@ import picocli.CommandLine.Command;
 
         description = "Fetch Entity Data")
 
-public class EntityQuery implements Callable<Integer> {
+public class QueryCLI implements Callable<Integer> {
 
     @Override
     public Integer call() {

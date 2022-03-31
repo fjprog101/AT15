@@ -1,11 +1,11 @@
-package org.fundacionjala.at15.pokemon.commands;
+package org.fundacionjala.at15.pokemon.commands.behavior;
 
 import java.util.concurrent.Callable;
 
 import picocli.CommandLine.Command;
 
-@Command(name = "trainer", subcommands = { SubCommandSelect.class, PokemonBehavior.class,
-        SubCommandCatch.class }, description = "Entry point to trainer behavior")
+@Command(name = "trainer", subcommands = { Select.class, PokemonBehavior.class,
+        Catch.class }, description = "Trainer behavior")
 public class TrainerBehavior implements Callable<Integer> {
 
     @Override

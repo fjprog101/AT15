@@ -4,10 +4,9 @@ import org.fundacionjala.at15.pokemon.ID.Identifier;
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
 public class WildPokemonBattle extends Battle {
-    private Trainer trainer;
-    private Pokemon wildPokemon;
+    private final Trainer trainer;
+    private final Pokemon wildPokemon;
     private boolean wildPokemonCapture = false;
-    private boolean pokemonLeft = false;
     private int turn = 0;
 
     public WildPokemonBattle(Trainer trainer, Pokemon pokemon) {
@@ -17,37 +16,23 @@ public class WildPokemonBattle extends Battle {
         this.wildPokemon = pokemon;
     }
 
-    public Pokemon getActualPokemon(Trainer trainer1) {
-        int actualHitPoints;
-        PokemonTeam team = trainer1.getPokemonTeam();
-        Pokemon actualPokemon = team.getPokemonsOfTeam().get(0);
-        for (int index = 0; index < team.getPokemonsOfTeam().size(); index++) {
-            actualPokemon = team.getPokemonsOfTeam().get(index);
-            actualHitPoints = actualPokemon.getHitPoints().getCurrentHitPoints();
-            if (actualHitPoints > 0) {
-                return actualPokemon;
-            }
-        }
-        pokemonLeft = true;
-        return actualPokemon;
-    }
-
-    public int getpotency(Pokemon pokemon) {
+    public int getPotency(Pokemon pokemon) {
         Move move = pokemon.getMove(0);
         return move.getPotency();
     }
 
     @Override
     public void fight() {
-        Pokemon myPokemon = getActualPokemon(trainer);
+        Pokemon myPokemon = getPokemonAvailable(trainer);
         DamageReceived damage;
+        boolean pokemonLeft = false;
         do {
             turn++;
             if (turn % 2 != 0) {
-                damage = new DamageReceived(getpotency(myPokemon));
+                damage = new DamageReceived(getPotency(myPokemon));
                 damage.affectHP(wildPokemon);
             } else {
-                damage = new DamageReceived(getpotency(wildPokemon));
+                damage = new DamageReceived(getPotency(wildPokemon));
                 damage.affectHP(myPokemon);
                 if (wildPokemon.getHitPoints().is20Percent()) {
                     trainer.usePokeball(wildPokemon);
@@ -55,8 +40,8 @@ public class WildPokemonBattle extends Battle {
                     break;
                 }
             }
-            myPokemon = getActualPokemon(trainer);
-        } while (!pokemonLeft);
+            myPokemon = getPokemonAvailable(trainer);
+        } while (!pokemonLeft); // WARNING: this variable is not updated inside the loop.
     }
 
     public Boolean isCaptured() {

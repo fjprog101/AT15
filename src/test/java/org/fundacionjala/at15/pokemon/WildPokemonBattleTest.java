@@ -22,7 +22,7 @@ public class WildPokemonBattleTest {
         Trainer trainer = new Trainer(pokemon, "ash");
         Pokemon wildPokemon = new Pokemon(100, "bullbasur");
         WildPokemonBattle battle = new WildPokemonBattle(trainer, wildPokemon);
-        Pokemon actualPokemon = battle.getActualPokemon(trainer);
+        Pokemon actualPokemon = battle.getPokemonAvailable(trainer);
         String actual = actualPokemon.getPokemonName();
         assertEquals("pikachu", actual);
     }

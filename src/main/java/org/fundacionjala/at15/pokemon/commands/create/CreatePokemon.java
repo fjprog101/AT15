@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.pokemon.commands;
+package org.fundacionjala.at15.pokemon.commands.create;
 
 import org.fundacionjala.at15.pokemon.io.Writer;
 import org.fundacionjala.at15.pokemon.Pokemon;
@@ -6,8 +6,8 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
-@Command(name = "pokemon", description = "Entry point to create objects in Pokemon world")
-public class PokemonCreateCLI implements Callable<Integer> {
+@Command(name = "pokemon", description = "Create a pokemon")
+public class CreatePokemon implements Callable<Integer> {
     private String idPokemonCreated;
 
     @Option(names = { "-name", "-n" }, description = "pokemon name", defaultValue = "Pikachu")

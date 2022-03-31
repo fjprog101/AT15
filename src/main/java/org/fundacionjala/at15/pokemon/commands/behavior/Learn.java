@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.pokemon.commands;
+package org.fundacionjala.at15.pokemon.commands.behavior;
 import java.util.concurrent.Callable;
 
 import org.fundacionjala.at15.pokemon.CurrentEntities;
@@ -10,8 +10,8 @@ import org.fundacionjala.at15.pokemon.io.Writer;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@Command(name = "learn", description = "Learn an Attack movement")
-public class SubCommandLearn implements Callable<Integer> {
+@Command(name = "learn", description = "Create and assign an attack to a pokemon")
+public class Learn implements Callable<Integer> {
 
     @Option(names = { "-name" }, description = "Attack movement")
     private String movement;

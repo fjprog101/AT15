@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.pokemon.commands;
+package org.fundacionjala.at15.pokemon.commands.create;
 
 import org.fundacionjala.at15.pokemon.WildPokemonBattle;
 import org.fundacionjala.at15.pokemon.io.*;
@@ -8,8 +8,8 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
-@Command(name = "wildbattle", description = "create a battle with a wild pokemon")
-public class WildPokemonBattleCLI implements Callable<Integer> {
+@Command(name = "wildbattle", description = "Create a battle against a wild pokemon")
+public class CreateWildPokemonBattle implements Callable<Integer> {
     private String idCreateWildPokemonBattle;
 
     @Option(names = { "-btltrID", "-bt" }, description = "trainer ID")

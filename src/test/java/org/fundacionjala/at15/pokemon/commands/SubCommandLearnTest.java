@@ -1,17 +1,19 @@
 package org.fundacionjala.at15.pokemon.commands;
 import static org.junit.Assert.assertEquals;
+
+import org.fundacionjala.at15.pokemon.commands.behavior.Learn;
+import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.fundacionjala.at15.pokemon.io.Reader;
-import org.junit.Test;
 import picocli.CommandLine;
 
 public class SubCommandLearnTest {
     //@Test
     public void commandShouldCreateAddMovementToJsonFile() {
-        PokemonCreateCLI pokemon1 = new PokemonCreateCLI();
+        CreatePokemon pokemon1 = new CreatePokemon();
         new CommandLine(pokemon1).parseArgs("-n", "pikachu", "-hp", "200");
         pokemon1.call();
 
-        SubCommandLearn subCommandLearn = new SubCommandLearn();
+        Learn subCommandLearn = new Learn();
         new CommandLine(subCommandLearn).parseArgs("-ID", pokemon1.getIdPokemonCreated());
         subCommandLearn.call();
 

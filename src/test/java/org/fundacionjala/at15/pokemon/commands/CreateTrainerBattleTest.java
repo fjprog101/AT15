@@ -1,27 +1,31 @@
 package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assert.assertEquals;
+
+import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
+import org.fundacionjala.at15.pokemon.commands.create.CreateTrainerBattle;
+import org.fundacionjala.at15.pokemon.commands.create.CreateTrainer;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Test;
 import picocli.CommandLine;
 
-public class TrainerBattleCLITest {
+public class CreateTrainerBattleTest {
     @Test
     public void commandShouldCreateATrainerBetweenTrainerBattleJsonFile() {
-        PokemonCreateCLI pokemon1 = new PokemonCreateCLI();
+        CreatePokemon pokemon1 = new CreatePokemon();
         new CommandLine(pokemon1).parseArgs("-n", "pikachu", "-hp", "200");
         pokemon1.call();
-        TrainerCreateCLI trainer1 = new TrainerCreateCLI();
+        CreateTrainer trainer1 = new CreateTrainer();
         new CommandLine(trainer1).parseArgs("-n", "Ash1", "-pID", pokemon1.getIdPokemonCreated());
         trainer1.call();
-        PokemonCreateCLI pokemon2 = new PokemonCreateCLI();
+        CreatePokemon pokemon2 = new CreatePokemon();
         new CommandLine(pokemon2).parseArgs("-n", "squirtle", "-hp", "250");
         pokemon2.call();
-        TrainerCreateCLI trainer2 = new TrainerCreateCLI();
+        CreateTrainer trainer2 = new CreateTrainer();
         new CommandLine(trainer2).parseArgs("-n", "Ash2", "-pID", pokemon2.getIdPokemonCreated());
         trainer2.call();
 
-        TrainerBattleCLI trainerBattleCLI = new TrainerBattleCLI();
+        CreateTrainerBattle trainerBattleCLI = new CreateTrainerBattle();
         new CommandLine(trainerBattleCLI).parseArgs("-tID1", trainer1.getIdTrainerCreated(), "-tID2", trainer2.getIdTrainerCreated());
         trainerBattleCLI.call();
 

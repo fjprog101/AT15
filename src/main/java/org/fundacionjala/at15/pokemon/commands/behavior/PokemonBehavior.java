@@ -1,11 +1,11 @@
-package org.fundacionjala.at15.pokemon.commands;
+package org.fundacionjala.at15.pokemon.commands.behavior;
 
 import java.util.concurrent.Callable;
 
 import picocli.CommandLine.Command;
 
-@Command(name = "pokemon", subcommands = { SubCommandSelect.class, SubCommandLearn.class,
-        SubCommandFight.class, SubCommandUse.class },
+@Command(name = "pokemon", subcommands = { Select.class, Learn.class,
+        Fight.class, Use.class },
 
         description = "Subcommands of Pokemon Behavior")
 public class PokemonBehavior implements Callable<Integer> {
