@@ -8,6 +8,7 @@ import java.util.concurrent.Callable;
 
 @Command(name = "pokemon", description = "Entry point to create objects in Pokemon world")
 public class PokemonCreateCLI implements Callable<Integer> {
+    private String idPokemonCreated;
 
     @Option(names = { "-name", "-n" }, description = "pokemon name", defaultValue = "Pikachu")
     private String pokemonName;
@@ -18,12 +19,12 @@ public class PokemonCreateCLI implements Callable<Integer> {
     @Override
     public Integer call() {
         Pokemon newPokemon = new Pokemon(hitPoints, pokemonName);
+        this.idPokemonCreated = newPokemon.getId();
         Writer.writeToJson(newPokemon);
-        System.out.println(
-                "Pokemon created: \n"
-                        + "Name: " + newPokemon.getPokemonName() + "\n"
-                        + "HitPoints: " + newPokemon.getHitPoints().getCurrentHitPoints() + "\n"
-                        + "ID: " + newPokemon.getId());
         return 0;
+    }
+
+    public String getIdPokemonCreated() {
+        return idPokemonCreated;
     }
 }
