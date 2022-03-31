@@ -11,7 +11,7 @@ import java.util.concurrent.Callable;
 
 @Command(name = "town", description = "Create a Pokemon Town")
 public class TownCLI implements Callable<Integer> {
-
+    private String idCreateTown;
 
     @Option(names = {"-addwpok", "-tp"}, description = "Add a Wild Pokemon in town")
     private String wildPokemon;
@@ -28,8 +28,18 @@ public class TownCLI implements Callable<Integer> {
         Trainer trainer = (Trainer) Reader.readJson(trainerID);
         newTown.addTrainersToTown(trainer);
         Writer.writeToJson(newTown);
+        idCreateTown = newTown.getId();
+        System.out.println(
+                "Town Created: \n"
+                + trainer.getId() + " trainer added to town" + "\n"
+                + poke.getId() + " pokemon added to town" + "\n"
+                + "ID: " + idCreateTown);
 
         return 0;
+    }
+
+    public String getIdCreateTrainerBattle() {
+        return idCreateTown;
     }
 
 }

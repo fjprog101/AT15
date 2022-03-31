@@ -1,6 +1,5 @@
 package org.fundacionjala.at15.pokemon.commands;
 
-import org.fundacionjala.at15.pokemon.ID.Identifier;
 import org.fundacionjala.at15.pokemon.io.*;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
@@ -10,6 +9,7 @@ import java.util.concurrent.Callable;
 
 @Command(name = "trainer", description = "create a trainer")
 public class TrainerCreateCLI implements Callable<Integer> {
+    private String idTrainerCreated;
 
     @Option(names = { "-name", "-n" }, description = "trainer name")
     private String trainerName;
@@ -23,11 +23,16 @@ public class TrainerCreateCLI implements Callable<Integer> {
 
         Trainer trainer = new Trainer(poke, trainerName);
         Writer.writeToJson(trainer);
-        String hCode = Identifier.generateId(trainer);
+        idTrainerCreated = trainer.getId();
         System.out.println(
-                "Trainer " + trainer.getName() + " created" + "\n"
-                        + poke.getId() + " added to pokemon team" + "\n"
-                        + "ID: " + hCode);
+                "Trainer Created: \n"
+                + "Name: " + trainer.getName() +  "\n"
+                + poke.getId() + " added to pokemon team" + "\n"
+                + "ID: " + idTrainerCreated);
         return 0;
+    }
+
+    public String getIdTrainerCreated() {
+        return idTrainerCreated;
     }
 }

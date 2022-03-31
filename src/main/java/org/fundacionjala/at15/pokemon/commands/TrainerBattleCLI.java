@@ -10,6 +10,7 @@ import java.util.concurrent.Callable;
 
 @Command(name = ":trainerBattle", description = "create a battle between trainers")
 public class TrainerBattleCLI implements Callable<Integer> {
+    private String idCreateTrainerBattle;
 
     @Option(names = { "-trainerID1", "-tID1" }, description = "trainer 1 ID")
     private String trainerID1;
@@ -25,7 +26,16 @@ public class TrainerBattleCLI implements Callable<Integer> {
         TrainerBattle trainerBattle = new TrainerBattle(trainer1, trainer2);
 
         Writer.writeToJson(trainerBattle);
+        idCreateTrainerBattle = trainerBattle.getId();
+        System.out.println(
+                "Battle Created: \n"
+                + trainer1.getId() + " trainer added to battle" + "\n"
+                + trainer2.getId() + " trainer added to battle" + "\n"
+                + "ID: " + idCreateTrainerBattle);
         return 0;
     }
 
+    public String getIdCreateTrainerBattle() {
+        return idCreateTrainerBattle;
+    }
 }

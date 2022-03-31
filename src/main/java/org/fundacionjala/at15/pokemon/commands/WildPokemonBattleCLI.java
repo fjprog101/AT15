@@ -10,11 +10,12 @@ import java.util.concurrent.Callable;
 
 @Command(name = "wildbattle", description = "create a battle with a wild pokemon")
 public class WildPokemonBattleCLI implements Callable<Integer> {
+    private String idCreateWildPokemonBattle;
 
-    @Option(names = { "-btltrID" }, description = "trainer ID")
+    @Option(names = { "-btltrID", "-bt" }, description = "trainer ID")
     private String trainerID;
 
-    @Option(names = { "-btlpokeID" }, description = "Wild pokemon ID")
+    @Option(names = { "-btlpokeID", "-bp" }, description = "Wild pokemon ID")
     private String pokemonID;
 
     @Override
@@ -23,6 +24,16 @@ public class WildPokemonBattleCLI implements Callable<Integer> {
         Trainer trainer = (Trainer) Reader.readJson(trainerID);
         WildPokemonBattle wildBattle = new WildPokemonBattle(trainer, poke);
         Writer.writeToJson(wildBattle);
+        idCreateWildPokemonBattle = wildBattle.getId();
+        System.out.println(
+                "Battle Created: \n"
+                + trainer.getId() + " trainer added to battle" + "\n"
+                + poke.getId() + " pokemon added to battle" + "\n"
+                + "ID: " + idCreateWildPokemonBattle);
         return 0;
+    }
+
+    public String getIdCreateWildPokemonBattle() {
+        return idCreateWildPokemonBattle;
     }
 }
