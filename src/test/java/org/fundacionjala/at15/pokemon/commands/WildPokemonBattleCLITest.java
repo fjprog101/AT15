@@ -1,11 +1,7 @@
 package org.fundacionjala.at15.pokemon.commands;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assume.assumeTrue;
 
-import org.fundacionjala.at15.pokemon.Entity;
-import org.fundacionjala.at15.pokemon.WildPokemonBattle;
-import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Test;
 import picocli.CommandLine;
 
@@ -25,10 +21,6 @@ public class WildPokemonBattleCLITest {
         WildPokemonBattleCLI wildBattleCLI = new WildPokemonBattleCLI();
         new CommandLine(wildBattleCLI).parseArgs("-bt", trainer1.getIdTrainerCreated(), "-bp", pokemon2.getIdPokemonCreated());
         wildBattleCLI.call();
-
-        /*Entity entity = Reader.readJson(wildBattleCLI.getIdCreateWildPokemonBattle());
-        WildPokemonBattle battle = (WildPokemonBattle) entity;
-        assertEquals(battle.getId(), wildBattleCLI.getIdCreateWildPokemonBattle());*/
 
         boolean expected = wildBattleCLI.getIdCreateWildPokemonBattle().isEmpty();
         assumeTrue(expected);
