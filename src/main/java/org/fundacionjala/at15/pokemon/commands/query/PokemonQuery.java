@@ -10,7 +10,7 @@ import static org.fundacionjala.at15.pokemon.io.Reader.*;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@Command(name = "pokemon", description = "Fetch data")
+@Command(name = "pokemon", description = "Fetch pokemon data")
 
 public class PokemonQuery implements Callable<Integer> {
 

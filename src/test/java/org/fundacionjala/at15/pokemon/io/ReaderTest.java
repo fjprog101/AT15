@@ -1,9 +1,9 @@
 package org.fundacionjala.at15.pokemon.io;
 
 import static org.fundacionjala.at15.pokemon.io.Reader.*;
+import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
 import static org.junit.Assert.assertEquals;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -73,5 +73,19 @@ public class ReaderTest {
 
         String fileString = jSonStringReader(getPath(fileName));
         assertEquals(jsonString, fileString);
+    }
+
+    @Test
+    public void itShouldReadCurrentEntities() throws IOException {
+        CurrentEntities entity = new CurrentEntities();
+        String jsonString = new Gson().toJson(entity);
+        String fileName = entity.getId();
+        FileWriter file = new FileWriter(getPath(fileName));
+        file.write(jsonString);
+        file.flush();
+        file.close();
+
+        Entity trueEntity = readJson(entity.getId());
+        assertEquals("class org.fundacionjala.at15.pokemon.CurrentEntities", trueEntity.getClass().toString());
     }
 }

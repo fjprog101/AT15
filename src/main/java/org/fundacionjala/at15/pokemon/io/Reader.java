@@ -1,6 +1,5 @@
 package org.fundacionjala.at15.pokemon.io;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,7 +8,6 @@ import java.io.IOException;
 import com.google.gson.Gson;
 
 import org.fundacionjala.at15.pokemon.*;
-import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -19,10 +17,10 @@ public final class Reader {
     private static final int THREE = 3;
 
     public static Entity readJson(String fileName) {
-        File path = getPath(fileName);
+        File path = PathHandler.getPath(fileName);
         String subName = fileName.substring(0, THREE);
         JSONParser jsonParser = new JSONParser();
-        String line = jSonStringReader(path);
+        String line = PathHandler.jSonStringReader(path);
         try (FileReader reader = new FileReader(path)) {
             Object obj = jsonParser.parse(reader);
             if (subName.equals("pkm")) {
@@ -57,38 +55,6 @@ public final class Reader {
             e.printStackTrace();
         }
         return null;
-    }
-
-    public static String jSonStringReader(File path) {
-        String line = "";
-        try {
-            BufferedReader input = new BufferedReader(new FileReader(path));
-            line = input.readLine();
-            input.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace(System.out);
-        } catch (IOException e) {
-            e.printStackTrace(System.out);
-        }
-        return line;
-    }
-
-    public static File getPath(String fileName) {
-        String subName = fileName.substring(0, THREE);
-        switch (subName) {
-            case "pkm":
-                return new File(POKEMON.getPath() + "/" + fileName + ".json");
-            case "trn":
-                return new File(TRAINER.getPath() + "/" + fileName + ".json");
-            case "btt":
-                return new File(BATTLE.getPath() + "/" + fileName + ".json");
-            case "twn":
-                return new File(TOWN.getPath() + "/" + fileName + ".json");
-            case "crt":
-                return new File(CURRENT.getPath() + "/" + fileName + ".json");
-            default:
-                return null;
-        }
     }
 
     private static void parsePokemonObject(JSONObject entity) {
@@ -156,14 +122,5 @@ public final class Reader {
 
     public static String getResult() {
         return Reader.result;
-    }
-
-    public static void main(String[] args) {
-        Pokemon pikachu = new Pokemon(1, "Pikachu");
-        Trainer ash = new Trainer(pikachu, "Ash");
-        Writer.writeToJson(ash);
-        Entity entity = readJson(ash.getId());
-        Trainer trainer = (Trainer) entity;
-        System.out.println(trainer.getName());
     }
 }
