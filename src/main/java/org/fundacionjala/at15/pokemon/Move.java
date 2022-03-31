@@ -23,7 +23,7 @@ public class Move {
         return movement;
     }
 
-    public void serMovement(String movement1) {
+    public void setMovement(String movement1) {
         this.movement = movement1;
     }
 }

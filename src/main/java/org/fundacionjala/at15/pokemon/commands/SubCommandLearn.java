@@ -13,9 +13,6 @@ import picocli.CommandLine.Option;
 @Command(name = "learn", description = "Learn an Attack movement")
 public class SubCommandLearn implements Callable<Integer> {
 
-    //@Option(names = { "-ID" }, description = "Attack movement")
-    //private String pokemonID;
-
     @Option(names = { "-name" }, description = "Attack movement")
     private String movement;
 
@@ -23,7 +20,7 @@ public class SubCommandLearn implements Callable<Integer> {
     private int potency;
 
 
-    String id;
+    private String id;
     @Override
     public Integer call() {
 
@@ -32,7 +29,7 @@ public class SubCommandLearn implements Callable<Integer> {
             id =  current.getPokemon();
             Pokemon pokemon = (Pokemon) Reader.readJson(id);
             Move move = new Move();
-            move.serMovement(movement);
+            move.setMovement(movement);
             move.setPotency(potency);
             pokemon.setMoveToList(move);
             Writer.writeToJson(pokemon);

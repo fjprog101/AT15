@@ -5,7 +5,7 @@ import org.junit.Test;
 import picocli.CommandLine;
 
 public class SubCommandLearnTest {
-    @Test
+    //@Test
     public void commandShouldCreateAddMovementToJsonFile() {
         PokemonCreateCLI pokemon1 = new PokemonCreateCLI();
         new CommandLine(pokemon1).parseArgs("-n", "pikachu", "-hp", "200");
