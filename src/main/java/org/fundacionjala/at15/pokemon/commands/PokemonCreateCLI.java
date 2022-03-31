@@ -21,6 +21,11 @@ public class PokemonCreateCLI implements Callable<Integer> {
         Pokemon newPokemon = new Pokemon(hitPoints, pokemonName);
         this.idPokemonCreated = newPokemon.getId();
         Writer.writeToJson(newPokemon);
+        System.out.println(
+                "Pokemon Created: \n"
+                + "Name: " + newPokemon.getPokemonName() +  "\n"
+                + "Hit points:" + newPokemon.getHitPoints().getCurrentHitPoints() + "\n"
+                + "ID: " + idPokemonCreated);
         return 0;
     }
 

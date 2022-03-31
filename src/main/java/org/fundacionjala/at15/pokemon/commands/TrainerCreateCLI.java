@@ -25,9 +25,10 @@ public class TrainerCreateCLI implements Callable<Integer> {
         Writer.writeToJson(trainer);
         idTrainerCreated = trainer.getId();
         System.out.println(
-                "Trainer " + trainer.getName() + " created" + "\n"
-                        + poke.getId() + " added to pokemon team" + "\n"
-                        + "ID: " + idTrainerCreated);
+                "Trainer Created: \n"
+                + "Name: " + trainer.getName() +  "\n"
+                + poke.getId() + " added to pokemon team" + "\n"
+                + "ID: " + idTrainerCreated);
         return 0;
     }
 
