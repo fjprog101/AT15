@@ -7,7 +7,7 @@ import picocli.CommandLine.Command;
 
 @Command(name = "query", subcommands = {PokemonQuery.class, TrainerQuery.class},
 
-        description = "Fetch Data")
+        description = "Fetch Entity Data")
 
 public class EntityQuery implements Callable<Integer> {
 
