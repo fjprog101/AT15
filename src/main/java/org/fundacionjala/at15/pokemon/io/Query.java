@@ -1,9 +1,8 @@
-package org.fundacionjala.at15.pokemon;
+package org.fundacionjala.at15.pokemon.io;
 
 import java.io.File;
 import static org.fundacionjala.at15.pokemon.io.Reader.*;
 
-import org.fundacionjala.at15.pokemon.io.EntityType;
 import java.util.ArrayList;
 
 public class Query {
@@ -27,7 +26,8 @@ public class Query {
             File file = new File(path + "/" + names);
             String content = jSonStringReader(file);
             if (content.contains(name)) {
-                selectedFiles.add(names);
+                String onlyName = names.replace(".json", "");
+                selectedFiles.add(onlyName);
             }
         }
         return selectedFiles;
