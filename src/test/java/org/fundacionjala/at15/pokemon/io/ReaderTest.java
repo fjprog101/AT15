@@ -1,9 +1,9 @@
 package org.fundacionjala.at15.pokemon.io;
 
 import static org.fundacionjala.at15.pokemon.io.Reader.*;
+import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
 import static org.junit.Assert.assertEquals;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
