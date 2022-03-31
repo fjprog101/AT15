@@ -18,12 +18,16 @@ public class SubCommandSelect implements Callable<Integer> {
 
     @Override
     public Integer call() {
-        CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
-        setCurrentEntity(current);
-        writeToJson(current);
+        if (entityID.length() > 0) {
+            CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+            setCurrentEntity(current);
+            writeToJson(current);
 
-        System.out.println("You have selected: ");
-        System.out.println(getEntitySelected());
+            System.out.println("You have selected: ");
+            System.out.println(getEntitySelected());
+        } else {
+            System.out.println("Invalid ID, please try with a valid Entity ID");
+        }
         return 0;
     }
 
