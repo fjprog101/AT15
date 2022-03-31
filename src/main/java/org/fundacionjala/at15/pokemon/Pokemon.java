@@ -8,7 +8,7 @@ import org.fundacionjala.at15.pokemon.ID.Identifier;
 
 public class Pokemon extends Entity {
     private HitPoints hitPoints;
-    private ArrayList<Move> movementList = new ArrayList<Move>();
+    private ArrayList<Move> movementList;
     private String pokemonName;
 
     public Pokemon(int newMaxHP, String pokemonName) {
@@ -17,6 +17,7 @@ public class Pokemon extends Entity {
         hitPoints = new HitPoints(newMaxHP);
         this.pokemonName = pokemonName;
         Move tackle = new Move();
+        movementList =  new ArrayList<Move>();
         this.movementList.add(tackle);
     }
 
