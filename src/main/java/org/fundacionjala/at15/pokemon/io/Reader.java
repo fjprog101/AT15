@@ -85,7 +85,7 @@ public final class Reader {
             case "twn":
                 return new File(TOWN.getPath() + "/" + fileName + ".json");
             case "crt":
-                return new File(TOWN.getPath() + "/" + fileName + ".json");
+                return new File(CURRENT.getPath() + "/" + fileName + ".json");
             default:
                 return null;
         }
