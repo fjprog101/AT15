@@ -5,7 +5,7 @@ import java.util.concurrent.Callable;
 
 import picocli.CommandLine.Command;
 
-@Command(name = "query", subcommands = {PokemonQuery.class},
+@Command(name = "query", subcommands = {PokemonQuery.class, TrainerQuery.class},
 
         description = "Fetch Data")
 
