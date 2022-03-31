@@ -7,7 +7,7 @@ import picocli.CommandLine;
 
 public class TrainerBattleCLITest {
     @Test
-    public void commandShouldCreateATrainerJsonFile() {
+    public void commandShouldCreateATrainerBetweenTrainerBattleJsonFile() {
         PokemonCreateCLI pokemon1 = new PokemonCreateCLI();
         new CommandLine(pokemon1).parseArgs("-n", "pikachu", "-hp", "200");
         pokemon1.call();
