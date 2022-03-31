@@ -10,7 +10,7 @@ import org.fundacionjala.at15.pokemon.io.Writer;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@Command(name = "learn", description = "Learn an Attack movement")
+@Command(name = "learn", description = "Create and assign an attack to a pokemon")
 public class SubCommandLearn implements Callable<Integer> {
 
     @Option(names = { "-name" }, description = "Attack movement")

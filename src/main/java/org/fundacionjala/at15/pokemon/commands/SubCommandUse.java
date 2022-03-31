@@ -5,7 +5,7 @@ import java.util.concurrent.Callable;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@Command(name = "use", description = "Use a movement to Attack other Pokemon")
+@Command(name = "use", description = "Set attacking move")
 public class SubCommandUse implements Callable<Integer> {
     @Option(names = { "-move" }, description = "Pokemon Movement", defaultValue = "tackle")
     private String pokemonMove;

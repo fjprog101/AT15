@@ -9,7 +9,7 @@ public class SubCommandCatch implements Callable<Integer> {
 
     @Override
     public Integer call() {
-
+        System.out.println("Pokemon catch!");
         return 0;
     }
 

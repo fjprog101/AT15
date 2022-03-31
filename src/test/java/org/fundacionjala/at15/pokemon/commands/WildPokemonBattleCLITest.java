@@ -2,6 +2,9 @@ package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assume.assumeTrue;
 
+import org.fundacionjala.at15.pokemon.commands.create.PokemonCreateCLI;
+import org.fundacionjala.at15.pokemon.commands.create.TrainerCreateCLI;
+import org.fundacionjala.at15.pokemon.commands.create.WildPokemonBattleCLI;
 import org.junit.Test;
 import picocli.CommandLine;
 

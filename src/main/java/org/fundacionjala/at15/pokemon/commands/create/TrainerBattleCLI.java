@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.pokemon.commands;
+package org.fundacionjala.at15.pokemon.commands.create;
 
 import org.fundacionjala.at15.pokemon.io.*;
 import org.fundacionjala.at15.pokemon.Trainer;
@@ -8,7 +8,7 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
-@Command(name = ":trainerBattle", description = "create a battle between trainers")
+@Command(name = ":trainerBattle", description = "Create a battle against a trainer")
 public class TrainerBattleCLI implements Callable<Integer> {
     private String idCreateTrainerBattle;
 

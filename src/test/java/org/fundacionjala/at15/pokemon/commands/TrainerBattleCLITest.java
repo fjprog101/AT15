@@ -1,6 +1,10 @@
 package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assert.assertEquals;
+
+import org.fundacionjala.at15.pokemon.commands.create.PokemonCreateCLI;
+import org.fundacionjala.at15.pokemon.commands.create.TrainerBattleCLI;
+import org.fundacionjala.at15.pokemon.commands.create.TrainerCreateCLI;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Test;
 import picocli.CommandLine;

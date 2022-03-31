@@ -11,7 +11,7 @@ import static org.fundacionjala.at15.pokemon.io.Writer.*;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@Command(name = "select", description = "Select a Pokemon in the Pokemon world")
+@Command(name = "select", description = "Select an object")
 public class SubCommandSelect implements Callable<Integer> {
     @Option(names = { "-id" }, description = "Entity ID")
     private String entityID;

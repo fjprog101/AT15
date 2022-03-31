@@ -7,7 +7,6 @@ public class WildPokemonBattle extends Battle {
     private final Trainer trainer;
     private final Pokemon wildPokemon;
     private boolean wildPokemonCapture = false;
-    private boolean pokemonLeft = false;
     private int turn = 0;
 
     public WildPokemonBattle(Trainer trainer, Pokemon pokemon) {
@@ -26,6 +25,7 @@ public class WildPokemonBattle extends Battle {
     public void fight() {
         Pokemon myPokemon = getPokemonAvailable(trainer);
         DamageReceived damage;
+        boolean pokemonLeft = false;
         do {
             turn++;
             if (turn % 2 != 0) {
@@ -41,7 +41,7 @@ public class WildPokemonBattle extends Battle {
                 }
             }
             myPokemon = getPokemonAvailable(trainer);
-        } while (!pokemonLeft);
+        } while (!pokemonLeft); // WARNING: this variable is not updated inside the loop.
     }
 
     public Boolean isCaptured() {

@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.pokemon.commands;
+package org.fundacionjala.at15.pokemon.commands.create;
 
 import picocli.CommandLine.Command;
 
@@ -8,7 +8,7 @@ import java.util.concurrent.Callable;
         TrainerBattleCLI.class, WildPokemonBattleCLI.class },
 
         description = "Entry point to create objects in Pokemon world")
-class CreateCLI implements Callable<Integer> {
+public class CreateCLI implements Callable<Integer> {
 
     @Override
     public Integer call() {

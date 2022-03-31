@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.pokemon.commands;
+package org.fundacionjala.at15.pokemon.commands.create;
 
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Town;
@@ -9,7 +9,7 @@ import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
-@Command(name = "town", description = "Create a Pokemon Town")
+@Command(name = "town", description = "Create a town")
 public class TownCLI implements Callable<Integer> {
     private String idCreateTown;
 
