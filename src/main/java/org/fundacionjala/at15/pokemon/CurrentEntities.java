@@ -1,6 +1,5 @@
 package org.fundacionjala.at15.pokemon;
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
-import org.fundacionjala.at15.pokemon.ID.Identifier;
 
 public class CurrentEntities extends Entity {
     private String pokemon = "";
@@ -9,7 +8,7 @@ public class CurrentEntities extends Entity {
     private String battle = "";
 
     public CurrentEntities() {
-        this.id = Identifier.generateId(this);
+        this.id = "crt-12345678";
         this.type = CURRENT;
     }
 

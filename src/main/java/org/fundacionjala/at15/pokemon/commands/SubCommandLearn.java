@@ -1,6 +1,7 @@
 package org.fundacionjala.at15.pokemon.commands;
 import java.util.concurrent.Callable;
 
+import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Move;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.io.Reader;
@@ -12,8 +13,8 @@ import picocli.CommandLine.Option;
 @Command(name = "learn", description = "Learn an Attack movement")
 public class SubCommandLearn implements Callable<Integer> {
 
-    @Option(names = { "-ID" }, description = "Attack movement")
-    private String pokemonID;
+    //@Option(names = { "-ID" }, description = "Attack movement")
+    //private String pokemonID;
 
     @Option(names = { "-name" }, description = "Attack movement")
     private String movement;
@@ -21,11 +22,15 @@ public class SubCommandLearn implements Callable<Integer> {
     @Option(names = { "-damage" }, description = "Attack potency", defaultValue = "40")
     private int potency;
 
+
+    String id;
     @Override
-    public Integer call() throws Exception {
+    public Integer call() {
 
         if (movement != "" && potency > 0) {
-            Pokemon pokemon = (Pokemon) Reader.readJson(pokemonID);
+            CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+            id =  current.getPokemon();
+            Pokemon pokemon = (Pokemon) Reader.readJson(id);
             Move move = new Move();
             move.serMovement(movement);
             move.setPotency(potency);
@@ -36,6 +41,9 @@ public class SubCommandLearn implements Callable<Integer> {
         } else {
             System.out.println("Arguments are invalid");
         }
-        return null;
+        return 0;
+    }
+    public String getIdPOkemon() {
+        return id;
     }
 }
