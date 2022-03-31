@@ -45,6 +45,10 @@ public final class Reader {
                 Town entity = new Gson().fromJson(line, Town.class);
                 return entity;
             }
+            if (subName.equals("crt")) {
+                CurrentEntities entity = new Gson().fromJson(line, CurrentEntities.class);
+                return entity;
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -80,6 +84,8 @@ public final class Reader {
                 return new File(BATTLE.getPath() + "/" + fileName + ".json");
             case "twn":
                 return new File(TOWN.getPath() + "/" + fileName + ".json");
+            case "crt":
+                return new File(CURRENT.getPath() + "/" + fileName + ".json");
             default:
                 return null;
         }
