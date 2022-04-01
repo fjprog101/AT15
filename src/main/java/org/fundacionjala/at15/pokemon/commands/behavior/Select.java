@@ -33,7 +33,6 @@ public class Select implements Callable<Integer> {
 
         System.out.println("You have selected: ");
         System.out.println(getEntitySelected());
-        
         return 0;
     }
 
