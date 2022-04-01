@@ -11,11 +11,7 @@ public class Query {
         File[] listOfFiles = folder.listFiles();
         ArrayList<String> listFile = new ArrayList<String>();
         for (File file : listOfFiles) {
-            if (file.isFile()) {
-                listFile.add(file.getName());
-            } else {
-                return null;
-            }
+            listFile.add(file.getName());
         }
         return listFile;
     }
