@@ -24,11 +24,6 @@ public class Select implements Callable<Integer> {
     public Integer call() {
         EntityType type = selectType();
         ArrayList<String> list = Query.getMatches(type, ":");
-        System.out.println("Choose a pokemon");
-        for (int index = 0; index < list.size(); index++) {
-            System.out.print(index + 1);
-            System.out.println(Reader.readJson(list.get(index)));
-        }
         entityID = selectObject(list);
         if (entityID.length() > 0) {
             CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
@@ -94,11 +89,14 @@ public class Select implements Callable<Integer> {
         return result;
     }
     private String selectObject(ArrayList<String> list) {
-        String ide = "";
+        System.out.println("Choose an option from the following list:");
+        for (int index = 0; index < list.size(); index++) {
+            System.out.print((index + 1) + " -> " + list.get(index) + "\n");
+        }
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
-        ide = list.get(option - 1);
-        return ide;
+        scanner.close();
+        return list.get(option - 1);
     }
 
     private EntityType selectType() {
