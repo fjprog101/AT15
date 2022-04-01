@@ -22,19 +22,18 @@ public class Select implements Callable<Integer> {
 
     @Override
     public Integer call() {
-        EntityType type = selectType();
-        ArrayList<String> list = Query.getMatches(type, ":");
-        entityID = selectObject(list);
-        if (entityID.length() > 0) {
-            CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
-            setCurrentEntity(current);
-            writeToJson(current);
-
-            System.out.println("You have selected: ");
-            System.out.println(getEntitySelected());
-        } else {
-            System.out.println("Invalid ID, please try with a valid Entity ID");
+        if (entityID == null) {
+            EntityType type = selectType();
+            ArrayList<String> list = Query.getMatches(type, ":");
+            entityID = selectObject(list);
         }
+        CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+        setCurrentEntity(current);
+        writeToJson(current);
+
+        System.out.println("You have selected: ");
+        System.out.println(getEntitySelected());
+        
         return 0;
     }
 
