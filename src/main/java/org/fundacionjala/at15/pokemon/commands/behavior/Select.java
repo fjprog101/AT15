@@ -15,7 +15,7 @@ import static org.fundacionjala.at15.pokemon.io.Writer.*;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@Command(name = "select", description = "Select an object")
+@Command(name = "select", description = "Select any object")
 public class Select implements Callable<Integer> {
     @Option(names = { "-id" }, description = "Entity ID")
     private String entityID;
@@ -23,9 +23,7 @@ public class Select implements Callable<Integer> {
     @Override
     public Integer call() {
         if (entityID == null) {
-            EntityType type = selectType();
-            ArrayList<String> list = Query.getMatches(type, ":");
-            entityID = selectObject(list);
+            entityID = selectObject(selectType());
         }
         CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
         setCurrentEntity(current);
@@ -47,7 +45,7 @@ public class Select implements Callable<Integer> {
                 break;
 
             case "trn":
-                current.settrainer(entityID);
+                current.setTrainer(entityID);
                 break;
 
             case "btt":
@@ -86,7 +84,8 @@ public class Select implements Callable<Integer> {
 
         return result;
     }
-    private String selectObject(ArrayList<String> list) {
+    private String selectObject(EntityType type) {
+        ArrayList<String> list = Query.getMatches(type, ":");
         System.out.println("Choose an option from the following list:");
         for (int index = 0; index < list.size(); index++) {
             System.out.print((index + 1) + " -> " + list.get(index) + "\n");

@@ -37,7 +37,7 @@ public class CurrentEntities extends Entity {
         this.pokemon = pokemonID;
     }
 
-    public void settrainer(String trainerID) {
+    public void setTrainer(String trainerID) {
         this.trainer = trainerID;
     }
 
