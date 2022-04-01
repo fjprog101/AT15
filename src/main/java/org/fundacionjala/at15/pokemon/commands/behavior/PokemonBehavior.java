@@ -13,6 +13,6 @@ public class PokemonBehavior implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         System.out.println("Subcommands :select, learn, fight, use");
-        return null;
+        return 0;
     }
 }

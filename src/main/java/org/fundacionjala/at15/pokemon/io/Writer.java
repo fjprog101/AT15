@@ -24,7 +24,7 @@ public final class Writer {
 
     public static void checkFolder(File path) {
         if (path.exists()) {
-            System.out.println(path + " already exists");
+            System.out.println("Data saved!");
         } else if (path.mkdirs()) {
             System.out.println(path + " was created");
         } else {

@@ -47,6 +47,6 @@ public class PokemonTest {
         pokemon.setMoveToList(move);
         assertTrue(pokemon.getMove("agility") instanceof Move);
 
-        assertEquals(null, pokemon.getMove("thunder"));
+        assertNull(pokemon.getMove("thunder"));
     }
 }
