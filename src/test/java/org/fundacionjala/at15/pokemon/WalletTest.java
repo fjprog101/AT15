@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class WalletTest {
     private final int money = 50;
+    private final int money1 = 120;
     Wallet wallet = new Wallet();
 
     @Test
@@ -21,6 +22,12 @@ public class WalletTest {
     }
 
     @Test
+    public void itShouldNotTakeOffBonus() {
+        wallet.spendMoney(money1);
+        assertEquals(100, wallet.getMoneyInWallet());
+    }
+
+    @Test
     public void itShouldReturnMoneyInWallet() {
         assertEquals(100, wallet.getMoneyInWallet());
     }
@@ -28,13 +35,12 @@ public class WalletTest {
     @Test
     public void itShouldLoseMoney() {
         wallet.loseMoney(50);
-        assertEquals(50,wallet.getMoneyInWallet());
+        assertEquals(50, wallet.getMoneyInWallet());
     }
-
 
     @Test
     public void itShouldSetMoneyTo0IfHasLessThanPay() {
         wallet.loseMoney(200);
         assertEquals(0, wallet.getMoneyInWallet());
-     }
+    }
 }
