@@ -8,7 +8,7 @@ public class Move {
 
     public Move() {
         this.potency = TACKLE_POTENCY;
-        this.movement = "Basic attack";
+        this.movement = "basicAttack";
     }
 
     public int getPotency() {

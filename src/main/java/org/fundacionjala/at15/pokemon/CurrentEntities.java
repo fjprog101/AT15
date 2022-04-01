@@ -6,6 +6,7 @@ public class CurrentEntities extends Entity {
     private String trainer = "";
     private String town = "";
     private String battle = "";
+    private String pokemonOpponent = "";
 
     public CurrentEntities() {
         this.id = "crt-12345678";
@@ -28,20 +29,28 @@ public class CurrentEntities extends Entity {
         return this.battle;
     }
 
-    public void setPokemon(String param) {
-        this.pokemon = param;
+    public String getPokemonOpponent() {
+        return this.pokemonOpponent;
     }
 
-    public void settrainer(String param) {
-        this.trainer = param;
+    public void setPokemon(String pokemonID) {
+        this.pokemon = pokemonID;
     }
 
-    public void setTown(String param) {
-        this.town = param;
+    public void settrainer(String trainerID) {
+        this.trainer = trainerID;
     }
 
-    public void setBattle(String param) {
-        this.battle = param;
+    public void setTown(String townID) {
+        this.town = townID;
+    }
+
+    public void setBattle(String battleID) {
+        this.battle = battleID;
+    }
+
+    public void setPokemonOpponent(String pokemonOpponentID) {
+        this.pokemonOpponent = pokemonOpponentID;
     }
 
     public String getPrefix() {
