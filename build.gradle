@@ -50,4 +50,5 @@ test.finalizedBy("jacocoTestReport")
 task runPokemonCli (dependsOn: 'classes', type: JavaExec) {
     main = 'org.fundacionjala.at15.pokemon.commands.PokemonCLI'
     classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
 }
