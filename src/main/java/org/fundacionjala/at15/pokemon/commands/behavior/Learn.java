@@ -37,9 +37,6 @@ public class Learn implements Callable<Integer> {
 
             System.out.println("Your Pokemon learn a new Attack movement");
         }
-        // } else {
-        // System.out.println("Arguments are invalid");
-        // }
         return 0;
     }
 
