@@ -14,7 +14,7 @@ public class SubCommandLearnTest {
     @Test
     public void commandShouldCreateAddMovementToJsonFile() {
         CreatePokemon poke = new CreatePokemon();
-        new CommandLine(poke).parseArgs("-n", "squirle", "-hp", "100");
+        new CommandLine(poke).parseArgs("-n", "pikachu", "-hp", "100");
         poke.call();
 
         Select select = new Select();
