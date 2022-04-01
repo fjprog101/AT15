@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 
 import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
+import static org.fundacionjala.at15.pokemon.io.Query.*;
 import org.fundacionjala.at15.pokemon.*;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
@@ -22,9 +23,11 @@ public class QueryTest {
         file.flush();
         file.close();
 
-        ArrayList<String> list = Query.getMatches(EntityType.POKEMON, pokemon.getPokemonName());
+        ArrayList<String> list = getMatches(EntityType.POKEMON, pokemon.getPokemonName());
+        assertEquals(pokemon.getId(), list.get(0));
 
-        assertEquals("Bulbasaur", list.get(0));
+       /* ArrayList<String> listOfFiles = getFiles(EntityType.POKEMON + "non");
+        assertEquals(null, listOfFiles.get(0));*/
     }
 
 }

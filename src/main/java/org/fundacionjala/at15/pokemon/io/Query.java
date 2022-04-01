@@ -13,6 +13,8 @@ public class Query {
         for (File file : listOfFiles) {
             if (file.isFile()) {
                 listFile.add(file.getName());
+            } else {
+                return null;
             }
         }
         return listFile;
