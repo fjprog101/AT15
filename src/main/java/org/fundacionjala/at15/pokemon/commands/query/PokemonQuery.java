@@ -13,16 +13,21 @@ import picocli.CommandLine.Option;
 @Command(name = "pokemon", description = "Fetch pokemon data")
 
 public class PokemonQuery implements Callable<Integer> {
+    private ArrayList<String> list;
 
-    @Option(names = {"-name", "-n"}, description = "pokemon name")
+    @Option(names = { "-name", "-n" }, description = "pokemon name")
     private String name;
 
     @Override
     public Integer call() {
-        ArrayList<String> list = Query.getMatches(EntityType.POKEMON, name);
+        list = Query.getMatches(EntityType.POKEMON, name);
         for (String item : list) {
             readJson(item);
         }
         return 0;
+    }
+
+    public ArrayList<String> getList() {
+        return list;
     }
 }
