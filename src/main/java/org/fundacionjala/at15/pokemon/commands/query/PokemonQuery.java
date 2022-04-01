@@ -20,8 +20,8 @@ public class PokemonQuery implements Callable<Integer> {
     @Override
     public Integer call() {
         ArrayList<String> list = Query.getMatches(EntityType.POKEMON, name);
-        for (int ind = 0; ind < list.size(); ind++) {
-            readJson(list.get(ind));
+        for (String item : list) {
+            readJson(item);
         }
         return 0;
     }
