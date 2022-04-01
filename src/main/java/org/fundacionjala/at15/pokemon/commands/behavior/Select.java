@@ -1,10 +1,14 @@
 package org.fundacionjala.at15.pokemon.commands.behavior;
 
+import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.concurrent.Callable;
 
 import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
+import org.fundacionjala.at15.pokemon.io.EntityType;
+import org.fundacionjala.at15.pokemon.io.Query;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import static org.fundacionjala.at15.pokemon.io.Writer.*;
 
@@ -18,6 +22,14 @@ public class Select implements Callable<Integer> {
 
     @Override
     public Integer call() {
+        EntityType type = selectType();
+        ArrayList<String> list = Query.getMatches(type, ":");
+        System.out.println("Choose a pokemon");
+        for (int index = 0; index < list.size(); index++) {
+            System.out.print(index + 1);
+            System.out.println(Reader.readJson(list.get(index)));
+        }
+        entityID = selectObject(list);
         if (entityID.length() > 0) {
             CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
             setCurrentEntity(current);
@@ -80,5 +92,40 @@ public class Select implements Callable<Integer> {
         }
 
         return result;
+    }
+    private String selectObject(ArrayList<String> list) {
+        String ide = "";
+        Scanner scanner = new Scanner(System.in);
+        int option = scanner.nextInt();
+        ide = list.get(option - 1);
+        return ide;
+    }
+
+    private EntityType selectType() {
+        boolean flag = true;
+        System.out.println("Which kind of entity do you want to select?");
+        System.out.println("1. Pokemon");
+        System.out.println("2. Trainer");
+        System.out.println("3. Battle");
+        System.out.println("4. Town");
+        Scanner scanner = new Scanner(System.in);
+        while (flag) {
+            String option = scanner.nextLine();
+            switch (option) {
+                case "1":
+                    return EntityType.POKEMON;
+                case "2":
+                    return EntityType.TRAINER;
+                case "3":
+                    return EntityType.BATTLE;
+                case "4":
+                    return EntityType.TOWN;
+                default:
+                    System.out.println("Select a number from 1 to 4");
+                    break;
+            }
+        }
+        scanner.close();
+        return null;
     }
 }
