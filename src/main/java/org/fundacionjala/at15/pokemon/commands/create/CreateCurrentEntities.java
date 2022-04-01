@@ -9,7 +9,7 @@ import picocli.CommandLine.Command;
 
 @Command(name = "current", description = "Create a new current entities json file")
 public class CreateCurrentEntities implements Callable<Integer> {
-    
+
     @Override
     public Integer call() {
         CurrentEntities currentEntities = new CurrentEntities();
