@@ -19,6 +19,7 @@ public class ReaderTest {
         Writer.writeToJson(pokemon);
         readJson(pokemon.getId());
         String expected = "id: " + pokemon.getId() + " name: Charizard hitpoints: 100/100";
+        FileEraser.eraseFile(pokemon);
         assertEquals(expected, getResult());
     }
 
@@ -31,6 +32,7 @@ public class ReaderTest {
         String fileName = trainer.getId();
         readJson(fileName);
         String expected = "id: " + trainer.getId() + " name: Ash badges: 0 money: 100";
+        FileEraser.eraseFile(trainer);
         assertEquals(expected, getResult());
     }
 
@@ -46,6 +48,7 @@ public class ReaderTest {
         readJson(battle.getId());
 
         String expected = "id: " + battle.getId() + " trainer1 name: Ash trainer2 name: Brooke isBattleOver: false";
+        FileEraser.eraseFile(battle);
         assertEquals(expected, getResult());
     }
 
@@ -55,6 +58,7 @@ public class ReaderTest {
         Writer.writeToJson(town);
         readJson(town.getId());
         String expected = "id: " + town.getId() + " town's gym leader name: gymLeader";
+        FileEraser.eraseFile(town);
         assertEquals(expected, getResult());
     }
 
@@ -72,6 +76,7 @@ public class ReaderTest {
         assertEquals("class org.fundacionjala.at15.pokemon.Pokemon", entity.getClass().toString());
 
         String fileString = jSonStringReader(getPath(fileName));
+        FileEraser.eraseFile(pokemon);
         assertEquals(jsonString, fileString);
     }
 
@@ -86,6 +91,7 @@ public class ReaderTest {
         file.close();
 
         Entity trueEntity = readJson(entity.getId());
+        FileEraser.eraseFile(entity);
         assertEquals("class org.fundacionjala.at15.pokemon.CurrentEntities", trueEntity.getClass().toString());
     }
 }

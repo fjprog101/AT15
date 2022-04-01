@@ -32,6 +32,7 @@ public class WriterTest {
         } catch (IOException e) {
             e.printStackTrace(System.out);
         }
+        FileEraser.eraseFile(pokemon);
 
         assertEquals(pokemonJson, line);
     }
