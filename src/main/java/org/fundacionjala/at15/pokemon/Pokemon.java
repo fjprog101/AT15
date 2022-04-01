@@ -29,6 +29,15 @@ public class Pokemon extends Entity {
         return movementList.get(move);
     }
 
+    public Move getMove(String moveAttack) {
+        for (Move move : movementList) {
+            if (move.getMovement().compareTo(moveAttack) == 0) {
+                return move;
+            }
+        }
+        return null;
+    }
+
     public void setMoveToList(Move newMove) {
         final int numberOfMoves = 4;
         if (movementList.size() < numberOfMoves) {
