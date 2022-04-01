@@ -61,4 +61,16 @@ public class TrainerBattle extends Battle {
     public String getPrefix() {
         return "btt";
     }
+
+    public Trainer getTrainer1() {
+        return this.trainer1;
+    }
+
+    public Trainer getTrainer2() {
+        return this.trainer2;
+    }
+
+    public boolean getBattleOver() {
+        return this.battleOver;
+    }
 }
