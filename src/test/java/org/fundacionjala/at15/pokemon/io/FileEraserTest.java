@@ -11,6 +11,6 @@ public class FileEraserTest {
         Town town = new Town();
         writeToJson(town);
 
-        assertTrue(eraseFile(town.getId()));
+        assertTrue(FileEraser.eraseFile(town));
     }
 }
