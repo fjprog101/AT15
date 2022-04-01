@@ -1,8 +1,6 @@
 package org.fundacionjala.at15.pokemon;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
-import java.util.UUID;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
 import org.junit.Test;
