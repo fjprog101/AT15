@@ -15,7 +15,7 @@ import org.junit.Test;
 public class QueryTest {
     @Test
     public void getFilesTest() throws IOException {
-        Pokemon pokemon = new Pokemon(70, "BulbasaurTesting");
+        Pokemon pokemon = new Pokemon(70, "TestingBulbasaur");
         String jsonString = new Gson().toJson(pokemon);
         String fileName = pokemon.getId();
         FileWriter file = new FileWriter(getPath(fileName));
