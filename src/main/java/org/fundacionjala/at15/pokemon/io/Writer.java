@@ -22,7 +22,7 @@ public final class Writer {
         }
     }
 
-    private static void checkFolder(File path) {
+    public static void checkFolder(File path) {
         if (path.exists()) {
             System.out.println("Data saved!");
         } else if (path.mkdirs()) {
