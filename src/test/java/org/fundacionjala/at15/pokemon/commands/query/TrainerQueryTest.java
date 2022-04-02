@@ -17,5 +17,4 @@ public class TrainerQueryTest {
         String expected = trainer.getName();
         assertEquals("Ash1", expected);
     }
-
 }
