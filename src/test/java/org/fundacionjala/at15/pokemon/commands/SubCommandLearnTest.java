@@ -22,7 +22,7 @@ public class SubCommandLearnTest {
         select.call();
 
         Learn learn = new Learn();
-        new CommandLine(learn).parseArgs("-name", "Patada", "-damage", "40");
+        new CommandLine(learn).parseArgs("-name", "Patada", "-damage", "400");
         learn.call();
 
         Pokemon pokemon = (Pokemon) Reader.readJson(learn.getIdPOkemon());
