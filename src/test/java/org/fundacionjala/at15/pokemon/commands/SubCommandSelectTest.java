@@ -19,6 +19,7 @@ public class SubCommandSelectTest {
     @Test
     public void itShouldSelectAPokemon() {
         Pokemon newPokemon = new Pokemon(200, "Pikachu");
+        Writer.writeToJson(new CurrentEntities());
         Writer.writeToJson(newPokemon);
 
         Select select = new Select();
@@ -36,6 +37,7 @@ public class SubCommandSelectTest {
     public void itShouldSelectATrainer() {
         Pokemon newPokemon = new Pokemon(200, "Pikachu");
         Trainer newTrainer = new Trainer(newPokemon, "Ash");
+        Writer.writeToJson(new CurrentEntities());
         Writer.writeToJson(newTrainer);
 
         Select select = new Select();
@@ -52,6 +54,7 @@ public class SubCommandSelectTest {
     @Test
     public void itShouldSelectATown() {
         Town town = new Town();
+        Writer.writeToJson(new CurrentEntities());
         Writer.writeToJson(town);
 
         Select select = new Select();
