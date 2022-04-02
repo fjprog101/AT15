@@ -1,4 +1,5 @@
 package org.fundacionjala.at15.pokemon.commands.behavior;
+
 import java.util.concurrent.Callable;
 
 import org.fundacionjala.at15.pokemon.CurrentEntities;
@@ -19,14 +20,14 @@ public class Learn implements Callable<Integer> {
     @Option(names = { "-damage" }, description = "Attack potency", defaultValue = "40")
     private int potency;
 
-
     private String id;
+
     @Override
     public Integer call() {
 
         if (movement != "" && potency > 0) {
             CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
-            id =  current.getPokemon();
+            id = current.getPokemon();
             Pokemon pokemon = (Pokemon) Reader.readJson(id);
             Move move = new Move();
             move.setMovement(movement);
@@ -35,11 +36,10 @@ public class Learn implements Callable<Integer> {
             Writer.writeToJson(pokemon);
 
             System.out.println("Your Pokemon learn a new Attack movement");
-        } else {
-            System.out.println("Arguments are invalid");
         }
         return 0;
     }
+
     public String getIdPOkemon() {
         return id;
     }

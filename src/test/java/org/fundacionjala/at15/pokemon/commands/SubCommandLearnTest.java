@@ -1,24 +1,38 @@
 package org.fundacionjala.at15.pokemon.commands;
+
 import static org.junit.Assert.assertEquals;
 
+import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.commands.behavior.Learn;
+import org.fundacionjala.at15.pokemon.commands.behavior.Select;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.fundacionjala.at15.pokemon.io.Reader;
+import org.junit.Test;
+import org.fundacionjala.at15.pokemon.commands.create.CreateCurrentEntities;
+
 import picocli.CommandLine;
 
 public class SubCommandLearnTest {
-    //@Test
+    @Test
     public void commandShouldCreateAddMovementToJsonFile() {
-        CreatePokemon pokemon1 = new CreatePokemon();
-        new CommandLine(pokemon1).parseArgs("-n", "pikachu", "-hp", "200");
-        pokemon1.call();
+        CreatePokemon poke = new CreatePokemon();
+        new CommandLine(poke).parseArgs("-n", "pikachu", "-hp", "100");
+        poke.call();
 
-        Learn subCommandLearn = new Learn();
-        new CommandLine(subCommandLearn).parseArgs("-ID", pokemon1.getIdPokemonCreated());
-        subCommandLearn.call();
+        CreateCurrentEntities current = new CreateCurrentEntities();
+        new CommandLine(current);
+        current.call();
 
-        Reader.readJson(subCommandLearn.getIdPOkemon());
-        String expected = "id: " + subCommandLearn.getIdPOkemon() + " name: pikachu hitpoints: 200/200";
-        assertEquals(expected, Reader.getResult());
+        Select select = new Select();
+        new CommandLine(select).parseArgs("-id", poke.getIdPokemonCreated());
+        select.call();
+
+        Learn learn = new Learn();
+        new CommandLine(learn).parseArgs("-name", "Patada", "-damage", "400");
+        learn.call();
+
+        Pokemon pokemon = (Pokemon) Reader.readJson(learn.getIdPOkemon());
+        String expected = pokemon.getMove("Patada").getMovement();
+        assertEquals("Patada", expected);
     }
 }
