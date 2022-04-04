@@ -19,13 +19,4 @@ public class CreatePokemonTest {
         String expected = "id: " + params.getIdPokemonCreated() + " name: squirtle hitpoints: 100/100";
         assertEquals(expected, Reader.getResult());
     }
-
-    @Test
-    public void commandShouldNotreateAPokemonJsonFile() throws IncompleteArguments {
-        CreatePokemon params = new CreatePokemon();
-        new CommandLine(params).parseArgs("-hp", "100");
-        params.call();
-        String expected = "Error. Incomplete arguments for the create pokemon command.";
-        assertEquals(expected, params.getWarningMessage());
-    }
 }

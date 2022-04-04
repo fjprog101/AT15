@@ -1,13 +1,11 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
-
-import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 import org.junit.Test;
 
 public class StoreTest {
     @Test
-    public void itShouldGiveAPokeballAndChargeCost() throws IncompleteArguments {
+    public void itShouldGiveAPokeballAndChargeCost() {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
         int initialSize = trainer.getPokeballs().size();
@@ -18,7 +16,7 @@ public class StoreTest {
     }
 
     @Test
-    public void itShouldGiveAPotionAndChargeCost() throws IncompleteArguments {
+    public void itShouldGiveAPotionAndChargeCost() {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
         int initialSize = trainer.getHealingPotion().size();
@@ -29,7 +27,7 @@ public class StoreTest {
     }
 
     @Test
-    public void itShouldAllowTrainerSellPokeball() throws IncompleteArguments {
+    public void itShouldAllowTrainerSellPokeball() {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
         int initialSize = trainer.getPokeballs().size();
@@ -40,7 +38,7 @@ public class StoreTest {
     }
 
     @Test
-    public void itShouldAllowTrainerSellPotion() throws IncompleteArguments {
+    public void itShouldAllowTrainerSellPotion() {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
         Store.buyHealingPotion(trainer);
@@ -52,7 +50,7 @@ public class StoreTest {
     }
 
     @Test
-    public void itShouldNotAllowTrainerSellPokeball() throws IncompleteArguments {
+    public void itShouldNotAllowTrainerSellPokeball() {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
         for (int index = 0; index < 6; index++) {
@@ -65,7 +63,7 @@ public class StoreTest {
     }
 
     @Test
-    public void itShouldNotAllowTrainerSellPotion() throws IncompleteArguments {
+    public void itShouldNotAllowTrainerSellPotion() {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
         int initialSize = trainer.getHealingPotion().size();

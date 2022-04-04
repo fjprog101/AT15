@@ -2,14 +2,12 @@ package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
-
-import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 import org.junit.Test;
 
 public class PokemonTest {
 
     @Test
-    public void itShouldHaveMoves() throws IncompleteArguments {
+    public void itShouldHaveMoves() {
         Pokemon genericPokemon = new Pokemon(200, "pikachu");
         Move tackle = new Move();
         genericPokemon.setMoveToList(tackle);
@@ -18,14 +16,13 @@ public class PokemonTest {
     }
 
     @Test
-    public void itShouldHaveName() throws IncompleteArguments {
+    public void itShouldHaveName() {
         Pokemon genericPokemon = new Pokemon(200, "pikachu");
-
         assertEquals("pikachu", genericPokemon.getPokemonName());
     }
 
     @Test
-    public void itShouldHaveOnlyFourMoves() throws IncompleteArguments {
+    public void itShouldHaveOnlyFourMoves() {
         Pokemon genericPokemon = new Pokemon(200, "pikachu");
         Move move = new Move();
         genericPokemon.setMoveToList(move);
@@ -36,7 +33,7 @@ public class PokemonTest {
     }
 
     @Test
-    public void itShouldVerifiesIfHasAGivenAttack() throws IncompleteArguments {
+    public void itShouldVerifiesIfHasAGivenAttack() {
         Pokemon pokemon = new Pokemon(200, "pikachu");
         Move move = new Move();
         move.setMovement("thunder");

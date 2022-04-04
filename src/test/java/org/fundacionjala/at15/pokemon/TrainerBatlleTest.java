@@ -1,13 +1,11 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
-
-import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 import org.junit.Test;
 
 public class TrainerBatlleTest {
     @Test
-    public void itShouldReturnAvailablePokemon() throws IncompleteArguments {
+    public void itShouldReturnAvailablePokemon() {
         Pokemon pokemon1 = new Pokemon(100, "pikachu");
         Trainer trainer1 = new Trainer(pokemon1, "Trainer1");
         Pokemon pokemon2 = new Pokemon(100, "Squirtle");
@@ -19,7 +17,7 @@ public class TrainerBatlleTest {
     }
 
     @Test
-    public void itShouldReturnAWinner() throws IncompleteArguments {
+    public void itShouldReturnAWinner() {
         Pokemon pokemon1 = new Pokemon(100, "pikachu");
         Trainer trainer1 = new Trainer(pokemon1, "Trainer1");
         Pokemon pokemon2 = new Pokemon(200, "Squirtle");
@@ -32,7 +30,7 @@ public class TrainerBatlleTest {
     }
 
     @Test
-    public void itShouldReturnAnotherWinner() throws IncompleteArguments {
+    public void itShouldReturnAnotherWinner() {
         Pokemon pokemon1 = new Pokemon(200, "pikachu");
         Trainer trainer1 = new Trainer(pokemon1, "Trainer1");
         Pokemon pokemon2 = new Pokemon(100, "Squirtle");

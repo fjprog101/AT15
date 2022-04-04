@@ -1,8 +1,6 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
-
-import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 import org.junit.Test;
 
 public class HealingPotionTest {
@@ -14,7 +12,7 @@ public class HealingPotionTest {
     }
 
     @Test
-    public void itShouldRestoreHitPointOfAPokemon() throws IncompleteArguments {
+    public void itShouldRestoreHitPointOfAPokemon() {
         Pokemon pikachu = new Pokemon(200, "pikachu");
         pikachu.getHitPoints().setCurrentHitPoints(10);
         pikachu.getHitPoints().fullRestore();

@@ -20,19 +20,18 @@ public class CreatePokemon implements Callable<Integer> {
 
     @Override
     public Integer call() throws IncompleteArguments {
-        try {
-            newPokemon = new Pokemon(hitPoints, pokemonName);
-            this.idPokemonCreated = newPokemon.getId();
-            Writer.writeToJson(newPokemon);
-            System.out.println(
-                    "Pokemon Created: \n"
-                            + "Name: " + newPokemon.getPokemonName() + "\n"
-                            + "Hit points:" + newPokemon.getHitPoints().getCurrentHitPoints() + "\n"
-                            + "ID: " + idPokemonCreated);
-        } catch (IncompleteArguments ex) {
-            warningMessage = "Error. Incomplete arguments for the create pokemon command.";
-            ex.warningCreatePokemon();
+        if ((hitPoints <= 0) || (pokemonName == null)) {
+            throw new IncompleteArguments(
+                    "Error. Incomplete arguments for the create pokemon command. Required arguments: -name -hitpoints.");
         }
+        newPokemon = new Pokemon(hitPoints, pokemonName);
+        this.idPokemonCreated = newPokemon.getId();
+        Writer.writeToJson(newPokemon);
+        System.out.println(
+                "Pokemon Created: \n"
+                        + "Name: " + newPokemon.getPokemonName() + "\n"
+                        + "Hit points:" + newPokemon.getHitPoints().getCurrentHitPoints() + "\n"
+                        + "ID: " + idPokemonCreated);
         return 0;
     }
 
