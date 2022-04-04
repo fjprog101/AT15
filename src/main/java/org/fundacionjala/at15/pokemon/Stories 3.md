@@ -31,7 +31,7 @@ Result should show all pokemon owned by "Brock" trainer, regardless of the type 
 ## User Story 2: Exception handlers
 Include Exception handling for the non ideal scenarios that are not currently supported by the project.
 
-- Use commands without required subcommands. Example: pkm create pokemon
+- Use commands without required subcommands. Example: pkm create -name "Pikachu"
 - Create objects (pokemon, trainer, battle) with missing required information. Example, create pokemon without hit points or trainer without name
 - The object (pokemon, trainer, battle) couldn't be read or created due a read/write error
 - A pokemon cannot learn a new movement due max limit of movements has been reached
