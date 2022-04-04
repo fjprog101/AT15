@@ -5,6 +5,7 @@ import java.util.concurrent.Callable;
 import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
+import org.fundacionjala.at15.pokemon.Exceptions.TrainerItemsException;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import picocli.CommandLine.Command;
 
@@ -24,7 +25,12 @@ public class Catch implements Callable<Integer> {
         assert wildPokemon != null;
         if (wildPokemon.getHitPoints().is20Percent()) {
             assert trainer != null;
-            trainer.usePokeball(wildPokemon);
+            try {
+                trainer.usePokeball(wildPokemon);
+            } catch (TrainerItemsException e) {
+                System.out.println("ERROR: ");
+                e.printStackTrace(System.out);
+            }
             current.setPokemonOpponent("");
             writeToJson(current);
             System.out.println("Pokemon catch!");

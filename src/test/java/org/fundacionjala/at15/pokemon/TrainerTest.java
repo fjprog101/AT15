@@ -31,14 +31,14 @@ public class TrainerTest {
     }
 
     @Test(expected = TrainerItemsException.class)
-    public void itShouldThrowsTheItemsException() throws TrainerItemsException {
+    public void itShouldThrowsTheItemPotionException() throws TrainerItemsException {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         trainer.useHealingPotion(0);
     }
 
     @Test
-    public void itShouldRemoveOnePokeball() {
+    public void itShouldRemoveOnePokeball() throws TrainerItemsException {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon wildPokemon = new Pokemon(100, "pikachu");
@@ -49,21 +49,19 @@ public class TrainerTest {
         assertEquals(2,trainer.getPokemonTeam().getPokemonsOfTeam().size());
     }
 
-    @Test
-    public void itShouldHave0Pokeballs() {
+    @Test(expected = TrainerItemsException.class)
+    public void itShouldHave0Pokeballs() throws TrainerItemsException {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon wildPokemon = new Pokemon(100, "pikachu");
         wildPokemon.getHitPoints().setCurrentHitPoints(10);
-
         trainer.getPokeballs().clear();
-
         trainer.usePokeball(wildPokemon);
         assertEquals(0, trainer.getPokeballs().size());
     }
 
     @Test
-    public void itShouldAddPokemon() {
+    public void itShouldAddPokemon() throws TrainerItemsException {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon wildPokemon = new Pokemon(10, "pikachu");

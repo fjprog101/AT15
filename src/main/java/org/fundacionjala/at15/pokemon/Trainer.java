@@ -41,14 +41,15 @@ public class Trainer extends Entity {
         healingPotions.remove(healingPotions.size() - 1);
     }
 
-    public void usePokeball(Pokemon pokemon) {
-        if (pokeballs.size() != 0) {
-            Pokeball currentPokeball = pokeballs.get(pokeballs.size() - 1);
-            if (currentPokeball.catchPokemon(pokemon)) {
-                pokemonTeam.addPokemon(pokemon);
-            }
-            pokeballs.remove(pokeballs.size() - 1);
+    public void usePokeball(Pokemon pokemon) throws TrainerItemsException {
+        if (pokeballs.size() == 0) {
+            throw new TrainerItemsException("There are no more pokeballs!");
         }
+        Pokeball currentPokeball = pokeballs.get(pokeballs.size() - 1);
+        if (currentPokeball.catchPokemon(pokemon)) {
+            pokemonTeam.addPokemon(pokemon);
+        }
+        pokeballs.remove(pokeballs.size() - 1);
     }
 
     public void winBadge() {
