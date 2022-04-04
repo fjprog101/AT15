@@ -2,6 +2,7 @@ package org.fundacionjala.at15.pokemon;
 
 import java.util.ArrayList;
 
+import org.fundacionjala.at15.pokemon.Exceptions.TrainerItemsException;
 import org.fundacionjala.at15.pokemon.ID.Identifier;
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
@@ -34,12 +35,13 @@ public class Trainer extends Entity {
     }
 
     // use the healing potion in the current pokemon
-    public void useHealingPotion(int current) {
-        if (healingPotions.size() != 0) {
-            HealingPotion currentPotion = healingPotions.get(healingPotions.size() - 1);
-            currentPotion.affectHP(currentPokemon(current));
-            healingPotions.remove(healingPotions.size() - 1);
+    public void useHealingPotion(int current) throws TrainerItemsException {
+        if (healingPotions.size() == 0) {
+            throw new TrainerItemsException("There are no more potions!");
         }
+        HealingPotion currentPotion = healingPotions.get(healingPotions.size() - 1);
+        currentPotion.affectHP(currentPokemon(current));
+        healingPotions.remove(healingPotions.size() - 1);
     }
 
     // use pokeball on wild pokemon
