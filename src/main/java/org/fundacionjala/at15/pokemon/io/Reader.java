@@ -1,10 +1,6 @@
 package org.fundacionjala.at15.pokemon.io;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
 import com.google.gson.Gson;
 
 import org.fundacionjala.at15.pokemon.*;
@@ -17,35 +13,29 @@ public final class Reader {
         File path = PathHandler.getPath(fileName);
         String subName = fileName.substring(0, THREE);
         String line = PathHandler.jSonStringReader(path);
-        try (FileReader reader = new FileReader(path)) {
-            if (subName.equals("pkm")) {
-                Pokemon entity = new Gson().fromJson(line, Pokemon.class);
-                parsePokemonObject(entity);
-                return entity;
-            }
-            if (subName.equals("trn")) {
-                Trainer entity = new Gson().fromJson(line, Trainer.class);
-                parseTrainerObject(entity);
-                return entity;
-            }
-            if (subName.equals("btt")) {
-                TrainerBattle entity = new Gson().fromJson(line, TrainerBattle.class);
-                parseTrainerBattleObject(entity);
-                return entity;
-            }
-            if (subName.equals("twn")) {
-                Town entity = new Gson().fromJson(line, Town.class);
-                parseTownObject(entity);
-                return entity;
-            }
-            if (subName.equals("crt")) {
-                CurrentEntities entity = new Gson().fromJson(line, CurrentEntities.class);
-                return entity;
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (subName.equals("pkm")) {
+            Pokemon entity = new Gson().fromJson(line, Pokemon.class);
+            parsePokemonObject(entity);
+            return entity;
+        }
+        if (subName.equals("trn")) {
+            Trainer entity = new Gson().fromJson(line, Trainer.class);
+            parseTrainerObject(entity);
+            return entity;
+        }
+        if (subName.equals("btt")) {
+            TrainerBattle entity = new Gson().fromJson(line, TrainerBattle.class);
+            parseTrainerBattleObject(entity);
+            return entity;
+        }
+        if (subName.equals("twn")) {
+            Town entity = new Gson().fromJson(line, Town.class);
+            parseTownObject(entity);
+            return entity;
+        }
+        if (subName.equals("crt")) {
+            CurrentEntities entity = new Gson().fromJson(line, CurrentEntities.class);
+            return entity;
         }
         return null;
     }
