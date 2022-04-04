@@ -39,11 +39,11 @@ public class WildPokemonBattle extends Battle {
                 if (wildPokemon.getHitPoints().is20Percent()) {
                     try {
                         trainer.usePokeball(wildPokemon);
+                        wildPokemonCapture = true;
                     } catch (TrainerItemsException e) {
                         System.out.println("ERROR: ");
                         e.printStackTrace(System.out);
                     }
-                    wildPokemonCapture = true;
                     break;
                 }
             }
