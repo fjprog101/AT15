@@ -1,8 +1,10 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.fundacionjala.at15.pokemon.Exceptions.TrainerItemsException;
+import org.junit.Rule;
 import org.junit.Test;
 
 public class TrainerTest {
@@ -26,6 +28,13 @@ public class TrainerTest {
         trainer.getHealingPotion().add(healingPotion2);
         trainer.useHealingPotion(0);
         assertEquals(1, trainer.getHealingPotion().size());
+    }
+
+    @Test(expected = TrainerItemsException.class)
+    public void itShouldThrowsTheItemsException() throws TrainerItemsException {
+        Pokemon pokemon = new Pokemon(100, "pikachu");
+        Trainer trainer = new Trainer(pokemon, "Trainer1");
+        trainer.useHealingPotion(0);
     }
 
     @Test
