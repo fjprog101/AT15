@@ -7,10 +7,10 @@ As pkm cli user, I want to pkm cli to also support read/write data in [XML](http
 
 Example
 ```
-pkm admin create pokemon -name "Pikachu" -hitpoints 100 --csv
+pkm admin create pokemon -name "Pikachu" -hitpoints 100 --xml
 ```
 
-The "--csv" flag is used to specify that data should be written in csv format. If flag is not specified, JSON format is used by default.
+The "--xml" flag is used to specify that data should be written in xml format. If flag is not specified, JSON format is used by default.
 
 To read data, pkm cli will always try to search any data available in both formats. Say, we have "Charizard" created as JSON, and "Bulbasaur" created as XML for the same trainer "Brock", and we want to list all pokemon whose trainer is "Brock", we have
 ```
