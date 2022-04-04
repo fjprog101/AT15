@@ -15,6 +15,7 @@ public class PathHandlerTest {
         Pokemon pokemon = new Pokemon(100, "Test");
         Writer.writeToJson(pokemon);
         String result = getTypeFile(pokemon.getId());
+        FileEraser.eraseFile(pokemon);
         assertEquals("json", result);
     }
 

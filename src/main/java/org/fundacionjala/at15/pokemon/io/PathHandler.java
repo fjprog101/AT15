@@ -12,12 +12,12 @@ import static org.fundacionjala.at15.pokemon.io.Query.*;
 
 public class PathHandler {
     private static final int THREE = 3;
-    public static String getTypeFile(String name) {
-        String path = getSubPath(name);
+    public static String getTypeFile(String nameID) {
+        String path = getSubPath(nameID);
         ArrayList<String> fileNames = getFiles(path);
         String selectedFile = "";
         for (String names : fileNames) {
-            if (names.contains(name)) {
+            if (names.contains(nameID)) {
                 selectedFile = names;
             }
         }
