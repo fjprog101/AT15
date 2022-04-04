@@ -1,14 +1,13 @@
 package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assert.assertEquals;
-
 import java.io.File;
-
 import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Town;
 import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.commands.behavior.Select;
+import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.fundacionjala.at15.pokemon.io.Writer;
@@ -17,7 +16,7 @@ import picocli.CommandLine;
 
 public class SubCommandSelectTest {
     @Test
-    public void itShouldSelectAPokemon() {
+    public void itShouldSelectAPokemon() throws IncompleteArguments {
         Pokemon newPokemon = new Pokemon(200, "Pikachu");
         Writer.writeToJson(new CurrentEntities());
         Writer.writeToJson(newPokemon);
@@ -34,7 +33,7 @@ public class SubCommandSelectTest {
     }
 
     @Test
-    public void itShouldSelectATrainer() {
+    public void itShouldSelectATrainer() throws IncompleteArguments {
         Pokemon newPokemon = new Pokemon(200, "Pikachu");
         Trainer newTrainer = new Trainer(newPokemon, "Ash");
         Writer.writeToJson(new CurrentEntities());
@@ -52,7 +51,7 @@ public class SubCommandSelectTest {
     }
 
     @Test
-    public void itShouldSelectATown() {
+    public void itShouldSelectATown() throws IncompleteArguments {
         Town town = new Town();
         Writer.writeToJson(new CurrentEntities());
         Writer.writeToJson(town);

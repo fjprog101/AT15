@@ -2,11 +2,12 @@ package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
 
+import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 import org.junit.Test;
 
 public class TrainerTest {
     @Test
-    public void itShouldReturnCurrentPokemon() {
+    public void itShouldReturnCurrentPokemon() throws IncompleteArguments {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon expectedPokemon = new Pokemon(100, "pikachu");
@@ -16,7 +17,7 @@ public class TrainerTest {
     }
 
     @Test
-    public void itShouldRemoveOneHealingPotion() {
+    public void itShouldRemoveOneHealingPotion() throws IncompleteArguments {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         HealingPotion healingPotion1 = new HealingPotion();
@@ -28,7 +29,7 @@ public class TrainerTest {
     }
 
     @Test
-    public void itShouldRemoveOnePokeball() {
+    public void itShouldRemoveOnePokeball() throws IncompleteArguments {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon wildPokemon = new Pokemon(100, "pikachu");
@@ -36,11 +37,11 @@ public class TrainerTest {
         Pokeball pokeball1 = new Pokeball();
         trainer.getPokeballs().add(pokeball1);
         trainer.usePokeball(wildPokemon);
-        assertEquals(2,trainer.getPokemonTeam().getPokemonsOfTeam().size());
+        assertEquals(2, trainer.getPokemonTeam().getPokemonsOfTeam().size());
     }
 
     @Test
-    public void itShouldHave0Pokeballs() {
+    public void itShouldHave0Pokeballs() throws IncompleteArguments {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon wildPokemon = new Pokemon(100, "pikachu");
@@ -53,7 +54,7 @@ public class TrainerTest {
     }
 
     @Test
-    public void itShouldAddPokemon() {
+    public void itShouldAddPokemon() throws IncompleteArguments {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon wildPokemon = new Pokemon(10, "pikachu");
@@ -66,7 +67,7 @@ public class TrainerTest {
     }
 
     @Test
-    public void itShouldAddABadge() {
+    public void itShouldAddABadge() throws IncompleteArguments {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         trainer.winBadge();

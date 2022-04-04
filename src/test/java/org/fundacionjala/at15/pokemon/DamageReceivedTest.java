@@ -1,12 +1,12 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
-
+import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 import org.junit.Test;
 
 public class DamageReceivedTest {
     @Test
-    public void itShouldBeHpAfterDamage() {
+    public void itShouldBeHpAfterDamage() throws IncompleteArguments {
         int maxHitPoints = 1000;
         int attackDamage = 100;
         int afterHp = 900;
@@ -17,7 +17,7 @@ public class DamageReceivedTest {
     }
 
     @Test
-    public void itShouldBeHpZero() {
+    public void itShouldBeHpZero() throws IncompleteArguments {
         int currentHitPoints = 80;
         int attackDamage = 100;
         int afterHp = 0;

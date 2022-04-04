@@ -3,18 +3,16 @@ package org.fundacionjala.at15.pokemon.io;
 import static org.fundacionjala.at15.pokemon.io.Reader.*;
 import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
 import static org.junit.Assert.assertEquals;
-
 import java.io.FileWriter;
 import java.io.IOException;
-
 import com.google.gson.Gson;
-
 import org.fundacionjala.at15.pokemon.*;
+import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 import org.junit.Test;
 
 public class ReaderTest {
     @Test
-    public void itShouldReadAPokemonFile() {
+    public void itShouldReadAPokemonFile() throws IncompleteArguments {
         Pokemon pokemon = new Pokemon(100, "Charizard");
         Writer.writeToJson(pokemon);
         readJson(pokemon.getId());
@@ -24,7 +22,7 @@ public class ReaderTest {
     }
 
     @Test
-    public void itShouldReadATrainerFile() {
+    public void itShouldReadATrainerFile() throws IncompleteArguments {
         final int hitPoints = 100;
         Pokemon pokemon = new Pokemon(hitPoints, "Pikachu");
         Trainer trainer = new Trainer(pokemon, "Ash");
@@ -36,8 +34,8 @@ public class ReaderTest {
         assertEquals(expected, getResult());
     }
 
-   @Test
-    public void itShouldReadABattle() {
+    @Test
+    public void itShouldReadABattle() throws IncompleteArguments {
         final int hitPoints = 100;
         Pokemon pokemon = new Pokemon(hitPoints, "Pikachu");
         Trainer trainer = new Trainer(pokemon, "Ash");
@@ -53,7 +51,7 @@ public class ReaderTest {
     }
 
     @Test
-    public void itShouldReadATown() {
+    public void itShouldReadATown() throws IncompleteArguments {
         Town town = new Town();
         Writer.writeToJson(town);
         readJson(town.getId());
@@ -63,7 +61,7 @@ public class ReaderTest {
     }
 
     @Test
-    public void itShouldReturnAnfEntityAndReadAFileAsString() throws IOException {
+    public void itShouldReturnAnfEntityAndReadAFileAsString() throws IOException, IncompleteArguments {
         Pokemon pokemon = new Pokemon(100, "Charizard");
         String jsonString = new Gson().toJson(pokemon);
         String fileName = pokemon.getId();

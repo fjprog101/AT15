@@ -2,7 +2,6 @@ package org.fundacionjala.at15.pokemon.io;
 
 import java.io.File;
 import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
-
 import java.util.ArrayList;
 
 public class Query {

@@ -3,18 +3,19 @@ package org.fundacionjala.at15.pokemon;
 import static org.junit.Assert.assertNotSame;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
+import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 import org.junit.Test;
 
 public class IdentifierTest {
     @Test
-    public void itShouldBeDifferentIdForTheDifferentPokemon() {
+    public void itShouldBeDifferentIdForTheDifferentPokemon() throws IncompleteArguments {
         Pokemon pokemon = new Pokemon(1000, "Pikachu");
         Pokemon pokemon1 = new Pokemon(1000, "Pikachu");
         assertNotSame(Identifier.generateId(pokemon), Identifier.generateId(pokemon1));
     }
 
     @Test
-    public void itShouldBeDifferentIdForTheDifferentTrainer() {
+    public void itShouldBeDifferentIdForTheDifferentTrainer() throws IncompleteArguments {
         Pokemon pokemon = new Pokemon(1000, "Pikachu");
         Pokemon pokemon1 = new Pokemon(1000, "Pikachu");
         Trainer trainer = new Trainer(pokemon, "Ash");
@@ -23,7 +24,7 @@ public class IdentifierTest {
     }
 
     @Test
-    public void itShouldBeDifferentIdForTheDifferentBattle() {
+    public void itShouldBeDifferentIdForTheDifferentBattle() throws IncompleteArguments {
         Pokemon pokemon1 = new Pokemon(1000, "Pikachu");
         Pokemon pokemon2 = new Pokemon(1000, "Snorlax");
         Trainer trainer1 = new Trainer(pokemon1, "Ash");
@@ -39,7 +40,7 @@ public class IdentifierTest {
     }
 
     @Test
-    public void itShouldBeDifferentIdForTheDifferentTown() {
+    public void itShouldBeDifferentIdForTheDifferentTown() throws IncompleteArguments {
         Town town1 = new Town();
         Town town2 = new Town();
 

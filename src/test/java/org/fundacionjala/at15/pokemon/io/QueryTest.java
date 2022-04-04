@@ -3,18 +3,18 @@ package org.fundacionjala.at15.pokemon.io;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
-
 import com.google.gson.Gson;
-
 import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
 import static org.fundacionjala.at15.pokemon.io.Query.*;
 import org.fundacionjala.at15.pokemon.*;
+import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
+
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class QueryTest {
     @Test
-    public void getFilesTest() {
+    public void getFilesTest() throws IncompleteArguments {
         Pokemon pokemon = new Pokemon(70, "TestingBulbasaur");
         String jsonString = new Gson().toJson(pokemon);
         String fileName = pokemon.getId();
@@ -27,7 +27,6 @@ public class QueryTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
         ArrayList<String> list = getMatches(EntityType.POKEMON, pokemon.getPokemonName());
         assertEquals(pokemon.getId(), list.get(0));

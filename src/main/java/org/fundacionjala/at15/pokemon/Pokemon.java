@@ -5,19 +5,26 @@ import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import java.util.ArrayList;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
+import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 
 public class Pokemon extends Entity {
     private HitPoints hitPoints;
     private ArrayList<Move> movementList;
     private String pokemonName;
 
-    public Pokemon(int newMaxHP, String pokemonName) {
+    public Pokemon(int newMaxHP, String pokemonName) throws IncompleteArguments {
         this.id = Identifier.generateId(this);
         this.type = POKEMON;
+        if (newMaxHP == 0) {
+            throw new IncompleteArguments();
+        }
         hitPoints = new HitPoints(newMaxHP);
+        if (pokemonName == null) {
+            throw new IncompleteArguments();
+        }
         this.pokemonName = pokemonName;
         Move tackle = new Move();
-        movementList =  new ArrayList<Move>();
+        movementList = new ArrayList<Move>();
         this.movementList.add(tackle);
     }
 

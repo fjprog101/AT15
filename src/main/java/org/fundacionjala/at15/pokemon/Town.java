@@ -3,6 +3,8 @@ package org.fundacionjala.at15.pokemon;
 import java.util.ArrayList;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
+import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
+
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
 public class Town extends Entity {
@@ -12,7 +14,7 @@ public class Town extends Entity {
     private Center center;
     private Gym gym;
 
-    public Town() {
+    public Town() throws IncompleteArguments {
         this.type = TOWN;
         this.id = Identifier.generateId(this);
         wildPokemons = new ArrayList<Pokemon>();

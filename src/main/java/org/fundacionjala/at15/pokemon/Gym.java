@@ -3,6 +3,8 @@ package org.fundacionjala.at15.pokemon;
 import static org.fundacionjala.at15.pokemon.constants.Town.*;
 import java.util.*;
 
+import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
+
 public class Gym {
     private Pokemon gymLeaderPokemon = new Pokemon(STANDAR_POKEMON_HP, "gymLeaderPokemon");
     private Trainer gymLeader = new Trainer(gymLeaderPokemon, "gymLeader");
@@ -13,7 +15,7 @@ public class Gym {
 
     private ArrayList<Trainer> trainers = new ArrayList<Trainer>();
 
-    public Gym() {
+    public Gym() throws IncompleteArguments {
         trainers.add(lowerRankingMember2);
         trainers.add(lowerRankingMember1);
         trainers.add(gymLeader);

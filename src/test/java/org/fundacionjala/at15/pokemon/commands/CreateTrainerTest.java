@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.fundacionjala.at15.pokemon.commands.create.CreateTrainer;
+import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Test;
 import picocli.CommandLine;
@@ -11,7 +12,7 @@ import picocli.CommandLine;
 public class CreateTrainerTest {
 
     @Test
-    public void commandShouldCreateATrainerJsonFile() {
+    public void commandShouldCreateATrainerJsonFile() throws IncompleteArguments {
         CreatePokemon pokemon = new CreatePokemon();
         new CommandLine(pokemon).parseArgs("-n", "squirtle", "-hp", "100");
         pokemon.call();
