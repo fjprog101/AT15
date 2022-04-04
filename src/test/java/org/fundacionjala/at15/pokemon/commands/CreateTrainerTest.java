@@ -2,9 +2,9 @@ package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assert.assertEquals;
 
+import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.fundacionjala.at15.pokemon.commands.create.CreateTrainer;
-import org.fundacionjala.at15.pokemon.commands.create.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Test;
 import picocli.CommandLine;

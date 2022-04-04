@@ -1,4 +1,4 @@
-package org.fundacionjala.at15.pokemon.commands.create;
+package org.fundacionjala.at15.pokemon.commands.Exeptions;
 
 public class IncompleteArguments extends Exception {
 
