@@ -1,7 +1,6 @@
 package org.fundacionjala.at15.pokemon.io;
 
 import java.io.File;
-//import com.google.gson.Gson;
 
 import org.fundacionjala.at15.pokemon.*;
 
