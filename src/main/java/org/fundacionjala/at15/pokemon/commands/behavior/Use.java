@@ -18,6 +18,10 @@ public class Use implements Callable<Integer> {
     @Option(names = {"-move"}, description = "Pokemon Movement", defaultValue = "tackle")
     private String moveAttack;
 
+    public void setMoveAttack(String newMoveAttack) {
+        this.moveAttack = newMoveAttack;
+    }
+
     @Override
     public Integer call() throws IncompleteArguments {
         if (moveAttack != null) {

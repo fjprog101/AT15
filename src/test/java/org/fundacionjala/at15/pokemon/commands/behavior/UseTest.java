@@ -10,6 +10,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import picocli.CommandLine;
 
+import static org.junit.Assert.fail;
+
 public class UseTest {
 
     @Test
@@ -30,5 +32,55 @@ public class UseTest {
         Pokemon expectedPokemon = (Pokemon) Reader.readJson(current.getPokemonOpponent());
 
         Assert.assertEquals(60, expectedPokemon.getHitPoints().getCurrentHitPoints());
+    }
+
+    @Test
+    public void itShouldUseThrowsAnExceptionNullMoveAttack() throws IncompleteArguments {
+        try {
+            CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+            CreatePokemon params1 = new CreatePokemon();
+            new CommandLine(params1).parseArgs("-n", "pikachu", "-hp", "300");
+            params1.call();
+            current.setPokemon(params1.getIdPokemonCreated());
+            CreatePokemon params = new CreatePokemon();
+            new CommandLine(params).parseArgs("-n", "squirtle", "-hp", "100");
+            params.call();
+            current.setPokemonOpponent(params.getIdPokemonCreated());
+            current.write(new JsonWriter());
+            Use params2 = new Use();
+            params2.setMoveAttack(null);
+            params2.call();
+
+            fail();
+            } catch (IncompleteArguments ex) {
+
+            Assert.assertEquals("Error. Incomplete arguments for the Use command. Required arguments: -move.",ex.getMessage());
+        }
+    }
+
+    @Test
+    public void itShouldUseThrowsAnExceptionNullMove() throws IncompleteArguments {
+        try {
+            CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+            CreatePokemon params1 = new CreatePokemon();
+            new CommandLine(params1).parseArgs("-n", "pikachu", "-hp", "300");
+            params1.call();
+            current.setPokemon(params1.getIdPokemonCreated());
+            CreatePokemon params = new CreatePokemon();
+            new CommandLine(params).parseArgs("-n", "squirtle", "-hp", "100");
+            params.call();
+            current.setPokemonOpponent(params.getIdPokemonCreated());
+            current.write(new JsonWriter());
+            Use params2 = new Use();
+            new CommandLine(params2).parseArgs("-move", "tackle");
+            params2.call();
+
+
+            fail();
+        } catch (IncompleteArguments ex) {
+
+            Assert.assertEquals("Your current Pokemon does not known to use: tackle\n" +
+                    "Please, use only learned attacks by your Pokemon.",ex.getMessage());
+        }
     }
 }
