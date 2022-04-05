@@ -3,6 +3,7 @@ package org.fundacionjala.at15.pokemon.commands.create;
 import org.fundacionjala.at15.pokemon.io.*;
 import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.TrainerBattle;
+import org.fundacionjala.at15.pokemon.Exceptions.BattleCommandException;
 
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
@@ -19,7 +20,11 @@ public class CreateTrainerBattle implements Callable<Integer> {
     private String trainerID2;
 
     @Override
-    public Integer call() {
+    public Integer call() throws BattleCommandException {
+
+        if (trainerID1 == null || trainerID2 == null) {
+            throw new BattleCommandException("Error. Incomplete arguments to create a battle command. Required arguments: -tID1 -tID2.");
+        }
 
         Trainer trainer1 = (Trainer) Reader.readJson(trainerID1);
         Trainer trainer2 = (Trainer) Reader.readJson(trainerID2);
