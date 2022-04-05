@@ -1,9 +1,7 @@
 package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assert.assertEquals;
-
 import java.io.File;
-
 import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Town;

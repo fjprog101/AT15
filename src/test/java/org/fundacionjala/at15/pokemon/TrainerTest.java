@@ -1,7 +1,6 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
 public class TrainerTest {
@@ -36,7 +35,7 @@ public class TrainerTest {
         Pokeball pokeball1 = new Pokeball();
         trainer.getPokeballs().add(pokeball1);
         trainer.usePokeball(wildPokemon);
-        assertEquals(2,trainer.getPokemonTeam().getPokemonsOfTeam().size());
+        assertEquals(2, trainer.getPokemonTeam().getPokemonsOfTeam().size());
     }
 
     @Test

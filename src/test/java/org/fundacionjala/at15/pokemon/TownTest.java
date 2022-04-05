@@ -1,7 +1,6 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
 public class TownTest {
@@ -40,6 +39,7 @@ public class TownTest {
 
         assertEquals(fourTwenty.getClass(), paleta.getStore().getClass());
     }
+
     @Test
     public void itShouldAddACenterToTown() {
         Town paleta = new Town();
@@ -48,6 +48,7 @@ public class TownTest {
 
         assertEquals(pokemonCenter.getClass(), paleta.getCenter().getClass());
     }
+
     @Test
     public void itShouldAddAGymTown() {
         Town paleta = new Town();

@@ -61,7 +61,8 @@ public class Reader {
 
         Boolean battleOver = trainerBattle.getBattleOver();
         System.out.println("isBattleOver: " + battleOver);
-        result = "id: " + identifier + " trainer1 name: " + name + " trainer2 name: " + name2 + " isBattleOver: " + battleOver;
+        result = "id: " + identifier + " trainer1 name: " + name + " trainer2 name: " + name2 + " isBattleOver: "
+                + battleOver;
     }
 
     public static void parseTownObject(Town town) {

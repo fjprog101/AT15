@@ -1,8 +1,9 @@
 package org.fundacionjala.at15.pokemon.io;
+
 import static org.fundacionjala.at15.pokemon.io.Writer.*;
 import static org.junit.Assert.assertTrue;
-
 import org.fundacionjala.at15.pokemon.Town;
+import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.junit.Test;
 import picocli.CommandLine;
@@ -17,7 +18,7 @@ public class FileEraserTest {
     }
 
     @Test
-    public void itShouldEraseAFileFromAnId() {
+    public void itShouldEraseAFileFromAnId() throws IncompleteArguments {
         CreatePokemon pokemon = new CreatePokemon();
         new CommandLine(pokemon).parseArgs("-n", "squirtle", "-hp", "100");
         pokemon.call();

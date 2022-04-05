@@ -1,9 +1,7 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
-
 import java.util.ArrayList;
-
 import org.fundacionjala.at15.pokemon.ID.Identifier;
 
 public class Pokemon extends Entity {
@@ -17,7 +15,7 @@ public class Pokemon extends Entity {
         hitPoints = new HitPoints(newMaxHP);
         this.pokemonName = pokemonName;
         Move tackle = new Move();
-        movementList =  new ArrayList<Move>();
+        movementList = new ArrayList<Move>();
         this.movementList.add(tackle);
     }
 
