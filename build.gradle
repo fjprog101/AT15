@@ -8,6 +8,8 @@ repositories {
 
 dependencies {
     testImplementation 'junit:junit:4.12'
+    implementation 'info.picocli:picocli:4.6.3'
+    implementation 'com.google.code.gson:gson:2.9.0'
 }
 
 test {
@@ -17,10 +19,19 @@ test {
     }
 }
 
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['org/fundacionjala/at15/katas/**'])
+        }))
+    }
+}
+
 checkstyle {
     toolVersion '8.34'
     configFile file('config/checkstyle/checkstyle.xml')
     checkstyleMain.source = "src/main/"
+    checkstyleMain.excludes = ["**/katas/**"]
     checkstyleMain.excludes = ["**/src/test/**"]
 }
 
@@ -32,12 +43,11 @@ checkstyleTest {
     source = 'src/main/java'
 }
 
-check.dependsOn jacocoTestReport
-
 test.finalizedBy("checkstyleMain")
 test.finalizedBy("jacocoTestReport")
 
-task runPokerHandsMauricio (dependsOn: 'classes', type: JavaExec) {
-    main = 'org.fundacionjala.at15.katas.pokerhands.mauricio.Main'
+task runPokemonCli (dependsOn: 'classes', type: JavaExec) {
+    main = 'org.fundacionjala.at15.pokemon.commands.PokemonCLI'
     classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
 }
