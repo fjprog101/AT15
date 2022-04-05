@@ -15,7 +15,7 @@ import static org.fundacionjala.at15.pokemon.io.Writer.writeToJson;
 public class Catch implements Callable<Integer> {
 
     @Override
-    public Integer call() {
+    public Integer call() throws TrainerItemsException {
 
         CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
         assert current != null;
@@ -25,12 +25,7 @@ public class Catch implements Callable<Integer> {
         assert wildPokemon != null;
         if (wildPokemon.getHitPoints().is20Percent()) {
             assert trainer != null;
-            try {
-                trainer.usePokeball(wildPokemon);
-            } catch (TrainerItemsException e) {
-                System.out.println("ERROR: ");
-                e.printStackTrace(System.out);
-            }
+            trainer.usePokeball(wildPokemon);
             current.setPokemonOpponent("");
             writeToJson(current);
             System.out.println("Pokemon catch!");
