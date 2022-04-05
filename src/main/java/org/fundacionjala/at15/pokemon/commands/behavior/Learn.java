@@ -5,7 +5,7 @@ import java.util.concurrent.Callable;
 import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Move;
 import org.fundacionjala.at15.pokemon.Pokemon;
-import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
+import org.fundacionjala.at15.pokemon.commands.exceptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.io.Reader;
 
 import picocli.CommandLine.Command;

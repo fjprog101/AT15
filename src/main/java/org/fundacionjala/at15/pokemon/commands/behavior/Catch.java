@@ -5,7 +5,7 @@ import java.util.concurrent.Callable;
 import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
-import org.fundacionjala.at15.pokemon.commands.Exeptions.TrainerItemsException;
+import org.fundacionjala.at15.pokemon.commands.exceptions.TrainerItemsException;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import picocli.CommandLine.Command;
 

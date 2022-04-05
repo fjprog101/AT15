@@ -1,7 +1,7 @@
 package org.fundacionjala.at15.pokemon.commands.create;
 
 import org.fundacionjala.at15.pokemon.Pokemon;
-import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
+import org.fundacionjala.at15.pokemon.commands.exceptions.IncompleteArguments;
 
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
@@ -11,7 +11,6 @@ import java.util.concurrent.Callable;
 public class CreatePokemon implements Callable<Integer> {
     private String idPokemonCreated;
     private Pokemon newPokemon;
-    private String warningMessage = "";
 
     @Option(names = { "-name", "-n" }, description = "pokemon name")
     private String pokemonName;
@@ -39,9 +38,5 @@ public class CreatePokemon implements Callable<Integer> {
 
     public String getIdPokemonCreated() {
         return idPokemonCreated;
-    }
-
-    public String getWarningMessage() {
-        return warningMessage;
     }
 }

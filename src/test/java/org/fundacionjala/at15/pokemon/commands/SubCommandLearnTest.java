@@ -3,10 +3,10 @@ package org.fundacionjala.at15.pokemon.commands;
 import static org.junit.Assert.assertEquals;
 
 import org.fundacionjala.at15.pokemon.Pokemon;
-import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.behavior.Learn;
 import org.fundacionjala.at15.pokemon.commands.behavior.Select;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
+import org.fundacionjala.at15.pokemon.commands.exceptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Test;
 import org.fundacionjala.at15.pokemon.commands.create.CreateCurrentEntities;

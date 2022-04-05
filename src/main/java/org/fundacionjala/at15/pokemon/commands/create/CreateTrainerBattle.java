@@ -3,7 +3,7 @@ package org.fundacionjala.at15.pokemon.commands.create;
 import org.fundacionjala.at15.pokemon.io.*;
 import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.TrainerBattle;
-import org.fundacionjala.at15.pokemon.commands.Exeptions.BattleCommandException;
+import org.fundacionjala.at15.pokemon.commands.exceptions.BattleCommandException;
 
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
@@ -23,8 +23,9 @@ public class CreateTrainerBattle implements Callable<Integer> {
     public Integer call() throws BattleCommandException {
 
         if (trainerID1 == null || trainerID2 == null) {
-            throw new BattleCommandException("Error. Incomplete arguments to create a battle command. Required arguments: -tID1 -tID2.",
-            null, true, false);
+            throw new BattleCommandException(
+                    "Error. Incomplete arguments to create a battle command. Required arguments: -tID1 -tID2.",
+                    null, true, false);
         }
 
         Trainer trainer1 = (Trainer) Reader.read(trainerID1);
@@ -35,9 +36,9 @@ public class CreateTrainerBattle implements Callable<Integer> {
         idCreateTrainerBattle = trainerBattle.getId();
         System.out.println(
                 "Battle Created: \n"
-                + trainer1.getId() + " trainer added to battle" + "\n"
-                + trainer2.getId() + " trainer added to battle" + "\n"
-                + "ID: " + idCreateTrainerBattle);
+                        + trainer1.getId() + " trainer added to battle" + "\n"
+                        + trainer2.getId() + " trainer added to battle" + "\n"
+                        + "ID: " + idCreateTrainerBattle);
         return 0;
     }
 

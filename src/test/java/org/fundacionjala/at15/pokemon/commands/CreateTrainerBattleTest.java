@@ -2,10 +2,10 @@ package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assert.assertEquals;
 
-import org.fundacionjala.at15.pokemon.commands.Exeptions.BattleCommandException;
-import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.fundacionjala.at15.pokemon.commands.create.CreateTrainerBattle;
+import org.fundacionjala.at15.pokemon.commands.exceptions.BattleCommandException;
+import org.fundacionjala.at15.pokemon.commands.exceptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreateTrainer;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Test;
@@ -13,7 +13,8 @@ import picocli.CommandLine;
 
 public class CreateTrainerBattleTest {
     @Test
-    public void commandShouldCreateATrainerBetweenTrainerBattleJsonFile() throws IncompleteArguments, BattleCommandException {
+    public void commandShouldCreateATrainerBetweenTrainerBattleJsonFile()
+            throws IncompleteArguments, BattleCommandException {
         CreatePokemon pokemon1 = new CreatePokemon();
         new CommandLine(pokemon1).parseArgs("-n", "pikachu", "-hp", "200");
         pokemon1.call();

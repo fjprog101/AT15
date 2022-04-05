@@ -1,7 +1,7 @@
 package org.fundacionjala.at15.pokemon;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
-import org.fundacionjala.at15.pokemon.commands.Exeptions.TrainerItemsException;
+import org.fundacionjala.at15.pokemon.commands.exceptions.TrainerItemsException;
 
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 

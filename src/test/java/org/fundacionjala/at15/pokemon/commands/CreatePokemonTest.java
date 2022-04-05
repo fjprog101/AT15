@@ -2,8 +2,8 @@ package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assert.assertEquals;
 
-import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
+import org.fundacionjala.at15.pokemon.commands.exceptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Test;
 
@@ -18,5 +18,12 @@ public class CreatePokemonTest {
         Reader.read(params.getIdPokemonCreated());
         String expected = "id: " + params.getIdPokemonCreated() + " name: squirtle hitpoints: 100/100";
         assertEquals(expected, Reader.getResult());
+    }
+
+    @Test(expected = IncompleteArguments.class)
+    public void commandShouldReturnException() throws IncompleteArguments {
+        CreatePokemon pokemon = new CreatePokemon();
+        new CommandLine(pokemon).parseArgs();
+        pokemon.call();
     }
 }

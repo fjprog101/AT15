@@ -3,7 +3,7 @@ package org.fundacionjala.at15.pokemon.commands.create;
 import org.fundacionjala.at15.pokemon.io.*;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
-import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
+import org.fundacionjala.at15.pokemon.commands.exceptions.IncompleteArguments;
 
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
@@ -22,8 +22,9 @@ public class CreateTrainer implements Callable<Integer> {
     @Override
     public Integer call() throws IncompleteArguments {
         if (trainerName == null || pokemonId == null) {
-            throw new IncompleteArguments("Error. Incomplete arguments to create a trainer command. Required arguments: -n -pID.",
-            null, true, false);
+            throw new IncompleteArguments(
+                    "Error. Incomplete arguments to create a trainer command. Required arguments: -n -pID.",
+                    null, true, false);
         }
         Pokemon poke = (Pokemon) Reader.read(pokemonId);
 
@@ -32,9 +33,9 @@ public class CreateTrainer implements Callable<Integer> {
         idTrainerCreated = trainer.getId();
         System.out.println(
                 "Trainer Created: \n"
-                + "Name: " + trainer.getName() +  "\n"
-                + poke.getId() + " added to pokemon team" + "\n"
-                + "ID: " + idTrainerCreated);
+                        + "Name: " + trainer.getName() + "\n"
+                        + poke.getId() + " added to pokemon team" + "\n"
+                        + "ID: " + idTrainerCreated);
         return 0;
     }
 
