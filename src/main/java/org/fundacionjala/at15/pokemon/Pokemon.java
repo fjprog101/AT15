@@ -2,12 +2,21 @@ package org.fundacionjala.at15.pokemon;
 
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import java.util.ArrayList;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import org.fundacionjala.at15.pokemon.ID.Identifier;
 
+@XmlRootElement
 public class Pokemon extends Entity {
     private HitPoints hitPoints;
     private ArrayList<Move> movementList = new ArrayList<Move>();
     private String pokemonName;
+
+    public Pokemon() {
+        this.id = Identifier.generateId(this);
+    }
 
     public Pokemon(int newMaxHP, String pokemonName) {
         this.id = Identifier.generateId(this);
@@ -18,6 +27,7 @@ public class Pokemon extends Entity {
         this.movementList.add(tackle);
     }
 
+    @XmlElement
     public ArrayList<Move> getMovementList() {
         return movementList;
     }
@@ -42,10 +52,12 @@ public class Pokemon extends Entity {
         }
     }
 
+    @XmlElement
     public HitPoints getHitPoints() {
         return this.hitPoints;
     }
 
+    @XmlElement
     public String getPokemonName() {
         return this.pokemonName;
     }

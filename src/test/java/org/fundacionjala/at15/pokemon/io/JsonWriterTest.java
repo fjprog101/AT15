@@ -9,7 +9,7 @@ import java.io.*;
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import org.junit.Test;
 
-public class WriterTest {
+public class JsonWriterTest {
     @Test
     public void itShouldWriteAJsonFile() {
         Pokemon pokemon = new Pokemon(200, "Mewto");
