@@ -2,6 +2,7 @@ package org.fundacionjala.at15.pokemon;
 
 import org.fundacionjala.at15.pokemon.ID.Prefixer;
 import org.fundacionjala.at15.pokemon.io.EntityType;
+import org.fundacionjala.at15.pokemon.io.Writer;
 
 public abstract class Entity implements Prefixer {
     protected String id;
@@ -13,5 +14,9 @@ public abstract class Entity implements Prefixer {
 
     public EntityType getType() {
         return this.type;
+    }
+
+    public void write(Writer writer) {
+        writer.writeToFile(this);
     }
 }

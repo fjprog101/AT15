@@ -72,4 +72,14 @@ public class PathHandler {
         }
         return line;
     }
+
+    public static void checkFolder(File path) {
+        if (path.exists()) {
+            System.out.println("Data saved!");
+        } else if (path.mkdirs()) {
+            System.out.println(path + " was created");
+        } else {
+            System.out.println(path + " was not created");
+        }
+    }
 }

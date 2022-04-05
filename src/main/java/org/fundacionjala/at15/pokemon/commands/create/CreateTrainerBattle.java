@@ -31,7 +31,7 @@ public class CreateTrainerBattle implements Callable<Integer> {
         Trainer trainer2 = (Trainer) Reader.readJson(trainerID2);
         TrainerBattle trainerBattle = new TrainerBattle(trainer1, trainer2);
 
-        Writer.writeToJson(trainerBattle);
+        trainerBattle.write(new JsonWriter());
         idCreateTrainerBattle = trainerBattle.getId();
         System.out.println(
                 "Battle Created: \n"

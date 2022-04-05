@@ -1,6 +1,7 @@
 package org.fundacionjala.at15.pokemon.io;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,7 +14,7 @@ public class PathHandlerTest {
     @Test
     public void getFileTest() {
         Pokemon pokemon = new Pokemon(100, "Test");
-        Writer.writeToJson(pokemon);
+        pokemon.write(new JsonWriter());
         String result = getTypeFile(pokemon.getId());
         FileEraser.eraseFile(pokemon);
         assertEquals("json", result);
@@ -32,5 +33,13 @@ public class PathHandlerTest {
         File file = getPath(filename);
         String fileRead = jSonStringReader(file);
         throw new FileNotFoundException();
+    }
+
+    @Test
+    public void itShouldCreateANewFolder() {
+        File file = new File(EntityType.BATTLE.getPath() + "/test");
+        checkFolder(file);
+
+        assertTrue(file.delete());
     }
 }

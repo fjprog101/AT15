@@ -4,8 +4,8 @@ import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
+import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import org.fundacionjala.at15.pokemon.io.Reader;
-import org.fundacionjala.at15.pokemon.io.Writer;
 import org.junit.Assert;
 import org.junit.Test;
 import picocli.CommandLine;
@@ -23,11 +23,10 @@ public class UseTest {
         new CommandLine(params).parseArgs("-n", "squirtle", "-hp", "100");
         params.call();
         current.setPokemonOpponent(params.getIdPokemonCreated());
-        Writer.writeToJson(current);
+        current.write(new JsonWriter());
         Use params2 = new Use();
         new CommandLine(params2).parseArgs("-move", "basicAttack");
         params2.call();
-        Writer.writeToJson(current);
         Pokemon expectedPokemon = (Pokemon) Reader.readJson(current.getPokemonOpponent());
 
         Assert.assertEquals(60, expectedPokemon.getHitPoints().getCurrentHitPoints());

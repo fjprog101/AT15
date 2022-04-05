@@ -4,8 +4,8 @@ package org.fundacionjala.at15.pokemon.commands.behavior;
 import java.util.concurrent.Callable;
 
 import org.fundacionjala.at15.pokemon.CurrentEntities;
+import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import org.fundacionjala.at15.pokemon.io.Reader;
-import static org.fundacionjala.at15.pokemon.io.Writer.*;
 
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
@@ -21,7 +21,7 @@ public class Fight implements Callable<Integer> {
             CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
             assert current != null;
             current.setPokemonOpponent(entityID);
-            writeToJson(current);
+            current.write(new JsonWriter());
         } else {
             System.out.println("A Pokemon Wild ID is needed");
         }
