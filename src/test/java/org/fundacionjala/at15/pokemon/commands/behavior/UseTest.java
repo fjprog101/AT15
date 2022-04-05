@@ -15,7 +15,34 @@ import static org.junit.Assert.fail;
 public class UseTest {
 
     @Test
-    public void itShouldUseMovement() throws IncompleteArguments {
+    public void itShouldUseMovement() {
+        try {
+            CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
+            CreatePokemon params1 = new CreatePokemon();
+            new CommandLine(params1).parseArgs("-n", "pikachu", "-hp", "300");
+            params1.call();
+            current.setPokemon(params1.getIdPokemonCreated());
+            CreatePokemon params = new CreatePokemon();
+            new CommandLine(params).parseArgs("-n", "squirtle", "-hp", "100");
+            params.call();
+            current.setPokemonOpponent(params.getIdPokemonCreated());
+            current.write();
+            Use params2 = new Use();
+            new CommandLine(params2).parseArgs("-move", "basicAttack");
+            params2.call();
+            Pokemon expectedPokemon = (Pokemon) Reader.read(current.getPokemonOpponent());
+
+            Assert.assertEquals(60, expectedPokemon.getHitPoints().getCurrentHitPoints());
+
+            FileEraser.eraseFile(params.getIdPokemonCreated());
+            FileEraser.eraseFile(params1.getIdPokemonCreated());
+        } catch (IncompleteArguments e) {
+
+        }
+    }
+
+    @Test(expected = IncompleteArguments.class)
+    public void itShouldUseThrowsAnExceptionNullMoveAttack() throws IncompleteArguments {
         CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
         CreatePokemon params1 = new CreatePokemon();
         new CommandLine(params1).parseArgs("-n", "pikachu", "-hp", "300");
@@ -27,69 +54,31 @@ public class UseTest {
         current.setPokemonOpponent(params.getIdPokemonCreated());
         current.write();
         Use params2 = new Use();
-        new CommandLine(params2).parseArgs("-move", "basicAttack");
+        params2.setMoveAttack(null);
         params2.call();
-        Pokemon expectedPokemon = (Pokemon) Reader.read(current.getPokemonOpponent());
-
-        Assert.assertEquals(60, expectedPokemon.getHitPoints().getCurrentHitPoints());
 
         FileEraser.eraseFile(params.getIdPokemonCreated());
         FileEraser.eraseFile(params1.getIdPokemonCreated());
+
     }
 
-    @Test
-    public void itShouldUseThrowsAnExceptionNullMoveAttack() throws IncompleteArguments {
-        try {
-            CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
-            CreatePokemon params1 = new CreatePokemon();
-            new CommandLine(params1).parseArgs("-n", "pikachu", "-hp", "300");
-            params1.call();
-            current.setPokemon(params1.getIdPokemonCreated());
-            CreatePokemon params = new CreatePokemon();
-            new CommandLine(params).parseArgs("-n", "squirtle", "-hp", "100");
-            params.call();
-            current.setPokemonOpponent(params.getIdPokemonCreated());
-            current.write();
-            Use params2 = new Use();
-            params2.setMoveAttack(null);
-            params2.call();
-
-            fail();
-            FileEraser.eraseFile(params.getIdPokemonCreated());
-            FileEraser.eraseFile(params1.getIdPokemonCreated());
-
-        } catch (IncompleteArguments ex) {
-
-            Assert.assertEquals("Error. Incomplete arguments for the Use command. Required arguments: -move.",
-                    ex.getMessage());
-        }
-    }
-
-    @Test
+    @Test(expected = IncompleteArguments.class)
     public void itShouldUseThrowsAnExceptionNullMove() throws IncompleteArguments {
-        try {
-            CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
-            CreatePokemon params1 = new CreatePokemon();
-            new CommandLine(params1).parseArgs("-n", "pikachu", "-hp", "300");
-            params1.call();
-            current.setPokemon(params1.getIdPokemonCreated());
-            CreatePokemon params = new CreatePokemon();
-            new CommandLine(params).parseArgs("-n", "squirtle", "-hp", "100");
-            params.call();
-            current.setPokemonOpponent(params.getIdPokemonCreated());
-            current.write();
-            Use params2 = new Use();
-            new CommandLine(params2).parseArgs("-move", "tackle");
-            params2.call();
+        CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
+        CreatePokemon params1 = new CreatePokemon();
+        new CommandLine(params1).parseArgs("-n", "pikachu", "-hp", "300");
+        params1.call();
+        current.setPokemon(params1.getIdPokemonCreated());
+        CreatePokemon params = new CreatePokemon();
+        new CommandLine(params).parseArgs("-n", "squirtle", "-hp", "100");
+        params.call();
+        current.setPokemonOpponent(params.getIdPokemonCreated());
+        current.write();
+        Use params2 = new Use();
+        new CommandLine(params2).parseArgs("-move", "tackle");
+        params2.call();
+        FileEraser.eraseFile(params.getIdPokemonCreated());
+        FileEraser.eraseFile(params1.getIdPokemonCreated());
 
-            fail();
-            FileEraser.eraseFile(params.getIdPokemonCreated());
-            FileEraser.eraseFile(params1.getIdPokemonCreated());
-
-        } catch (IncompleteArguments ex) {
-
-            Assert.assertEquals("Your current Pokemon does not know the move: tackle\n" +
-                    "Please, use only learned moves known by your Pokemon.", ex.getMessage());
-        }
     }
 }
