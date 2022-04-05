@@ -23,5 +23,10 @@ public class CreateTrainerTest {
         String expected = "id: " + trainer.getIdTrainerCreated() + " name: AshKetchup badges: 0 money: 100";
         assertEquals(expected, Reader.getResult());
     }
-
+    @Test(expected = IncompleteArguments.class)
+    public void commandShouldVerifyCreateTrainerCommandException() throws IncompleteArguments {
+        CreateTrainer trainer = new CreateTrainer();
+        new CommandLine(trainer).parseArgs();
+        trainer.call();
+    }
 }
