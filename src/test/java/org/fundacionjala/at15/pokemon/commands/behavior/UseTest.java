@@ -2,8 +2,8 @@ package org.fundacionjala.at15.pokemon.commands.behavior;
 
 import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
-import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
+import org.fundacionjala.at15.pokemon.commands.exceptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.io.FileEraser;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Assert;
@@ -58,9 +58,10 @@ public class UseTest {
             FileEraser.eraseFile(params.getIdPokemonCreated());
             FileEraser.eraseFile(params1.getIdPokemonCreated());
 
-            } catch (IncompleteArguments ex) {
+        } catch (IncompleteArguments ex) {
 
-            Assert.assertEquals("Error. Incomplete arguments for the Use command. Required arguments: -move.",ex.getMessage());
+            Assert.assertEquals("Error. Incomplete arguments for the Use command. Required arguments: -move.",
+                    ex.getMessage());
         }
     }
 
@@ -88,7 +89,7 @@ public class UseTest {
         } catch (IncompleteArguments ex) {
 
             Assert.assertEquals("Your current Pokemon does not know the move: tackle\n" +
-                    "Please, use only learned moves known by your Pokemon.",ex.getMessage());
+                    "Please, use only learned moves known by your Pokemon.", ex.getMessage());
         }
     }
 }

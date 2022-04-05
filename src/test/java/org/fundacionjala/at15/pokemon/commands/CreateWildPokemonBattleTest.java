@@ -2,10 +2,10 @@ package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assume.assumeTrue;
 
-import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.fundacionjala.at15.pokemon.commands.create.CreateTrainer;
 import org.fundacionjala.at15.pokemon.commands.create.CreateWildPokemonBattle;
+import org.fundacionjala.at15.pokemon.commands.exceptions.IncompleteArguments;
 import org.junit.Test;
 import picocli.CommandLine;
 

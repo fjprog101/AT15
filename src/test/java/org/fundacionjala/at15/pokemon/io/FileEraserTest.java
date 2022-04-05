@@ -2,8 +2,8 @@ package org.fundacionjala.at15.pokemon.io;
 
 import static org.junit.Assert.assertTrue;
 import org.fundacionjala.at15.pokemon.Town;
-import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
+import org.fundacionjala.at15.pokemon.commands.exceptions.IncompleteArguments;
 import org.junit.Test;
 import picocli.CommandLine;
 
