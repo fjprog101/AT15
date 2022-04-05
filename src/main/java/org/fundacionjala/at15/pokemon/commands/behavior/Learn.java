@@ -5,6 +5,7 @@ import java.util.concurrent.Callable;
 import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Move;
 import org.fundacionjala.at15.pokemon.Pokemon;
+import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.fundacionjala.at15.pokemon.io.Writer;
 
@@ -21,9 +22,10 @@ public class Learn implements Callable<Integer> {
     private int potency;
 
     private String id;
+    private final int maxSizeOfMovemments = 4;
 
     @Override
-    public Integer call() {
+    public Integer call() throws IncompleteArguments {
 
         if (movement != "" && potency > 0) {
             CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
@@ -32,10 +34,15 @@ public class Learn implements Callable<Integer> {
             Move move = new Move();
             move.setMovement(movement);
             move.setPotency(potency);
-            pokemon.setMoveToList(move);
-            Writer.writeToJson(pokemon);
+            if (pokemon.getMovementList().size() == maxSizeOfMovemments) {
+                throw new IncompleteArguments("Error, A pokemon cannot learn more than four movements", null, true,
+                        false);
+            } else {
+                pokemon.setMoveToList(move);
+                Writer.writeToJson(pokemon);
+                System.out.println("Your Pokemon learn a new Attack movement");
+            }
 
-            System.out.println("Your Pokemon learn a new Attack movement");
         }
         return 0;
     }
