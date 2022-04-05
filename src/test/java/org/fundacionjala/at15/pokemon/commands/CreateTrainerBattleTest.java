@@ -40,14 +40,8 @@ public class CreateTrainerBattleTest {
 
     @Test(expected = BattleCommandException.class)
     public void commandShouldVerifyTheBattleCommandException() throws BattleCommandException {
-
-
         CreateTrainerBattle trainerBattleCLI = new CreateTrainerBattle();
         new CommandLine(trainerBattleCLI).parseArgs();
         trainerBattleCLI.call();
-
-        /*Reader.readJson(trainerBattleCLI.getIdCreateTrainerBattle());
-        String expected = "id: " + trainerBattleCLI.getIdCreateTrainerBattle() + " trainer1 name: Ash1 trainer2 name: Ash2 isBattleOver: false";
-        assertEquals(expected, Reader.getResult());*/
     }
 }
