@@ -51,7 +51,7 @@ public class ReaderTest {
 
     @Test
     public void itShouldReadATown() {
-        Town town = new Town();
+        Town town = new Town("Paleta");
         town.write();
         read(town.getId());
         String expected = "id: " + town.getId() + " town's gym leader name: gymLeader";
