@@ -18,6 +18,10 @@ public class Use implements Callable<Integer> {
     @Option(names = {"-move"}, description = "Pokemon Movement", defaultValue = "tackle")
     private String moveAttack;
 
+    public void setMoveAttack(String newMoveAttack) {
+        this.moveAttack = newMoveAttack;
+    }
+
     @Override
     public Integer call() throws IncompleteArguments {
         if (moveAttack != null) {
@@ -47,8 +51,8 @@ public class Use implements Callable<Integer> {
                         + " HP");
             } else {
                 throw new IncompleteArguments(
-                        "Your current Pokemon does not known to use: " + moveAttack + "\n"
-                                + "Please, use only learned attacks by your Pokemon.",
+                        "Your current Pokemon does not know the move: " + moveAttack + "\n"
+                                + "Please, use only learned moves known by your Pokemon.",
                         null, true, false);
             }
         } else {
