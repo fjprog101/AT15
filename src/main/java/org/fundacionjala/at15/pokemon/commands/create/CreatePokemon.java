@@ -24,7 +24,8 @@ public class CreatePokemon implements Callable<Integer> {
     public Integer call() throws IncompleteArguments {
         if ((hitPoints <= 0) || (pokemonName == null)) {
             throw new IncompleteArguments(
-                    "Error. Incomplete arguments for the create pokemon command. Required arguments: -name -hitpoints.");
+                    "Error. Incomplete arguments for the create pokemon command. Required arguments: -name -hitpoints.",
+                    null, true, false);
         }
         newPokemon = new Pokemon(hitPoints, pokemonName);
         this.idPokemonCreated = newPokemon.getId();

@@ -12,12 +12,8 @@ public class Pokemon extends Entity {
     public Pokemon(int newMaxHP, String pokemonName) {
         this.id = Identifier.generateId(this);
         this.type = POKEMON;
-        if (newMaxHP > 0) {
-            hitPoints = new HitPoints(newMaxHP);
-        }
-        if (pokemonName != null) {
-            this.pokemonName = pokemonName;
-        }
+        hitPoints = new HitPoints(newMaxHP);
+        this.pokemonName = pokemonName;
         Move tackle = new Move();
         movementList = new ArrayList<Move>();
         this.movementList.add(tackle);
