@@ -6,7 +6,9 @@ import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.DamageReceived;
 import org.fundacionjala.at15.pokemon.Move;
 import org.fundacionjala.at15.pokemon.Pokemon;
+import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.io.Reader;
+
 import static org.fundacionjala.at15.pokemon.io.Writer.*;
 
 import picocli.CommandLine.Command;
@@ -14,11 +16,11 @@ import picocli.CommandLine.Option;
 
 @Command(name = "use", description = "Use an attacking move")
 public class Use implements Callable<Integer> {
-    @Option(names = { "-move" }, description = "Pokemon Movement", defaultValue = "tackle")
+    @Option(names = {"-move"}, description = "Pokemon Movement", defaultValue = "tackle")
     private String moveAttack;
 
     @Override
-    public Integer call() {
+    public Integer call() throws IncompleteArguments {
         if (moveAttack != null) {
             CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
             assert current != null;
@@ -40,16 +42,20 @@ public class Use implements Callable<Integer> {
                 writeToJson(wildPokemon);
 
                 System.out.println("Wild " + wildPokemon.getPokemonName() + " has now: "
-                                    + wildPokemon.getHitPoints().getCurrentHitPoints()
-                                    + " HP" + "\n" + pokemon.getPokemonName()
-                                    + " has now: " + pokemon.getHitPoints().getCurrentHitPoints()
-                                    + " HP");
+                        + wildPokemon.getHitPoints().getCurrentHitPoints()
+                        + " HP" + "\n" + pokemon.getPokemonName()
+                        + " has now: " + pokemon.getHitPoints().getCurrentHitPoints()
+                        + " HP");
             } else {
-                System.out.println("Your current Pokemon does not known to use: " + moveAttack + "\n"
-                        + "Please, use only learned attacks by your Pokemon.");
+                throw new IncompleteArguments(
+                        "Your current Pokemon does not known to use: " + moveAttack + "\n"
+                                + "Please, use only learned attacks by your Pokemon.",
+                        null, true, false);
             }
         } else {
-            System.out.println("A Move Attack is needed.");
+            throw new IncompleteArguments(
+                    "Error. Incomplete arguments for the Use command. Required arguments: -move.",
+                    null, true, false);
         }
 
         return 0;
