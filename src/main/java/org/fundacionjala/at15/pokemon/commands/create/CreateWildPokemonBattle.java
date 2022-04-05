@@ -23,7 +23,7 @@ public class CreateWildPokemonBattle implements Callable<Integer> {
         Pokemon poke = (Pokemon) Reader.readJson(pokemonID);
         Trainer trainer = (Trainer) Reader.readJson(trainerID);
         WildPokemonBattle wildBattle = new WildPokemonBattle(trainer, poke);
-        Writer.writeToJson(wildBattle);
+        wildBattle.write(new JsonWriter());
         idCreateWildPokemonBattle = wildBattle.getId();
         System.out.println(
                 "Battle Created: \n"

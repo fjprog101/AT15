@@ -8,8 +8,9 @@ import org.fundacionjala.at15.pokemon.Town;
 import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.commands.behavior.Select;
 import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
+
+import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import org.fundacionjala.at15.pokemon.io.Reader;
-import org.fundacionjala.at15.pokemon.io.Writer;
 import org.junit.Test;
 import picocli.CommandLine;
 
@@ -17,8 +18,8 @@ public class SubCommandSelectTest {
     @Test
     public void itShouldSelectAPokemon() {
         Pokemon newPokemon = new Pokemon(200, "Pikachu");
-        Writer.writeToJson(new CurrentEntities());
-        Writer.writeToJson(newPokemon);
+        new CurrentEntities().write(new JsonWriter());
+        newPokemon.write(new JsonWriter());
 
         Select select = new Select();
         new CommandLine(select).parseArgs("-id", newPokemon.getId());
@@ -35,8 +36,8 @@ public class SubCommandSelectTest {
     public void itShouldSelectATrainer() {
         Pokemon newPokemon = new Pokemon(200, "Pikachu");
         Trainer newTrainer = new Trainer(newPokemon, "Ash");
-        Writer.writeToJson(new CurrentEntities());
-        Writer.writeToJson(newTrainer);
+        new CurrentEntities().write(new JsonWriter());
+        newTrainer.write(new JsonWriter());
 
         Select select = new Select();
         new CommandLine(select).parseArgs("-id", newTrainer.getId());
@@ -52,8 +53,8 @@ public class SubCommandSelectTest {
     @Test
     public void itShouldSelectATown() {
         Town town = new Town();
-        Writer.writeToJson(new CurrentEntities());
-        Writer.writeToJson(town);
+        new CurrentEntities().write(new JsonWriter());
+        town.write(new JsonWriter());
 
         Select select = new Select();
         new CommandLine(select).parseArgs("-id", town.getId());

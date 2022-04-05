@@ -1,6 +1,6 @@
 package org.fundacionjala.at15.pokemon.commands.create;
 
-import org.fundacionjala.at15.pokemon.io.Writer;
+import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 
@@ -29,7 +29,7 @@ public class CreatePokemon implements Callable<Integer> {
         }
         newPokemon = new Pokemon(hitPoints, pokemonName);
         this.idPokemonCreated = newPokemon.getId();
-        Writer.writeToJson(newPokemon);
+        newPokemon.write(new JsonWriter());
         System.out.println(
                 "Pokemon Created: \n"
                         + "Name: " + newPokemon.getPokemonName() + "\n"

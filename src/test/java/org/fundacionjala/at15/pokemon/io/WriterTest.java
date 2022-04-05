@@ -3,7 +3,6 @@ package org.fundacionjala.at15.pokemon.io;
 import com.google.gson.Gson;
 import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
-import static org.fundacionjala.at15.pokemon.io.Writer.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 import java.io.*;
@@ -16,7 +15,7 @@ public class WriterTest {
         Pokemon pokemon = new Pokemon(200, "Mewto");
         String pokemonJson = new Gson().toJson(pokemon);
 
-        writeToJson(pokemon);
+        pokemon.write(new JsonWriter());
 
         File inputFile = new File(POKEMON.getPath() + "/" + pokemon.getId() + ".json");
         String line = "";
@@ -39,7 +38,7 @@ public class WriterTest {
         Pokemon pokemon = new Pokemon(400, "Mew");
         CurrentEntities currentEntities = new CurrentEntities();
         currentEntities.setPokemon(pokemon.getId());
-        writeToJson(currentEntities);
+        currentEntities.write(new JsonWriter());
 
         assertNotSame("", new Gson().toJson(currentEntities));
     }

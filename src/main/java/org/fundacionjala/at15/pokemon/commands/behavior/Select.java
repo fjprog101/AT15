@@ -8,9 +8,9 @@ import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.io.EntityType;
+import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import org.fundacionjala.at15.pokemon.io.Query;
 import org.fundacionjala.at15.pokemon.io.Reader;
-import static org.fundacionjala.at15.pokemon.io.Writer.*;
 
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
@@ -27,7 +27,7 @@ public class Select implements Callable<Integer> {
         }
         CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
         setCurrentEntity(current);
-        writeToJson(current);
+        current.write(new JsonWriter());
 
         System.out.println("You have selected: ");
         System.out.println(getEntitySelected());
