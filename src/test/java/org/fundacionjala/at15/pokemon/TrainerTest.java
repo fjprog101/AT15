@@ -22,10 +22,10 @@ public class TrainerTest {
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         HealingPotion healingPotion1 = new HealingPotion();
         HealingPotion healingPotion2 = new HealingPotion();
-        trainer.getHealingPotion().add(healingPotion1);
-        trainer.getHealingPotion().add(healingPotion2);
+        trainer.getHealingPotions().add(healingPotion1);
+        trainer.getHealingPotions().add(healingPotion2);
         trainer.useHealingPotion(0);
-        assertEquals(1, trainer.getHealingPotion().size());
+        assertEquals(1, trainer.getHealingPotions().size());
     }
 
     @Test(expected = TrainerItemsException.class)
@@ -44,7 +44,7 @@ public class TrainerTest {
         Pokeball pokeball1 = new Pokeball();
         trainer.getPokeballs().add(pokeball1);
         trainer.usePokeball(wildPokemon);
-        assertEquals(2, trainer.getPokemonTeam().getPokemonsOfTeam().size());
+        assertEquals(2, trainer.getPokemonTeam().getPokemonTeam().size());
     }
 
     @Test(expected = TrainerItemsException.class)
