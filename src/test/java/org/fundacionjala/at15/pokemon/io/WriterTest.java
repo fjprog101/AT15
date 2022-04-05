@@ -15,7 +15,7 @@ public class WriterTest {
         Pokemon pokemon = new Pokemon(200, "Mewto");
         String pokemonJson = new Gson().toJson(pokemon);
 
-        pokemon.write(new JsonWriter());
+        pokemon.write();
 
         File inputFile = new File(POKEMON.getPath() + "/" + pokemon.getId() + ".json");
         String line = "";
@@ -38,7 +38,7 @@ public class WriterTest {
         Pokemon pokemon = new Pokemon(400, "Mew");
         CurrentEntities currentEntities = new CurrentEntities();
         currentEntities.setPokemon(pokemon.getId());
-        currentEntities.write(new JsonWriter());
+        currentEntities.write();
 
         assertNotSame("", new Gson().toJson(currentEntities));
     }

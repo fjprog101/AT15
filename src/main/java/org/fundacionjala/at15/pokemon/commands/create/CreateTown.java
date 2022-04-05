@@ -4,7 +4,6 @@ import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Town;
 import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
-import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
@@ -28,7 +27,7 @@ public class CreateTown implements Callable<Integer> {
         newTown.addWildPokemonsToTown(poke);
         Trainer trainer = (Trainer) Reader.readJson(trainerID);
         newTown.addTrainersToTown(trainer);
-        newTown.write(new JsonWriter());
+        newTown.write();
         idCreateTown = newTown.getId();
         System.out.println(
                 "Town Created: \n"

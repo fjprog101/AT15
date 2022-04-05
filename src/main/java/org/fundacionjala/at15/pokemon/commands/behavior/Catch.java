@@ -6,7 +6,6 @@ import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.commands.Exeptions.TrainerItemsException;
-import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import picocli.CommandLine.Command;
 
@@ -26,7 +25,7 @@ public class Catch implements Callable<Integer> {
             assert trainer != null;
             trainer.usePokeball(wildPokemon);
             current.setPokemonOpponent("");
-            current.write(new JsonWriter());
+            current.write();
             System.out.println("Pokemon catch!");
         } else {
             System.out.println("Pokemon escaped!");

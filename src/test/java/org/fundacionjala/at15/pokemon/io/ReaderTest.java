@@ -13,7 +13,7 @@ public class ReaderTest {
     @Test
     public void itShouldReadAPokemonFile() {
         Pokemon pokemon = new Pokemon(100, "Charizard");
-        pokemon.write(new JsonWriter());
+        pokemon.write();
         readJson(pokemon.getId());
         String expected = "id: " + pokemon.getId() + " name: Charizard hitpoints: 100/100";
         FileEraser.eraseFile(pokemon);
@@ -25,7 +25,7 @@ public class ReaderTest {
         final int hitPoints = 100;
         Pokemon pokemon = new Pokemon(hitPoints, "Pikachu");
         Trainer trainer = new Trainer(pokemon, "Ash");
-        trainer.write(new JsonWriter());
+        trainer.write();
         String fileName = trainer.getId();
         readJson(fileName);
         String expected = "id: " + trainer.getId() + " name: Ash badges: 0 money: 100";
@@ -41,7 +41,7 @@ public class ReaderTest {
         Trainer trainer2 = new Trainer(pokemon, "Brooke");
 
         TrainerBattle battle = new TrainerBattle(trainer, trainer2);
-        battle.write(new JsonWriter());
+        battle.write();
         readJson(battle.getId());
 
         String expected = "id: " + battle.getId() + " trainer1 name: Ash trainer2 name: Brooke isBattleOver: false";
@@ -52,7 +52,7 @@ public class ReaderTest {
     @Test
     public void itShouldReadATown() {
         Town town = new Town();
-        town.write(new JsonWriter());
+        town.write();
         readJson(town.getId());
         String expected = "id: " + town.getId() + " town's gym leader name: gymLeader";
         FileEraser.eraseFile(town);

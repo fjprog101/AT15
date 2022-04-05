@@ -6,7 +6,6 @@ public class XmlWriter extends Writer {
 
     @Override
     public void writeToFile(Entity entity) {
-        
+
     }
-    
 }
