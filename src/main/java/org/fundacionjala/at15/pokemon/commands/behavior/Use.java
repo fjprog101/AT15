@@ -24,10 +24,10 @@ public class Use implements Callable<Integer> {
     @Override
     public Integer call() throws IncompleteArguments {
         if (moveAttack != null) {
-            CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+            CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
             assert current != null;
-            Pokemon wildPokemon = (Pokemon) Reader.readJson(current.getPokemonOpponent());
-            Pokemon pokemon = (Pokemon) Reader.readJson(current.getPokemon());
+            Pokemon wildPokemon = (Pokemon) Reader.read(current.getPokemonOpponent());
+            Pokemon pokemon = (Pokemon) Reader.read(current.getPokemon());
             assert pokemon != null;
             Move move = pokemon.getMove(moveAttack);
 

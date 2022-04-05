@@ -6,16 +6,15 @@ import org.fundacionjala.at15.pokemon.ID.Identifier;
 
 public class Pokemon extends Entity {
     private HitPoints hitPoints;
-    private ArrayList<Move> movementList;
+    private ArrayList<Move> movementList = new ArrayList<Move>();
     private String pokemonName;
 
     public Pokemon(int newMaxHP, String pokemonName) {
         this.id = Identifier.generateId(this);
         this.type = POKEMON;
-        hitPoints = new HitPoints(newMaxHP);
+        this.hitPoints = new HitPoints(newMaxHP);
         this.pokemonName = pokemonName;
         Move tackle = new Move();
-        movementList = new ArrayList<Move>();
         this.movementList.add(tackle);
     }
 

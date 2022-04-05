@@ -31,7 +31,7 @@ public class PathHandlerTest {
     public void whenExceptionThrown_thenExpectationSatisfied() throws Exception{
         String filename = "pkm-non-existen-file";
         File file = getPath(filename);
-        String fileRead = jSonStringReader(file);
+        String fileRead = stringReader(file);
         throw new FileNotFoundException();
     }
 

@@ -12,7 +12,7 @@ public class PokemonQueryTest {
         PokemonQuery params = new PokemonQuery();
         new CommandLine(params).parseArgs("-name", "pikachu");
         params.call();
-        Pokemon pokemon = (Pokemon) Reader.readJson(params.getList().get(0));
+        Pokemon pokemon = (Pokemon) Reader.read(params.getList().get(0));
         String expected = pokemon.getPokemonName();
         assertEquals("pikachu", expected);
     }

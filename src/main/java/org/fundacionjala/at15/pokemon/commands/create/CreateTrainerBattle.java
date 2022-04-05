@@ -27,8 +27,8 @@ public class CreateTrainerBattle implements Callable<Integer> {
             null, true, false);
         }
 
-        Trainer trainer1 = (Trainer) Reader.readJson(trainerID1);
-        Trainer trainer2 = (Trainer) Reader.readJson(trainerID2);
+        Trainer trainer1 = (Trainer) Reader.read(trainerID1);
+        Trainer trainer2 = (Trainer) Reader.read(trainerID2);
         TrainerBattle trainerBattle = new TrainerBattle(trainer1, trainer2);
 
         trainerBattle.write();

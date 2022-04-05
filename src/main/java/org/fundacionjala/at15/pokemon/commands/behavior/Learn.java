@@ -27,9 +27,9 @@ public class Learn implements Callable<Integer> {
     public Integer call() throws IncompleteArguments {
 
         if (movement != "" && potency > 0) {
-            CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+            CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
             id = current.getPokemon();
-            Pokemon pokemon = (Pokemon) Reader.readJson(id);
+            Pokemon pokemon = (Pokemon) Reader.read(id);
             Move move = new Move();
             move.setMovement(movement);
             move.setPotency(potency);

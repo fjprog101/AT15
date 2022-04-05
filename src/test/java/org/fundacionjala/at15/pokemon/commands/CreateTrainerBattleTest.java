@@ -32,7 +32,7 @@ public class CreateTrainerBattleTest {
                 trainer2.getIdTrainerCreated());
         trainerBattleCLI.call();
 
-        Reader.readJson(trainerBattleCLI.getIdCreateTrainerBattle());
+        Reader.read(trainerBattleCLI.getIdCreateTrainerBattle());
         String expected = "id: " + trainerBattleCLI.getIdCreateTrainerBattle()
                 + " trainer1 name: Ash1 trainer2 name: Ash2 isBattleOver: false";
         assertEquals(expected, Reader.getResult());

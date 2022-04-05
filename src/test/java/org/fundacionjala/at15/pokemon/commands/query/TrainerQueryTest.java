@@ -13,7 +13,7 @@ public class TrainerQueryTest {
         TrainerQuery params = new TrainerQuery();
         new CommandLine(params).parseArgs("-name", "Ash1");
         params.call();
-        Trainer trainer = (Trainer) Reader.readJson(params.getList().get(0));
+        Trainer trainer = (Trainer) Reader.read(params.getList().get(0));
         String expected = trainer.getName();
         assertEquals("Ash1", expected);
     }

@@ -59,7 +59,7 @@ public class PathHandler {
         }
     }
 
-    public static String jSonStringReader(File path) {
+    public static String stringReader(File path) {
         String line = "";
         try {
             BufferedReader input = new BufferedReader(new FileReader(path));
