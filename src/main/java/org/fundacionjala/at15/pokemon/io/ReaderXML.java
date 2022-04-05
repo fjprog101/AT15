@@ -9,41 +9,61 @@ import javax.xml.bind.*;
 public class ReaderXML extends Reader {
     public static Entity readXML(String subName, String line) {
         JAXBContext jaxbContext;
-        try {
-            jaxbContext = JAXBContext.newInstance(Pokemon.class);
 
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-
-            Pokemon pokemon = (Pokemon) jaxbUnmarshaller.unmarshal(new StringReader(line));
-
-            System.out.println(pokemon);
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
-        /*if (subName.equals("pkm")) {
-
-            parsePokemonObject(entity);
-            return entity;
+        if (subName.equals("pkm")) {
+            try {
+                jaxbContext = JAXBContext.newInstance(Pokemon.class);
+                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+                Pokemon entity = (Pokemon) jaxbUnmarshaller.unmarshal(new StringReader(line));
+                parsePokemonObject(entity);
+                return entity;
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
         }
         if (subName.equals("trn")) {
-
-            parseTrainerObject(entity);
-            return entity;
+            try {
+                jaxbContext = JAXBContext.newInstance(Pokemon.class);
+                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+                Trainer entity = (Trainer) jaxbUnmarshaller.unmarshal(new StringReader(line));
+                parseTrainerObject(entity);
+                return entity;
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
         }
         if (subName.equals("btt")) {
-
-            parseTrainerBattleObject(entity);
-            return entity;
+            try {
+                jaxbContext = JAXBContext.newInstance(Pokemon.class);
+                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+                TrainerBattle entity = (TrainerBattle) jaxbUnmarshaller.unmarshal(new StringReader(line));
+                parseTrainerBattleObject(entity);
+                return entity;
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
         }
         if (subName.equals("twn")) {
-
-            parseTownObject(entity);
-            return entity;
+            try {
+                jaxbContext = JAXBContext.newInstance(Pokemon.class);
+                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+                Town entity = (Town) jaxbUnmarshaller.unmarshal(new StringReader(line));
+                parseTownObject(entity);
+                return entity;
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
         }
         if (subName.equals("crt")) {
-
-            return entity;
-        }*/
+            try {
+                jaxbContext = JAXBContext.newInstance(Pokemon.class);
+                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+                CurrentEntities entity = (CurrentEntities) jaxbUnmarshaller.unmarshal(new StringReader(line));
+                return entity;
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
+        }
         return null;
     }
 }

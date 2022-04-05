@@ -7,10 +7,16 @@ import org.fundacionjala.at15.pokemon.*;
 public class Reader {
     private static String result = "";
     private static final int THREE = 3;
+
     public static Entity read(String fileName) {
         String subName = fileName.substring(0, THREE);
         if (PathHandler.getTypeFile(fileName).equals("json")) {
             File path = PathHandler.getPath(fileName);
+            String text = PathHandler.stringReader(path);
+            return ReaderJSON.readJSON(subName, text);
+        }
+        if (PathHandler.getTypeFile(fileName).equals("xml")) {
+            File path = PathHandler.getPathXML(fileName);
             String text = PathHandler.stringReader(path);
             return ReaderJSON.readJSON(subName, text);
         }
