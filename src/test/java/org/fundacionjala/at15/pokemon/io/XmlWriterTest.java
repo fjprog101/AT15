@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.io.BufferedReader;
 import java.io.*;
 
+import org.fundacionjala.at15.pokemon.Move;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import org.junit.Test;
@@ -13,6 +14,7 @@ public class XmlWriterTest {
     @Test
     public void itShouldCreateAXmlFileFromAnEntity() {
         Pokemon pokemon = new Pokemon(200, "Mewto");
+        pokemon.setMoveToList(new Move());
         pokemon.write(new XmlWriter());
 
         File inputFile = new File(POKEMON.getPath() + "/" + pokemon.getId() + ".xml");

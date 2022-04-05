@@ -2,6 +2,10 @@ package org.fundacionjala.at15.pokemon;
 
 import static org.fundacionjala.at15.pokemon.constants.Tackle.*;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Move {
     protected int potency;
     protected String movement;
@@ -11,6 +15,7 @@ public class Move {
         this.movement = "basicAttack";
     }
 
+    @XmlElement
     public int getPotency() {
         return potency;
     }
@@ -19,6 +24,7 @@ public class Move {
         this.potency = potency1;
     }
 
+    @XmlElement
     public String getMovement() {
         return movement;
     }
