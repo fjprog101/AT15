@@ -14,7 +14,8 @@ public class CreateTownTest {
         CreateTown townCLI = new CreateTown();
         new CommandLine(townCLI).parseArgs("-nt", "Paleta");
         townCLI.call();
-        Reader.readJson(townCLI.getIdCreateTrainerBattle());
+
+        Reader.read(townCLI.getIdCreateTrainerBattle());
         String expected = "id: " + townCLI.getIdCreateTrainerBattle() + " town's gym leader name: gymLeader";
         assertEquals(expected, Reader.getResult());
     }

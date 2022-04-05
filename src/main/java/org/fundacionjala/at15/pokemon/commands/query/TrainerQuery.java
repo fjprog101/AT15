@@ -22,7 +22,7 @@ public class TrainerQuery implements Callable<Integer> {
     public Integer call() {
         list = Query.getMatches(EntityType.TRAINER, name);
         for (String item : list) {
-            readJson(item);
+            read(item);
         }
         return 0;
     }

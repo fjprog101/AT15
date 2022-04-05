@@ -19,7 +19,7 @@ public class CreateTrainer implements Callable<Integer> {
 
     @Override
     public Integer call() {
-        Pokemon poke = (Pokemon) Reader.readJson(pokemonId);
+        Pokemon poke = (Pokemon) Reader.read(pokemonId);
 
         Trainer trainer = new Trainer(poke, trainerName);
         trainer.write();

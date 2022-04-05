@@ -15,10 +15,10 @@ public class Catch implements Callable<Integer> {
     @Override
     public Integer call() throws TrainerItemsException {
 
-        CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+        CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
         assert current != null;
-        Pokemon wildPokemon = (Pokemon) Reader.readJson(current.getPokemonOpponent());
-        Trainer trainer = (Trainer) Reader.readJson(current.gettrainer());
+        Pokemon wildPokemon = (Pokemon) Reader.read(current.getPokemonOpponent());
+        Trainer trainer = (Trainer) Reader.read(current.gettrainer());
 
         assert wildPokemon != null;
         if (wildPokemon.getHitPoints().is20Percent()) {

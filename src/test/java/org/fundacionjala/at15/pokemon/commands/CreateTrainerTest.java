@@ -19,7 +19,7 @@ public class CreateTrainerTest {
         CreateTrainer trainer = new CreateTrainer();
         new CommandLine(trainer).parseArgs("-n", "AshKetchup", "-pID", pokemon.getIdPokemonCreated());
         trainer.call();
-        Reader.readJson(trainer.getIdTrainerCreated());
+        Reader.read(trainer.getIdTrainerCreated());
         String expected = "id: " + trainer.getIdTrainerCreated() + " name: AshKetchup badges: 0 money: 100";
         assertEquals(expected, Reader.getResult());
     }

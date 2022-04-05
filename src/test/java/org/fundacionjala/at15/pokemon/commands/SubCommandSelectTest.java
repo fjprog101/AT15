@@ -25,7 +25,7 @@ public class SubCommandSelectTest {
         new CommandLine(select).parseArgs("-id", newPokemon.getId());
         select.call();
 
-        CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+        CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
         assertEquals(newPokemon.getId(), current.getPokemon());
 
         File file = getPath(newPokemon.getId());
@@ -43,7 +43,7 @@ public class SubCommandSelectTest {
         new CommandLine(select).parseArgs("-id", newTrainer.getId());
         select.call();
 
-        CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+        CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
         assertEquals(newTrainer.getId(), current.gettrainer());
 
         File file = getPath(newTrainer.getId());
@@ -60,7 +60,7 @@ public class SubCommandSelectTest {
         new CommandLine(select).parseArgs("-id", town.getId());
         select.call();
 
-        CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+        CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
         assertEquals(town.getId(), current.getTown());
 
         File file = getPath(town.getId());

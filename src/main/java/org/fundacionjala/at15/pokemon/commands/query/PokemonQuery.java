@@ -22,7 +22,7 @@ public class PokemonQuery implements Callable<Integer> {
     public Integer call() {
         list = Query.getMatches(EntityType.POKEMON, name);
         for (String item : list) {
-            readJson(item);
+            read(item);
         }
         return 0;
     }

@@ -24,7 +24,7 @@ public class Select implements Callable<Integer> {
         if (entityID == null) {
             entityID = selectObject(selectType());
         }
-        CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+        CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
         setCurrentEntity(current);
         current.write();
 
@@ -68,12 +68,12 @@ public class Select implements Callable<Integer> {
 
         switch (prefix) {
             case "pkm":
-                pokemon = (Pokemon) Reader.readJson(entityID);
+                pokemon = (Pokemon) Reader.read(entityID);
                 result = "Movements: " + pokemon.getMovementList().size() + "\n";
                 break;
 
             case "trn":
-                trainer = (Trainer) Reader.readJson(entityID);
+                trainer = (Trainer) Reader.read(entityID);
                 result = "Pokeballs: " + trainer.getPokeballs().size() + "\n";
                 break;
 

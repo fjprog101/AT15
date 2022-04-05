@@ -17,7 +17,7 @@ public class Fight implements Callable<Integer> {
     @Override
     public Integer call() {
         if (entityID != null) {
-            CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+            CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
             assert current != null;
             current.setPokemonOpponent(entityID);
             current.write();

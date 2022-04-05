@@ -20,8 +20,8 @@ public class CreateWildPokemonBattle implements Callable<Integer> {
 
     @Override
     public Integer call() {
-        Pokemon poke = (Pokemon) Reader.readJson(pokemonID);
-        Trainer trainer = (Trainer) Reader.readJson(trainerID);
+        Pokemon poke = (Pokemon) Reader.read(pokemonID);
+        Trainer trainer = (Trainer) Reader.read(trainerID);
         WildPokemonBattle wildBattle = new WildPokemonBattle(trainer, poke);
         wildBattle.write();
         idCreateWildPokemonBattle = wildBattle.getId();

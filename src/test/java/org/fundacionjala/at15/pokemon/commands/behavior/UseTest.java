@@ -16,7 +16,7 @@ public class UseTest {
 
     @Test
     public void itShouldUseMovement() throws IncompleteArguments {
-        CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+        CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
         CreatePokemon params1 = new CreatePokemon();
         new CommandLine(params1).parseArgs("-n", "pikachu", "-hp", "300");
         params1.call();
@@ -29,10 +29,10 @@ public class UseTest {
         Use params2 = new Use();
         new CommandLine(params2).parseArgs("-move", "basicAttack");
         params2.call();
-        Pokemon expectedPokemon = (Pokemon) Reader.readJson(current.getPokemonOpponent());
+        Pokemon expectedPokemon = (Pokemon) Reader.read(current.getPokemonOpponent());
 
         Assert.assertEquals(60, expectedPokemon.getHitPoints().getCurrentHitPoints());
-        
+
         FileEraser.eraseFile(params.getIdPokemonCreated());
         FileEraser.eraseFile(params1.getIdPokemonCreated());
     }
@@ -40,7 +40,7 @@ public class UseTest {
     @Test
     public void itShouldUseThrowsAnExceptionNullMoveAttack() throws IncompleteArguments {
         try {
-            CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+            CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
             CreatePokemon params1 = new CreatePokemon();
             new CommandLine(params1).parseArgs("-n", "pikachu", "-hp", "300");
             params1.call();
@@ -67,7 +67,7 @@ public class UseTest {
     @Test
     public void itShouldUseThrowsAnExceptionNullMove() throws IncompleteArguments {
         try {
-            CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
+            CurrentEntities current = (CurrentEntities) Reader.read("crt-12345678");
             CreatePokemon params1 = new CreatePokemon();
             new CommandLine(params1).parseArgs("-n", "pikachu", "-hp", "300");
             params1.call();

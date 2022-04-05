@@ -14,7 +14,7 @@ public class ReaderTest {
     public void itShouldReadAPokemonFile() {
         Pokemon pokemon = new Pokemon(100, "Charizard");
         pokemon.write();
-        readJson(pokemon.getId());
+        read(pokemon.getId());
         String expected = "id: " + pokemon.getId() + " name: Charizard hitpoints: 100/100";
         FileEraser.eraseFile(pokemon);
         assertEquals(expected, getResult());
@@ -27,7 +27,7 @@ public class ReaderTest {
         Trainer trainer = new Trainer(pokemon, "Ash");
         trainer.write();
         String fileName = trainer.getId();
-        readJson(fileName);
+        read(fileName);
         String expected = "id: " + trainer.getId() + " name: Ash badges: 0 money: 100";
         FileEraser.eraseFile(trainer);
         assertEquals(expected, getResult());
@@ -42,7 +42,7 @@ public class ReaderTest {
 
         TrainerBattle battle = new TrainerBattle(trainer, trainer2);
         battle.write();
-        readJson(battle.getId());
+        read(battle.getId());
 
         String expected = "id: " + battle.getId() + " trainer1 name: Ash trainer2 name: Brooke isBattleOver: false";
         FileEraser.eraseFile(battle);
@@ -51,9 +51,9 @@ public class ReaderTest {
 
     @Test
     public void itShouldReadATown() {
-        Town town = new Town("Paleta");
-        town.write(new JsonWriter());
-        readJson(town.getId());
+        Town town = new Town();
+        town.write();
+        read(town.getId());
         String expected = "id: " + town.getId() + " town's gym leader name: gymLeader";
         FileEraser.eraseFile(town);
         assertEquals(expected, getResult());
@@ -69,10 +69,10 @@ public class ReaderTest {
         file.flush();
         file.close();
 
-        Entity entity = readJson(pokemon.getId());
+        Entity entity = read(pokemon.getId());
         assertEquals("class org.fundacionjala.at15.pokemon.Pokemon", entity.getClass().toString());
 
-        String fileString = jSonStringReader(getPath(fileName));
+        String fileString = stringReader(getPath(fileName));
         FileEraser.eraseFile(pokemon);
         assertEquals(jsonString, fileString);
     }
@@ -87,14 +87,14 @@ public class ReaderTest {
         file.flush();
         file.close();
 
-        Entity trueEntity = readJson(entity.getId());
+        Entity trueEntity = read(entity.getId());
         FileEraser.eraseFile(entity);
         assertEquals("class org.fundacionjala.at15.pokemon.CurrentEntities", trueEntity.getClass().toString());
     }
 
     @Test
     public void readerShouldReturnNull() {
-        assertEquals(null, readJson("pkm-testing"));
+        assertEquals(null, read("pkm-testing"));
         assertEquals(null, ReaderJSON.readJSON("testing", "line"));
     }
 }

@@ -32,7 +32,7 @@ public class SubCommandLearnTest {
         new CommandLine(learn).parseArgs("-name", "Patada", "-damage", "400");
         learn.call();
 
-        Pokemon pokemon = (Pokemon) Reader.readJson(learn.getIdPOkemon());
+        Pokemon pokemon = (Pokemon) Reader.read(learn.getIdPOkemon());
         String expected = pokemon.getMove("Patada").getMovement();
         assertEquals("Patada", expected);
     }
