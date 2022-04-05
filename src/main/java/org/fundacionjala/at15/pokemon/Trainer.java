@@ -2,8 +2,9 @@ package org.fundacionjala.at15.pokemon;
 
 import java.util.ArrayList;
 
-import org.fundacionjala.at15.pokemon.Exceptions.TrainerItemsException;
 import org.fundacionjala.at15.pokemon.ID.Identifier;
+import org.fundacionjala.at15.pokemon.commands.Exeptions.TrainerItemsException;
+
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
 public class Trainer extends Entity {
@@ -34,7 +35,7 @@ public class Trainer extends Entity {
 
     public void useHealingPotion(int current) throws TrainerItemsException {
         if (healingPotions.size() == 0) {
-            throw new TrainerItemsException("There are no more potions!");
+            throw new TrainerItemsException("There are no more potions!", null, true, false);
         }
         HealingPotion currentPotion = healingPotions.get(healingPotions.size() - 1);
         currentPotion.affectHP(currentPokemon(current));
@@ -43,7 +44,7 @@ public class Trainer extends Entity {
 
     public void usePokeball(Pokemon pokemon) throws TrainerItemsException {
         if (pokeballs.size() == 0) {
-            throw new TrainerItemsException("There are no more pokeballs!");
+            throw new TrainerItemsException("There are no more pokeballs!", null, true, false);
         }
         Pokeball currentPokeball = pokeballs.get(pokeballs.size() - 1);
         if (currentPokeball.catchPokemon(pokemon)) {
