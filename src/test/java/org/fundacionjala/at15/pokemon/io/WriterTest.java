@@ -6,7 +6,6 @@ import org.fundacionjala.at15.pokemon.Pokemon;
 import static org.fundacionjala.at15.pokemon.io.Writer.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertTrue;
 import java.io.*;
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import org.junit.Test;
@@ -43,13 +42,5 @@ public class WriterTest {
         writeToJson(currentEntities);
 
         assertNotSame("", new Gson().toJson(currentEntities));
-    }
-
-    @Test
-    public void itShouldCreateANewFolder() {
-        File file = new File(EntityType.BATTLE.getPath() + "/test");
-        Writer.checkFolder(file);
-
-        assertTrue(file.delete());
     }
 }
