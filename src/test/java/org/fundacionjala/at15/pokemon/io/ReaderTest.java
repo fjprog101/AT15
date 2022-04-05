@@ -91,4 +91,10 @@ public class ReaderTest {
         FileEraser.eraseFile(entity);
         assertEquals("class org.fundacionjala.at15.pokemon.CurrentEntities", trueEntity.getClass().toString());
     }
+
+    @Test
+    public void readerShouldReturnNull() {
+        assertEquals(null, readJson("pkm-testing"));
+        assertEquals(null, ReaderJSON.readJSON("testing", "line"));
+    }
 }
