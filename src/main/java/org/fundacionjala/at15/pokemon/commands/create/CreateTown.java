@@ -1,10 +1,8 @@
 package org.fundacionjala.at15.pokemon.commands.create;
 
-import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Town;
-import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
-import org.fundacionjala.at15.pokemon.io.Reader;
+import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
@@ -13,26 +11,22 @@ import java.util.concurrent.Callable;
 public class CreateTown implements Callable<Integer> {
     private String idCreateTown;
 
-    @Option(names = { "-addwpok", "-tp" }, description = "Add a Wild Pokemon in town")
-    private String wildPokemon;
-
-    @Option(names = { "-addtrainer", "-tt" }, description = "Add a trainer in town")
-    private String trainerID;
+    @Option(names = { "-nameTown", "-nt" }, description = "name town")
+    private String townName;
 
     @Override
     public Integer call() throws IncompleteArguments {
-        Town newTown = new Town();
-
-        Pokemon poke = (Pokemon) Reader.readJson(wildPokemon);
-        newTown.addWildPokemonsToTown(poke);
-        Trainer trainer = (Trainer) Reader.readJson(trainerID);
-        newTown.addTrainersToTown(trainer);
-        newTown.write();
+        if ((townName == null)) {
+            throw new IncompleteArguments(
+                    "Error. Incomplete arguments for the create town command. Required arguments: -name",
+                    null, true, false);
+        }
+        Town newTown = new Town(townName);
+        newTown.write(new JsonWriter());
         idCreateTown = newTown.getId();
         System.out.println(
                 "Town Created: \n"
-                        + trainer.getId() + " trainer added to town" + "\n"
-                        + poke.getId() + " pokemon added to town" + "\n"
+                        + newTown.getName() + " name town" + "\n"
                         + "ID: " + idCreateTown);
 
         return 0;

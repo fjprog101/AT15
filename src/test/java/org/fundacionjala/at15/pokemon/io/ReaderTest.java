@@ -51,8 +51,8 @@ public class ReaderTest {
 
     @Test
     public void itShouldReadATown() {
-        Town town = new Town();
-        town.write();
+        Town town = new Town("Paleta");
+        town.write(new JsonWriter());
         readJson(town.getId());
         String expected = "id: " + town.getId() + " town's gym leader name: gymLeader";
         FileEraser.eraseFile(town);

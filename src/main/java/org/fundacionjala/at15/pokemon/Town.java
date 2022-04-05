@@ -10,8 +10,10 @@ public class Town extends Entity {
     private Store store;
     private Center center;
     private Gym gym;
+    private String name;
 
-    public Town() {
+    public Town(String name) {
+        this.name = name;
         this.type = TOWN;
         this.id = Identifier.generateId(this);
         wildPokemons = new ArrayList<Pokemon>();
@@ -55,5 +57,9 @@ public class Town extends Entity {
 
     public String getPrefix() {
         return "twn";
+    }
+
+    public String getName() {
+        return name;
     }
 }
