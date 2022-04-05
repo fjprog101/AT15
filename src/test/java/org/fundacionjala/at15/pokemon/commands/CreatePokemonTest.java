@@ -19,4 +19,11 @@ public class CreatePokemonTest {
         String expected = "id: " + params.getIdPokemonCreated() + " name: squirtle hitpoints: 100/100";
         assertEquals(expected, Reader.getResult());
     }
+
+    @Test(expected = IncompleteArguments.class)
+    public void commandShouldReturnException() throws IncompleteArguments {
+        CreatePokemon pokemon = new CreatePokemon();
+        new CommandLine(pokemon).parseArgs();
+        pokemon.call();
+    }
 }
