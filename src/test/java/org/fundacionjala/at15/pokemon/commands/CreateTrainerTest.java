@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.fundacionjala.at15.pokemon.commands.create.CreateTrainer;
+import org.fundacionjala.at15.pokemon.io.FileEraser;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Test;
 import picocli.CommandLine;
@@ -22,6 +23,9 @@ public class CreateTrainerTest {
         Reader.readJson(trainer.getIdTrainerCreated());
         String expected = "id: " + trainer.getIdTrainerCreated() + " name: AshKetchup badges: 0 money: 100";
         assertEquals(expected, Reader.getResult());
+
+        FileEraser.eraseFile(pokemon.getIdPokemonCreated());
+        FileEraser.eraseFile(trainer.getIdTrainerCreated());
     }
 
 }

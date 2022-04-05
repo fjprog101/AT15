@@ -1,6 +1,8 @@
 package org.fundacionjala.at15.pokemon.io;
 
 import com.google.gson.Gson;
+
+import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
 import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import static org.fundacionjala.at15.pokemon.io.Writer.*;
@@ -43,6 +45,9 @@ public class WriterTest {
         writeToJson(currentEntities);
 
         assertNotSame("", new Gson().toJson(currentEntities));
+
+        File file = getPath(currentEntities.getId());
+        file.delete();
     }
 
     @Test

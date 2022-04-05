@@ -6,6 +6,7 @@ import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.fundacionjala.at15.pokemon.commands.create.CreateTrainer;
 import org.fundacionjala.at15.pokemon.commands.create.CreateWildPokemonBattle;
+import org.fundacionjala.at15.pokemon.io.FileEraser;
 import org.junit.Test;
 import picocli.CommandLine;
 
@@ -29,5 +30,10 @@ public class CreateWildPokemonBattleTest {
 
         boolean expected = wildBattleCLI.getIdCreateWildPokemonBattle().isEmpty();
         assumeTrue(expected);
+
+        FileEraser.eraseFile(pokemon1.getIdPokemonCreated());
+        FileEraser.eraseFile(trainer1.getIdTrainerCreated());
+        FileEraser.eraseFile(pokemon2.getIdPokemonCreated());
+        FileEraser.eraseFile(wildBattleCLI.getIdCreateWildPokemonBattle());
     }
 }

@@ -30,7 +30,6 @@ public class QueryTest {
         ArrayList<String> list = getMatches(EntityType.POKEMON, pokemon.getPokemonName());
         assertEquals(pokemon.getId(), list.get(0));
 
-        File file = getPath(fileName);
-        file.delete();
+        FileEraser.eraseFile(fileName);
     }
 }

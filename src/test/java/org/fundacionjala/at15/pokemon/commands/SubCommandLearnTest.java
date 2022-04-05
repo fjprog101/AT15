@@ -7,6 +7,7 @@ import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.behavior.Learn;
 import org.fundacionjala.at15.pokemon.commands.behavior.Select;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
+import org.fundacionjala.at15.pokemon.io.FileEraser;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Test;
 import org.fundacionjala.at15.pokemon.commands.create.CreateCurrentEntities;
@@ -35,5 +36,8 @@ public class SubCommandLearnTest {
         Pokemon pokemon = (Pokemon) Reader.readJson(learn.getIdPOkemon());
         String expected = pokemon.getMove("Patada").getMovement();
         assertEquals("Patada", expected);
+
+        FileEraser.eraseFile(poke.getIdPokemonCreated());
+        FileEraser.eraseFile(learn.getIdPOkemon());
     }
 }

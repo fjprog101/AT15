@@ -4,6 +4,7 @@ import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
+import org.fundacionjala.at15.pokemon.io.FileEraser;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.fundacionjala.at15.pokemon.io.Writer;
 import org.junit.Assert;
@@ -31,5 +32,8 @@ public class UseTest {
         Pokemon expectedPokemon = (Pokemon) Reader.readJson(current.getPokemonOpponent());
 
         Assert.assertEquals(60, expectedPokemon.getHitPoints().getCurrentHitPoints());
+
+        FileEraser.eraseFile(params1.getIdPokemonCreated());
+        FileEraser.eraseFile(params.getIdPokemonCreated());
     }
 }

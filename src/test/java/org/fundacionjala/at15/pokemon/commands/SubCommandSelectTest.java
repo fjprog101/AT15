@@ -1,13 +1,12 @@
 package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assert.assertEquals;
-import java.io.File;
 import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Town;
 import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.commands.behavior.Select;
-import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
+import org.fundacionjala.at15.pokemon.io.FileEraser;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.fundacionjala.at15.pokemon.io.Writer;
 import org.junit.Test;
@@ -27,8 +26,7 @@ public class SubCommandSelectTest {
         CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
         assertEquals(newPokemon.getId(), current.getPokemon());
 
-        File file = getPath(newPokemon.getId());
-        file.delete();
+        FileEraser.eraseFile(newPokemon.getId());
     }
 
     @Test
@@ -45,8 +43,7 @@ public class SubCommandSelectTest {
         CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
         assertEquals(newTrainer.getId(), current.gettrainer());
 
-        File file = getPath(newTrainer.getId());
-        file.delete();
+        FileEraser.eraseFile(newTrainer.getId());
     }
 
     @Test
@@ -62,7 +59,6 @@ public class SubCommandSelectTest {
         CurrentEntities current = (CurrentEntities) Reader.readJson("crt-12345678");
         assertEquals(town.getId(), current.getTown());
 
-        File file = getPath(town.getId());
-        file.delete();
+        FileEraser.eraseFile(town.getId());
     }
 }

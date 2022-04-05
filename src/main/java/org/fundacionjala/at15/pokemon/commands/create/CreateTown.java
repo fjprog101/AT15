@@ -39,7 +39,7 @@ public class CreateTown implements Callable<Integer> {
         return 0;
     }
 
-    public String getIdCreateTrainerBattle() {
+    public String getIdCreateTown() {
         return idCreateTown;
     }
 
