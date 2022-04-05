@@ -2,6 +2,7 @@ package org.fundacionjala.at15.pokemon.commands;
 
 import static org.junit.Assume.assumeTrue;
 
+import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.fundacionjala.at15.pokemon.commands.create.CreateTrainer;
 import org.fundacionjala.at15.pokemon.commands.create.CreateWildPokemonBattle;
@@ -10,7 +11,7 @@ import picocli.CommandLine;
 
 public class CreateWildPokemonBattleTest {
     @Test
-    public void commandShouldCreateAPokemonBetweenTrainerBattleJsonFile() {
+    public void commandShouldCreateAPokemonBetweenTrainerBattleJsonFile() throws IncompleteArguments {
         CreatePokemon pokemon1 = new CreatePokemon();
         new CommandLine(pokemon1).parseArgs("-n", "pikachu", "-hp", "200");
         pokemon1.call();
@@ -22,7 +23,8 @@ public class CreateWildPokemonBattleTest {
         pokemon2.call();
 
         CreateWildPokemonBattle wildBattleCLI = new CreateWildPokemonBattle();
-        new CommandLine(wildBattleCLI).parseArgs("-bt", trainer1.getIdTrainerCreated(), "-bp", pokemon2.getIdPokemonCreated());
+        new CommandLine(wildBattleCLI).parseArgs("-bt", trainer1.getIdTrainerCreated(), "-bp",
+                pokemon2.getIdPokemonCreated());
         wildBattleCLI.call();
 
         boolean expected = wildBattleCLI.getIdCreateWildPokemonBattle().isEmpty();

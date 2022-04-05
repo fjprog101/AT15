@@ -3,6 +3,7 @@ package org.fundacionjala.at15.pokemon.commands;
 import static org.junit.Assert.assertEquals;
 
 import org.fundacionjala.at15.pokemon.Pokemon;
+import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.behavior.Learn;
 import org.fundacionjala.at15.pokemon.commands.behavior.Select;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
@@ -14,7 +15,7 @@ import picocli.CommandLine;
 
 public class SubCommandLearnTest {
     @Test
-    public void commandShouldCreateAddMovementToJsonFile() {
+    public void commandShouldCreateAddMovementToJsonFile() throws IncompleteArguments {
         CreatePokemon poke = new CreatePokemon();
         new CommandLine(poke).parseArgs("-n", "pikachu", "-hp", "100");
         poke.call();

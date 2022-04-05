@@ -3,9 +3,7 @@ package org.fundacionjala.at15.pokemon;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
-
 import org.junit.Test;
 
 public class GymTest {

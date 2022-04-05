@@ -3,6 +3,7 @@ package org.fundacionjala.at15.pokemon.commands;
 import static org.junit.Assert.assertEquals;
 
 import org.fundacionjala.at15.pokemon.Exceptions.BattleCommandException;
+import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.fundacionjala.at15.pokemon.commands.create.CreateTrainerBattle;
 import org.fundacionjala.at15.pokemon.commands.create.CreateTrainer;
@@ -12,7 +13,7 @@ import picocli.CommandLine;
 
 public class CreateTrainerBattleTest {
     @Test
-    public void commandShouldCreateATrainerBetweenTrainerBattleJsonFile() throws BattleCommandException {
+    public void commandShouldCreateATrainerBetweenTrainerBattleJsonFile() throws IncompleteArguments {
         CreatePokemon pokemon1 = new CreatePokemon();
         new CommandLine(pokemon1).parseArgs("-n", "pikachu", "-hp", "200");
         pokemon1.call();
@@ -27,11 +28,13 @@ public class CreateTrainerBattleTest {
         trainer2.call();
 
         CreateTrainerBattle trainerBattleCLI = new CreateTrainerBattle();
-        new CommandLine(trainerBattleCLI).parseArgs("-tID1", trainer1.getIdTrainerCreated(), "-tID2", trainer2.getIdTrainerCreated());
+        new CommandLine(trainerBattleCLI).parseArgs("-tID1", trainer1.getIdTrainerCreated(), "-tID2",
+                trainer2.getIdTrainerCreated());
         trainerBattleCLI.call();
 
         Reader.readJson(trainerBattleCLI.getIdCreateTrainerBattle());
-        String expected = "id: " + trainerBattleCLI.getIdCreateTrainerBattle() + " trainer1 name: Ash1 trainer2 name: Ash2 isBattleOver: false";
+        String expected = "id: " + trainerBattleCLI.getIdCreateTrainerBattle()
+                + " trainer1 name: Ash1 trainer2 name: Ash2 isBattleOver: false";
         assertEquals(expected, Reader.getResult());
     }
 

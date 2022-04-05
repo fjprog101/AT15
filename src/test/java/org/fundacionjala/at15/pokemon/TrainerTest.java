@@ -44,7 +44,7 @@ public class TrainerTest {
         Pokeball pokeball1 = new Pokeball();
         trainer.getPokeballs().add(pokeball1);
         trainer.usePokeball(wildPokemon);
-        assertEquals(2,trainer.getPokemonTeam().getPokemonsOfTeam().size());
+        assertEquals(2, trainer.getPokemonTeam().getPokemonsOfTeam().size());
     }
 
     @Test(expected = TrainerItemsException.class)

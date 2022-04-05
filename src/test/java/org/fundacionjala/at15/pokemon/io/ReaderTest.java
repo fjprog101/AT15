@@ -3,12 +3,9 @@ package org.fundacionjala.at15.pokemon.io;
 import static org.fundacionjala.at15.pokemon.io.Reader.*;
 import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
 import static org.junit.Assert.assertEquals;
-
 import java.io.FileWriter;
 import java.io.IOException;
-
 import com.google.gson.Gson;
-
 import org.fundacionjala.at15.pokemon.*;
 import org.junit.Test;
 
@@ -36,7 +33,7 @@ public class ReaderTest {
         assertEquals(expected, getResult());
     }
 
-   @Test
+    @Test
     public void itShouldReadABattle() {
         final int hitPoints = 100;
         Pokemon pokemon = new Pokemon(hitPoints, "Pikachu");

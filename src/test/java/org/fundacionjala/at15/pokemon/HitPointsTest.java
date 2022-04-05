@@ -2,14 +2,13 @@ package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 public class HitPointsTest {
     @Test
     public void itShouldHaveMaxHP() {
         HitPoints hitPoints = new HitPoints(200);
-        assertEquals(200, hitPoints.getMaxHitPoints() );
+        assertEquals(200, hitPoints.getMaxHitPoints());
     }
 
     @Test
@@ -18,7 +17,6 @@ public class HitPointsTest {
         hitPoints.setCurrentHitPoints(150);
         assertEquals(150, hitPoints.getCurrentHitPoints());
     }
-
 
     @Test
     public void itShouldKnowIf20Percent() {

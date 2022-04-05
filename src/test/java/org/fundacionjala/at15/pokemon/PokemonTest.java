@@ -1,7 +1,7 @@
 package org.fundacionjala.at15.pokemon;
+
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 public class PokemonTest {
@@ -18,7 +18,6 @@ public class PokemonTest {
     @Test
     public void itShouldHaveName() {
         Pokemon genericPokemon = new Pokemon(200, "pikachu");
-
         assertEquals("pikachu", genericPokemon.getPokemonName());
     }
 
