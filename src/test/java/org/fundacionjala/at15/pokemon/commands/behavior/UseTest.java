@@ -79,8 +79,8 @@ public class UseTest {
             fail();
         } catch (IncompleteArguments ex) {
 
-            Assert.assertEquals("Your current Pokemon does not known to use: tackle\n" +
-                    "Please, use only learned attacks by your Pokemon.",ex.getMessage());
+            Assert.assertEquals("Your current Pokemon does not know the move: tackle\n" +
+                    "Please, use only learned moves known by your Pokemon.",ex.getMessage());
         }
     }
 }

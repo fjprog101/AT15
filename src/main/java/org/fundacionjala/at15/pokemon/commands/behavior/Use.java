@@ -51,8 +51,8 @@ public class Use implements Callable<Integer> {
                         + " HP");
             } else {
                 throw new IncompleteArguments(
-                        "Your current Pokemon does not known to use: " + moveAttack + "\n"
-                                + "Please, use only learned attacks by your Pokemon.",
+                        "Your current Pokemon does not know the move: " + moveAttack + "\n"
+                                + "Please, use only learned moves known by your Pokemon.",
                         null, true, false);
             }
         } else {
