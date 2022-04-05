@@ -3,6 +3,8 @@ package org.fundacionjala.at15.pokemon.commands.create;
 import org.fundacionjala.at15.pokemon.io.*;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
+import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
+
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
@@ -18,7 +20,11 @@ public class CreateTrainer implements Callable<Integer> {
     private String pokemonId;
 
     @Override
-    public Integer call() {
+    public Integer call() throws IncompleteArguments {
+        if (trainerName == null || pokemonId == null) {
+            throw new IncompleteArguments("Error. Incomplete arguments to create a trainer command. Required arguments: -n -pID.",
+            null, true, false);
+        }
         Pokemon poke = (Pokemon) Reader.read(pokemonId);
 
         Trainer trainer = new Trainer(poke, trainerName);
