@@ -10,8 +10,8 @@ import picocli.CommandLine;
 public class FileEraserTest {
     @Test
     public void itShouldEraseAFileFromAEntity() {
-        Town town = new Town();
-        town.write();
+        Town town = new Town("Paleta");
+        town.write(new JsonWriter());
 
         assertTrue(FileEraser.eraseFile(town));
     }

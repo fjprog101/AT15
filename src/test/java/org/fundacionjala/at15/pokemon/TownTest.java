@@ -7,7 +7,7 @@ public class TownTest {
 
     @Test
     public void itShouldAddPokemonsToTown() {
-        Town paleta = new Town();
+        Town paleta = new Town("Paleta");
         Pokemon wildPokemon1 = new Pokemon(100, "Pikachu");
         Pokemon wildPokemon2 = new Pokemon(100, "Squirtle");
 
@@ -20,7 +20,7 @@ public class TownTest {
 
     @Test
     public void itShouldAddTrainersToTown() {
-        Town paleta = new Town();
+        Town paleta = new Town("Paleta");
         Trainer trainer1 = new Trainer(new Pokemon(100, "Pikachu"), "Ash");
         Trainer trainer2 = new Trainer(new Pokemon(100, "Squirtle"), "Brook");
         paleta.addTrainersToTown(trainer1, trainer2);
@@ -33,7 +33,7 @@ public class TownTest {
 
     @Test
     public void itShouldAddAStoreToTown() {
-        Town paleta = new Town();
+        Town paleta = new Town("Paleta");
         Store fourTwenty = new Store();
         paleta.getStore().getClass();
 
@@ -42,7 +42,7 @@ public class TownTest {
 
     @Test
     public void itShouldAddACenterToTown() {
-        Town paleta = new Town();
+        Town paleta = new Town("Paleta");
         Center pokemonCenter = new Center();
         paleta.getStore().getClass();
 
@@ -51,7 +51,7 @@ public class TownTest {
 
     @Test
     public void itShouldAddAGymTown() {
-        Town paleta = new Town();
+        Town paleta = new Town("Paleta");
         Gym pokemonGym = new Gym();
         paleta.getStore().getClass();
 

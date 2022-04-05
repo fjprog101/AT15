@@ -9,6 +9,7 @@ import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.commands.behavior.Select;
 import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
 
+import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Test;
 import picocli.CommandLine;
@@ -51,9 +52,9 @@ public class SubCommandSelectTest {
 
     @Test
     public void itShouldSelectATown() {
-        Town town = new Town();
-        new CurrentEntities().write();
-        town.write();
+        Town town = new Town("Paleta");
+        new CurrentEntities().write(new JsonWriter());
+        town.write(new JsonWriter());
 
         Select select = new Select();
         new CommandLine(select).parseArgs("-id", town.getId());
