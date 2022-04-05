@@ -23,7 +23,8 @@ public class CreateTrainerBattle implements Callable<Integer> {
     public Integer call() throws BattleCommandException {
 
         if (trainerID1 == null || trainerID2 == null) {
-            throw new BattleCommandException("Error. Incomplete arguments to create a battle command. Required arguments: -tID1 -tID2.", null, true, false);
+            throw new BattleCommandException("Error. Incomplete arguments to create a battle command. Required arguments: -tID1 -tID2.",
+            null, true, false);
         }
 
         Trainer trainer1 = (Trainer) Reader.readJson(trainerID1);
