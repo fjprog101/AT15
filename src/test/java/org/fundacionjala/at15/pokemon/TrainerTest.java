@@ -1,6 +1,8 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
+
+import org.fundacionjala.at15.pokemon.commands.Exeptions.TrainerItemsException;
 import org.junit.Test;
 
 public class TrainerTest {
@@ -15,7 +17,7 @@ public class TrainerTest {
     }
 
     @Test
-    public void itShouldRemoveOneHealingPotion() {
+    public void itShouldRemoveOneHealingPotion() throws TrainerItemsException {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         HealingPotion healingPotion1 = new HealingPotion();
@@ -26,8 +28,15 @@ public class TrainerTest {
         assertEquals(1, trainer.getHealingPotion().size());
     }
 
+    @Test(expected = TrainerItemsException.class)
+    public void itShouldThrowsTheItemPotionException() throws TrainerItemsException {
+        Pokemon pokemon = new Pokemon(100, "pikachu");
+        Trainer trainer = new Trainer(pokemon, "Trainer1");
+        trainer.useHealingPotion(0);
+    }
+
     @Test
-    public void itShouldRemoveOnePokeball() {
+    public void itShouldRemoveOnePokeball() throws TrainerItemsException {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon wildPokemon = new Pokemon(100, "pikachu");
@@ -38,21 +47,19 @@ public class TrainerTest {
         assertEquals(2, trainer.getPokemonTeam().getPokemonsOfTeam().size());
     }
 
-    @Test
-    public void itShouldHave0Pokeballs() {
+    @Test(expected = TrainerItemsException.class)
+    public void itShouldHave0Pokeballs() throws TrainerItemsException {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon wildPokemon = new Pokemon(100, "pikachu");
         wildPokemon.getHitPoints().setCurrentHitPoints(10);
-
         trainer.getPokeballs().clear();
-
         trainer.usePokeball(wildPokemon);
         assertEquals(0, trainer.getPokeballs().size());
     }
 
     @Test
-    public void itShouldAddPokemon() {
+    public void itShouldAddPokemon() throws TrainerItemsException {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon wildPokemon = new Pokemon(10, "pikachu");

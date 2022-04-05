@@ -1,6 +1,8 @@
 package org.fundacionjala.at15.pokemon;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
+import org.fundacionjala.at15.pokemon.commands.Exeptions.TrainerItemsException;
+
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
 public class WildPokemonBattle extends Battle {
@@ -35,8 +37,13 @@ public class WildPokemonBattle extends Battle {
                 damage = new DamageReceived(getPotency(wildPokemon));
                 damage.affectHP(myPokemon);
                 if (wildPokemon.getHitPoints().is20Percent()) {
-                    trainer.usePokeball(wildPokemon);
-                    wildPokemonCapture = true;
+                    try {
+                        trainer.usePokeball(wildPokemon);
+                        wildPokemonCapture = true;
+                    } catch (TrainerItemsException e) {
+                        System.out.println("ERROR: ");
+                        e.printStackTrace(System.out);
+                    }
                     break;
                 }
             }
