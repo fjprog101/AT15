@@ -9,4 +9,8 @@ public final class FileEraser {
         String path = entity.getType().getPath() + "/" + entity.getId() + ".json";
         return new File(path).delete();
     }
+
+    public static boolean eraseFile(String nameID) {
+        return PathHandler.getPath(nameID).delete();
+    }
 }
