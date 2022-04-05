@@ -3,7 +3,6 @@ package org.fundacionjala.at15.pokemon.commands.create;
 import java.util.concurrent.Callable;
 
 import org.fundacionjala.at15.pokemon.CurrentEntities;
-import org.fundacionjala.at15.pokemon.io.JsonWriter;
 
 import picocli.CommandLine.Command;
 
@@ -13,7 +12,7 @@ public class CreateCurrentEntities implements Callable<Integer> {
     @Override
     public Integer call() {
         CurrentEntities currentEntities = new CurrentEntities();
-        currentEntities.write(new JsonWriter());
+        currentEntities.write();
         System.out.println("File created successfully");
         return 0;
     }

@@ -8,7 +8,6 @@ import org.fundacionjala.at15.pokemon.Move;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.io.Reader;
-import org.fundacionjala.at15.pokemon.io.JsonWriter;
 
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
@@ -42,7 +41,7 @@ public class Use implements Callable<Integer> {
                     damageDelivered.affectHP(pokemon);
                 }
 
-                wildPokemon.write(new JsonWriter());
+                wildPokemon.write();
 
                 System.out.println("Wild " + wildPokemon.getPokemonName() + " has now: "
                         + wildPokemon.getHitPoints().getCurrentHitPoints()

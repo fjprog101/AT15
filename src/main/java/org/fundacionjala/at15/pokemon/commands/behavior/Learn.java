@@ -6,7 +6,6 @@ import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Move;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
-import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import org.fundacionjala.at15.pokemon.io.Reader;
 
 import picocli.CommandLine.Command;
@@ -39,7 +38,7 @@ public class Learn implements Callable<Integer> {
                         false);
             } else {
                 pokemon.setMoveToList(move);
-                pokemon.write(new JsonWriter());
+                pokemon.write();
                 System.out.println("Your Pokemon learn a new Attack movement");
             }
 

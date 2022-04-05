@@ -11,7 +11,7 @@ public class FileEraserTest {
     @Test
     public void itShouldEraseAFileFromAEntity() {
         Town town = new Town();
-        town.write(new JsonWriter());
+        town.write();
 
         assertTrue(FileEraser.eraseFile(town));
     }

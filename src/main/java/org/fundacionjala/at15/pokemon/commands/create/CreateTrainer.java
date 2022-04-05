@@ -22,7 +22,7 @@ public class CreateTrainer implements Callable<Integer> {
         Pokemon poke = (Pokemon) Reader.readJson(pokemonId);
 
         Trainer trainer = new Trainer(poke, trainerName);
-        trainer.write(new JsonWriter());
+        trainer.write();
         idTrainerCreated = trainer.getId();
         System.out.println(
                 "Trainer Created: \n"

@@ -5,7 +5,6 @@ import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
 import org.fundacionjala.at15.pokemon.io.FileEraser;
-import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Assert;
 import org.junit.Test;
@@ -26,7 +25,7 @@ public class UseTest {
         new CommandLine(params).parseArgs("-n", "squirtle", "-hp", "100");
         params.call();
         current.setPokemonOpponent(params.getIdPokemonCreated());
-        current.write(new JsonWriter());
+        current.write();
         Use params2 = new Use();
         new CommandLine(params2).parseArgs("-move", "basicAttack");
         params2.call();
@@ -50,7 +49,7 @@ public class UseTest {
             new CommandLine(params).parseArgs("-n", "squirtle", "-hp", "100");
             params.call();
             current.setPokemonOpponent(params.getIdPokemonCreated());
-            current.write(new JsonWriter());
+            current.write();
             Use params2 = new Use();
             params2.setMoveAttack(null);
             params2.call();
@@ -77,7 +76,7 @@ public class UseTest {
             new CommandLine(params).parseArgs("-n", "squirtle", "-hp", "100");
             params.call();
             current.setPokemonOpponent(params.getIdPokemonCreated());
-            current.write(new JsonWriter());
+            current.write();
             Use params2 = new Use();
             new CommandLine(params2).parseArgs("-move", "tackle");
             params2.call();
