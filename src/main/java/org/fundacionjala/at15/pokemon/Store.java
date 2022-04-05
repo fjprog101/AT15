@@ -11,7 +11,7 @@ public class Store {
     }
 
     public static void buyHealingPotion(Trainer trainer) {
-        trainer.getHealingPotion().add(new HealingPotion());
+        trainer.getHealingPotions().add(new HealingPotion());
         trainer.getWallet().spendMoney(POTION_COST);
     }
 
@@ -23,8 +23,8 @@ public class Store {
     }
 
     public static void sellHealingPotion(Trainer trainer) {
-        if (trainer.getHealingPotion().size() > 0) {
-            trainer.getHealingPotion().remove(0);
+        if (trainer.getHealingPotions().size() > 0) {
+            trainer.getHealingPotions().remove(0);
             trainer.getWallet().winMoney(POTION_COST);
         }
     }

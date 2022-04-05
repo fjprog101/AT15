@@ -7,12 +7,15 @@ import java.io.*;
 
 import org.fundacionjala.at15.pokemon.Move;
 import org.fundacionjala.at15.pokemon.Pokemon;
+import org.fundacionjala.at15.pokemon.Store;
+import org.fundacionjala.at15.pokemon.Trainer;
+
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import org.junit.Test;
 
 public class XmlWriterTest {
     @Test
-    public void itShouldCreateAXmlFileFromAnEntity() {
+    public void itShouldCreateAXmlFileFromAPokemon() {
         Pokemon pokemon = new Pokemon(200, "Mewto");
         pokemon.setMoveToList(new Move());
         pokemon.write(new XmlWriter());
@@ -35,5 +38,33 @@ public class XmlWriterTest {
         }
 
         assertTrue(stringContent.contains(pokemon.getId()));
+    }
+
+    @Test
+    public void itShouldCreateAXmlFileFromATrainer() {
+        Pokemon pokemon = new Pokemon(200, "Mewto");
+        pokemon.setMoveToList(new Move());
+        Trainer trainer = new Trainer(pokemon, "Misty");
+        Store.buyHealingPotion(trainer);
+        trainer.write(new XmlWriter());
+
+        File inputFile = new File(TRAINER.getPath() + "/" + trainer.getId() + ".xml");
+        String line = "";
+        String stringContent = "";
+        try {
+            BufferedReader input = new BufferedReader(new FileReader(inputFile));
+            line = input.readLine();
+            while (line != null) {
+                stringContent += line + "\n";
+                line = input.readLine();
+            }
+            input.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace(System.out);
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
+
+        assertTrue(stringContent.contains(trainer.getId()));
     }
 }

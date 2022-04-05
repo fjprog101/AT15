@@ -13,7 +13,7 @@ public class GymTest {
         ArrayList<Trainer> gymTrainers = gym.getTrainers();
         String leadersPokemon = gymTrainers.get(2).getName();
         assertEquals("gymLeader", leadersPokemon);
-        String namePokemonLeader = gymTrainers.get(2).getPokemonTeam().getPokemonsOfTeam().get(0).getPokemonName();
+        String namePokemonLeader = gymTrainers.get(2).getPokemonTeam().getPokemonTeam().get(0).getPokemonName();
         assertEquals("gymLeaderPokemon", namePokemonLeader);
     }
 
@@ -22,7 +22,7 @@ public class GymTest {
         Gym gym = new Gym();
         Trainer gymLeader = gym.getGymLeader();
         assertEquals("gymLeader", gymLeader.getName());
-        assertEquals("gymLeaderPokemon", gymLeader.getPokemonTeam().getPokemonsOfTeam().get(0).getPokemonName());
+        assertEquals("gymLeaderPokemon", gymLeader.getPokemonTeam().getPokemonTeam().get(0).getPokemonName());
     }
 
     @Test

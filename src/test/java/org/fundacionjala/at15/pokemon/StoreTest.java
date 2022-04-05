@@ -19,10 +19,10 @@ public class StoreTest {
     public void itShouldGiveAPotionAndChargeCost() {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
-        int initialSize = trainer.getHealingPotion().size();
+        int initialSize = trainer.getHealingPotions().size();
         Store.buyHealingPotion(trainer);
 
-        assertEquals(initialSize + 1, trainer.getHealingPotion().size());
+        assertEquals(initialSize + 1, trainer.getHealingPotions().size());
         assertEquals(60, trainer.getWallet().getMoneyInWallet());
     }
 
@@ -42,10 +42,10 @@ public class StoreTest {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
         Store.buyHealingPotion(trainer);
-        int initialSize = trainer.getHealingPotion().size();
+        int initialSize = trainer.getHealingPotions().size();
         Store.sellHealingPotion(trainer);
 
-        assertEquals(initialSize - 1, trainer.getHealingPotion().size());
+        assertEquals(initialSize - 1, trainer.getHealingPotions().size());
         assertEquals(100, trainer.getWallet().getMoneyInWallet());
     }
 
@@ -66,10 +66,10 @@ public class StoreTest {
     public void itShouldNotAllowTrainerSellPotion() {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
-        int initialSize = trainer.getHealingPotion().size();
+        int initialSize = trainer.getHealingPotions().size();
         Store.sellHealingPotion(trainer);
 
-        assertEquals(initialSize, trainer.getHealingPotion().size());
+        assertEquals(initialSize, trainer.getHealingPotions().size());
         assertEquals(100, trainer.getWallet().getMoneyInWallet());
     }
 }

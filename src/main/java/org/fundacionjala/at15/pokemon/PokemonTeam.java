@@ -4,8 +4,15 @@ import static org.fundacionjala.at15.pokemon.constants.PokemonTeam.*;
 
 import java.util.*;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class PokemonTeam {
     private ArrayList<Pokemon> pokemonTeam = new ArrayList<Pokemon>();
+
+    public PokemonTeam() {
+    }
 
     public PokemonTeam(Pokemon pokemon) {
         pokemonTeam.add(pokemon);
@@ -17,7 +24,8 @@ public class PokemonTeam {
         }
     }
 
-    public ArrayList<Pokemon> getPokemonsOfTeam() {
+    @XmlElement
+    public ArrayList<Pokemon> getPokemonTeam() {
         return this.pokemonTeam;
     }
 }
