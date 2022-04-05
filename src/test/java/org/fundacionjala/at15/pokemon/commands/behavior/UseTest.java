@@ -4,6 +4,7 @@ import org.fundacionjala.at15.pokemon.CurrentEntities;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.commands.Exeptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.commands.create.CreatePokemon;
+import org.fundacionjala.at15.pokemon.io.FileEraser;
 import org.fundacionjala.at15.pokemon.io.JsonWriter;
 import org.fundacionjala.at15.pokemon.io.Reader;
 import org.junit.Assert;
@@ -32,6 +33,9 @@ public class UseTest {
         Pokemon expectedPokemon = (Pokemon) Reader.readJson(current.getPokemonOpponent());
 
         Assert.assertEquals(60, expectedPokemon.getHitPoints().getCurrentHitPoints());
+        
+        FileEraser.eraseFile(params.getIdPokemonCreated());
+        FileEraser.eraseFile(params1.getIdPokemonCreated());
     }
 
     @Test
@@ -52,6 +56,9 @@ public class UseTest {
             params2.call();
 
             fail();
+            FileEraser.eraseFile(params.getIdPokemonCreated());
+            FileEraser.eraseFile(params1.getIdPokemonCreated());
+
             } catch (IncompleteArguments ex) {
 
             Assert.assertEquals("Error. Incomplete arguments for the Use command. Required arguments: -move.",ex.getMessage());
@@ -75,8 +82,10 @@ public class UseTest {
             new CommandLine(params2).parseArgs("-move", "tackle");
             params2.call();
 
-
             fail();
+            FileEraser.eraseFile(params.getIdPokemonCreated());
+            FileEraser.eraseFile(params1.getIdPokemonCreated());
+
         } catch (IncompleteArguments ex) {
 
             Assert.assertEquals("Your current Pokemon does not know the move: tackle\n" +
