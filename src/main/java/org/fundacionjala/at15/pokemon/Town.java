@@ -1,9 +1,13 @@
 package org.fundacionjala.at15.pokemon;
 
 import java.util.ArrayList;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
 import org.fundacionjala.at15.pokemon.ID.Identifier;
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
+@XmlRootElement
 public class Town extends Entity {
     private ArrayList<Pokemon> wildPokemons;
     private ArrayList<Trainer> trainers;
@@ -11,6 +15,9 @@ public class Town extends Entity {
     private Center center;
     private Gym gym;
     private String name;
+
+    public Town() {
+    }
 
     public Town(String name) {
         this.name = name;
