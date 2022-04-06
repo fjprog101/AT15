@@ -10,6 +10,8 @@ import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Store;
 import org.fundacionjala.at15.pokemon.Town;
 import org.fundacionjala.at15.pokemon.Trainer;
+import org.fundacionjala.at15.pokemon.TrainerBattle;
+import org.fundacionjala.at15.pokemon.WildPokemonBattle;
 import org.fundacionjala.at15.pokemon.commands.exceptions.WalletException;
 
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
@@ -95,5 +97,65 @@ public class XmlWriterTest {
         }
 
         assertTrue(stringContent.contains(town.getId()));
+    }
+
+    @Test
+    public void itShouldCreateAXmlFileFromATrainerBattle() {
+        Pokemon pokemon1 = new Pokemon(200, "Mewto");
+        pokemon1.setMoveToList(new Move());
+        Trainer trainer1 = new Trainer(pokemon1, "Misty");
+        Pokemon pokemon2 = new Pokemon(200, "Mewto");
+        pokemon2.setMoveToList(new Move());
+        Trainer trainer2 = new Trainer(pokemon2, "Misty");
+        TrainerBattle trainerBattle = new TrainerBattle(trainer1, trainer2);
+        trainerBattle.write(new XmlWriter());
+
+        File inputFile = new File(BATTLE.getPath() + "/" + trainerBattle.getId() + ".xml");
+        String line = "";
+        String stringContent = "";
+        try {
+            BufferedReader input = new BufferedReader(new FileReader(inputFile));
+            line = input.readLine();
+            while (line != null) {
+                stringContent += line + "\n";
+                line = input.readLine();
+            }
+            input.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace(System.out);
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
+
+        assertTrue(stringContent.contains(trainerBattle.getId()));
+    }
+
+    @Test
+    public void itShouldCreateAXmlFileFromAWildPokemonBattle() {
+        Pokemon pokemon1 = new Pokemon(200, "Mewto");
+        pokemon1.setMoveToList(new Move());
+        Trainer trainer1 = new Trainer(pokemon1, "Misty");
+        Pokemon pokemon2 = new Pokemon(200, "Mewto");
+        WildPokemonBattle wildPokemonBattle = new WildPokemonBattle(trainer1, pokemon2);
+        wildPokemonBattle.write(new XmlWriter());
+
+        File inputFile = new File(BATTLE.getPath() + "/" + wildPokemonBattle.getId() + ".xml");
+        String line = "";
+        String stringContent = "";
+        try {
+            BufferedReader input = new BufferedReader(new FileReader(inputFile));
+            line = input.readLine();
+            while (line != null) {
+                stringContent += line + "\n";
+                line = input.readLine();
+            }
+            input.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace(System.out);
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
+
+        assertTrue(stringContent.contains(wildPokemonBattle.getId()));
     }
 }

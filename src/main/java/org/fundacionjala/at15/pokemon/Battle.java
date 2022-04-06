@@ -1,5 +1,8 @@
 package org.fundacionjala.at15.pokemon;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public abstract class Battle extends Entity {
     protected boolean battleOver = false;
 
@@ -18,5 +21,9 @@ public abstract class Battle extends Entity {
         }
         battleOver = true;
         return currentPokemon;
+    }
+
+    public boolean isBattleOver() {
+        return battleOver;
     }
 }
