@@ -4,6 +4,7 @@ import org.fundacionjala.at15.pokemon.io.*;
 import org.fundacionjala.at15.pokemon.Trainer;
 import org.fundacionjala.at15.pokemon.TrainerBattle;
 import org.fundacionjala.at15.pokemon.commands.exceptions.BattleCommandException;
+import org.fundacionjala.at15.pokemon.io.XmlWriter;
 
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
@@ -19,6 +20,9 @@ public class CreateTrainerBattle implements Callable<Integer> {
     @Option(names = { "-trainerID2", "-tID2" }, description = "trainer 2 ID")
     private String trainerID2;
 
+    @Option(names = { "--xml" }, description = "create the object in xml format")
+    private boolean xml;
+
     @Override
     public Integer call() throws BattleCommandException {
 
@@ -32,7 +36,13 @@ public class CreateTrainerBattle implements Callable<Integer> {
         Trainer trainer2 = (Trainer) Reader.read(trainerID2);
         TrainerBattle trainerBattle = new TrainerBattle(trainer1, trainer2);
 
-        trainerBattle.write();
+        if (!xml) {
+            trainerBattle.write();
+        } else {
+            trainerBattle.write(new XmlWriter());
+        }
+
+
         idCreateTrainerBattle = trainerBattle.getId();
         System.out.println(
                 "Battle Created: \n"

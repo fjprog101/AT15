@@ -4,6 +4,7 @@ import org.fundacionjala.at15.pokemon.WildPokemonBattle;
 import org.fundacionjala.at15.pokemon.io.*;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Trainer;
+import org.fundacionjala.at15.pokemon.io.XmlWriter;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
@@ -18,12 +19,22 @@ public class CreateWildPokemonBattle implements Callable<Integer> {
     @Option(names = { "-btlpokeID", "-bp" }, description = "Wild pokemon ID")
     private String pokemonID;
 
+    @Option(names = { "--xml" }, description = "create the object in xml format")
+    private boolean xml;
+
     @Override
     public Integer call() {
         Pokemon poke = (Pokemon) Reader.read(pokemonID);
         Trainer trainer = (Trainer) Reader.read(trainerID);
         WildPokemonBattle wildBattle = new WildPokemonBattle(trainer, poke);
-        wildBattle.write();
+
+        if (!xml) {
+            wildBattle.write();
+        } else {
+            wildBattle.write(new XmlWriter());
+        }
+
+
         idCreateWildPokemonBattle = wildBattle.getId();
         System.out.println(
                 "Battle Created: \n"
