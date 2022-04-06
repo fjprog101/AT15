@@ -11,7 +11,6 @@ import java.util.concurrent.Callable;
 @Command(name = "pokemon", description = "Create a pokemon")
 public class CreatePokemon implements Callable<Integer> {
     private String idPokemonCreated;
-    private Pokemon newPokemon;
 
     @Option(names = { "-name", "-n" }, description = "pokemon name")
     private String pokemonName;
@@ -29,7 +28,7 @@ public class CreatePokemon implements Callable<Integer> {
                     "Error. Incomplete arguments for the create pokemon command. Required arguments: -name -hitPoints.",
                     null, true, false);
         }
-        newPokemon = new Pokemon(hitPoints, pokemonName);
+        Pokemon newPokemon = new Pokemon(hitPoints, pokemonName);
         this.idPokemonCreated = newPokemon.getId();
         if (!xml) {
             newPokemon.write();
