@@ -74,7 +74,7 @@ public class ReaderTest {
 
         String fileString = stringReader(getPath(fileName));
         FileEraser.eraseFile(pokemon);
-        assertEquals(jsonString, fileString);
+        assertEquals(jsonString + "\n", fileString);
     }
 
     @Test

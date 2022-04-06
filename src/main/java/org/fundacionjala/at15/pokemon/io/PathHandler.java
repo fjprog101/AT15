@@ -61,16 +61,21 @@ public class PathHandler {
 
     public static String stringReader(File path) {
         String line = "";
+        String stringContent = "";
         try {
             BufferedReader input = new BufferedReader(new FileReader(path));
             line = input.readLine();
+            while (line != null) {
+                stringContent += line + "\n";
+                line = input.readLine();
+            }
             input.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace(System.out);
         } catch (IOException e) {
             e.printStackTrace(System.out);
         }
-        return line;
+        return stringContent;
     }
 
     public static void checkFolder(File path) {
