@@ -1,6 +1,8 @@
 package org.fundacionjala.at15.pokemon.io;
 
 import org.fundacionjala.at15.pokemon.*;
+import org.fundacionjala.at15.pokemon.commands.exceptions.WalletException;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -20,7 +22,7 @@ public class ReaderXMLTest {
     }
 
     @Test
-    public void itShouldReadeATrainerXmlFile() {
+    public void itShouldReadeATrainerXmlFile() throws WalletException {
         Pokemon pokemon = new Pokemon(150, "Miau");
         pokemon.setMoveToList(new Move());
         Trainer trainer = new Trainer(pokemon, "Cesar");
