@@ -8,7 +8,6 @@ import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
 public class TrainerBattle extends Battle {
     private final Trainer trainer1;
     private final Trainer trainer2;
