@@ -9,6 +9,7 @@ import org.fundacionjala.at15.pokemon.Move;
 import org.fundacionjala.at15.pokemon.Pokemon;
 import org.fundacionjala.at15.pokemon.Store;
 import org.fundacionjala.at15.pokemon.Trainer;
+import org.fundacionjala.at15.pokemon.commands.exceptions.WalletException;
 
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 import org.junit.Test;
@@ -41,7 +42,7 @@ public class XmlWriterTest {
     }
 
     @Test
-    public void itShouldCreateAXmlFileFromATrainer() {
+    public void itShouldCreateAXmlFileFromATrainer() throws WalletException {
         Pokemon pokemon = new Pokemon(200, "Mewto");
         pokemon.setMoveToList(new Move());
         Trainer trainer = new Trainer(pokemon, "Misty");

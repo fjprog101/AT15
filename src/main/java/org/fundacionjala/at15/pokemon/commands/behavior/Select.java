@@ -95,7 +95,7 @@ public class Select implements Callable<Integer> {
         return list.get(option - 1);
     }
 
-    private EntityType selectType() {
+    public EntityType selectType() {
         boolean flag = true;
         System.out.println("Which kind of entity do you want to select?");
         System.out.println("1. Pokemon");

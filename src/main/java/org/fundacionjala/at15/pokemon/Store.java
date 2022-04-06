@@ -3,14 +3,16 @@ package org.fundacionjala.at15.pokemon;
 import static org.fundacionjala.at15.pokemon.constants.HealingPotion.*;
 import static org.fundacionjala.at15.pokemon.constants.Pokeball.*;
 
+import org.fundacionjala.at15.pokemon.commands.exceptions.WalletException;
+
 public class Store {
 
-    public static void buyPokeball(Trainer trainer) {
+    public static void buyPokeball(Trainer trainer) throws WalletException {
         trainer.getPokeballs().add(new Pokeball());
         trainer.getWallet().spendMoney(POKEBALL_COST);
     }
 
-    public static void buyHealingPotion(Trainer trainer) {
+    public static void buyHealingPotion(Trainer trainer) throws WalletException {
         trainer.getHealingPotions().add(new HealingPotion());
         trainer.getWallet().spendMoney(POTION_COST);
     }
