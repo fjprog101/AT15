@@ -2,7 +2,6 @@ package org.fundacionjala.at15.pokemon;
 
 import static org.fundacionjala.at15.pokemon.constants.Wallet.*;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -32,7 +31,6 @@ public class Wallet {
         }
     }
 
-    @XmlElement
     public int getMoneyInWallet() {
         return moneyInWallet;
     }

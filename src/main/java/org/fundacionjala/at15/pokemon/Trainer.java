@@ -2,7 +2,6 @@ package org.fundacionjala.at15.pokemon;
 
 import java.util.ArrayList;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.fundacionjala.at15.pokemon.ID.Identifier;
@@ -20,7 +19,6 @@ public class Trainer extends Entity {
     private ArrayList<Pokeball> pokeballs = new ArrayList<Pokeball>();
 
     public Trainer() {
-        this.id = Identifier.generateId(this);
     }
 
     public Trainer(Pokemon pokemon, String newName) {
@@ -65,32 +63,26 @@ public class Trainer extends Entity {
         badge++;
     }
 
-    @XmlElement
     public String getName() {
         return this.name;
     }
 
-    @XmlElement
     public Wallet getWallet() {
         return this.wallet;
     }
 
-    @XmlElement
     public int getBadge() {
         return badge;
     }
 
-    @XmlElement
     public PokemonTeam getPokemonTeam() {
         return this.pokemonTeam;
     }
 
-    @XmlElement
     public ArrayList<HealingPotion> getHealingPotions() {
         return this.healingPotions;
     }
 
-    @XmlElement
     public ArrayList<Pokeball> getPokeballs() {
         return this.pokeballs;
     }
