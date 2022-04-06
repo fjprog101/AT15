@@ -5,11 +5,20 @@ import org.fundacionjala.at15.pokemon.commands.exceptions.TrainerItemsException;
 
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class WildPokemonBattle extends Battle {
     private final Trainer trainer;
     private final Pokemon wildPokemon;
     private boolean wildPokemonCapture = false;
     private int turn = 0;
+
+    public WildPokemonBattle() {
+        this.trainer = null;
+        this.wildPokemon = null;
+    }
 
     public WildPokemonBattle(Trainer trainer, Pokemon pokemon) {
         this.type = BATTLE;
@@ -57,5 +66,21 @@ public class WildPokemonBattle extends Battle {
 
     public String getPrefix() {
         return "wbt";
+    }
+
+    public Trainer getTrainer() {
+        return trainer;
+    }
+
+    public Pokemon getWildPokemon() {
+        return wildPokemon;
+    }
+
+    public boolean isWildPokemonCapture() {
+        return wildPokemonCapture;
+    }
+
+    public int getTurn() {
+        return turn;
     }
 }
