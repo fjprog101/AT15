@@ -2,13 +2,13 @@ package org.fundacionjala.at15.pokemon;
 
 import static org.fundacionjala.at15.pokemon.constants.Wallet.*;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 import org.fundacionjala.at15.pokemon.commands.exceptions.WalletException;
 
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Wallet {
-
     private int moneyInWallet;
 
     public Wallet() {

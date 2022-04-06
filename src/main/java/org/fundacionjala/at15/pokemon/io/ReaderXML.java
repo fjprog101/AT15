@@ -7,13 +7,13 @@ import java.io.*;
 import javax.xml.bind.*;
 
 public class ReaderXML extends Reader {
-    public static Entity readXML(String subName, File line) {
+    public static Entity readXML(String subName, File file) {
         JAXBContext jaxbContext;
         if (subName.equals("pkm")) {
             try {
                 jaxbContext = JAXBContext.newInstance(Pokemon.class);
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                Pokemon entity = (Pokemon) jaxbUnmarshaller.unmarshal(line);
+                Pokemon entity = (Pokemon) jaxbUnmarshaller.unmarshal(file);
                 parsePokemonObject(entity);
                 return entity;
             } catch (JAXBException e) {
@@ -24,7 +24,7 @@ public class ReaderXML extends Reader {
             try {
                 jaxbContext = JAXBContext.newInstance(Trainer.class);
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                Trainer entity = (Trainer) jaxbUnmarshaller.unmarshal(line);
+                Trainer entity = (Trainer) jaxbUnmarshaller.unmarshal(file);
                 parseTrainerObject(entity);
                 return entity;
             } catch (JAXBException e) {
@@ -35,7 +35,7 @@ public class ReaderXML extends Reader {
             try {
                 jaxbContext = JAXBContext.newInstance(TrainerBattle.class);
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                TrainerBattle entity = (TrainerBattle) jaxbUnmarshaller.unmarshal(line);
+                TrainerBattle entity = (TrainerBattle) jaxbUnmarshaller.unmarshal(file);
                 parseTrainerBattleObject(entity);
                 return entity;
             } catch (JAXBException e) {
@@ -46,7 +46,7 @@ public class ReaderXML extends Reader {
             try {
                 jaxbContext = JAXBContext.newInstance(Town.class);
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                Town entity = (Town) jaxbUnmarshaller.unmarshal(line);
+                Town entity = (Town) jaxbUnmarshaller.unmarshal(file);
                 parseTownObject(entity);
                 return entity;
             } catch (JAXBException e) {
@@ -57,7 +57,7 @@ public class ReaderXML extends Reader {
             try {
                 jaxbContext = JAXBContext.newInstance(CurrentEntities.class);
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                CurrentEntities entity = (CurrentEntities) jaxbUnmarshaller.unmarshal(line);
+                CurrentEntities entity = (CurrentEntities) jaxbUnmarshaller.unmarshal(file);
                 return entity;
             } catch (JAXBException e) {
                 e.printStackTrace();
