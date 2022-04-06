@@ -2,6 +2,10 @@ package org.fundacionjala.at15.pokemon;
 
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Center implements HPAffecter {
     private ArrayList<Pokemon> pokemonTeam = new ArrayList<Pokemon>();
 
@@ -14,5 +18,9 @@ public class Center implements HPAffecter {
 
     public void affectHP(Pokemon pokemon) {
         pokemon.getHitPoints().fullRestore();
+    }
+
+    public ArrayList<Pokemon> getPokemonTeam() {
+        return pokemonTeam;
     }
 }

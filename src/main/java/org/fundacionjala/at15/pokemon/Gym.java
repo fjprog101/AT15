@@ -3,6 +3,10 @@ package org.fundacionjala.at15.pokemon;
 import static org.fundacionjala.at15.pokemon.constants.Town.*;
 import java.util.*;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Gym {
     private Pokemon gymLeaderPokemon = new Pokemon(STANDAR_POKEMON_HP, "gymLeaderPokemon");
     private Trainer gymLeader = new Trainer(gymLeaderPokemon, "gymLeader");
@@ -46,5 +50,25 @@ public class Gym {
         }
 
         return isWinner;
+    }
+
+    public Pokemon getGymLeaderPokemon() {
+        return gymLeaderPokemon;
+    }
+
+    public Pokemon getPokemon1() {
+        return pokemon1;
+    }
+
+    public Trainer getLowerRankingMember1() {
+        return lowerRankingMember1;
+    }
+
+    public Pokemon getPokemon2() {
+        return pokemon2;
+    }
+
+    public Trainer getLowerRankingMember2() {
+        return lowerRankingMember2;
     }
 }
