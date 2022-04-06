@@ -6,7 +6,7 @@ public abstract class Battle extends Entity {
     public abstract void fight();
 
     public Pokemon getPokemonAvailable(Trainer trainer) {
-        int currentHitPoints;
+        double currentHitPoints;
         PokemonTeam pokemonTeam = trainer.getPokemonTeam();
         Pokemon currentPokemon = pokemonTeam.getPokemonTeam().get(0);
         for (int ind = 0; ind < pokemonTeam.getPokemonTeam().size(); ind++) {

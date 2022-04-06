@@ -32,7 +32,7 @@ public class UseTest {
             params2.call();
             Pokemon expectedPokemon = (Pokemon) Reader.read(current.getPokemonOpponent());
 
-            Assert.assertEquals(60, expectedPokemon.getHitPoints().getCurrentHitPoints());
+            Assert.assertEquals(60, expectedPokemon.getHitPoints().getCurrentHitPoints(), 0);
 
             FileEraser.eraseFile(params.getIdPokemonCreated());
             FileEraser.eraseFile(params1.getIdPokemonCreated());

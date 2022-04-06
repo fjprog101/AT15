@@ -7,33 +7,33 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class HitPoints {
-    private int maxHitPoints;
-    private int currentHitPoints;
+    private double maxHitPoints;
+    private double currentHitPoints;
 
     public HitPoints() {
     }
 
-    public HitPoints(int maxHp) {
+    public HitPoints(double maxHp) {
         super();
         this.maxHitPoints = maxHp;
         this.currentHitPoints = maxHitPoints;
     }
 
     @XmlElement
-    public int getMaxHitPoints() {
+    public double getMaxHitPoints() {
         return maxHitPoints;
     }
 
     @XmlElement
-    public int getCurrentHitPoints() {
+    public double getCurrentHitPoints() {
         return currentHitPoints;
     }
 
-    public void setMaxHitPoints(int maxHitP) {
+    public void setMaxHitPoints(double maxHitP) {
         this.maxHitPoints = maxHitP;
     }
 
-    public void setCurrentHitPoints(int currentHp) {
+    public void setCurrentHitPoints(double currentHp) {
         this.currentHitPoints = currentHp;
     }
 

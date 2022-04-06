@@ -8,14 +8,16 @@ public class HitPointsTest {
     @Test
     public void itShouldHaveMaxHP() {
         HitPoints hitPoints = new HitPoints(200);
-        assertEquals(200, hitPoints.getMaxHitPoints());
+        double expected = 200;
+        assertEquals(expected, hitPoints.getMaxHitPoints(), 0);
     }
 
     @Test
     public void itShouldChangeCurrentHP() {
         HitPoints hitPoints = new HitPoints(200);
         hitPoints.setCurrentHitPoints(150);
-        assertEquals(150, hitPoints.getCurrentHitPoints());
+        double expected = 200;
+        assertEquals(expected, hitPoints.getMaxHitPoints(), 0);
     }
 
     @Test
@@ -31,15 +33,16 @@ public class HitPointsTest {
         HitPoints hitPoints = new HitPoints(200);
         hitPoints.setCurrentHitPoints(2);
         hitPoints.fullRestore();
-
-        assertEquals(200, hitPoints.getCurrentHitPoints());
+        double expected = 200;
+        assertEquals(expected, hitPoints.getCurrentHitPoints(), 0);
     }
 
     @Test
     public void itShouldSetMaxHitPoints() {
         HitPoints hp = new HitPoints(200);
         hp.setMaxHitPoints(300);
-        assertEquals(300, hp.getMaxHitPoints());
+        double expected = 300;
+        assertEquals(expected, hp.getMaxHitPoints(),0);
     }
 
 }

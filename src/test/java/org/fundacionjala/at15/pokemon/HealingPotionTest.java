@@ -16,8 +16,8 @@ public class HealingPotionTest {
         Pokemon pikachu = new Pokemon(200, "pikachu");
         pikachu.getHitPoints().setCurrentHitPoints(10);
         pikachu.getHitPoints().fullRestore();
-        assertEquals(200, pikachu.getHitPoints().getCurrentHitPoints());
-
+        double hitpoints = 200;
+        assertEquals(hitpoints, pikachu.getHitPoints().getCurrentHitPoints(), 0);
     }
 
 }

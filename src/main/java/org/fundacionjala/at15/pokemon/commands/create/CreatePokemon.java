@@ -21,6 +21,9 @@ public class CreatePokemon implements Callable<Integer> {
     @Option(names = { "--xml" }, description = "create the object in xml format")
     private boolean xml;
 
+    @Option(names = { "-type", "-t" }, description = "pokemon type", defaultValue = "Normal")
+    private String pokemonType;
+
     @Override
     public Integer call() throws IncompleteArguments {
         if ((hitPoints <= 0) || (pokemonName == null)) {
@@ -29,6 +32,8 @@ public class CreatePokemon implements Callable<Integer> {
                     null, true, false);
         }
         Pokemon newPokemon = new Pokemon(hitPoints, pokemonName);
+        newPokemon = new Pokemon(hitPoints, pokemonName);
+        newPokemon.setPokemonType(pokemonType);
         this.idPokemonCreated = newPokemon.getId();
         if (!xml) {
             newPokemon.write();
@@ -38,9 +43,10 @@ public class CreatePokemon implements Callable<Integer> {
 
         System.out.println(
                 "Pokemon Created: \n"
-                        + "Name: " + newPokemon.getPokemonName() + "\n"
-                        + "Hit points:" + newPokemon.getHitPoints().getCurrentHitPoints() + "\n"
-                        + "ID: " + idPokemonCreated);
+                        + "Name:         " + newPokemon.getPokemonName() + "\n"
+                        + "Hit points:   " + newPokemon.getHitPoints().getCurrentHitPoints() + "\n"
+                        + "Pokemon type: " + newPokemon.getPokemonType() + "\n"
+                        + "ID:           " + idPokemonCreated);
         return 0;
     }
 

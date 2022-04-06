@@ -13,6 +13,7 @@ public class Pokemon extends Entity {
     private HitPoints hitPoints;
     private ArrayList<Move> movementList = new ArrayList<Move>();
     private String pokemonName;
+    private String pokemonType;
 
     public Pokemon() {
     }
@@ -25,6 +26,7 @@ public class Pokemon extends Entity {
         this.pokemonName = pokemonName;
         Move tackle = new Move();
         this.movementList.add(tackle);
+        this.pokemonType = "Normal";
     }
 
     public ArrayList<Move> getMovementList() {
@@ -61,5 +63,13 @@ public class Pokemon extends Entity {
 
     public String getPrefix() {
         return "pkm";
+    }
+
+    public String getPokemonType() {
+        return pokemonType;
+    }
+
+    public void setPokemonType(String newPokemonType) {
+        this.pokemonType = newPokemonType;
     }
 }

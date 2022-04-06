@@ -11,6 +11,7 @@ public class CenterTest {
         pokemon.getHitPoints().setCurrentHitPoints(0);
         Center center = new Center();
         center.healTeam(team);
-        assertEquals(1000, pokemon.getHitPoints().getCurrentHitPoints());
+        double expected = 1000;
+        assertEquals(expected, pokemon.getHitPoints().getCurrentHitPoints(), 0);
     }
 }

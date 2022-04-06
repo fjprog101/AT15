@@ -2,22 +2,55 @@ package org.fundacionjala.at15.pokemon;
 
 import static org.fundacionjala.at15.pokemon.constants.DamageReceived.*;
 
-public class DamageReceived implements HPAffecter {
-    private int potency;
-    private int currentHitPoints;
+public class DamageReceived {
+    private double potency;
+    private double currentHitPoints;
+    private final double aument = 1.2;
+    private final double reduce = 0.8;
 
-    public DamageReceived(int potency) {
+    public DamageReceived(double potency) {
         this.potency = potency;
     }
 
-    public void affectHP(Pokemon pokemon) {
-        currentHitPoints = pokemon.getHitPoints().getCurrentHitPoints();
+    public void affectHP(Pokemon attackedPokemon, String attackingPokemonType) {
+        if (attackingPokemonType.equals("Fire")) {
+            fireType(attackedPokemon);
+        } else if (attackingPokemonType.equals("Grass")) {
+            grassType(attackedPokemon);
+        } else if (attackingPokemonType.equals("Water")) {
+            waterType(attackedPokemon);
+        }
+        currentHitPoints = attackedPokemon.getHitPoints().getCurrentHitPoints();
         if (currentHitPoints > potency) {
             currentHitPoints = currentHitPoints - potency;
-            pokemon.getHitPoints().setCurrentHitPoints(currentHitPoints);
+            attackedPokemon.getHitPoints().setCurrentHitPoints(currentHitPoints);
         } else if (currentHitPoints > FAINT && currentHitPoints <= potency) {
             currentHitPoints = FAINT;
-            pokemon.getHitPoints().setCurrentHitPoints(currentHitPoints);
+            attackedPokemon.getHitPoints().setCurrentHitPoints(currentHitPoints);
+        }
+    }
+
+    public void fireType(Pokemon attackedPokemon) {
+        if (attackedPokemon.getPokemonType().equals("Grass")) {
+            potency = potency * aument;
+        } else if (attackedPokemon.getPokemonType().equals("Water")) {
+            potency = potency * reduce;
+        }
+    }
+
+    public void grassType(Pokemon attackedPokemon) {
+        if (attackedPokemon.getPokemonType().equals("Fire")) {
+            potency = potency * reduce;
+        } else if (attackedPokemon.getPokemonType().equals("Water")) {
+            potency = potency * aument;
+        }
+    }
+
+    public void waterType(Pokemon attackedPokemon) {
+        if (attackedPokemon.getPokemonType().equals("Grass")) {
+            potency = potency * reduce;
+        } else if (attackedPokemon.getPokemonType().equals("Fire")) {
+            potency = potency * aument;
         }
     }
 }

@@ -16,7 +16,7 @@ public class CreatePokemonTest {
         new CommandLine(params).parseArgs("-n", "squirtle", "-hp", "100");
         params.call();
         Reader.read(params.getIdPokemonCreated());
-        String expected = "id: " + params.getIdPokemonCreated() + " name: squirtle hitpoints: 100/100";
+        String expected = "id: " + params.getIdPokemonCreated() + " name: squirtle hitpoints: 100.0/100.0";
         assertEquals(expected, Reader.getResult());
     }
 

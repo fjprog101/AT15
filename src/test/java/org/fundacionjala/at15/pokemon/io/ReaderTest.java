@@ -15,7 +15,7 @@ public class ReaderTest {
         Pokemon pokemon = new Pokemon(100, "Charizard");
         pokemon.write();
         read(pokemon.getId());
-        String expected = "id: " + pokemon.getId() + " name: Charizard hitpoints: 100/100";
+        String expected = "id: " + pokemon.getId() + " name: Charizard hitpoints: 100.0/100.0";
         FileEraser.eraseFile(pokemon);
         assertEquals(expected, getResult());
     }
