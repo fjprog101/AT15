@@ -21,7 +21,7 @@ public class CreatePokemon implements Callable<Integer> {
     @Option(names = { "--xml" }, description = "create the object in xml format")
     private boolean xml;
 
-    @Option(names = { "-pokemonType", "-pt" }, description = "pokemon type", defaultValue = "Normal")
+    @Option(names = { "-type", "-t" }, description = "pokemon type", defaultValue = "Normal")
     private String pokemonType;
 
     @Override
