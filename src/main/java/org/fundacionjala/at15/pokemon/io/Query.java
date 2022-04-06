@@ -17,13 +17,19 @@ public class Query {
 
     public static ArrayList<String> getMatches(EntityType entityType, String name) {
         String path = entityType.getPath();
+        String onlyName = "";
         ArrayList<String> fileNames = getFiles(path);
         ArrayList<String> selectedFiles = new ArrayList<String>();
         for (String names : fileNames) {
             File file = new File(path + "/" + names);
             String content = stringReader(file);
             if (content.contains(name)) {
-                String onlyName = names.replace(".json", "");
+                if (names.contains(".json")) {
+                    onlyName = names.replace(".json", "");
+                }
+                if (names.contains(".xml")) {
+                    onlyName = names.replace(".xml", "");
+                }
                 selectedFiles.add(onlyName);
             }
         }
