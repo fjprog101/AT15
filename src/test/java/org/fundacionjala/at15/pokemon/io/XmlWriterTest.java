@@ -37,6 +37,7 @@ public class XmlWriterTest {
             e.printStackTrace(System.out);
         }
 
+        FileEraser.eraseFile(pokemon);
         assertTrue(stringContent.contains(pokemon.getId()));
     }
 
@@ -65,6 +66,7 @@ public class XmlWriterTest {
             e.printStackTrace(System.out);
         }
 
+        FileEraser.eraseFile(trainer);
         assertTrue(stringContent.contains(trainer.getId()));
     }
 }
