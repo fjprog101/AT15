@@ -5,10 +5,19 @@ import static org.fundacionjala.at15.pokemon.constants.TrainerBattle.*;
 import org.fundacionjala.at15.pokemon.ID.Identifier;
 import static org.fundacionjala.at15.pokemon.io.EntityType.*;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class TrainerBattle extends Battle {
     private final Trainer trainer1;
     private final Trainer trainer2;
     private int turn = 0;
+
+    public TrainerBattle() {
+        this.trainer1 = null;
+        this.trainer2 = null;
+    }
 
     public TrainerBattle(Trainer newTrainer1, Trainer newTrainer2) {
         this.type = BATTLE;
@@ -72,5 +81,9 @@ public class TrainerBattle extends Battle {
 
     public boolean getBattleOver() {
         return this.battleOver;
+    }
+
+    public int getTurn() {
+        return turn;
     }
 }
