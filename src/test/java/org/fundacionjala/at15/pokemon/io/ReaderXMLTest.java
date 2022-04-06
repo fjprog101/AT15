@@ -17,7 +17,7 @@ public class ReaderXMLTest {
         FileEraser.eraseFile(pokemon);
         assertEquals("class org.fundacionjala.at15.pokemon.Pokemon", entity.getClass().toString());
 
-        String expected = "id: " + pokemon.getId() + " name: Chikorita hitpoints: 100/100";
+        String expected = "id: " + pokemon.getId() + " name: Chikorita hitpoints: 100.0/100.0";
         assertEquals(expected, Reader.getResult());
     }
 
