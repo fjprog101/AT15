@@ -36,4 +36,31 @@ public class SubCommandLearnTest {
         String expected = pokemon.getMove("Patada").getMovement();
         assertEquals("Patada", expected);
     }
+
+    @Test(expected = IncompleteArguments.class)
+    public void commandShouldVerifyLearnException() throws IncompleteArguments {
+        CreatePokemon poke = new CreatePokemon();
+        new CommandLine(poke).parseArgs("-n", "pikachu", "-hp", "100");
+        poke.call();
+
+        CreateCurrentEntities current = new CreateCurrentEntities();
+        new CommandLine(current);
+        current.call();
+
+        Select select = new Select();
+        new CommandLine(select).parseArgs("-id", poke.getIdPokemonCreated());
+        select.call();
+
+        Learn learn = new Learn();
+        new CommandLine(learn).parseArgs("-name", "Patada", "-damage", "400");
+        learn.call();
+        new CommandLine(learn).parseArgs("-name", "Patada", "-damage", "400");
+        learn.call();
+        new CommandLine(learn).parseArgs("-name", "Patada", "-damage", "400");
+        learn.call();
+        new CommandLine(learn).parseArgs("-name", "Patada", "-damage", "400");
+        learn.call();
+        new CommandLine(learn).parseArgs("-name", "Patada", "-damage", "400");
+        learn.call();
+    }
 }

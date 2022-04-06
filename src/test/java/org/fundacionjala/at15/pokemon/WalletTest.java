@@ -1,6 +1,8 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
+
+import org.fundacionjala.at15.pokemon.commands.exceptions.WalletException;
 import org.junit.Test;
 
 public class WalletTest {
@@ -15,13 +17,13 @@ public class WalletTest {
     }
 
     @Test
-    public void itShouldTakeOffBonus() {
+    public void itShouldTakeOffBonus() throws WalletException {
         wallet.spendMoney(money);
         assertEquals(50, wallet.getMoneyInWallet());
     }
 
-    @Test
-    public void itShouldNotTakeOffBonus() {
+    @Test(expected = WalletException.class)
+    public void itShouldNotTakeOffBonus() throws WalletException {
         wallet.spendMoney(money1);
         assertEquals(100, wallet.getMoneyInWallet());
     }

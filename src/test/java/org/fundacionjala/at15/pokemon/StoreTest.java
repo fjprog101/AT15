@@ -1,11 +1,13 @@
 package org.fundacionjala.at15.pokemon;
 
 import static org.junit.Assert.assertEquals;
+
+import org.fundacionjala.at15.pokemon.commands.exceptions.WalletException;
 import org.junit.Test;
 
 public class StoreTest {
     @Test
-    public void itShouldGiveAPokeballAndChargeCost() {
+    public void itShouldGiveAPokeballAndChargeCost() throws WalletException {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
         int initialSize = trainer.getPokeballs().size();
@@ -16,7 +18,7 @@ public class StoreTest {
     }
 
     @Test
-    public void itShouldGiveAPotionAndChargeCost() {
+    public void itShouldGiveAPotionAndChargeCost() throws WalletException {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
         int initialSize = trainer.getHealingPotions().size();
@@ -38,7 +40,7 @@ public class StoreTest {
     }
 
     @Test
-    public void itShouldAllowTrainerSellPotion() {
+    public void itShouldAllowTrainerSellPotion() throws WalletException {
         Pokemon pokemon = new Pokemon(100, "pokemon");
         Trainer trainer = new Trainer(pokemon, "trainer");
         Store.buyHealingPotion(trainer);
