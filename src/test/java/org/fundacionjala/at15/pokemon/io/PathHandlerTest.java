@@ -39,7 +39,6 @@ public class PathHandlerTest {
     public void itShouldCreateANewFolder() {
         File file = new File(EntityType.BATTLE.getPath() + "/test");
         checkFolder(file);
-
         assertTrue(file.delete());
     }
 }
