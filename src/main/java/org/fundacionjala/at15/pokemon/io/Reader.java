@@ -30,8 +30,8 @@ public class Reader {
         String name = pokemon.getPokemonName();
         System.out.println("name: " + name);
 
-        int currentHitPoints = pokemon.getHitPoints().getCurrentHitPoints();
-        int maxHitPoints = pokemon.getHitPoints().getMaxHitPoints();
+        double currentHitPoints = pokemon.getHitPoints().getCurrentHitPoints();
+        double maxHitPoints = pokemon.getHitPoints().getMaxHitPoints();
         System.out.println("hitpoints: " + currentHitPoints + "/" + maxHitPoints);
 
         result = "id: " + identifier + " name: " + name + " hitpoints: " + currentHitPoints + "/" + maxHitPoints;

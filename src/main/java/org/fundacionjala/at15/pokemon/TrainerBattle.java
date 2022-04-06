@@ -33,10 +33,10 @@ public class TrainerBattle extends Battle {
             turn++;
             if (turn % 2 != 0) {
                 damageReceived = new DamageReceived(getpotency(pokemonTrainer1));
-                damageReceived.affectHP(pokemonTrainer2);
+                damageReceived.affectHP(pokemonTrainer2, pokemonTrainer1.getPokemonType());
             } else {
                 damageReceived = new DamageReceived(getpotency(pokemonTrainer2));
-                damageReceived.affectHP(pokemonTrainer1);
+                damageReceived.affectHP(pokemonTrainer1, pokemonTrainer2.getPokemonType());
             }
             pokemonTrainer1 = getPokemonAvailable(trainer1);
             pokemonTrainer2 = getPokemonAvailable(trainer2);

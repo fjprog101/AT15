@@ -32,10 +32,10 @@ public class WildPokemonBattle extends Battle {
             turn++;
             if (turn % 2 != 0) {
                 damage = new DamageReceived(getPotency(myPokemon));
-                damage.affectHP(wildPokemon);
+                damage.affectHP(wildPokemon, myPokemon.getPokemonType());
             } else {
                 damage = new DamageReceived(getPotency(wildPokemon));
-                damage.affectHP(myPokemon);
+                damage.affectHP(myPokemon, wildPokemon.getPokemonType());
                 if (wildPokemon.getHitPoints().is20Percent()) {
                     try {
                         trainer.usePokeball(wildPokemon);

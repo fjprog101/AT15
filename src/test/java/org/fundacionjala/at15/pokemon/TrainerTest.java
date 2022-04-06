@@ -11,9 +11,9 @@ public class TrainerTest {
         Pokemon pokemon = new Pokemon(100, "pikachu");
         Trainer trainer = new Trainer(pokemon, "Trainer1");
         Pokemon expectedPokemon = new Pokemon(100, "pikachu");
-        int actual = trainer.currentPokemon(0).getHitPoints().getMaxHitPoints();
-        int expected = expectedPokemon.getHitPoints().getMaxHitPoints();
-        assertEquals(expected, actual);
+        double actual = trainer.currentPokemon(0).getHitPoints().getMaxHitPoints();
+        double expected = expectedPokemon.getHitPoints().getMaxHitPoints();
+        assertEquals(expected, actual, 0);
     }
 
     @Test

@@ -34,12 +34,12 @@ public class Use implements Callable<Integer> {
             if (move != null) {
                 DamageReceived damageDealer = new DamageReceived(move.getPotency());
                 assert wildPokemon != null;
-                damageDealer.affectHP(wildPokemon);
+                damageDealer.affectHP(wildPokemon, pokemon.getPokemonType());
 
                 if (wildPokemon.getHitPoints().getCurrentHitPoints() > 0) {
                     DamageReceived damageDelivered = new DamageReceived(
                             wildPokemon.getMove("basicAttack").getPotency());
-                    damageDelivered.affectHP(pokemon);
+                    damageDelivered.affectHP(pokemon, wildPokemon.getPokemonType());
                 }
 
                 wildPokemon.write();
