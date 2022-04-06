@@ -3,6 +3,8 @@ package org.fundacionjala.at15.pokemon.io;
 import static org.fundacionjala.at15.pokemon.io.Reader.*;
 import static org.fundacionjala.at15.pokemon.io.PathHandler.*;
 import static org.junit.Assert.assertEquals;
+
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import com.google.gson.Gson;
@@ -96,5 +98,7 @@ public class ReaderTest {
     public void readerShouldReturnNull() {
         assertEquals(null, read("pkm-testing"));
         assertEquals(null, ReaderJSON.readJSON("testing", "line"));
+        File path = PathHandler.getPathXML("pkm-file");
+        assertEquals(null, ReaderXML.readXML("testing", path));
     }
 }
