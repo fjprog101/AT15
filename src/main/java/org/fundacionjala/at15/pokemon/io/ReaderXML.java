@@ -53,16 +53,6 @@ public class ReaderXML extends Reader {
                 e.printStackTrace();
             }
         }
-        if (subName.equals("crt")) {
-            try {
-                jaxbContext = JAXBContext.newInstance(CurrentEntities.class);
-                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                CurrentEntities entity = (CurrentEntities) jaxbUnmarshaller.unmarshal(file);
-                return entity;
-            } catch (JAXBException e) {
-                e.printStackTrace();
-            }
-        }
         return null;
     }
 }
