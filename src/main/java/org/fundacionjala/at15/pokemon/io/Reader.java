@@ -17,8 +17,7 @@ public class Reader {
         }
         if (PathHandler.getTypeFile(fileName).equals("xml")) {
             File path = PathHandler.getPathXML(fileName);
-            String text = PathHandler.stringReader(path);
-            return ReaderXML.readXML(subName, text);
+            return ReaderXML.readXML(subName, path);
         }
         return null;
     }

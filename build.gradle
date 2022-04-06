@@ -52,3 +52,8 @@ task runPokemonCli (dependsOn: 'classes', type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     standardInput = System.in
 }
+
+task runAdhemar (dependsOn: 'classes', type: JavaExec) {
+    main = 'org.fundacionjala.at15.pokemon.Pokemon'
+    classpath = sourceSets.main.runtimeClasspath
+}
