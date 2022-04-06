@@ -3,6 +3,7 @@ package org.fundacionjala.at15.pokemon.commands.create;
 import org.fundacionjala.at15.pokemon.Town;
 import org.fundacionjala.at15.pokemon.commands.exceptions.IncompleteArguments;
 import org.fundacionjala.at15.pokemon.io.JsonWriter;
+import org.fundacionjala.at15.pokemon.io.XmlWriter;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
@@ -14,6 +15,9 @@ public class CreateTown implements Callable<Integer> {
     @Option(names = { "-nameTown", "-nt" }, description = "name town")
     private String townName;
 
+    @Option(names = { "--xml" }, description = "create the object in xml format")
+    private boolean xml;
+
     @Override
     public Integer call() throws IncompleteArguments {
         if ((townName == null)) {
@@ -22,7 +26,12 @@ public class CreateTown implements Callable<Integer> {
                     null, true, false);
         }
         Town newTown = new Town(townName);
-        newTown.write(new JsonWriter());
+        if (!xml) {
+            newTown.write(new JsonWriter());
+        } else {
+            newTown.write(new XmlWriter());
+        }
+
         idCreateTown = newTown.getId();
         System.out.println(
                 "Town Created: \n"
