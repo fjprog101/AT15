@@ -1,6 +1,5 @@
 package org.fundacionjala.at15.pokemon.io;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.BufferedReader;
@@ -78,7 +77,7 @@ public class XmlWriterTest {
         Town town = new Town("Town");
         town.write(new XmlWriter());
 
-        File inputFile = new File(TRAINER.getPath() + "/" + town.getId() + ".xml");
+        File inputFile = new File(TOWN.getPath() + "/" + town.getId() + ".xml");
         String line = "";
         String stringContent = "";
         try {
@@ -95,6 +94,6 @@ public class XmlWriterTest {
             e.printStackTrace(System.out);
         }
 
-        assertEquals("", stringContent);
+        assertTrue(stringContent.contains(town.getId()));
     }
 }
